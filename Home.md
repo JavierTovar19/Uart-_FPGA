@@ -1,6 +1,11 @@
 # Diseño Digital para FPGAs, con herramientas libres
 
-TODO. Why libre??
+TODO. 
+Why libre?
+Por donde íbamos? --> Retomar artículos sobre el tema
+--> convirtiendo hw en sw
+--> Hispalinux
+--> JCRA barcelona
 
 ## Repo
 
