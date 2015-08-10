@@ -177,3 +177,4 @@ En la consola veremos que han aparecido los siguientes mensajes:
 El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de pruebas cuando la salida estaba a '1'
 
 ## Conclusiones
+TODO
