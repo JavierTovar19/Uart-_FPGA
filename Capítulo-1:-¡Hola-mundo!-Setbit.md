@@ -33,13 +33,40 @@ En la figura 2 se muestra gráficamente esta idea.  Como lo que estamos describi
 
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-2.png)
 
-Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos este comando desde la consola:
+Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos el comando **make sint** desde la consola:
 
     $ make sint
+    
+    yosys -p "synth_ice40 -blif setbit.blif" setbit.v
+    
+    /----------------------------------------------------------------------------\
+    |                                                                            |
+    |  yosys -- Yosys Open SYnthesis Suite                                       |
+    |                                                                            |
+    |  Copyright (C) 2012 - 2015  Clifford Wolf <clifford@clifford.at>           |
+    |                                                                            |
+    |  Permission to use, copy, modify, and/or distribute this software for any  |
+    |  purpose with or without fee is hereby granted, provided that the above    |
+    ...
 
-Se nos genera el fichero setbit.bin que contiene la conguración de la FPGA para que se nos implemente nuestro circuito digital.
+Saldrán muchos más mensajes. En mi portátil tarda en sintetizar menos de 1 segundos. Los mensajes finales que se obtienen son:
 
-Lo descargamos en la fpga mediante el comando:
+    ...
+    After placement:
+    PIOs       1 / 96
+    PLBs       1 / 160
+    BRAMs      0 / 16
+    
+    place time 0.00s
+    route...
+    pass 1, 0 shared.
+    route time 0.00s
+    write_txt setbit.txt...
+    #-- Generar binario final, listo para descargar en fgpa
+    icepack setbit.txt setbit.bin
+    $
+
+Al terminar se habrá generado el fichero setbit.bin que es el que descargaremos en la FPGA para configurarla. Introducimos la iCEStick en el USB y ejecutamos este comando:
 
     $ sudo iceprog setbit.bin
 
