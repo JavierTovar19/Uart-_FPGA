@@ -12,9 +12,18 @@ Todos los circuitos digitales se descomponen en sus elementos básicos: **puerta
 (dibujo)
 
 # Entorno libre
+TODO
+
+Usaremos [icestorm](http://www.clifford.at/icestorm/), yosys y aracne, para la síntesis y descarga en la FPGA
+Entorno: Ubuntu Linux 15.04
 
 # Instalación
 
 # Placa ICEStick
+
+Esta es la placa que usaremos para probar todos los diseños digitales de este tutorial:
+[Placa IceStrick](http://www.latticesemi.com/icestick)
+
+Si no dispones de esta placa, ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
 
 # Enlaces
