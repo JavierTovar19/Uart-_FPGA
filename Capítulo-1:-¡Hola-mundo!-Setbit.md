@@ -70,7 +70,24 @@ Al terminar se habrá generado el fichero setbit.bin que es el que descargaremos
 
     $ sudo iceprog setbit.bin
 
-El led D1 de la ICEStick se enciende
+El proceso dura aproximadamente 30 segundos (con la versión actual del iceprog. Este tiempo se irá reduciendo según se vaya mejorando el software por la comunidad). Los mensajes que aparecen son:
+
+    [sudo] password for obijuan: 
+    init..
+    cdone: high
+    reset..
+    cdone: low
+    flash ID: 0x20 0xBA 0x16 0x10 0x00 0x00 0x23 0x12 0x67 0x21 0x23 0x00 0x21 0x00 0x43 0x04 0x11 0x11 0x5F 0x7D
+    file size: 32216
+    erase 64kB sector at 0x000000..
+    programming..
+    reading..
+    VERIFY OK
+    cdone: high
+    Bye.
+    $
+
+El led D1 de la ICEStick se encenderá:
 
 (Foto)
 
