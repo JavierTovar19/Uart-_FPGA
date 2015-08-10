@@ -94,9 +94,16 @@ El led D1 de la ICEStick se encenderá:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
-
-
-
 ## Simulación
+
+### Primero simulamos, luego sintetizamos
+
+El ejemplo anterior lo hemos descargado directamente en la FPGA porque el diseño ya **ESTABA PROBADO PREVIAMENTE**. Cuando trabajamos con FPGAs **estamos haciendo hardware** y tenemos que tener siempre mucho cuidado. Podemos escribir un código que por ejemplo tenga un cortocircuito. Y podría ocurrir que las herramientas de síntesis no nos avisen con un warning (sobre todo con estas primeras versiones que todavía están en estado alfa). Si lo descargamos en la fpga la podríamos estropear parcialmente.
+
+Por ello, **SIEMPRE** hay que **simular el código** que hagamos. Y una vez que estamos lo bastante seguros de que funciona (o que no tiene error gordos) es cuando lo cargamos en la FPGA.
+
+### Probando componentes: banco de trabajo
+
+
 
 
