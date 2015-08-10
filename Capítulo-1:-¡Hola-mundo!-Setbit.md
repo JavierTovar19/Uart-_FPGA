@@ -16,6 +16,7 @@ Verilog es un lenguaje que sirve para describir hardware... pero ¡Cuidado! ¡NO
 
 El código verilog que implementa este circuito "hola mundo" se encuentra en el fichero [setbit.v](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T01-setbit/setbit.v). Tiene esta pinta:
 
+    //-- Fichero setbit.v
     module setbit(output A);
     wire A;
     
