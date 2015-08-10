@@ -129,7 +129,7 @@ El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos 
      .A (A)
     );
     
-      //-- Comenzamos las pruebas (bloque de comprobacion)
+    //-- Comenzamos las pruebas (bloque de comprobacion)
     initial begin
     
         //-- Definir el fichero donde volcar los datos
