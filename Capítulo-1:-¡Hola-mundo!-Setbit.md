@@ -110,7 +110,11 @@ En verilog (y resto de lenguajes HDL) hacemos lo mismo.  Un componente descrito 
 
 ¿Cómo comprobamos el componente setbit? Se trata de un chip que sólo tiene un pin de salida que siempre está a '1'. En la vida real lo pondríamos en su placa de puntos, lo alimentaríamos, conectaríamos un cable en su pin de salida (A) y usando un polímetro comprobaríamos que sale una tensión igual a la de alimentación (un '1').  Haremos exactamente eso, pero describiéndolo en Verilog. Gráficamente tendríamos lo siguiente:
 
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-3.png)
 
+El fichero se llama setbit_tb.v. Siempre usaremos el sufijo _tb para indicar que se trata de un banco de pruebas (TestBench) y ¡No de hardware real!. Este banco de pruebas NO ES SINTETIZABLE. Es un código que sólo vale para la SIMULACIÓN.  Lo que sintetizamos es el componente setbit.v.  Por eso, a la hora de hacer bancos de pruebas, estamos empleando Verilog no como una herramienta de descripción hardware sino como un programa. Aquí sí podemos pensar en Verilog como un lenguaje de programación tradicional.
+
+El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos llamado A y un bloque de comprobación (que sería el equivalente al polímetro en el mundo real). El código es el siguiente:
 
 
 
