@@ -151,4 +151,5 @@ El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos 
     end
     endmodule
 
+## ¡Simulando!
 
