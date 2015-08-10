@@ -116,6 +116,39 @@ El fichero se llama setbit_tb.v. Siempre usaremos el sufijo _tb para indicar que
 
 El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos llamado A y un bloque de comprobación (que sería el equivalente al polímetro en el mundo real). El código es el siguiente:
 
+    //-- Modulo para el test bench
+    module setbit_tb;
+    
+    //-- Cable para conectar al pin de salida de setbit
+    //-- Le podemos dar CUALQUIER nombre. Pero le llamamos A (igual que el pin de setbit)
+    wire A;
+    
+    //-- Colocar el componente (se denomina "Instanciar") y
+    //-- Conectar en el pin A el cable A
+    setbit SB1 (
+     .A (A)
+    );
+    
+      //-- Comenzamos las pruebas (bloque de comprobacion)
+    initial begin
+    
+        //-- Definir el fichero donde volcar los datos
+        $dumpfile("setbit_tb.vcd");
+    
+        //-- Volcar todos los datos a ese fichero (al finalizar la simulacion)
+        $dumpvars(0, setbit_tb);
+    
+        //-- Pasadas 10 unidades de tiempo comprobamos si el cable está a '1'
+        //-- En caso de no estar a 1, se informa del problema, pero la
+        //-- simulacion no se detiene
+        # 10 if (A != 1)
+               $display("---->¡ERROR! Salida no esta a 1");
+             else
+               $display("Componente ok!");
 
+      //-- Terminar la simulacion tras 10 unidades de tiempo desde la comprobacion
+      # 10 $finish;
+    end
+    endmodule
 
 
