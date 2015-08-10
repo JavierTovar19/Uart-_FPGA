@@ -104,6 +104,14 @@ Por ello, **SIEMPRE** hay que **simular el código** que hagamos. Y una vez que 
 
 ### Probando componentes: banco de trabajo
 
+Si compramos un chip y lo queremos probar, ¿Qué hacemos?. Hombre, normalmente lo soldamos directamente en el PCB o lo introducimos en un zócalo.  Pero también lo podemos pinchar en una placa entrendora y colocar nosotros los cables de conexión a la alimentación, señales y resto de componentes.
+
+En verilog (y resto de lenguajes HDL) hacemos lo mismo.  Un componente descrito en Verilog (como por ejemplo setbit.v) **no se puede simular directamente**. Es necesario escribir un **banco de pruebas** que indique qué cables conectar a sus pines, qué valores de prueba enviar y comprobar que por sus salidas salen resultados correctos. Este banco de pruebas es un fichero también en Verilog.
+
+¿Cómo comprobamos el componente setbit? Se trata de un chip que sólo tiene un pin de salida que siempre está a '1'. En la vida real lo pondríamos en su placa de puntos, lo alimentaríamos, conectaríamos un cable en su pin de salida (A) y usando un polímetro comprobaríamos que sale una tensión igual a la de alimentación (un '1').  Haremos exactamente eso, pero describiéndolo en Verilog. Gráficamente tendríamos lo siguiente:
+
+
+
 
 
 
