@@ -153,3 +153,27 @@ El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos 
 
 ## ¡Simulando!
 
+Para simular utilizamos las herramientas icarus verilog y GTKwave. Ejecutamos el comando:
+
+    $ make sim
+
+y automáticamente se nos abrirá una ventana con el resultado de la simulación:
+
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
+
+A un golpe de vista comprobamos que se comporta como esperábamos: la señal del cable A está siempre a '1'. Ignoramos las unidades de tiempo que pone, que por defecto está en segundos. Para nosotros serán unidades de tiempo. Tras 20 unidades, la simulación termina.
+
+En la consola veremos que han aparecido los siguientes mensajes:
+
+    #-- Compilar
+    iverilog setbit.v setbit_tb.v -o setbit_tb.out
+    #-- Simular
+    ./setbit_tb.out
+    VCD info: dumpfile setbit_tb.vcd opened for output.
+    Componente ok!
+    #-- Ver visualmente la simulacion con gtkwave
+    gtkwave setbit_tb.vcd setbit_tb.gtkw &
+
+El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de pruebas cuando la salida estaba a '1'
+
+## Conclusiones
