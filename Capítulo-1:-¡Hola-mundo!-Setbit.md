@@ -176,5 +176,11 @@ En la consola veremos que han aparecido los siguientes mensajes:
 
 El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de pruebas cuando la salida estaba a '1'
 
+## Ejercicios propuestos
+
+* Cambiar el componente para que saque un 0. Descargarlo en la fpga. Comprobar que el led está ahora apagado
+
+* Cambiar el ejemplo original para que se encienda el led D2 en vez el D1  (está asociado al pin 98 en vez de al 99)
+
 ## Conclusiones
 TODO
