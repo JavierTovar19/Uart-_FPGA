@@ -6,7 +6,7 @@ El circuito digital más sencillo es simplemente un cable que está conectado a 
 
 La salida de este circuito la hemos denominado A.
 
-## Descripción del hardware
+## setbit.v: Descripción del hardware
 
 Para sintetizar este circuito en la fpga, primero lo tenemos que describir usando un lenguaje de descripción hardware (HDL). En este tutorial utilizaremos Verilog, ya que tenemos todas las herramientas libres para su simulación / síntesis.
 
@@ -32,4 +32,21 @@ Sólo consta de una línea, en la que se asocia la etiqueta A del componente al 
 En la figura 2 se muestra gráficamente esta idea.  Como lo que estamos describiendo es hardware, siempre es interesante hacerse esquemas y dibujos para comprenderlo mejor:
 
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-2.png)
+
+Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos este comando desde la consola:
+
+    $ make sint
+
+Se nos genera el fichero setbit.bin que contiene la conguración de la FPGA para que se nos implemente nuestro circuito digital.
+
+Lo descargamos en la fpga mediante el comando:
+
+    $ sudo iceprog setbit.bin
+
+El led D1 de la ICEStick se enciende
+
+(Foto)
+
+## Simulación
+
 
