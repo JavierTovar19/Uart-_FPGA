@@ -110,3 +110,8 @@ El código del banco de pruebas es:
     endmodule
 
 Observamos que la salida del componente es data, y le hemos conectado el cable DATA, para enfatizar el hecho de que los nombres pueden ser diferentes
+
+Para realizar la simulación ejecutamos el comando **make sim**:
+
+   $ make sim
+
