@@ -4,4 +4,4 @@
 
 ## Introducción
 
-TODO
+Ahora en vez de 1 bit sacaremos 4, y los mostraremos por los leds. Se trata de un valor fijo, que está "cableado por hardware". Si queremos visualizar otro número por los leds, habrá que sintentizar otro circuito.
