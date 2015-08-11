@@ -51,6 +51,11 @@ En el mensaje final obtenemos un resumen de los recursos de la FPGA consumidos y
     PLBs       1 / 160
     BRAMs      0 / 16
 
+Estos recursos son:
+* PIO = Programmable I/O (Entradas / salidas programables)
+* PLBs = Programmable Logic Blocks (Bloques lógicos programables)
+* BRAMs = Block RAM Memory (Bloques de memoria)
+
 Ahora descargamos en la fpga el fichero Fport.bin:
 
     $ sudo iceprog Fport.bin
