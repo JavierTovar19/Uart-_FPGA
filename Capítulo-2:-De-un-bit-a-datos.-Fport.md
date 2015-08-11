@@ -108,3 +108,5 @@ El código del banco de pruebas es:
     end
     
     endmodule
+
+Observamos que la salida del componente es data, y le hemos conectado el cable DATA, para enfatizar el hecho de que los nombres pueden ser diferentes
