@@ -115,3 +115,18 @@ Para realizar la simulación ejecutamos el comando **make sim**:
 
    $ make sim
 
+Este es el resultado con gtkwave:
+
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-sim-1.png)
+
+Comprobamos que la salida siempre está al valor 1010
+
+## Ejercicios propuestos
+* Cambiar el valor para sacar otro patrón por los leds. Simular, sintetizar y cargar en la FPGA
+* Modificar el componente para que el bus sea de 5 bits en vez de 4. Sacar el quinto bit por el pin 44 de la FPGA (no tiene led asociado)
+
+## Conclusiones
+TODO
+
+
+
