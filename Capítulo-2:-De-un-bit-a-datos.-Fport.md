@@ -12,3 +12,13 @@ Este componente lo denominaremos Fport (Fixed port). Tiene un bus de salida de 4
 
 ## Fport.v: Descripción del hardware
 
+    //-- Fichero Fport.v
+    module Fport(output [3:0] data);
+    
+    //-- La salida del modulo son 4 cables
+    wire [3:0] data;
+    
+      //-- Sacar el valor por el bus de salida
+      assign data = 4'b1010; //-- 4'hA
+    
+    endmodule
