@@ -44,6 +44,13 @@ Para realizar la síntesis entramos en el directorio **tutorial/T02-Fport** y ej
 
     $ make sint
 
+En el mensaje final obtenemos un resumen de los recursos de la FPGA consumidos y los que quedan libres:
+
+    After placement:
+    PIOs       2 / 96
+    PLBs       1 / 160
+    BRAMs      0 / 16
+
 Ahora descargamos en la fpga el fichero Fport.bin:
 
     $ sudo iceprog Fport.bin
