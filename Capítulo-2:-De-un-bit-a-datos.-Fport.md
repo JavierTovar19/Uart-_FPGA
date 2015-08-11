@@ -27,3 +27,7 @@ Este circuito es muy parecido al del tutorial anterior (setbit.v) pero en vez de
 
 La salida ahora es un **array de 4 cables**. Esto se denota poniendo [3:0] delante del nombre. Para realizar la asignación escribimos el número en binario usando la notación de Verilog: Primero el número de bits, luego el carácter ', a continuación la base del número (b para binario) y por último los 4 dígitos binarios.  Este mísmo número se podría expresar mediante un único dígito hexadecimal mediante:  4'hA. También lo podriamos poner en decimal como 4'd10
 
+## Síntesis en la FPGA
+
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-2.png)
+
