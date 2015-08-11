@@ -64,4 +64,5 @@ Al terminar, dos leds estarán encendidos y dos apagados, ya que estamos enviand
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
 
+## Simulación
 
