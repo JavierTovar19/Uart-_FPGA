@@ -66,3 +66,45 @@ Al terminar, dos leds estarán encendidos y dos apagados, ya que estamos enviand
 
 ## Simulación
 
+El banco de pruebas es similar al del capítulo anterior, pero ahora en vez de comprobar sólo un bit se comprueba el patrón de 4 bits. Si no es igual al esperado se emite un mensaje de error. El diagrama es el siguiente:
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-3.png)
+
+El banco de pruebas (Fport_tb.v) consta de tres elementos:
+
+* El componente a probar: Fport  (En la liteatura se conoce como uut: unit under test)
+* El bloque de comprobación 
+* El cable DATA
+
+El código del banco de pruebas es:
+
+    //-- Fport_tb.v
+    module Fport_tb;
+    
+    //-- Bus de 4 cables para conectarlos a la salida del componente Fport
+    wire [3:0] DATA;
+    
+    //--Instanciar el componente. Conectar la salida a DATA
+    Fport FP1 (
+      .data (DATA)
+    );
+    
+    //-- Comenzamos las pruebas
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("Fport_tb.vcd");
+      $dumpvars(0, Fport_tb);
+    
+      //-- Pasadas 10 unidades de tiempo comprobamos
+      //-- si el cable tiene el patron establecido
+      # 10 if (DATA != 4'b1010)
+             $display("---->¡ERROR! Salida Erronea");
+           else
+             $display("Componente ok!");
+    
+      //-- Terminar la simulacion 10 unidades de tiempo despues
+      # 10 $finish;
+    end
+    
+    endmodule
