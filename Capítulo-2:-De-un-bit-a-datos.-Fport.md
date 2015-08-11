@@ -29,5 +29,27 @@ La salida ahora es un **array de 4 cables**. Esto se denota poniendo [3:0] delan
 
 ## Síntesis en la FPGA
 
+Cada uno de los 4 bits de la salida data se saca por los pines de la fpga donde están conectados los 4 leds:
+
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-2.png)
+
+Esto se especifica en el fichero Fport.pcf:
+
+    set_io data[0] 99
+    set_io data[1] 98
+    set_io data[2] 97
+    set_io data[3] 96
+
+Para realizar la síntesis entramos en el directorio **tutorial/T02-Fport** y ejecutamos el comando **make sint**:
+
+    $ make sint
+
+Ahora descargamos en la fpga el fichero Fport.bin:
+
+    $ sudo iceprog Fport.bin
+
+Al terminar, dos leds estarán encendidos y dos apagados, ya que estamos enviando el valor 1010:
+
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
+
 
