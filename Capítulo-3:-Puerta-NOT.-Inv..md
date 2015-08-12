@@ -73,12 +73,12 @@ Al conectar el cable de GND, el led se encenderá. Lo sacamos. Conectamos el cab
 ## Simulación
 En el banco de pruebas se instancia la puerta inversora y se le conecta el **cable dout** por la salida B.
 
-Por la entrada 
-
-Por la entrada A conectamos el **registro** de 1 bit **din**: es un elemento que funciona como una variable, a la que se le pueden asignar valores. El programa de pruebas introduce un '0' por la entrada y comprueba si por la salida se obtiene un '1' (que es el negado). Y luego al revés: se introduce un '1' y se comprueba que se obtiene un '1'. El elemento din tiene que ser un registro porque se le asignan valores diferentes: primero un 0 y luego un 1
-
+Por la entrada introduciremos diferentes valores y comprobaremos qué se obtiene a la salida. Por ello, conectamos el **registro** denotado como **din**.
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-3.png)
+
+ A diferencia del cable, el **registro** funciona como una variable, a la que podemos asignar diferentes valores. Primero se introduce un '0' y se comprueba que la salida tenga un '1' (que es el negado). Y luego al revés: se introduce un '1' y se comprueba que se obtiene un '0'.
+
 
 ![Imagen 4]()
 
