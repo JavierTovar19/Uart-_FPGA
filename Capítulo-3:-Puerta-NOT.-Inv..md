@@ -34,3 +34,24 @@ Como se trata de un circuito combinacional, que NO almacena información, **tant
 
 ## Síntesis en la FPGA
 
+![Imagen 2]()
+
+
+<img src="" width="400" align="center">
+
+## Simulación
+
+![Imagen 3]()
+
+![Imagen 4]()
+
+## Ejercicios propuestos
+* Ej1
+* Ej2
+
+## Conclusiones
+TODO
+
+
+
+
