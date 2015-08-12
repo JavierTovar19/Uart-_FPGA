@@ -57,9 +57,12 @@ Ahora lo cargamos en la FPGA con:
     $ sudo iceprog inv.bin
 
 ## Probando la puerta inversora
+La placa iCEstick tiene pines para su expansión, que dan acceso a algunos de los pines de la fpga. Es muy útil soldar una tira de pines hembra en estos pines para acceder fácilmente a ellos. En la imagen se muestra la tira soldada en los pines inferiores
 
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-4.png)
 
-<img src="" width="400" align="center">
+El pin inferior izquierdo se corresponde con el pin 44 de la FPGA y es el que usaremos como entrada de la entrada inversora.  El pin inferior derecho es la alimentación de 3.3 y lo usaremos para introducir un "1" al inversor y el que está a su izquierda es GND, y nos servirá para introducir un "0"
+
 
 ## Simulación
 
