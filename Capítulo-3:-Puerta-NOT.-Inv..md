@@ -67,6 +67,7 @@ Conectamos dos cables a los pines 3.3v y GND. Serán los que usemos para introdu
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
 
+Al conectar el cable de GND, el led se encenderá. Lo sacamos. Conectamos el cable de 3.3v. El led estará apagado.  Cuando no hay nada conectado, el resultado es aleatorio: puede estar encendido, apagado u oscilando entre ambos estados.  Esta es una de las reglas básicas de la electrónica digital: "No dejar los pines de entrada al aire. Siempre a '0' ó '1'.
 
 
 ## Simulación
