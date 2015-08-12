@@ -34,7 +34,7 @@ Como se trata de un circuito combinacional, que NO almacena información, **tant
 
 ## Síntesis en la FPGA
 
-![Imagen 2]()
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-2.png)
 
 
 <img src="" width="400" align="center">
