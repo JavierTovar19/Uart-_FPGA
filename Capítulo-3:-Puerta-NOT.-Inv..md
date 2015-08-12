@@ -79,6 +79,50 @@ Por la entrada introduciremos diferentes valores y comprobaremos qué se obtiene
 
  A diferencia del cable, el **registro** funciona como una variable, a la que podemos asignar diferentes valores. Primero se introduce un '0' y se comprueba que la salida tenga un '1' (que es el negado). Y luego al revés: se introduce un '1' y se comprueba que se obtiene un '0'.
 
+ En el banco de pruebas se instancia el inversor, conectando su entrada A al registro din y su salida B al cable dout. Desde el bucle principal se asignan los valores a din y se comprueba el valor de dout. 
+
+    //-- inv_tb.v
+    module inv_tb();
+    
+    //-- Registro de 1 bit conectado a la entrada del inversor
+    reg din;
+    
+    //-- Cable conectado a la salida del inversor
+    wire dout;
+    
+    //-- Instaciar el inversor, conectado din a la entrada A, y dout a la salida B
+    inv NOT1 (
+     .A (din),
+     .B (dout)
+    );
+    
+    //-- Comenzamos las pruebas
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("inv_tb.vcd");
+      $dumpvars(0, inv_tb);
+    
+      //-- Ponemos la entrada del inversor a 0
+      #5 din = 0;
+    
+      //-- Tras 5 unidades de tiempo comprobamos la salida
+      # 5 if (dout != 1)
+            $display("---->¡ERROR! Esperado: 1. Leido: %d", dout);
+    
+      //-- Tras otras 5 unidades ponemos un 1 en la entrada
+      # 5 din = 1;
+     
+      //-- Tras 5 unidades comprobamos si hay un 0 en la entrada
+      # 5 if (dout != 0)
+            $display("---> ¡ERROR! Esperado: 0. Leido: %d", dout);
+    
+      # 5 $display("FIN de la simulacion");
+      # 10 $finish;
+    end
+    endmodule
+
+
 
 ![Imagen 4]()
 
