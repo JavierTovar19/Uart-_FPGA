@@ -31,3 +31,6 @@ La descripción es muy parecida al componente hola mundo setbit.v, pero ahora te
 A la salida B le asignamos la entrada A negada. Usamos el **operador ~** delante de A para negar (mismo operador que en el lenguaje C).
 
 Como se trata de un circuito combinacional, que NO almacena información, **tanto A como B se define como cables**: la información se transmite por ellos, pero no se almacena.
+
+## Síntesis en la FPGA
+
