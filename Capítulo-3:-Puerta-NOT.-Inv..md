@@ -134,7 +134,6 @@ Vemos como en las primeras 5 unidades de tiempo tanto din como dout tienen el va
 
 ## Ejercicios propuestos
 * Hacer un componente que tenga 2 inversores, y por tanto dos entradas y dos salidas. Sus salidas deberán estar conectadas a dos leds
-* Ej2
 
 ## Conclusiones
 TODO
