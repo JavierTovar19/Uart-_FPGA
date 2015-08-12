@@ -34,7 +34,21 @@ Como se trata de un circuito combinacional, que NO almacena información, **tant
 
 ## Síntesis en la FPGA
 
+La salida de la puerta la conectamos al pin donde está el LED D1 de la iCEstick. La entrada al pin 44, que está disponible en el puerto de expansión de la iCEstick
+
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-2.png)
+
+Al pin 44 le introduciremos un "0" o un "1" desde el exterior para encender o apagar el led. Esto lo hacemos conectando el pin a la alimentación (3.3v) o a tierra (0v, GND) mediante un cable externo
+
+Realizamos la síntesis como siempre, ejecutando el comando make sint:
+
+    $ make sint
+
+y cargamos en la FPGA con:
+
+    $ sudo iceprog inv.bin
+
+## Probando la puerta inversora
 
 
 <img src="" width="400" align="center">
