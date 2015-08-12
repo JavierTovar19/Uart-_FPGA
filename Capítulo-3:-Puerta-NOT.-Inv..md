@@ -126,12 +126,14 @@ Realizamos la simulación, ejecutando el comando make sim
 
     $ make sim
 
-En la simulación vemos como dout es siempre el negado de din
+En la simulación vemos como **dout** es siempre el negado de **din**
 
-![Imagen 4]()
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-5.png)
+
+Vemos como en las primeras 5 unidades de tiempo tanto din como dout tienen el valor x (están en rojo), que significa que son valores indefinidos. Esto es porque din no lo hemos inicializado hasta el instante 5. Antes estaba a un estado indefinido (X) y por tanto la salida también. Pero a partir de t = 5, din vale 0 y por tanto dout 1
 
 ## Ejercicios propuestos
-* Ej1
+* Hacer un componente que tenga 2 inversores, y por tanto dos entradas y dos salidas. Sus salidas deberán estar conectadas a dos leds
 * Ej2
 
 ## Conclusiones
