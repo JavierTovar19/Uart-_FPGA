@@ -122,7 +122,11 @@ Por la entrada introduciremos diferentes valores y comprobaremos qué se obtiene
     end
     endmodule
 
+Realizamos la simulación, ejecutando el comando make sim
 
+    $ make sim
+
+En la simulación vemos como dout es siempre el negado de din
 
 ![Imagen 4]()
 
