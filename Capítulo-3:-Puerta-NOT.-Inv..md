@@ -44,7 +44,15 @@ Realizamos la síntesis como siempre, ejecutando el comando make sint:
 
     $ make sint
 
-y cargamos en la FPGA con:
+Los recursos que esta puerta consume son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 2 / 96
+|PLBs      | 1 / 160
+|BRAMs     | 0 / 16
+
+Ahora lo cargamos en la FPGA con:
 
     $ sudo iceprog inv.bin
 
