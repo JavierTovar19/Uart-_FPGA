@@ -7,7 +7,7 @@ Modelaremos nuestro **primer circuito secuencial**: un contador conectado a los 
 
 Esta es la pinta de nuestro componente. Se actualiza en cada flanco de subida del reloj, y su **salida data** es de **26 bits**.
 
-![Imagen 1]()
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-1.png)
 
 ## Descripción del hardware
 
