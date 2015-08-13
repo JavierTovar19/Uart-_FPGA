@@ -76,7 +76,15 @@ Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-5.png)
 
-Se incrementa con cada flance de subida de la señal de reloj, que tiene un periodo T
+Se incrementa con cada flanco de subida de la señal de reloj clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits:
+
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-4.png)
+
+vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **TN = N * T**
+
+## Periodo del contador
+
+
 
 Borrador
 El bit de mayor peso (25) parpadea con un frecuencia de f = 1 / T   T0 = 2 * 2^0 T,  T1 = 2 * 2 * T, Tb = 2 * 2^b * T = 2^(b+1) * T.    T25 = 2^26 * T = 5.6 seg (aprox)
