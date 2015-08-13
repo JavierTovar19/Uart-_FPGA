@@ -38,6 +38,21 @@ Cualquier contador, con independencia de su número de bits, se construye de est
 
 ## Síntesis en la FPGA
 
+Los 4 bits de mayor peso (data[25], data[24], data[23] y data[22]) los conectaremos a los pines de la fpga donde están los leds. El reloj de la iCEstick entra por el pin 21, que lo conectaremos a la señal de reloj clk de nuestro contador
+
+![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-2.png)
+
+La asociación entre pines de nuestro componente y pines de la fpga se establece en el fichero counter.pcf:
+
+    set_io data[25] 96
+    set_io data[24] 97
+    set_io data[23] 98
+    set_io data[22] 99
+    set_io clk 21
+
+Realizamos la síntesis como siempre:
+
+    $ make sint
 
 [![Click to see the youtube video](http://img.youtube.com/vi/x9_OwUAtts4/0.jpg)](https://www.youtube.com/watch?v=x9_OwUAtts4)
 
