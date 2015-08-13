@@ -12,10 +12,8 @@
 
 ## Síntesis en la FPGA
 
-![Imagen 2]()
 
-
-<img src="" width="400" align="center">
+[![Click to see the youtube video](http://img.youtube.com/vi/x9_OwUAtts4/0.jpg)](https://www.youtube.com/watch?v=x9_OwUAtts4)
 
 ## Simulación
 
