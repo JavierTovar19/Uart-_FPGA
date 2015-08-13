@@ -3,7 +3,7 @@
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T04-counter)
 
 ## Introducción
-Modelaremos nuestro primer circuito secuencial: un contador conectado a los LEDs. Los circuitos secuenciales, a diferencia de los combinacionales, almacenan información. El contador almacena un número que se incrementa con cada tic del reloj.
+Modelaremos nuestro **primer circuito secuencial**: un contador conectado a los LEDs. Los circuitos secuenciales, a diferencia de los combinacionales, **almacenan información**. El contador almacena un número que se incrementa con cada tic del reloj.
 
 Esta es la pinta de nuestro componente. Se actualiza en cada flanco de subida del reloj, y su salida es de 26 bits.
 
