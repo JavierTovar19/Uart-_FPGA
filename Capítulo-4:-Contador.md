@@ -54,6 +54,20 @@ Realizamos la síntesis como siempre:
 
     $ make sint
 
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 14 / 96
+|PLBs      | 6 / 160
+|BRAMs     | 0 / 16
+
+Para probarlo lo cargamos en la FPGA como siempre:
+
+    $ sudo iceprog counter.bin
+
+En este vídeo de youtube podemos ver el contador en funcionamiento:
+
 [![Click to see the youtube video](http://img.youtube.com/vi/x9_OwUAtts4/0.jpg)](https://www.youtube.com/watch?v=x9_OwUAtts4)
 
 ## División de frecuencias
