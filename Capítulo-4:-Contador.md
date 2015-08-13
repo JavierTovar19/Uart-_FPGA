@@ -70,7 +70,13 @@ En este vídeo de youtube podemos ver el contador en funcionamiento:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/x9_OwUAtts4/0.jpg)](https://www.youtube.com/watch?v=x9_OwUAtts4)
 
-## División de frecuencias
+## Prescaler
+
+Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. Como ejemplo veremos un prescaler de 2 bits (que es un contador de 2 bits). 
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-5.png)
+
+Se incrementa con cada flance de subida de la señal de reloj, que tiene un periodo T
 
 Borrador
 El bit de mayor peso (25) parpadea con un frecuencia de f = 1 / T   T0 = 2 * 2^0 T,  T1 = 2 * 2 * T, Tb = 2 * 2^b * T = 2^(b+1) * T.    T25 = 2^26 * T = 5.6 seg (aprox)
