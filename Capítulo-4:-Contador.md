@@ -42,7 +42,7 @@ Los 4 bits de mayor peso (data[25], data[24], data[23] y data[22]) los conectare
 
 ![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-2.png)
 
-La asociación entre pines de nuestro componente y pines de la fpga se establece en el fichero counter.pcf:
+La asociación entre pines de nuestro componente y pines de la fpga se establece en el fichero **counter.pcf**:
 
     set_io data[25] 96
     set_io data[24] 97
