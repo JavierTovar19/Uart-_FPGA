@@ -119,7 +119,70 @@ La frecuencia del contador la podemos variar cambiando el prescaler. En la sigui
 
 ## Simulación
 
-![Imagen 3]()
+El banco de pruebas está compuesto por 4 elementos (en paralelo) unidos por cables. El diagrama es el siguiente:
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-3.png)
+
+Hay un generador de reloj que produce una señal cuadrada para incrementar el contador. La salida del contador se comprueba en dos componentes diferentes. Uno hace la comprobación inicial, verificando que inicialmente arranca desde 0.  El segundo tiene una variable interna que se incrementa con cada flanco de bajada del generador del reloj y su salida se comprueba con la del contdor, para verificar que efectivamente está contando. Como es un contador de 26 bits, no se comprueban todos los 67108864 valores, sino que la simulación se para transcurridas 100 unidades de tiempo.
+
+El código en verilog es:
+
+    //-- counter_tb.v
+    module counter_tb();
+    
+    //-- Registro para generar la señal de reloj
+    reg clk = 0;
+    
+    //-- Datos de salida del contador
+    wire [26:0] data;
+
+    //-- Registro para comprobar si el contador cuenta correctamente
+    reg [26:0] counter_check = 1;
+    
+    //-- Instanciar el contador
+    counter C1(
+      .clk(clk),
+      .data(data)
+    );
+    
+    //-- Generador de reloj. Periodo 2 unidades
+    always #1 clk = ~clk;
+    
+    //-- Comprobacion del valor del contador
+    //-- En cada flanco de bajada se comprueba la salida del contador
+    //-- y se incrementa el valor esperado
+    always @(negedge clk) begin
+      if (counter_check != data)
+        $display("-->ERROR!. Esperado: %d. Leido: %d",counter_check, data);
+    
+      counter_check <= counter_check + 1;
+    end
+    
+    //-- Proceso al inicio
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("counter_tb.vcd");
+      $dumpvars(0, counter_tb);
+    
+      //-- Comprobación del reset.
+      # 0.5 if (data != 0)
+              $display("ERROR! Contador NO está a 0!");
+            else
+	      $display("Contador inicializado. OK.");
+
+      # 99 $display("FIN de la simulacion");
+      # 100 $finish;
+    end
+    
+endmodule
+
+Es importante darse cuenta de que todos estos componentes están funcionando en paralelo, todos a la vez (el código NO es secuencial). Por eso, daría igual cambiar el orden de escritura de los elementos.
+
+
+Para simular, ejecutamos:
+
+
 
 ![Imagen 4]()
 
