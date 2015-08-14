@@ -18,9 +18,9 @@ Antes de implementar un prescaler de N bits, vamos a entender cómo funciona uno
 
 Internamente está constituido por un **contador de 2 bits**, cuyas salidas son d0 y d1. La de mayor peso es la que se saca como señal de salida. Este contador se incrementa en cada flanco de subida de clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits (d0 y d1):
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-4.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-4.png)
 
-vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **Tp = 2^N * T**. Si tomamos los inversos para pasarlo a frecuancias, tenemos que **fp = f / 2^N**. **La frecuencia del bit de mayor peso del prescaler es la frecuencia de su reloj dividida entre 2 elevado al número de bits del prescaler**.
+vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. Es decir, que cada nuevo bit duplica el periodo de la señal anterior. Siguiendo la fórmula general, el periodo de este prescaler de 2 bits es: Tout = 2^2 * T = 4 * T (y gráficamente comprobamos que es así).
 
 ## Periodo del contador
 
