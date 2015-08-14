@@ -178,16 +178,16 @@ El código en verilog es:
 
 Es importante darse cuenta de que todos estos componentes están funcionando en paralelo, todos a la vez (el código NO es secuencial). Por eso, daría igual cambiar el orden de escritura de los elementos.
 
-
 Para simular, ejecutamos:
 
+    $ make sim
 
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/T04-counter-sim-1.png)
 
-![Imagen 4]()
+Efectivamente el contador cuenta. En la imagen sólo se muestran los primeros valores, pero desplazando la imagen se pueden ver hasta el instante 100
 
 ## Ejercicios propuestos
-* Ej1
-* Ej2
+* Cambiar el contador de 26 a 24 bits, para que se incremente más rápidamente
 
 ## Conclusiones
 TODO
