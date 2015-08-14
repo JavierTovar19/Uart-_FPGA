@@ -4,18 +4,15 @@
 
 ## Introducción
 
-Los _prescalers_ sirven para **ralentizar las señales de reloj**. Por la entrada entra una señal de reloj de frecuencia f y por la salida se obtiene una de frecuencia menor. Para un prescaler de N bits, las fórmulas que relacionan las frecuencias y periodos de entrada con los de salida son:
+Los _prescalers_ sirven para **ralentizar las señales de reloj**. Por la entrada entra una señal de reloj de frecuencia f y por la salida se obtiene una de frecuencia menor.  En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
 
+Para un prescaler de N bits, las **fórmulas** que relacionan las frecuencias y periodos de entrada con los de salida son:
 
-
-
-Re-escribir....
-
-Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-2.png)
 
 ## Entendiendo el prescaler de 2 bits
 
-Antes de implementar un prescaler de N bits, vamos a entender uno de sólo 2 bits
+Antes de implementar un prescaler de N bits, vamos a entender cómo funciona uno de 2 bits
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/counter-5.png)
 
