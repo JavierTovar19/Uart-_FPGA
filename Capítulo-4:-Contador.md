@@ -80,7 +80,7 @@ Se incrementa con cada flanco de subida de la señal de reloj clk, que tiene un 
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-4.png)
 
-vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **TN = 2^N * T**. Si tomamos los inversos para pasarlo a frecuancias, tenemos que **fN = f / 2^N**. **La frecuencia del bit de mayor peso del prescaler es la frecuencia de su relog dividida entre 2 elevado al número de bits del prescaler**.
+vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **Tp = 2^N * T**. Si tomamos los inversos para pasarlo a frecuancias, tenemos que **fp = f / 2^N**. **La frecuencia del bit de mayor peso del prescaler es la frecuencia de su relog dividida entre 2 elevado al número de bits del prescaler**.
 
 ## Periodo del contador
 
@@ -88,7 +88,7 @@ El contador de 26 bits del tutorial lo podemos ver como un contador de 4 bits cu
 
 ![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-6.png)
 
-Aplicando la fórmula anterior, la **frecuencia de reloj del contador de 4 bits es **f22 = 12Mhz / 2^22 = **2.86 Hz**. Se incrementa cada 1 / 2.86 =  **0.35 segundos**.
+Aplicando la fórmula anterior, la **frecuencia de reloj del contador de 4 bits es **fp = 12Mhz / 2^22 = **2.86 Hz**. Se incrementa cada Tp = 1 / fp = 1 / 2.86 =  **0.35 segundos**.
 
 
 
