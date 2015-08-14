@@ -8,7 +8,7 @@ Se incrementa con cada flanco de subida de la señal de reloj clk, que tiene un 
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-4.png)
 
-vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **Tp = 2^N * T**. Si tomamos los inversos para pasarlo a frecuancias, tenemos que **fp = f / 2^N**. **La frecuencia del bit de mayor peso del prescaler es la frecuencia de su relog dividida entre 2 elevado al número de bits del prescaler**.
+vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. En general, si tenemos un **prescaler de N bits**, el bit de mayor peso tendrá un periodo de **Tp = 2^N * T**. Si tomamos los inversos para pasarlo a frecuancias, tenemos que **fp = f / 2^N**. **La frecuencia del bit de mayor peso del prescaler es la frecuencia de su reloj dividida entre 2 elevado al número de bits del prescaler**.
 
 ## Periodo del contador
 
