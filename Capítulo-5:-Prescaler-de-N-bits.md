@@ -4,6 +4,13 @@
 
 ## Introducción
 
+Los _prescalers_ sirven para **ralentizar las señales de reloj**. Por la entrada entra una señal de reloj de frecuencia f y por la salida se obtiene una de frecuencia menor. Para un prescaler de N bits, las fórmulas que relacionan las frecuencias y periodos de entrada con los de salida son:
+
+
+
+
+Re-escribir....
+
 Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
 
 ## Entendiendo el prescaler de 2 bits
