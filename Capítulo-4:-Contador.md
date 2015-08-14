@@ -174,8 +174,7 @@ El código en verilog es:
       # 99 $display("FIN de la simulacion");
       # 100 $finish;
     end
-    
-endmodule
+    endmodule
 
 Es importante darse cuenta de que todos estos componentes están funcionando en paralelo, todos a la vez (el código NO es secuencial). Por eso, daría igual cambiar el orden de escritura de los elementos.
 
