@@ -1,3 +1,7 @@
+![Image header](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-1.png)
+
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T05-prescaler)
+
 ## Introducción
 
 Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
@@ -6,7 +10,7 @@ Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven
 
 Antes de implementar un prescaler de N bits, vamos a entender uno de sólo 2 bits
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-counter/images/counter-5.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/counter-5.png)
 
 
 
