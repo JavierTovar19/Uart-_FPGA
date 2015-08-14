@@ -22,11 +22,11 @@ Internamente está constituido por un **contador de 2 bits**, cuyas salidas son 
 
 vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. Es decir, que cada nuevo bit duplica el periodo de la señal anterior. Siguiendo la fórmula general, el periodo de este prescaler de 2 bits es: Tout = 2^2 * T = 4 * T (y gráficamente comprobamos que es así).
 
-## Periodo del contador
+## Frecuencias y periodos del prescaler
 
-La frecuencia del contador la podemos variar cambiando el prescaler. En la siguiente tabla se han recopilado los datos de las frecuencias y periodos de prescalers según su número de bits:
+La **frecuencia de entrada** al prescaler en la placa iCEStick es de **12Mhz**. Aplicando la fórmula anterior, obtenemos esta **tabla con periodos y frecuencias** para prescalers con diferente número de bits (N). Esto nos da una idea de qué valor de N elegir para hacer parpadear el led
 
-| Bits  | Frecuencia  |  Periodo 
+| Bits (N)  | Frecuencia  |  Periodo 
 |-------|-------------|---------
 |  1    |  6 MHz      |  0.167 usec
 |  2    |  3 MHz      |  0.333 usec
