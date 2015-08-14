@@ -92,8 +92,30 @@ Aplicando la fórmula anterior, la **frecuencia de reloj del contador de 4 bits 
 
 La frecuencia del contador la podemos variar cambiando el prescaler. En la siguiente tabla se han recopilado los datos de las frecuencias y periodos de prescalers según su número de bits:
 
-
-
+| Bits  | Frecuencia  |  Periodo 
+|-------|-------------|---------
+|  1    |  6 MHz      |  0.167 usec
+|  2    |  3 MHz      |  0.333 usec
+|  3    |  1.5 Mhz    |  0.666 usec
+|  4    |  750 Khz    |  1.333 usec
+|  5    |  375 Khz    |  2.666 usec
+|  6    |  187.5 Khz  |  5.333 usec
+|  7    |  93.75 KHz  |  10.666 usec
+|  8    |  46.875 Khz |  21.333 usec
+|  9    |  23437.5 Hz |  42.666 usec
+| 10    |  11718.7 Hz |  85.333 usec
+| 11    |  5859.37 Hz |  170.66 usec
+| 12    |  2929.68 Hz |  341.33 usec
+| 13    |  1464.84 Hz |  682.66 usec
+| 14    |  732.42 Hz  |  1.365 ms
+| 15    |  366.21 Hz  |  2.73 ms
+| 16    |  183.1 Hz   |  5.46 ms
+| 17    |  92.552 Hz  |  10.92 ms
+| 18    |  45.776 Hz  |  21.84 ms
+| 19    |  22.888 Hz  |  43.69 ms
+| 20    |  11.444 Hz  |  87.38 ms
+| 21    |  5.722 Hz   |  174.76 ms
+| 22    |  2.861 Hz   |  349.52 ms
 
 ## Simulación
 
