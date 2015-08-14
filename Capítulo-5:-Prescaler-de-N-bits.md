@@ -14,11 +14,9 @@ Para un prescaler de N bits, las **fórmulas** que relacionan las frecuencias y 
 
 Antes de implementar un prescaler de N bits, vamos a entender cómo funciona uno de 2 bits
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/counter-5.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-3.png)
 
-
-
-Se incrementa con cada flanco de subida de la señal de reloj clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits:
+Internamente está constituido por un contador de 2 bits, cuyas salidas son d0 y d1. La de mayor peso es la que se saca como señal de salida. Este contador se incrementa en cada flanco de subida de clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits (d0 y d1):
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-4.png)
 
