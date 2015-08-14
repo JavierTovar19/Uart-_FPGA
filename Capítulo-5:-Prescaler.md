@@ -1,8 +1,14 @@
 ## Introducción
 
-Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. Como ejemplo veremos un prescaler de 2 bits (que es un contador de 2 bits). 
+Una de las aplicaciones de los contadores es usarlos como **prescalers**. Sirven para **dividir la frecuencia** de una señal de reloj, obteniendo otra de menor frecuencia. En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-5.png)
+## Entendiendo el prescaler de 2 bits
+
+Antes de implementar un prescaler de N bits, vamos a entender uno de sólo 2 bits
+
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-counter/images/counter-5.png)
+
+
 
 Se incrementa con cada flanco de subida de la señal de reloj clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits:
 
