@@ -1,3 +1,14 @@
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/mpres-1.png" width="400" align="center">
+
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T06-multiples-prescalers)
+
+## Introducción
+
+
+![Imagen 1]()
+
+## Descripción del hardware
+
 Borrador...
 
 El contador de 26 bits del tutorial lo podemos ver como un contador de 4 bits cuyos bits se sacan por los leds y cuya señal de reloj proviene de un prescaler de 22 bits, con un reloj de entrada de 12Mhz
