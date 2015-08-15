@@ -82,7 +82,9 @@ El código es prácticamente igual al de un contador, sin embargo introducimos l
     
     endmodule
 
-Definimos un registro de N bits, que se incrementa en cada flanco de subida de la señal de reloj de entrada. Su bit más significativo se conecta directamente a la salida clk_out
+Definimos un registro de N bits, que se incrementa en cada flanco de subida de la señal de reloj de entrada. Su bit más significativo se conecta directamente a la salida clk_out.
+
+**Por defecto el prescaler es de 22 bits**, por lo que la **frecuencia de clk_out** es de **2.9Hz** aprox. Sólo hay que dar otro valor a N para cambiar la frecuencia de salida
 
 ## Síntesis en la FPGA
 
