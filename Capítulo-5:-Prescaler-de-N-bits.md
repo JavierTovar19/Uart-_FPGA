@@ -57,6 +57,32 @@ Al usar el prescarler con el led, **a partir de 19 bits es cuando se puede aprec
 
 ## Descripción del hardware
 
+El código es prácticamente igual al de un contador, sin embargo introducimos la novedad de que **el prescaler es paramétrico**, de forma que el número de bits está determinado por el **parámetro N**. Sólo cambiando este parámetro podemos sintetizar prescalers de diferentes tamaños
+
+    //-- prescaler.v
+    //-- clk_in: señal de reloj de entrada
+    //-- clk_out: Señal de reloj de salida, con menor frecuencia
+    module prescaler(input clk_in, output clk_out);
+    wire clk_in;
+    wire clk_out;
+    
+    //-- Numero de bits del prescaler (por defecto)
+    parameter N = 22;
+    
+    //-- Registro para implementar contador de N bits
+    reg [N-1:0] count = 0;
+    
+    //-- El bit más significativo se saca por la salida
+    assign clk_out = count[N-1];
+    
+    //-- Contador: se incrementa en flanco de subida
+    always @(posedge(clk_in)) begin
+      count <= count + 1;
+    end
+    
+    endmodule
+
+Definimos un registro de N bits, que se incrementa en cada flanco de subida de la señal de reloj de entrada. Su bit más significativo se conecta directamente a la salida clk_out
 
 ## Síntesis en la FPGA
 
