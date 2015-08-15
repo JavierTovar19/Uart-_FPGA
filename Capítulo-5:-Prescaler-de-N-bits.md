@@ -88,8 +88,19 @@ Definimos un registro de N bits, que se incrementa en cada flanco de subida de l
 
 ## Síntesis en la FPGA
 
-![Imagen 2]()
+La señal de la placa iCEstick de 12 MHZ se introduce a clk_in a través del pin 21 de la fpga. La salida clk_out se envía directamente al led D1 (pin 99), para que parpadee a su misma frecuencia
 
+![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-5.png)
+
+Para sintentizar ejecutamos el comando:
+
+    $ make sint
+
+y lo descargamos en la FPGA mediante:
+
+    $ sudo iceprog prescaler.bin
+
+El led D1 empezará a parpadear
 
 <img src="" width="400" align="center">
 
