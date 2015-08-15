@@ -98,7 +98,15 @@ Para sintentizar ejecutamos el comando:
 
     $ make sint
 
-y lo descargamos en la FPGA mediante:
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 2 / 96
+|PLBs      | 5 / 160
+|BRAMs     | 0 / 16
+
+Lo descargamos en la FPGA mediante:
 
     $ sudo iceprog prescaler.bin
 
@@ -112,9 +120,69 @@ En este **vídeo de youtube** se puede ver el led parpadeando:
 
 ## Simulación
 
-![Imagen 3]()
+En el banco de pruebas colocamos el **prescaler de N bits** (por defecto con N = 2), un **generador de reloj** y un **bloque de comprobación** que se ejecuta con cada flanco de bajada del reloj. Este bloque tiene un registro interno que se incrementa y su bit más significativo se comprueba con clk_out, para asegurarse que está funcionando correctamente.  Hay un cuarto bloque que inicializa todo y espera a que se termine la simulación
 
-![Imagen 4]()
+![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-6.png)
+
+El código del banco de pruebas es el siguiente:
+
+    //-- prescaler_tb.v
+    module prescaler_tb();
+    
+    //-- Numero de bits del prescaler a comprobar
+    parameter N = 2;
+    
+    //-- Registro para generar la señal de reloj
+    reg clk = 0;
+    
+    //-- Salida del prescaler
+    wire clk_out;
+    
+    //-- Registro para comprobar si el prescaler funciona
+    reg [N-1:0] counter_check = 0;
+    
+    //-- Instanciar el prescaler de N bits
+    prescaler #(.N(N))  //-- Parámetro N
+      Pres1(
+        .clk_in(clk),
+        .clk_out(clk_out)
+      );
+    
+    //-- Generador de reloj. Periodo 2 unidades
+    always #1 clk = ~clk;
+
+    //-- Comprobacion del valor del contador
+    //-- En cada flanco de bajada se comprueba la salida del contador
+    //-- y se incrementa el valor esperado
+    always @(negedge clk) begin
+    
+      //-- Incrementar variable del contador de prueba
+      counter_check = counter_check + 1;
+    
+      //-- El bit de mayor peso debe coincidir con clk_out
+      if (counter_check[N-1] != clk_out) begin
+        $display("--->ERROR! Prescaler no funciona correctamente");
+        $display("Clk out: %d, counter_check[2]: %d", 
+                  clk_out, counter_check[N-1]);
+      end
+    
+    end
+    
+    //-- Proceso al inicio
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("prescaler_tb.vcd");
+      $dumpvars(0, prescaler_tb);
+    
+      # 99 $display("FIN de la simulacion");
+      # 100 $finish;
+    end
+    endmodule
+
+Para simular ejecutamos:
+
+    $ make sim
 
 ## Ejercicios propuestos
 * Ej1
