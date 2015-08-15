@@ -27,7 +27,7 @@ vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 vec
 La **frecuencia de entrada** al prescaler en la placa iCEStick es de **12Mhz**. Aplicando la fórmula anterior, obtenemos esta **tabla con periodos y frecuencias** para prescalers con diferente número de bits (N). Esto nos da una idea de qué valor de N elegir para hacer parpadear el led
 
 | Bits (N)  | Frecuencia  |  Periodo | Visible
-|-------|-------------|---------| No
+|-------|-------------|---------|-----------
 |  1    |  6 MHz      |  0.167 usec | No
 |  2    |  3 MHz      |  0.333 usec | No
 |  3    |  1.5 Mhz    |  0.666 usec | No
