@@ -55,3 +55,28 @@ El ojo humano tiene una frecuencia de refresco de unos 25Hz. Esto significa que 
 
 Al usar el prescarler con el led, **a partir de 19 bits es cuando se puede apreciar el parpadeo**. Cuanto más bits, más lento parpadeará el led.
 
+## Descripción del hardware
+
+
+## Síntesis en la FPGA
+
+![Imagen 2]()
+
+
+<img src="" width="400" align="center">
+
+## Simulación
+
+![Imagen 3]()
+
+![Imagen 4]()
+
+## Ejercicios propuestos
+* Ej1
+* Ej2
+
+## Conclusiones
+TODO
+
+
+
