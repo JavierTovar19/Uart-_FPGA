@@ -106,7 +106,7 @@ El led D1 empezará a parpadear
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
 
-En este vídeo de youtube se puede ver el led parpadeando:
+En este **vídeo de youtube** se puede ver el led parpadeando:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/HSqNa5iC2Qc/0.jpg)](https://www.youtube.com/watch?v=HSqNa5iC2Qc)
 
