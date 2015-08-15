@@ -26,27 +26,32 @@ vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 vec
 
 La **frecuencia de entrada** al prescaler en la placa iCEStick es de **12Mhz**. Aplicando la fórmula anterior, obtenemos esta **tabla con periodos y frecuencias** para prescalers con diferente número de bits (N). Esto nos da una idea de qué valor de N elegir para hacer parpadear el led
 
-| Bits (N)  | Frecuencia  |  Periodo 
-|-------|-------------|---------
-|  1    |  6 MHz      |  0.167 usec
-|  2    |  3 MHz      |  0.333 usec
-|  3    |  1.5 Mhz    |  0.666 usec
-|  4    |  750 Khz    |  1.333 usec
-|  5    |  375 Khz    |  2.666 usec
-|  6    |  187.5 Khz  |  5.333 usec
-|  7    |  93.75 KHz  |  10.666 usec
-|  8    |  46.875 Khz |  21.333 usec
-|  9    |  23437.5 Hz |  42.666 usec
-| 10    |  11718.7 Hz |  85.333 usec
-| 11    |  5859.37 Hz |  170.66 usec
-| 12    |  2929.68 Hz |  341.33 usec
-| 13    |  1464.84 Hz |  682.66 usec
-| 14    |  732.42 Hz  |  1.365 ms
-| 15    |  366.21 Hz  |  2.73 ms
-| 16    |  183.1 Hz   |  5.46 ms
-| 17    |  92.552 Hz  |  10.92 ms
-| 18    |  45.776 Hz  |  21.84 ms
-| 19    |  22.888 Hz  |  43.69 ms
-| 20    |  11.444 Hz  |  87.38 ms
-| 21    |  5.722 Hz   |  174.76 ms
-| 22    |  2.861 Hz   |  349.52 ms
+| Bits (N)  | Frecuencia  |  Periodo | Visible
+|-------|-------------|---------| No
+|  1    |  6 MHz      |  0.167 usec | No
+|  2    |  3 MHz      |  0.333 usec | No
+|  3    |  1.5 Mhz    |  0.666 usec | No
+|  4    |  750 Khz    |  1.333 usec | No
+|  5    |  375 Khz    |  2.666 usec | No
+|  6    |  187.5 Khz  |  5.333 usec | No
+|  7    |  93.75 KHz  |  10.666 usec | No
+|  8    |  46.875 Khz |  21.333 usec | No
+|  9    |  23437.5 Hz |  42.666 usec | No
+| 10    |  11718.7 Hz |  85.333 usec | No
+| 11    |  5859.37 Hz |  170.66 usec | No
+| 12    |  2929.68 Hz |  341.33 usec | No
+| 13    |  1464.84 Hz |  682.66 usec | No
+| 14    |  732.42 Hz  |  1.365 ms    | No
+| 15    |  366.21 Hz  |  2.73 ms | No
+| 16    |  183.1 Hz   |  5.46 ms | No
+| 17    |  92.552 Hz  |  10.92 ms | No
+| 18    |  45.776 Hz  |  21.84 ms | No
+| 19    |  22.888 Hz  |  43.69 ms | Si
+| 20    |  11.444 Hz  |  87.38 ms | Si
+| 21    |  5.722 Hz   |  174.76 ms | Si
+| 22    |  2.861 Hz   |  349.52 ms | Si
+
+El ojo humano tiene una frecuencia de refresco de unos 25Hz. Esto significa que frecuencias superiores no se aprecian. Si hacemos parpadear el led con una frecuencia superior, lo apreciaremos como si siempre estuviese encendido (no lo veremos parpadear)
+
+Al usar el prescarler con el led, **a partir de 19 bits es cuando se puede apreciar el parpadeo**. Cuanto más bits, más lento parpadeará el led.
+
