@@ -1,10 +1,12 @@
-![Image header](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-1.png)
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T05-prescaler)
 
 ## Introducción
 
 Los _prescalers_ sirven para **ralentizar las señales de reloj**. Por la entrada entra una señal de reloj de frecuencia f y por la salida se obtiene una de frecuencia menor.  En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
+
+![Image header](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-1.png)
 
 Para un prescaler de N bits, las **fórmulas** que relacionan las frecuencias y periodos de entrada con los de salida son:
 
@@ -102,7 +104,7 @@ y lo descargamos en la FPGA mediante:
 
 El led D1 empezará a parpadear
 
-<img src="" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
 
 ## Simulación
 
