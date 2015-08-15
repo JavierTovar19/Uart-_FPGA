@@ -184,9 +184,23 @@ Para simular ejecutamos:
 
     $ make sim
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-sim-N-2.png)
+
+En esta simulación del prescaler de 2 bits vemos cómo efectivamente la señal de salida tiene un periodo de 4 veces el de la señal de entrada.
+
+Repetimos la simulación pero ahora estableciendo un prescaler de 3 bits, cambiando esta línea:
+
+    parameter N = 2;
+
+El resultado es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-sim-N-3.png)
+
+Ahora la señal de salida tiene  un periodo 8 veces mayor que el de la entrada
+
 ## Ejercicios propuestos
-* Ej1
-* Ej2
+* Modificar el prescaler para valores de N = 18, 19, 20 y 21. Sintetizarlos y descargarlos en la iCEstick
+* Realizar la simulación para N = 4
 
 ## Conclusiones
 TODO
