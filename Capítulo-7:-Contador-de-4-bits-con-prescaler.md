@@ -61,10 +61,61 @@ Cargar en la FPGA con el comando:
     $ sudo iceprog counter4.bin
 
 ## Simulación
+El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de comprobación del contador se ha modificado ligeramente. 
 
-![Imagen 3]()
+    //-- counter4_tb.v
+    module counter4_tb();
+    
+    //-- Registro para generar la señal de reloj
+    reg clk = 0;
+    
+    //-- Datos de salida del contador
+    wire [3:0] data;
+    
+    //-- Registro para comprobar si el contador cuenta correctamente
+    reg [3:0] counter_check = 0;
+    
+    //-- Instanciar el contador, con prescaler de 1 bit (para la simulacion)
+    counter4 #(.N(1))
+      C1(
+        .clk(clk),
+        .data(data)
+      );
 
-![Imagen 4]()
+    //-- Generador de reloj. Periodo 2 unidades
+    always #1 clk = ~clk;
+    
+    //-- Proceso de comprobación. Cada vez que hay un cambio en
+    //-- el contador se comprueba con el valor de prueba
+    always @(data) begin
+    
+      if (counter_check != data)
+        $display("-->ERROR!. Esperado: %d. Leido: %d",counter_check, data);
+    
+      counter_check = counter_check + 1;
+    end
+    
+    //-- Proceso al inicio
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("counter4_tb.vcd");
+      $dumpvars(0, counter4_tb);
+    
+      //-- Comprobación del reset.
+      # 0.5 if (data != 0)
+              $display("ERROR! Contador NO está a 0!");
+	    else
+	      $display("Contador inicializado. OK.");
+    
+      # 99 $display("FIN de la simulacion");
+      # 100 $finish;
+    end
+    
+    endmodule
+
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T07-contador-prescaler/images/T07-counter4-simulation-1.png)
 
 ## Ejercicios propuestos
 * Ej1
