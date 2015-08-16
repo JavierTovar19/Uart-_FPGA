@@ -48,7 +48,17 @@ Para sintentizarlo ejecutar el comando:
 
     $ make sint
 
+Los recursos empleados son:
 
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 7 / 160
+|BRAMs     | 0 / 16
+
+Cargar en la FPGA con el comando:
+
+    $ sudo iceprog counter4.bin
 
 ## Simulación
 
