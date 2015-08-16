@@ -38,13 +38,17 @@ El contador tiene una **entrada de reloj clk** y una **salida de datos data** de
 
 Se podría haber definido un contador genérico en un fichero aparte e instanciarlo (igual que se ha hecho con el prescaler). Sin embargo se ha hecho así para mostrar un ejemplo de diseño jerárquico mezclado con un componente definido en un proceso.  Además, el contador es tan sencillo, que no merece la pena almacernarlo en un fichero separado.
 
+El código se ha implementado a partir del dibujo  de la imagen 1
 
 ## Síntesis en la FPGA
 
-![Imagen 2]()
+La señal de reloj de 21Mhz entra por el pin 21 de la fpga, y la salida de datos se cada por los pines de los leds, del 99 al 96
+
+Para sintentizarlo ejecutar el comando:
+
+    $ make sint
 
 
-<img src="" width="400" align="center">
 
 ## Simulación
 
