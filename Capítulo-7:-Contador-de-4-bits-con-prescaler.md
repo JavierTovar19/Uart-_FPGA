@@ -61,7 +61,7 @@ Cargar en la FPGA con el comando:
     $ sudo iceprog counter4.bin
 
 ## Simulación
-El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de comprobación del contador se ha modificado ligeramente. 
+El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de comprobación del contador se ha modificado ligeramente. Ahora en vez de realizarse la comprobación en el flanco de bajada, se hace cuando hay algún cambio en la salida data del contador.  Esto se consigue poniendo a data en la lista de sensibilidad del proceso de comprobación:
 
     //-- counter4_tb.v
     module counter4_tb();
@@ -114,12 +114,25 @@ El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de co
     
     endmodule
 
+El proceso de comprobación comienza con
+
+    always @(data) begin
+
+Esto significa que cada vez que ejecuta cada vez que hay un cambio en data
+
+Para simular ejecutamos:
+
+    $ make sim
+
+El resultado es:
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T07-contador-prescaler/images/T07-counter4-simulation-1.png)
 
+Vemos que el contador cuenta. Se ha utilizado un prescaler de 1 bit para que vaya más rápido en l simulación
+
 ## Ejercicios propuestos
-* Ej1
-* Ej2
+* Cambiar el prescaler para que cuente más rápido
+* Cambiar el prescaler para que cuente más lento
 
 ## Conclusiones
 TODO
