@@ -1,4 +1,4 @@
-<img src="" width="400" align="center">
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T07-contador-prescaler/images/counter4-1.png)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T07-contador-prescaler)
 
