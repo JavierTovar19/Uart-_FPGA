@@ -76,6 +76,28 @@ La descripción del hardware se obtiene directamente de transcribir la imagen 1 
 
 Primero se define el nombre del componente con todos sus puertos. Luego se declaran los 5 parámetros: el tamaño en bits de todos sus prescalers. A continuación se declara la señal de reloj base que entrará por las entradas clk_in de los 4 prescalers asociados a los leds y finalmente se instancian cada uno de los 5 prescalers, definiendo sus tamaño con cada parámetro y conectando a sus puertos los cables correspondientes
 
+## Síntesis en la FPGA
+
+![Imagen 2]()
+
+
+<img src="" width="400" align="center">
+
+## Simulación
+
+![Imagen 3]()
+
+![Imagen 4]()
+
+## Ejercicios propuestos
+* Ej1
+* Ej2
+
+## Conclusiones
+TODO
+
+
+
 
 
 
