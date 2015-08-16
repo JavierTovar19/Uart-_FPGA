@@ -110,7 +110,7 @@ En este vídeo se puede ver la secuencia original:
 
 ## Simulación
 
-![Imagen 3]()
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/T06-mpres-sim-1.png)
 
 ![Imagen 4]()
 
