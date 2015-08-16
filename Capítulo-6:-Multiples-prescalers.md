@@ -96,11 +96,17 @@ Los recursos ocupados son:
 |PLBs      | 7 / 160
 |BRAMs     | 0 / 16
 
-Para cargalo en la FPGA ejecutamos:
+Para cargarlo en la FPGA ejecutamos:
 
     $ sudo iceprog mpres.bin
 
-<img src="" width="400" align="center">
+Los leds empezarán a parpadear
+
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/T06-mpres-iCEstick-1.png" width="400" align="center">
+
+En este vídeo se puede ver la secuencia original:
+
+
 
 ## Simulación
 
