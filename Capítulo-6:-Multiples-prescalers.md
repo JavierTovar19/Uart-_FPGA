@@ -106,7 +106,7 @@ Los leds empezarán a parpadear
 
 En este vídeo se puede ver la secuencia original:
 
-
+[![Click to see the youtube video](http://img.youtube.com/vi/Kldn76w58VY/0.jpg)](https://www.youtube.com/watch?v=Kldn76w58VY)
 
 ## Simulación
 
