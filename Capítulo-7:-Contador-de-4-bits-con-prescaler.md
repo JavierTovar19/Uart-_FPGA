@@ -1,11 +1,11 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T07-contador-prescaler/images/counter4-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T07-contador-prescaler/images/counter4-1.png)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T07-contador-prescaler)
 
 ## Introducción
+**Contador de 4 bits** conectado a los leds. Para que cuente más lentamente, la señal de reloj se pasa por un **prescaler de 22 bits**.  Se trata del mismo contador del capítulo 4, pero con un diseño mejorado. Para cambiar la frecuencia de cuenta sólo hay que cambiar los bits del prescaler (y no hace falta modificar los bits del contador ni reasignarlos en el fichero .pcf)
 
-
-![Imagen 1]()
+El contador tiene una entrada de reloj clk y una salida de datos de 4 bits.
 
 ## Descripción del hardware
 
