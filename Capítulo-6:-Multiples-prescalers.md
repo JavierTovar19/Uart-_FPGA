@@ -80,7 +80,17 @@ Se pueden establecer diferentes valores para sus parámetros. En este ejemplo se
 
 ## Síntesis en la FPGA
 
-![Imagen 2]()
+La señal de reloj de entrada es la de 12Mhz de la iCEstick que entra por el pin 21 de la fpga. Las 4 señales de salida se sacan directamente a los leds, en los pines 99 a 96.
+
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/mpres-1.png)
+
+Para realizar la síntesis ejecutamos:
+
+    $ make sim
+
+Los recursos ocupados son:
+
+
 
 
 <img src="" width="400" align="center">
