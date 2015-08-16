@@ -110,9 +110,17 @@ En este vídeo se puede ver la secuencia original:
 
 ## Simulación
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/T06-mpres-sim-1.png)
+El banco de pruebas es muy básico. Simplemente se **instancia el componente mpres.v**, se coloca un **generador de reloj** y un **proceso para iniciar y terminar la simulación**. No se hace una comprobación explícita de si el componente funciona correctamente. Se tiene que comprobar visualmente viendo las señales de la simulación
 
-![Imagen 4]()
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/mpres-2.png)
+
+Para hacer la simulación más sencilla, se toma un valor N0 = 1, para que el prescaler base sea sólo de 1 bit. El resto de prescalers se ponen de 1, 2, 3 y 4 bits respectivamente. El código verilog es el siguiente:
+
+
+
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T06-multiples-prescalers/images/T06-mpres-sim-1.png)
+
+
 
 ## Ejercicios propuestos
 * Ej1
