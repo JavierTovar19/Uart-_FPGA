@@ -90,8 +90,15 @@ Para realizar la síntesis ejecutamos:
 
 Los recursos ocupados son:
 
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 7 / 160
+|BRAMs     | 0 / 16
 
+Para cargalo en la FPGA ejecutamos:
 
+    $ sudo iceprog mpres.bin
 
 <img src="" width="400" align="center">
 
