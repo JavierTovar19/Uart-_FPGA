@@ -5,9 +5,11 @@
 ## Introducción
 **Contador de 4 bits** conectado a los leds. Para que cuente más lentamente, la señal de reloj se pasa por un **prescaler de 22 bits**.  Se trata del mismo contador del capítulo 4, pero con un diseño mejorado. Para cambiar la frecuencia de cuenta sólo hay que cambiar los bits del prescaler (y no hace falta modificar los bits del contador ni reasignarlos en el fichero .pcf)
 
-El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits.
+
 
 ## Descripción del hardware
+
+El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits. También tiene un paráemtro N para indicar el número de bits del prescaler y establecer su frecuencia de funcionamiento. El código verilog es el siguiente:
 
     //-- counter4.v
     module counter4(input clk, output [3:0] data);
@@ -33,6 +35,8 @@ El contador tiene una **entrada de reloj clk** y una **salida de datos data** de
     end
     
     endmodule
+
+Se podría haber definido un contador genérico en un fichero aparte e instanciarlo (igual que se ha hecho con el prescaler). Sin embargo se ha hecho así para mostrar un ejemplo de diseño jerárquico mezclado con un componente definido en un proceso.  Además, el contador es tan sencillo, que no merece la pena almacernarlo en un fichero separado.
 
 
 ## Síntesis en la FPGA
