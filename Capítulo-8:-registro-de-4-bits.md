@@ -62,8 +62,32 @@ Para poder apreciar el parpadeo, se incluye un prescaler. La descripción del ha
     
     endmodule
 
+Obsevamos que la **implementación de un registro** es extremadamente sencilla. Basta con este código:
 
+    always @(posedge(clk_base))
+      dout <= din;
 
+Esta es la razón por la que normalmente no usaremos un diseño jerárquico: no es necesario incluir el código en un fichero a parte por lo sencillo que es.
+
+Hemos usado una **definición compacta** de los parámetros del módulo blink4: todo está definido en la propia declaración del módulo:
+
+    module blink4(input wire clk, output wire [3:0] data);
+
+Esto se podría haber hecho también así:
+
+    module blink4(input clk, output [3:0] data);
+    wire clk;
+    wire data;
+    
+o así:
+
+    module blink4(clk, data);
+    input clk;
+    output data;
+    wire clk;
+    wire [3:0] data;
+    
+Esta última forma se utiilza para definir componentes paramétricos (lo veremos más adelante)
 
 ## Síntesis en la FPGA
 
