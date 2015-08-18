@@ -27,6 +27,42 @@ El diseño completo a implementar en la FPGA se muestra en esta figura:
 
 Para poder apreciar el parpadeo, se incluye un prescaler. La descripción del hardware en Verilog es:
 
+    //-- blink4.v
+    module blink4(input wire clk,           //--Reloj
+                  output wire [3:0] data    //-- Salida del registro);
+    
+    //-- Bits para el prescaler
+    parameter N = 22;
+    
+    //-- Reloj principal (prescalado)
+    wire clk_base;
+    
+    //-- Datos del registro
+    reg [3:0] dout = 0;
+    
+    //-- Cable de entrada al registro
+    wire [3:0] din;
+    
+    //-- Instanciar el prescaler
+    prescaler #(.N(N))
+      PRES (
+        .clk_in(clk),
+        .clk_out(clk_base)
+      );
+    
+    //-- Registro
+    always @(posedge(clk_base))
+      dout <= din;
+    
+    //-- Puerta NOT entra la salida y la entrada
+    assign din = ~dout;
+    
+    //-- Sacar datos del registro por la salida
+    assign data = dout;
+    
+    endmodule
+
+
 
 
 ## Síntesis en la FPGA
