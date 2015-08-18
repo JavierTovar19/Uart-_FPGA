@@ -1,6 +1,6 @@
-<img src="" width="400" align="center">
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-1.png)
 
-[Ejemplos de este capítulo en github]()
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T08-register)
 
 ## Introducción
 
