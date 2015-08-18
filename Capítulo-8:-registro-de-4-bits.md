@@ -110,7 +110,7 @@ Para descargar en la FPGA hacemos:
 
 En este vídeo se puede ver el resultado:
 
-
+[![Click to see the youtube video](http://img.youtube.com/vi/YFdEBQlX604/0.jpg)](https://www.youtube.com/watch?v=YFdEBQlX604)
 
 ## Simulación
 
