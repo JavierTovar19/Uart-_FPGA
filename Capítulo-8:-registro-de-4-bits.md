@@ -114,6 +114,8 @@ En este vídeo se puede ver el resultado:
 
 ## Simulación
 
+El banco de pruebas es muy básico. Simplemente se instancia el componente blink4, se genera la señal de reloj y se inicia la simulación. Para que la simulación sea más rápida, se ha establecido el parámetro N del prescaler a 1 bit
+
     //-- blink4.v
     module blink4_tb();
     
