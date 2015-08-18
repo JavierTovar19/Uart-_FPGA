@@ -116,6 +116,10 @@ En este vídeo se puede ver el resultado:
 
 El banco de pruebas es muy básico. Simplemente se instancia el componente blink4, se genera la señal de reloj y se inicia la simulación. Para que la simulación sea más rápida, se ha establecido el parámetro N del prescaler a 1 bit
 
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-4.png)
+
+El código es:
+
     //-- blink4.v
     module blink4_tb();
     
@@ -146,6 +150,13 @@ El banco de pruebas es muy básico. Simplemente se instancia el componente blink
       $finish;     
     end
     endmodule
+
+Para simular ejecutamos:
+
+    $ make sim
+
+La salida de gtkwave es:
+
 
 
 ## Ejercicios propuestos
