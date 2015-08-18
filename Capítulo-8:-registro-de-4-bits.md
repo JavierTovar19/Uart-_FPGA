@@ -1,4 +1,4 @@
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-1.png)
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/T08-blink4-iCEstick-1.png" width="400" align="center">
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T08-register)
 
@@ -15,17 +15,11 @@ En este capitulo utilizaremos un registro de 4 bits para hacer que parpadeen los
 
 
 ## Síntesis en la FPGA
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-1.png)
 
-![Imagen 2]()
 
-
-<img src="" width="400" align="center">
 
 ## Simulación
-
-![Imagen 3]()
-
-![Imagen 4]()
 
 ## Ejercicios propuestos
 * Ej1
