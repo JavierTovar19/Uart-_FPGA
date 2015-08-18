@@ -87,10 +87,28 @@ o así:
     wire clk;
     wire [3:0] data;
     
-Esta última forma se utiilza para definir componentes paramétricos (lo veremos más adelante)
+Esta última forma se utiliza para definir componentes paramétricos (lo veremos más adelante)
 
 ## Síntesis en la FPGA
+Para sintetizar el diseño en la FPGA hacemos:
 
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 6 / 160
+|BRAMs     | 0 / 16
+
+Para descargar en la FPGA hacemos:
+
+    $ sudo iceprog blink4.bin
+
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/T08-blink4-iCEstick-1.png" width="400" align="center">
+
+En este vídeo se puede ver el resultado:
 
 
 
