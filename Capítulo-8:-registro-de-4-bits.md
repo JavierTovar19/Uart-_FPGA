@@ -112,6 +112,14 @@ En este vídeo se puede ver el resultado:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/YFdEBQlX604/0.jpg)](https://www.youtube.com/watch?v=YFdEBQlX604)
 
+### Inicialización de los registros
+
+Los **registros sintetizados** tienen siempre el **valor inicial 0**. La línea de código:
+
+    reg [3:0] dout = 0;
+
+sólo sirve para la simulación. Se puede dar cualquier valor y lo veremos en la simulación, sin embargo en "hardware de verdad" no podemos hacer esto. Siempre se inicializarán a 0. Para poner otro valor tendremos que cargar el registros con este valor. En el ejemplo blink4, si pudiésemos cargar el registro inicialmente con el valor 1010 (en vez de 0000), al negarse se obtendría el 0101. Por lo que tendríamos una secuencia diferente: 1010, 0101, 1010 ...  ¿Cómo podríamos implementar esta carga? Se deja como ejercicio para ir pensando sobre ello. En los siguientes capítulos se mostrarán los elementos necesarios para poder hacerlo.
+
 ## Simulación
 
 El banco de pruebas es muy básico. Simplemente se instancia el componente blink4, se genera la señal de reloj y se inicia la simulación. Para que la simulación sea más rápida, se ha establecido el parámetro N del prescaler a 1 bit
@@ -163,7 +171,8 @@ Se observa cómo aparece la secuencia 0000, 1111, 0000, 1111 ...
 
 
 ## Ejercicios propuestos
-* TODO
+* Ej1: Cambiar la frecuencia de parpadeo de los leds
+* Ej2: ¿Cómo podríamos hacer para que el registros se cargue inicialmente con el valor 1010 y así obtener la secuencia 1010, 0101, 1010....  en vez de la actual? Pensar sobre ello. En los siguientes capítulos se irán enseñando los elementos necesarios para hacerlo
 
 ## Conclusiones
 TODO
