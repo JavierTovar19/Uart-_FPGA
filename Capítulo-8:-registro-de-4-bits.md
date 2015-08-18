@@ -7,6 +7,8 @@ Los **registros** son **elementos esenciales** en los circuitos digitales. Nos p
 
 El registro básico captura los datos de la entrada, en flanco de subida o bajada del reloj, los almacena y los saca por la salida. Su esquema es:
 
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-2.png)
+
 En este capitulo utilizaremos un registro de 4 bits para hacer que parpadeen los 4 leds de la placa iCEstick
 
 ## Descripción del hardware
