@@ -157,11 +157,13 @@ Para simular ejecutamos:
 
 La salida de gtkwave es:
 
+![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/T08-blink4-sim-1.png)
+
+Se observa cómo aparece la secuencia 0000, 1111, 0000, 1111 ...
 
 
 ## Ejercicios propuestos
-* Ej1
-* Ej2
+* TODO
 
 ## Conclusiones
 TODO
