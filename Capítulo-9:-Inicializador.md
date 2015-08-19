@@ -77,6 +77,11 @@ Lo sintetizamos con:
 
 Los recursos utilizados son:
 
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 2 / 96
+|PLBs      | 1 / 160
+|BRAMs     | 0 / 16
 
 
 ## Simulación
