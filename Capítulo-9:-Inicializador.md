@@ -49,14 +49,34 @@ Esta implementación es muy sencilla y se entiende muy bien. Se ve claramente qu
 
 ### Implementación optimizada
 
+Podemos hacer lo mismo pero con mucho menos código implementando directamente un registro que asigne siempre un "1" a su salida:
 
+    //-- init.v  (version optimizada)
+    module init(input wire clk, output ini);
+
+    //-- Registro de 1 bit inicializa a 0 (solo para simulacion)
+    //-- Al sintetizarlo siempre estará a cero con independencia del valor al que lo pongamos
+    reg ini = 0;
+    
+    //-- En flanco de subida sacamos un "1" por la salida
+    always @(posedge(clk))
+      ini <= 1;
+    
+    endmodule
 
 ## Síntesis en la FPGA
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-1.png)
+
+Para probarlo en la fpga simplemente vamos a **conectar la salida ini a un led**. Al cargarlo en la FPGA sólo veremos cómo se enciende un led, sin embargo con ello tenemos nuestro circuito validado y listo para inicalizar los diseños de los capítulos siguientes
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-1.png)
+
+Lo sintetizamos con:
+
+    $ make sint
+
+Los recursos utilizados son:
 
 
-
-<img src="" width="400" align="center">
 
 ## Simulación
 
