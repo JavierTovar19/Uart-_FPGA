@@ -55,7 +55,8 @@ Podemos hacer lo mismo pero con mucho menos código implementando directamente u
     module init(input wire clk, output ini);
 
     //-- Registro de 1 bit inicializa a 0 (solo para simulacion)
-    //-- Al sintetizarlo siempre estará a cero con independencia del valor al que lo pongamos
+    //-- Al sintetizarlo siempre estará a cero con independencia 
+    //-- del valor al que lo pongamos
     reg ini = 0;
     
     //-- En flanco de subida sacamos un "1" por la salida
