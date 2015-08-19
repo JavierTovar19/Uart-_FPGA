@@ -97,6 +97,8 @@ Para simularlo utilizaremos un banco de pruebas simple, en el que no realizamos 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-4.png)
 
+El código Verilog es:
+
     //-- init_tb.v
     module init_tb();
     
