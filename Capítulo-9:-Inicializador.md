@@ -83,6 +83,11 @@ Los recursos utilizados son:
 |PLBs      | 1 / 160
 |BRAMs     | 0 / 16
 
+Lo cargamos en la FPGA con:
+
+    $ sudo iceprog init.bin
+
+<img src="" width="400" align="center">
 
 ## Simulación
 
