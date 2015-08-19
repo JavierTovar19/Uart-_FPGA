@@ -5,7 +5,7 @@
 ## Introducción
 
 
-![Imagen 1]()
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
 
 ## Descripción del hardware
 
