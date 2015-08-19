@@ -87,7 +87,9 @@ Lo cargamos en la FPGA con:
 
     $ sudo iceprog init.bin
 
-<img src="" width="400" align="center">
+El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sacaremos más partido en los capítulos sucesivos :-)
+
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/T09-init-iCEstorm-1.png" width="400" align="center">
 
 ## Simulación
 
