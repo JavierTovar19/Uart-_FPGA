@@ -93,7 +93,9 @@ El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sa
 
 ## Simulación
 
-![Imagen 3]()
+Para simularlo utilizaremos un banco de pruebas simple, en el que no realizamos comprobación de la señal de salida (hay que hacerlo visualmente).  Se instancia el componente, se coloca el reloj y el proceso de inicialización
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-4.png)
 
     //-- init_tb.v
     module init_tb();
@@ -127,7 +129,11 @@ El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sa
     end
     endmodule
 
-![Imagen 4]()
+El resultado de la simulación es:
+
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/T09-init-sim.png)
+
+Observamos cómo la señal ini está a 0 al comienzo y en cuanto llega el primer flanco se pone a 1, permaneciendo en ese estado el resto de ciclos
 
 ## Ejercicios propuestos
 * Ej1
