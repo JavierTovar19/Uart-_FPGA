@@ -135,9 +135,11 @@ El resultado de la simulación es:
 
 Observamos cómo la señal ini está a 0 al comienzo y en cuanto llega el primer flanco se pone a 1, permaneciendo en ese estado el resto de ciclos
 
+## Modificaciones en la duración del arranque
+Por defecto, este inicializador está en el **estado inicial** durante **1 ciclo de reloj**. Si nos interesase que estuviese durante más ciclos, sólo habría que **añadir un prescaler** a la entrada de reloj, y conectar su salida clk_out al reloj del registro
+
 ## Ejercicios propuestos
-* Ej1
-* Ej2
+* Ejercicio 1: Modificar el inicializador para que su estado inicial dure más de 1 ciclo de reloj
 
 ## Conclusiones
 TODO
