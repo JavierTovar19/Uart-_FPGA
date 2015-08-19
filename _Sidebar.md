@@ -1,7 +1,8 @@
 [[Inicio|Home]]  
 [[You are leaving the privative sector|Capítulo 0: you are leaving the privative sector]]  
+  
 1 [[¡Hola mundo!|Capítulo 1: ¡Hola mundo! Setbit]]  
-* [[Capítulo 2: De un bit a datos. Fport]]
+2 [[De un bit a datos|Capítulo 2: De un bit a datos. Fport]]  
 * [[Capítulo 3: Puerta NOT. Inv]]
 * [[Capítulo 4: Contador de 26 bits]]
 * [[Capítulo 5: Prescaler de N bits]]
