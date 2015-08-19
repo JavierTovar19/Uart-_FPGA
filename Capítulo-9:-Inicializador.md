@@ -15,7 +15,7 @@ Esto se implementa de una manera muy sencilla utilizando un **registro de 1 bit*
 
 ## Init.v: Descripción del hardware
 
-Al tratarse de un registro, lo podemos implementar igual que en el capítulo anterior. Esta es la implementación natural. Otra posibilidad es hacer una implementación optimizada, usando menos código verilog
+Al tratarse de un registro, lo podemos implementar igual que en el capítulo anterior. Esta es la **implementación natural**. Otra posibilidad es hacer una **implementación optimizada**, usando menos código verilog
 
 ### Implementación natural
 
