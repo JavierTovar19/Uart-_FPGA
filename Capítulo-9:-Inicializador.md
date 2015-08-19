@@ -104,5 +104,5 @@ El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sa
 ## Conclusiones
 TODO
 
-[1] Un registro de 1 bit es en realidad un **flip-flop**. Sin embargo prefiero llamarlo registro de 1 bit para generaliza. Su implementación en Verilog es la misma que la de un registro de N bits
+[1] Un registro de 1 bit es en realidad un **flip-flop**. Sin embargo prefiero llamarlo registro de 1 bit para generalizar. Su implementación en Verilog es la misma que la de un registro de N bits
 
