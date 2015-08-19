@@ -15,6 +15,41 @@ Esto se implementa de una manera muy sencilla utilizando un **registro de 1 bit*
 
 ## Init.v: Descripción del hardware
 
+Al tratarse de un registro, lo podemos implementar igual que en el capítulo anterior. Esta es la implementación natural. Otra posibilidad es hacer una implementación optimizada, usando menos código verilog
+
+### Implementación natural
+
+Es la implementación más lógica. Se parte de un registro genérico de 1 bit, que ya sabemos cómo se modela y simplemente cableamos su entrada a 1 y sacamos su salida hacia fuera:
+
+    //-- init.v (implementación natural)
+    //-- Entrada: cable del reloj
+    //-- Salida: Cable con la señal de inicialización
+    module init(input wire clk, output wire ini);
+    
+    //-- Cable de entrada el registro de 1 bit
+    wire din;
+    
+    //-- Salida del registro de 1 bit (inicializado a 0) (solo para simulacion)
+    //-- En la sintesis siempre estará a 0
+    reg dout = 0;
+
+    //-- Registro genérico: en flanco de subida se captura la entrada
+    always @(posedge(clk))
+      dout <= din;
+    
+    //-- Cablear la entrada a 1
+    assign din = 1;
+    
+    //-- Conectar la salida del registro a la señal ini
+    assign ini = dout;
+    
+    endmodule
+
+Esta implementación es muy sencilla y se entiende muy bien. Se ve claramente que es un registro con un "1" cableado por la entrada, sin embargo es muy "verbosa". Hay que escribir mucho código
+
+### Implementación optimizada
+
+
 
 ## Síntesis en la FPGA
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-1.png)
