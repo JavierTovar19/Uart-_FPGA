@@ -35,13 +35,68 @@ La carga inicial la realizamos usando un **inicializador**, como el mostrado en 
 
 ## Descripción del hardware
 
-#### Registro de desplazamiento
+### Registro de desplazamiento
 
+El registro de desplazamiento se describe con muy pocas líneas. Es un proceso que depende del flanco de subida del reloj. 
 
+    always @(posedge(clk_pres)) begin
+      if (load_shift == 0)  //-- Load mode
+        data <= INI;
+      else
+        data <= {data[2:0], serin};
+    end
+
+En el **modo carga** se saca el valor inicial (INI) por la salida. En el de desplazamiento se sacan los tres bits menos significativos y se añade serin como menos significativo. Esto se hace con el **operador de concatenación {}**: A los tres cables definidos por data[2:0] se le añade un cuarto cable: serin
 
 ### Componente shift4
 
+El componente final shift4 tiene **2 parámetros**: el **número de bits del prescaler** (NP), que determina la velocidad de rotación de los bits y el **valor inicial** (INI) a cargar, que determina la secuencia. Por defecto, este valor inicial es 0001.
 
+El código para describir el componente shift4 completo es:
+
+    //-- shift4.v
+    module shift4(input wire clk, output reg [3:0] data);
+    
+    //-- Parametros del secuenciador
+    parameter NP = 21;  //-- Bits del prescaler
+    parameter INI = 1;  //-- Valor inicial a cargar en el registro
+    
+    //-- Reloj de salida del prescaler
+    wire clk_pres;
+    
+    //-- Shift / load. Señal que indica si el registro
+    //-- se carga o desplaza
+    //-- shift = 0: carga
+    //-- shift = 1: desplaza
+    reg load_shift = 0;
+    
+    //-- Entrada serie del registro
+    wire serin;
+    
+    //-- Instanciar el prescaler de N bits
+    prescaler #(.N(NP))
+      pres1 (
+        .clk_in(clk),
+        .clk_out(clk_pres)
+      );
+    
+    //-- Inicializador
+    always @(posedge(clk_pres)) begin
+        load_shift <= 1;
+    end
+    
+    //-- Registro de desplazamiento
+    always @(posedge(clk_pres)) begin
+      if (load_shift == 0)  //-- Load mode
+        data <= INI;
+      else
+        data <= {data[2:0], serin};
+    end
+    
+    //-- Salida de mayor peso se re-introduce por la entrada serie
+    assign serin = data[3];
+    
+    endmodule
 
 ## Síntesis en la FPGA
 
