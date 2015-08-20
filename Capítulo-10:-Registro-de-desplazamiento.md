@@ -98,7 +98,7 @@ El código para describir el componente shift4 completo es:
     
     endmodule
 
-El regsitro de desplazamiento se ha implementado directamente como un proceso en el propio componente, en vez de hacer como un componente separado (diseño jerárquico).
+El registro de desplazamiento se ha implementado directamente como un proceso en el propio componente, en vez de hacer como un componente separado (diseño jerárquico).
 
 ## Síntesis en la FPGA
 
