@@ -122,7 +122,7 @@ Para cargar en la FPGA ejecutamos:
 
     $ sudo iceprog shift4.bin
 
-En este vídeo de Youtube se puede ver la salida de los leds:
+En este **vídeo de Youtube** se puede ver la salida de los leds:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/JgwFiXQobi4/0.jpg)](https://www.youtube.com/watch?v=JgwFiXQobi4)
 
