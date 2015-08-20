@@ -1,7 +1,7 @@
 [[Inicio|Home]]  
-[[You are leaving the privative sector|Capítulo 0: you are leaving the privative sector]]  
-  
+
 ## Capítulos
+0 [[You are leaving the privative sector|Capítulo 0: you are leaving the privative sector]]  
 1 [[¡Hola mundo!|Capítulo 1: ¡Hola mundo! Setbit]]  
 2 [[De un bit a datos|Capítulo 2: De un bit a datos. Fport]]  
 3 [[Puerta NOT|Capítulo 3: Puerta NOT. Inv]]  
