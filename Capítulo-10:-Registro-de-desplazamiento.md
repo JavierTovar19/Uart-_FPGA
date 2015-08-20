@@ -111,8 +111,12 @@ Sintetizamos con el comando:
     $ make sint
 
 Los recursos empleados son:
-TODO
 
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 8 / 160
+|BRAMs     | 0 / 16
 
 Para cargar en la FPGA ejecutamos:
 
