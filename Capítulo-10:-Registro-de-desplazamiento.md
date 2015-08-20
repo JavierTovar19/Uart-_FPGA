@@ -13,7 +13,7 @@ El registro de desplazamiento que usaremos es como el siguiente:
 
 La **salida** del registro es **de N bits** (en nuestro ejemplo usaremos un registro de 4 bits). Tiene una **entrada en paralelo** de N bits, que nos permite cargar en el registro con un valor nuevo. La **señal load_shift** nos permite determinar el **modo de funcionamiento**: cuando está a 0 se realiza la **carga** de un valor nuevo al llegar un flanco de subida de reloj. Cuando está a 1 se realiza un **desplazamiento hacia la izquierda** en el flanco de subida del reloj.
 
-
+En este desplazamiento **el bit más significativo se pierde**, y el nuevo se lee de la **entrada serin** (serial input). Si tenemos almacenado el valor inicial 1001, la señal load_shift está a 1, serin está a 0 y llega un flanco de subida de reloj, obtendremos el valor:  0010.  En el siguiente flanco (si serin sigue a 0) obtendremos 0100, luego 1000 y luego 0000.
 
 ## Descripción del hardware
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
