@@ -15,6 +15,13 @@ La **salida** del registro es **de N bits** (en nuestro ejemplo usaremos un regi
 
 En este desplazamiento **el bit más significativo se pierde**, y el nuevo se lee de la **entrada serin** (serial input). Si tenemos almacenado el valor inicial 1001, la señal load_shift está a 1, serin está a 0 y llega un flanco de subida de reloj, obtendremos el valor:  0010.  En el siguiente flanco (si serin sigue a 0) obtendremos 0100, luego 1000 y luego 0000.
 
+## shift4: Rotación de bits
+
+Como ejemplo usaremos un **registro de desplazamiento de 4 bits** para rotar una secuencia de bits y mostrarlos por los 4 leds de la placa iCEStick. La secuencia obtenida por los leds dependerá del valor inicial cargado en el registro.
+
+
+
+
 ## Descripción del hardware
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
 
