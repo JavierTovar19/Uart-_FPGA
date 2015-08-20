@@ -12,3 +12,4 @@
 8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]]  
 9 [[Inicializador|Capítulo 9: Inicializador]]  
 10 [[Registro de desplazamiento|Capítulo 10: Registro de desplazamiento]]  
+[[Capítulo 11: Multiplexor de 2 a 1]]
