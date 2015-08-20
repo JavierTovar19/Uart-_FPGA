@@ -24,6 +24,9 @@ El diagrama de bloques del componente **shift4** es:
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
 
+El componente principal es un **registro de desplazamiento de 4 bits**. Por su entrada de reloj se conecta el reloj de la placa iCEstick a través de un **prescaler**, para disminuir su frecuencia y poder ver la rotación de los bits en los leds.
+
+
 
 ## Descripción del hardware
 
