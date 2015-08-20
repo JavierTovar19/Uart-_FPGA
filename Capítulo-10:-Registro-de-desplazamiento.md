@@ -26,6 +26,11 @@ El diagrama de bloques del componente **shift4** es:
 
 El componente principal es un **registro de desplazamiento de 4 bits**. Por su entrada de reloj se conecta el reloj de la placa iCEstick a través de un **prescaler**, para disminuir su frecuencia y poder ver la rotación de los bits en los leds.
 
+El bit más significativo del registro (**data[3]**) se conecta directamente a la entrada **serin**, de forma que se consiga la **rotación de bits** (el más significativo pasa a ser el de menor peso)
+
+Por la entrada paralelo introducimos el **valor inicial**, que por defecto será el **0001**. Al rotar aparecerá la secuencia 0010, 0100, 1000 y 0001.
+
+La carga inicial la realizamos usando un **inicializador**, como el mostrado en el capítulo 9. Está conectado a la entrada load_shift, de manera que inicialmente está a 0 y al llegar el primer flanco de reloj pasa a '1', cargándose el valor inicial y pasando a modo desplazamiento. En el resto de flancos se realizará el desplazamiento (y no la carga).  Este es un ejemplo de cómo funciona el inicializador.
 
 
 ## Descripción del hardware
