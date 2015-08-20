@@ -20,11 +20,13 @@ En este desplazamiento **el bit más significativo se pierde**, y el nuevo se le
 
 Como ejemplo usaremos un **registro de desplazamiento de 4 bits** para rotar una secuencia de bits y mostrarlos por los 4 leds de la placa iCEStick. La secuencia obtenida por los leds dependerá del valor inicial cargado en el registro.
 
+El diagrama de bloques del componente **shift4** es:
 
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
 
 
 ## Descripción del hardware
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-1.png)
+
 
 ## Síntesis en la FPGA
 
