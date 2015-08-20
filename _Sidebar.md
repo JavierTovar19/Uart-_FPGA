@@ -10,5 +10,5 @@
 6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  
 7 [[Contador de 4 bits con prescaler|Capítulo 7: Contador de 4 bits con prescaler]]  
 8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]]  
-* [[Capítulo 9: Inicializador]]
+9 [[Inicializador|Capítulo 9: Inicializador]]
 * [[Capítulo 10: Registro de desplazamiento]]
