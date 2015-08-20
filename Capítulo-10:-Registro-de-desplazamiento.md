@@ -35,6 +35,13 @@ La carga inicial la realizamos usando un **inicializador**, como el mostrado en 
 
 ## Descripción del hardware
 
+#### Registro de desplazamiento
+
+
+
+### Componente shift4
+
+
 
 ## Síntesis en la FPGA
 
