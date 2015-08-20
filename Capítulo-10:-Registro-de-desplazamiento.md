@@ -102,7 +102,25 @@ El regsitro de desplazamiento se ha implementado directamente como un proceso en
 
 ## Síntesis en la FPGA
 
+Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
+
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-3.png)
+
+Sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+TODO
+
+
+Para cargar en la FPGA ejecutamos:
+
+    $ sudo iceprog shift4.bin
+
+En este vídeo de Youtube se puede ver la salida de los leds:
+
+TODO
 
 ## Simulación
 
