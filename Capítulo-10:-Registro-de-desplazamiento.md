@@ -102,7 +102,7 @@ El regsitro de desplazamiento se ha implementado directamente como un proceso en
 
 ## Síntesis en la FPGA
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-4.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/shift4-3.png)
 
 ## Simulación
 
