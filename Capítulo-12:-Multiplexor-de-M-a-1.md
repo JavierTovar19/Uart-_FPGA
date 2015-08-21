@@ -17,16 +17,20 @@ Como ejemplo vamos a implementar un multiplexor de 4 entradas (M = 4) de 4 bits 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-3.png)
 
-El código Verilog es el siguiente:
+El código Verilog es muy intuitivo. Usaremos la instrucción case:
 
-always@*
-  case (sel)
-     2'b00 : out <= fuente0;
-     2'b01 : out <= fuente1;
-     2'b10 : out <= fuente2;
-     2'b11 : out <= fuente3;
-     default : data <= 0;
-  endcase
+    always @*
+      case (sel)
+         0 : out <= fuente0;
+         1 : out <= fuente1;
+         2 : out <= fuente2;
+         3 : out <= fuente3;
+         default : data <= 0;
+      endcase
+
+Observamos que **están cubiertos todos los casos**. Pero aún así, se ha añadido el caso "default" (que no se cumplirá nunca). Esto es así para asegurarse que todos los casos se cubren (por si en el código por error se quita un caso, o se comenta). Esto nos garantiza que se implementa un circuito combinacional. Si no se cubren todos los casos, el sintetizador puede inferior algún registro.
+
+En la lista de sensilidad habría que colocar las 5 entradas. Por ello se ha preferido usar @*
 
 ## mux4: secuenciador de 4 estados
 
