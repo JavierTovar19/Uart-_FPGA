@@ -33,6 +33,7 @@ Observamos que **están cubiertos todos los casos**. Pero aún así, se ha añad
 En la lista de sensilidad habría que colocar las 5 entradas. Por ello se ha preferido usar @*
 
 ## mux4: secuenciador de 4 estados
+Utilizaremos un **multiplexor de 4 a 1** para hacer un **secuenciador de 4 estados**, generando una secuencia que salga por los leds. Por las 4 entradas cableamos los valores de la secuencia. Por defecto serán: 0000, 1010, 1111 y 0101. La entrada de sección se conecta a un **contador de 2 bits** para que se vayan seleccionando secuencialmente las 4 entradas.  El reloj del contador está conectado a un **prescaler** para que vaya más lento
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-4.png)
 
