@@ -72,8 +72,28 @@ La implementación del multiplexor es sencilla por lo que se incluye directament
 
 ## Síntesis en la FPGA
 
+Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T11-mux-2-1/images/mux2-1.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T11-mux-2-1/images/mux2-1.png)
+
+Sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 5 / 160
+|BRAMs     | 0 / 16
+
+Para cargar en la FPGA ejecutamos:
+
+    $ sudo iceprog mux2.bin
+
+En este **vídeo de Youtube** se puede ver la salida de los leds:
+
 
 ## Simulación
 
