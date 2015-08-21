@@ -107,10 +107,9 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4]()
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T11-mux-2-1/images/T11-mux2-simulation.png)
 
-Vemos cómo inicialmente el registro tiene un valor indefinido (está en rojo, aunque en la síntesis tendrá un 0) y al llegar el **primer flanco de subida** se inicializa con el valor **0001**  (Gracias al circuito inicializador). En los siguientes flancos vemos cómo efectivamente el bit se desplaza hacia la izquierda: 0010, 0100, 1000  y por último vuelve al valor inicial: 0001, repitiéndose la secuencia hasta el final de la simulación.
-
+Vemos cómo se van alternando las dos salidas: 1010 y 0101 alternativamente, cada una asociada a un nivel de la señal de sel (que proviene del reloj pasada por un prescaler de 1 bit en simulación)
 
 ## Ejercicios propuestos
 
