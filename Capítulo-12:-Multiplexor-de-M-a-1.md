@@ -15,11 +15,18 @@ Los multiplexores nos permiten **seleccionar entre M entradas** (siendo M una po
 
 Como ejemplo vamos a implementar un multiplexor de 4 entradas (M = 4) de 4 bits (N = 4). La entrada de selección tiene 2 bits:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-4.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-3.png)
 
 El código Verilog es el siguiente:
 
-
+always@*
+  case (sel)
+     2'b00 : out <= fuente0;
+     2'b01 : out <= fuente1;
+     2'b10 : out <= fuente2;
+     2'b11 : out <= fuente3;
+     default : data <= 0;
+  endcase
 
 ## mux4: secuenciador de 4 estados
 
