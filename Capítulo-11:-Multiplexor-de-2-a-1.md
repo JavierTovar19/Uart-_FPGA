@@ -1,3 +1,5 @@
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T11-mux-2-1/images/mux2-1.png)
+
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T11-mux-2-1)
 
 ## Introducción
