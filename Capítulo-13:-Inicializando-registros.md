@@ -2,4 +2,8 @@
 
 ## Introducción
 
-TODO
+## Inicializando registros
+
+## reginit.v: Secuenciador de 2 estados con registro
+
+## Síntesis en la FPGA
