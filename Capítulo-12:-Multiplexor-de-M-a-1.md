@@ -119,6 +119,19 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 [![Click to see the youtube video](http://img.youtube.com/vi/6z3PyGcX_eg/0.jpg)](https://www.youtube.com/watch?v=6z3PyGcX_eg)
 
 ## Simulación
+El banco de pruebas es uno básico, que instancia el componente mux4, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+
+![Imagen 3]()
+
+La simulación se realiza con:
+
+    $ make sim
+
+El resultado en gtkwave es:
+
+![Imagen 4]()
+
+Vemos cómo se van alternando las 4 salidas: xxx cada una asociada a un valor de la señal de sel
 
 ## Ejercicios propuestos
 
