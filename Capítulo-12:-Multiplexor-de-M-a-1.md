@@ -121,7 +121,7 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 ## Simulación
 El banco de pruebas es uno básico, que instancia el componente mux4, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3]()
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-5.png)
 
 La simulación se realiza con:
 
@@ -129,11 +129,13 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4]()
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/T12-mux4-sim-1.png)
 
-Vemos cómo se van alternando las 4 salidas: xxx cada una asociada a un valor de la señal de sel
+Vemos cómo se van alternando las 4 salidas: 0000, 1010, 1111, 0101, cada una asociada a un valor de la señal de sel
 
 ## Ejercicios propuestos
+* Ejercicio 1: Modificar los valores para obtener una secuencia diferente
+* Ejercicio 2: Hacer un secuenciador de 8 estados usando un multiplexor de 8 a 1
 
 ## Conclusiones
 TODO
