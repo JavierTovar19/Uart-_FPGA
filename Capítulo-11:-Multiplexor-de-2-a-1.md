@@ -112,6 +112,7 @@ El resultado en gtkwave es:
 Vemos cómo se van alternando las dos salidas: 1010 y 0101 alternativamente, cada una asociada a un nivel de la señal de sel (que proviene del reloj pasada por un prescaler de 1 bit en simulación)
 
 ## Ejercicios propuestos
+* **Ejercicio 1**: Cambiar los valores de entrada del multiplexor para sacar otra secuencia diferente por los leds
 
 ## Conclusiones
 TODO
