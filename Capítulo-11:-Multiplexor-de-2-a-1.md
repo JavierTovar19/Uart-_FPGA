@@ -35,7 +35,40 @@ Se utilizan 2 fuentes de datos fijas (están cableadas a valores fijos) que dete
 
 El código verilog es el siguiente:
 
+    //-- mux2.v
+    module mux2(input wire clk, output reg [3:0] data);
+    
+    //-- Parametros del secuenciador:
+    parameter NP = 22;         //-- Bits del prescaler
+    parameter VAL0 = 4'b1010;  //-- Valor secuencia 0
+    parameter VAL1 = 4'b0101;  //-- Valor secuencia 1
+    
+    //-- Cables de las 3 entradas del multiplexor
+    wire [3:0] val0;
+    wire [3:0] val1;
+    wire sel;
+    
+    //-- Por las entradas del mux cableamos los datos de entrada
+    assign val0 = VAL0;
+    assign val1 = VAL1;
+    
+    //-- Implementación del multiplexor
+    always @(sel or val0 or val1)
+      if (sel==0)
+        data <= val0;
+      else
+        data <= val1;
+    
+    //-- Presaler que controla la señal de selección del multiplexor
+    prescaler #(.N(NP))
+      PRES (
+        .clk_in(clk),
+        .clk_out(sel)
+      );
+    
+    endmodule
 
+La implementación del multiplexor es sencilla por lo que se incluye directamente en un proceso, en vez de definirla en un fichero separado y luego instanciarlo (diseño jerárquico).
 
 ## Síntesis en la FPGA
 
