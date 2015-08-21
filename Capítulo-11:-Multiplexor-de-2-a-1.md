@@ -27,7 +27,15 @@ Esta lista incluye automáticamente todas las señales de entrada
 
 ## mux2.v: Secuenciador de 2 estados
 
-## Descripción del hardware
+Como ejemplo de uso, haremos un **secuenciador de 2 estados**: Un circuito que envía alternativamente dos datos de 4 bits a los leds. El esquema del circuito es el siguiente:
+
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T11-mux-2-1/images/mux2-3.png)
+
+Se utilizan 2 fuentes de datos fijas (están cableadas a valores fijos) que determinan el estado de los leds en cada momento. El multiplexor selecciona alternativamemente entre una y otra a través de una señal de reloj que pasa por un prescaler (para reducir la frecuencia y que podamos apreciar el movimiento de los leds).
+
+El código verilog es el siguiente:
+
+
 
 ## Síntesis en la FPGA
 
