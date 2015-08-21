@@ -17,6 +17,14 @@ Los describimos en Verilog usando la intrucción if ... else:
       else
         dout <= fuente1;
 
+Es muy importante que exista el **else**. Al tratarse de un circuito combinacional, **todos los casos deben estar cubiertos**. Si no es así, se pueden inferir registros.  También es muy importante colocar en la **lista de sensibilidad** TODAS las señales de entrada: fuente0, fuente1 y sel.
+
+La lista de sensibilidad se puede escribir de forma abreviada con el argumento @*
+
+    always @*
+
+Esta lista incluye automáticamente todas las señales de entrada
+
 ## mux2.v: Secuenciador de 2 estados
 
 ## Descripción del hardware
