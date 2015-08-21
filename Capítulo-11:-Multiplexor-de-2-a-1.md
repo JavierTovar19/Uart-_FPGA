@@ -97,6 +97,20 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 [![Click to see the youtube video](http://img.youtube.com/vi/4GnH5lqlTOU/0.jpg)](https://www.youtube.com/watch?v=4GnH5lqlTOU)
 
 ## Simulación
+El banco de pruebas es uno básico, que instancia el componente mux2, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+
+![Imagen 3]()
+
+La simulación se realiza con:
+
+    $ make sim
+
+El resultado en gtkwave es:
+
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T10-shif-register/images/T10-shift4-sim-1.png)
+
+Vemos cómo inicialmente el registro tiene un valor indefinido (está en rojo, aunque en la síntesis tendrá un 0) y al llegar el **primer flanco de subida** se inicializa con el valor **0001**  (Gracias al circuito inicializador). En los siguientes flancos vemos cómo efectivamente el bit se desplaza hacia la izquierda: 0010, 0100, 1000  y por último vuelve al valor inicial: 0001, repitiéndose la secuencia hasta el final de la simulación.
+
 
 ## Ejercicios propuestos
 
