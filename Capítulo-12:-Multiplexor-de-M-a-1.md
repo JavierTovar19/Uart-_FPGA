@@ -34,6 +34,8 @@ En la lista de sensilidad habría que colocar las 5 entradas. Por ello se ha pre
 
 ## mux4: secuenciador de 4 estados
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-4.png)
+
 ## Síntesis en la FPGA
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-1.png)
