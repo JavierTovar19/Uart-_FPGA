@@ -94,7 +94,32 @@ El código Verilog es:
 
 ## Síntesis en la FPGA
 
+Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-1.png)
+
+Sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 5 / 160
+|BRAMs     | 0 / 16
+
+Para cargar en la FPGA ejecutamos:
+
+    $ sudo iceprog mux4.bin
+
+En este **vídeo de Youtube** se puede ver la salida de los leds:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+
+
 
 ## Simulación
 
