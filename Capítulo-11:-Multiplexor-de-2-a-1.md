@@ -94,6 +94,7 @@ Para cargar en la FPGA ejecutamos:
 
 En este **vídeo de Youtube** se puede ver la salida de los leds:
 
+[![Click to see the youtube video](http://img.youtube.com/vi/4GnH5lqlTOU/0.jpg)](https://www.youtube.com/watch?v=4GnH5lqlTOU)
 
 ## Simulación
 
