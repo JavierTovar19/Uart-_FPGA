@@ -1,3 +1,5 @@
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-1.png)
+
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T13-reg-init)
 
 ## Introducción
@@ -8,3 +10,5 @@ Ya podemos responder a la pregunta planteada en el capítulo 8 sobre **cómo rea
 ## reginit.v: Secuenciador de 2 estados con registro
 
 ## Síntesis en la FPGA
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-1.png)
