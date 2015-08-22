@@ -19,10 +19,9 @@ Queremos que se cargue con un valor inicial al principio y que luego funcione no
 
 Ahora ya simplemente conectamos un inicializador a la entrada de selección del multiplexor.
 
-Dibujo: registr + mux + inicializador
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-4.png)
 
  De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor inicial. En el siguiente franco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento
-
 
 
 ## reginit.v: Secuenciador de 2 estados con registro
