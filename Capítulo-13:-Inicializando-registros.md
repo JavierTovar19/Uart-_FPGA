@@ -31,7 +31,11 @@ Vamos a reacer el circuito blink4 del capítulo 8. Este circuito hacía parpadea
 
 Ahora lo vamos a mejorar haciendo que se pueda poner cualquier valor inicial en el registro, lográndose la secuencia INI, ~INI, INI ... (valor inicial y su negado alternativamente):
 
-dibujo
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-5.png)
+
+El código VHDL es el siguiente:
+
+
 
 ## Síntesis en la FPGA
 
