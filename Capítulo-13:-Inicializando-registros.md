@@ -29,6 +29,10 @@ Vamos a reacer el circuito blink4 del capítulo 8. Este circuito hacía parpadea
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-3.png)
 
+Ahora lo vamos a mejorar haciendo que se pueda poner cualquier valor inicial en el registro, lográndose la secuencia INI, ~INI, INI ... (valor inicial y su negado alternativamente):
+
+dibujo
+
 ## Síntesis en la FPGA
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-1.png)
