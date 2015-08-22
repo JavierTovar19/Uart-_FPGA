@@ -23,8 +23,11 @@ Ahora ya simplemente conectamos un inicializador a la entrada de selección del 
 
  De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor inicial. En el siguiente franco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento
 
-
 ## reginit.v: Secuenciador de 2 estados con registro
+
+Vamos a reacer el circuito blink4 del capítulo 8. Este circuito hacía parpadear los 4 leds a la vez, produciendo la secuencia: 0000, 1111, 0000 ...
+
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-2.png)
 
 ## Síntesis en la FPGA
 
