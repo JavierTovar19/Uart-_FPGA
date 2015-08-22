@@ -161,12 +161,12 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4]()
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/T13-reginit-sim.png)
 
-TODO
+Se puede ver cómo el registro se carga con su valor inicial 1100 y se van alternando los valores 0011 y 1100 
 
 ## Ejercicios propuestos
-* Ejercicio 1: Modificar el valor inicial para obtener una secuencia diferente
+* **Ejercicio 1**: Modificar el valor inicial para obtener una secuencia diferente
 
 ## Conclusiones
 TODO
