@@ -15,3 +15,4 @@
 11 [[Multiplexor de 2 a 1|Capítulo 11: Multiplexor de 2 a 1]]  
 12 [[Multiplexor de M a 1|Capítulo 12: Multiplexor de M a 1]]  
 13 [[Inicializando registros|Capítulo 13: Inicializando registros]]  
+[[Capítulo 14: Registro de N bits con reset síncrono]]
