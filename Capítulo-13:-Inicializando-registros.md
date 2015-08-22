@@ -13,7 +13,7 @@ Partimos de un **registro genérico de N bits**, que ya conocemos, con una entra
 
 Queremos que se cargue con un valor inicial al principio y que luego funcione normalmente. Para hacerlo colocamos un **multiplexor de 2 a 1** en su entrada (para dividir la entrada en 2). Por una entrada del multiplexor ponemos el **valor inicial** y por la otra la entrada genérica del registro din2.
 
-Dibujo: Registro + mux 2 - 1
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-3.png)
 
 **Es muy importante que el valor inicial se introduzca por la fuente 0 del multiplexor**.
 
