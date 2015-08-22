@@ -27,7 +27,7 @@ Ahora ya simplemente conectamos un inicializador a la entrada de selección del 
 
 Vamos a reacer el circuito blink4 del capítulo 8. Este circuito hacía parpadear los 4 leds a la vez, produciendo la secuencia: 0000, 1111, 0000 ...
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-2.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T08-register/images/blink4-3.png)
 
 ## Síntesis en la FPGA
 
