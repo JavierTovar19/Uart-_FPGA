@@ -115,12 +115,12 @@ Para cargar en la FPGA ejecutamos:
 
 En este **vídeo de Youtube** se puede ver la salida de los leds:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/dYikGANv1t4/0.jpg)](https://www.youtube.com/watch?v=dYikGANv1t4)
 
 ## Simulación
-El banco de pruebas es uno básico, que instancia el componente mux4, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+El banco de pruebas es uno básico, que instancia el componente reginit, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/mux4-5.png)
+![Imagen 3]()
 
 La simulación se realiza con:
 
@@ -128,13 +128,12 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T12-mux-4-1/images/T12-mux4-sim-1.png)
+![Imagen 4]()
 
-Vemos cómo se van alternando las 4 salidas: 0000, 1010, 1111, 0101, cada una asociada a un valor de la señal de sel
+TODO
 
 ## Ejercicios propuestos
-* Ejercicio 1: Modificar los valores para obtener una secuencia diferente
-* Ejercicio 2: Hacer un secuenciador de 8 estados usando un multiplexor de 8 a 1
+* Ejercicio 1: Modificar el valor inicial para obtener una secuencia diferente
 
 ## Conclusiones
 TODO
