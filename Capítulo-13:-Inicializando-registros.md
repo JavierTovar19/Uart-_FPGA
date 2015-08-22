@@ -120,7 +120,40 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 ## Simulación
 El banco de pruebas es uno básico, que instancia el componente reginit, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3]()
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-6.png)
+
+El código verilog es:
+
+    //-- reginit_tb.v
+    module reginit_tb();
+    
+    //-- Registro para generar la señal de reloj
+    reg clk = 0;
+    
+    //-- Datos de salida del componente
+    wire [3:0] data;
+
+    //-- Instanciar el componente, con prescaler de 1 bit (para la simulacion)
+    reginit #(.NP(1))
+      dut(
+       .clk(clk),
+       .data(data)
+      );
+    
+    //-- Generador de reloj. Periodo 2 unidades
+    always #1 clk = ~clk;
+    
+    //-- Proceso al inicio
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("reginit_tb.vcd");
+      $dumpvars(0, reginit_tb);
+    
+      # 30 $display("FIN de la simulacion");
+      $finish;
+    end
+    endmodule
 
 La simulación se realiza con:
 
