@@ -83,12 +83,12 @@ El multiplexor de 2 a 1 ha implementado usando el **operador ? :** (similar al d
 
 Es equivalente a:
 
-always @*
-  if (sel == 0)
-    din <= INI;
-  else
-    din <= ~dout;
-
+    always @*
+      if (sel == 0)
+        din <= INI;
+      else
+        din <= ~dout;
+    
 pero la primera notación es más compacta
 
 ## Síntesis en la FPGA
