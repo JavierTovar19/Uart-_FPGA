@@ -7,6 +7,20 @@ Ya podemos responder a la pregunta planteada en el capítulo 8 sobre **cómo rea
 
 ## Inicializando registros
 
+Partimos de un registro genérico de N bits, que ya conocemos, con una entrada din, una salida dout y una señal de reloj
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T13-reg-init/images/reginit-2.png)
+
+Queremos que se cargue con un valor inicial al principio y que luego funcione normalmente. Para hacerlo colocamos un multiplexor de 2 a 1 en su entrada (para dividir la entrada en 2). Por una entrada del multiplexor ponemos el valor inicial y por la otra la entrada genérica del registro din2.
+
+Dibujo: Registro + mux 2 - 1
+
+Es muy importante que el valor inicial se introduzca por la fuente 0 del multiplexor.
+
+Ahora ya simplemente conectamos un inicializador a la entrada de selección del multiplexor. De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor inicial. En el siguiente franco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento
+
+Dibujo: registr + mux + inicializador
+
 ## reginit.v: Secuenciador de 2 estados con registro
 
 ## Síntesis en la FPGA
