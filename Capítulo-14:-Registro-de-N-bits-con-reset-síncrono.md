@@ -54,6 +54,7 @@ El reloj (cables rojos) se pasa a través de un prescaler y se introduce tanto e
 
 El código Verilog es el siguiente:
 
+    //-- regreset.v
     module regreset(input wire clk, output wire [3:0] data);
     
     //-- Parametros del secuenciador:
@@ -104,4 +105,57 @@ El código Verilog es el siguiente:
       );
     
     endmodule
+
+## Síntesis en la FPGA
+
+Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-1.png)
+
+Sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 5 / 96
+|PLBs      | 12 / 160
+|BRAMs     | 0 / 16
+
+Para cargar en la FPGA ejecutamos:
+
+    $ sudo iceprog regreset.bin
+
+En este **vídeo de Youtube** se puede ver la salida de los leds:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+## Simulación
+El banco de pruebas es uno básico, que instancia el componente regreset, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+
+![Imagen 3]()
+
+El código verilog es:
+
+TODO
+
+La simulación se realiza con:
+
+    $ make sim
+
+El resultado en gtkwave es:
+
+![Imagen 4]()
+
+
+
+## Ejercicios propuestos
+* **Ejercicio 1**: 
+
+## Conclusiones
+TODO
+
+
 
