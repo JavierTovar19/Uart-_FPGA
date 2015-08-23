@@ -135,7 +135,7 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 ## Simulación
 El banco de pruebas es uno básico, que instancia el componente regreset, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3]()
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-4.png)
 
 El código verilog es:
 
