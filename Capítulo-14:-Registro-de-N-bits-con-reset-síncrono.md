@@ -184,12 +184,12 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4]()
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-sim-1.png)
 
-
+Se puede ver cómo la secuencia 1001, 0111, 1001, 0111... se va alternando
 
 ## Ejercicios propuestos
-* **Ejercicio 1**: 
+* **Ejercicio 1**: Modificar el diseño para añadir 2 registro más y hacer que el secuenciador tenga 4 estados
 
 ## Conclusiones
 TODO
