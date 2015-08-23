@@ -128,6 +128,13 @@ Para cargar en la FPGA ejecutamos:
 
     $ sudo iceprog regreset.bin
 
+Estos son los valores que se visualizan en los leds alternativamente:
+
+| Valor 1  |  Valor 2
+|-----------|----------
+| [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-leds-seq1.png|width=200px]] | [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-leds-seq2.png|width=200px]]
+
+
 En este **vídeo de Youtube** se puede ver la salida de los leds:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/TgnjJZ7BZEg/0.jpg)](https://www.youtube.com/watch?v=TgnjJZ7BZEg)
