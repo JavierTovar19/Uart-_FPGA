@@ -44,6 +44,12 @@ Esto es equivalente a la implementación en el capítulo anterior, donde usábam
 
 Como ejemplo de prueba vamos a implementar un **secuenciador de 2 estados**, usando **2 registros**. Cada uno almacena inicialmente el valor a mostrar en los leds en cada estado. **Los registros están encadenados**, de manera que la salida de uno se conecta a la entrada del otro. De esta forma, cada vez que llega un flanco de  subida de reloj, los registros **intercambian sus valores**. La salida de uno de ellos está conectada los leds.
 
-Dibujo
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-3.png)
+
+La salida del registro 0 sale al exterior (puerto data) pero también se envía a la entrada del registro 1, cuya salida está conectada a la del registro 0
+
+En las entradas de reset de los registros se ha colocado **un inicializar** que general la señal escalón para realizar la **carga inicial** en el primer flanco de subida del reloj. Los cables de reset han dibujado en verde en la figura. En el resto de ciclos funcionan como registros normales, cargando lo que les llega por su entradas din
+
+El reloj (cables rojos) se pasa a través de un prescaler y se introduce tanto en los registros como en el inicializador
 
 
