@@ -42,3 +42,8 @@ Esto es equivalente a la implementación en el capítulo anterior, donde usábam
 
 ## regreset.v: Secuenciador con dos registros de 4 bits
 
+Como ejemplo de prueba vamos a implementar un **secuenciador de 2 estados**, usando **2 registros**. Cada uno almacena inicialmente el valor a mostrar en los leds en cada estado. **Los registros están encadenados**, de manera que la salida de uno se conecta a la entrada del otro. De esta forma, cada vez que llega un flanco de  subida de reloj, los registros **intercambian sus valores**. La salida de uno de ellos está conectada los leds.
+
+Dibujo
+
+
