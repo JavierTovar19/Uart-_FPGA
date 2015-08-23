@@ -16,26 +16,29 @@ Tiene una **entrada de datos din de N bits**, y su **salida dout** correspondien
 
 Esta manera de inicilizar el registro ya la conocemos del capítulo anterior, pero ahora se ha integrado dentro del propio registro. Su descripción en Verilog es la siguiente:
 
-//-- register.v
-module register (rst, clk, din, dout);
+    //-- register.v
+    module register (rst, clk, din, dout);
+    
+    //-- Parametros:
+    parameter N = 4;     //-- Número de bits del registro
+    parameter INI = 0;   //-- Valor inicial
+    
+    //-- Declaración de los puertos
+    input wire rst;
+    input wire clk;
+    input wire [N-1:0] din;
+    output reg [N-1:0] dout;
+    
+    //-- Registro
+    always @(posedge(clk))
+      if (rst == 0)
+        dout <= INI; //-- Inicializacion
+      else
+        dout <= din; //-- Funcionamiento normal
+    
+    endmodule
 
-//-- Parametros:
-parameter N = 4;     //-- Número de bits del registro
-parameter INI = 0;   //-- Valor inicial
+Esto es equivalente a la implementación en el capítulo anterior, donde usábamos dos procesos: uno para el multiplexor y otro para el registro. Aquí están los dos componentes dentro del mismo proceso. Es **la forma típica de implementar un registro con inicialización**
 
-//-- Declaración de los puertos
-input wire rst;
-input wire clk;
-input wire [N-1:0] din;
-output reg [N-1:0] dout;
-
-//-- Registro
-always @(posedge(clk))
-  if (rst == 0)
-    dout <= INI; //-- Inicializacion
-  else
-    dout <= din; //-- Funcionamiento normal
-
-endmodule
-
+## regreset.v: Secuenciador con dos registros de 4 bits
 
