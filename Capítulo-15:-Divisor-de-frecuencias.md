@@ -26,13 +26,15 @@ Vemos que clk_out tiene un periodo Tout 3 veces mayor que Tin (La tercera parte 
 
 Un **divisor de frecuencia entre M** se implementa usando un **contador módulo M**, y tomando como **salida** el **bit de mayor peso**.
 
-Para implementar este divisor hola mundo, hay que utilizar por tanto un contador módulo 3, como se muestra en el siguiente diagrama
+Para implementar este divisor hola mundo, hay que utilizar por tanto un **contador módulo 3**, como se muestra en el siguiente diagrama
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-3.png)
 
-## Contador módulo M
+## Contador módulo 3
 
-Un contador módulo M es un contador normal que se inicializa al cabo de M pulsos. Empezaría en 0 e iría contando 1, 2, 3 ... M-1  y el llegar el siguiente flanco de reloj pasaría de nuevo a 0.
+Este componente es un contador que al cabo de 3 pulsos vuelve al comienzo, repitiendo la cuenta 0, 1, 2, 0, 1, 2, 0, 1, 2...
 
-El contador módulo 3 sacaría la secuencia de números: 0, 1, 2, 0, 1, 2, 0, 1, 2 ...
+En general,  un **contador módulo M** se inicializa al cabo de M pulsos. Empieza en 0 y va contando 1, 2, 3, 4... hasta M-1. En el siguiente pulso pasa de nuevo a 0 y vuelve a empezar
+
+
 
