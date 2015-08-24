@@ -61,17 +61,17 @@ Ya tenemos todos los elementos para implementar el divisor entre 3. El código c
     //-- div3.v
     module div3(input wire clk_in, output wire clk_out);
     
-    reg [1:0] counter = 0;
+    reg [1:0] divcounter = 0;
     
     //-- Contador módulo 3
     always @(posedge clk_in)
-      if (counter == 2) 
-        counter <= 0;
+      if (divcounter == 2) 
+        divcounter <= 0;
       else 
-        counter <= counter + 1;
+        divcounter <= divcounter + 1;
     
     //-- Sacar el bit mas significativo por clk_out
-    assign clk_out = counter[1];
+    assign clk_out = divcounter[1];
     
     endmodule
 
