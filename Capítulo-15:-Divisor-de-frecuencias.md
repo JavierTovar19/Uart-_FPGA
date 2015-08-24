@@ -16,7 +16,7 @@ Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y 
 
 ## "Hola mundo": Divisor entre 3
 
- Comenzaremos por el divisor más pequeño posible, el **"hola mundo"**, un **divisor entre 3**. Obendremos una señal con una frecuencia 3 veces menor. En el caso de probarlo en la placa iCEstick con el reloj de 12Mhz, obtendríamos una señal de 12/3 = 4Mhz. 
+ Comenzaremos por el divisor más pequeño posible, el **"hola mundo"**, un **divisor entre 3**. Obtendremos una señal con una frecuencia 3 veces menor. En el caso de probarlo en la placa iCEstick con el reloj de 12Mhz, obtendríamos una señal de 12/3 = 4Mhz. 
 
 Las señales de entrada y salida son las siguientes:
 
