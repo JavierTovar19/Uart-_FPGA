@@ -32,5 +32,7 @@ Para implementar este divisor hola mundo, hay que utilizar por tanto un contador
 
 ## Contador módulo M
 
+Un contador módulo M es un contador normal que se inicializa al cabo de M pulsos. Empezaría en 0 e iría contando 1, 2, 3 ... M-1  y el llegar el siguiente flanco de reloj pasaría de nuevo a 0.
 
+El contador módulo 3 sacaría la secuencia de números: 0, 1, 2, 0, 1, 2, 0, 1, 2 ...
 
