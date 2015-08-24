@@ -8,3 +8,5 @@ Con estos divisores conseguimos **generar señales de frecuencias exactas**. Son
 
 Dividir la frecuencia de una señal entre 2 es muy sencillo: colocamos un prescaler de 1 bit. En general, **para divir entre cualquier potencia de 2** (2, 4, 8, 16...2^N) nos basta con un **prescaler de N bits**. Para el resto de frecuencias necesitamos el divisor de frecuencias. Comenzaremos por el más pequeño posible, el **"hola mundo"**, un **divisor entre 3**. Obendremos una señal con una frecuencia 3 veces menor. En el caso de probarlo en la placa iCEstick con el reloj de 12Mhz, obtendríamos una señal de 12/3 = 4Mhz. 
 
+Para entender el funcionamiento, es mejor trabajar con periodos en vez de frecuencias. Así la señal de salida de un divisor entre 3 tendrá un periodo 3 veces mayor que el de entrada:
+
