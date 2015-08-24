@@ -118,7 +118,9 @@ Ejecutamos el comando:
 
 El resultado de la simulación es:
 
-Figure
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/div3_sim.png)
+
+Vemos cómo el periodo de la señal de salida clk_out es 3 veces el de la señal de entrada
 
 ## Divisor entre M
 
