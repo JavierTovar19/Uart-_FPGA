@@ -26,7 +26,9 @@ Vemos que clk_out tiene un periodo Tout 3 veces mayor que Tin (La tercera parte 
 
 Un **divisor de frecuencia entre M** se implementa usando un **contador módulo M**, y tomando como **salida** el **bit de mayor peso**.
 
-Para este divisor hola mundo, hay que utilizar un contador módulo 3
+Para implementar este divisor hola mundo, hay que utilizar por tanto un contador módulo 3, como se muestra en el siguiente diagrama
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-3.png)
 
 ## Contador módulo M
 
