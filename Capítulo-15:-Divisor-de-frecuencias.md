@@ -30,7 +30,7 @@ Para implementar este divisor hola mundo, hay que utilizar por tanto un **contad
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-3.png)
 
-## Contador módulo 3
+### Contador módulo 3
 
 En general,  un **contador módulo M** se inicializa al cabo de M pulsos. Empieza en 0 y va contando 1, 2, 3, 4... hasta M-1. En el siguiente pulso pasa de nuevo a 0 y vuelve a empezar
 
@@ -54,7 +54,7 @@ Este **contador módulo 3** se puede describir en **Verilog** de una forma muy s
 
 **NOTA**: estamos usando always @(posedge clk) en vez de always @(posedge(clk)). Son equivalentes
 
-## div3.v: Divisor entre 3
+### div3.v: Descripción del hardware del divisor entre 3
 
 Ya tenemos todos los elementos para implementar el divisor entre 3. El código completo es el siguiente:
 
