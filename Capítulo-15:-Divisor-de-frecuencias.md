@@ -75,3 +75,7 @@ Ya tenemos todos los elementos para implementar el divisor entre 3. El código c
     
     endmodule
 
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/div3_tb.png)
+
+
