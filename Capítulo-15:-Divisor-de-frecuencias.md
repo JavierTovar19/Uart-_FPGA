@@ -28,4 +28,7 @@ Un **divisor de frecuencia entre M** se implementa usando un **contador módulo 
 
 Para este divisor hola mundo, hay que utilizar un contador módulo 3
 
+## Contador módulo M
+
+
 
