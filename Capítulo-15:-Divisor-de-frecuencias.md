@@ -10,7 +10,7 @@ En este capítulo ....
 
 Dividir la frecuencia de una señal entre 2 es muy sencillo: colocamos un prescaler de 1 bit. En general, **para divir entre cualquier potencia de 2** (2, 4, 8, 16...2^N) nos basta con un **prescaler de N bits**. Para el resto de frecuencias necesitamos el divisor de frecuencias
 
-Dibujo
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-1.png)
 
 Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y periodo Tin. Como salida tiene otra señal (clk_out) cuya frecuencia es la de la entrada dividia entre M
 
