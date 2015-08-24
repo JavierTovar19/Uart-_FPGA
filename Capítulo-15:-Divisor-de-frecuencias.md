@@ -18,6 +18,11 @@ Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y 
 
  Comenzaremos por el divisor más pequeño posible, el **"hola mundo"**, un **divisor entre 3**. Obendremos una señal con una frecuencia 3 veces menor. En el caso de probarlo en la placa iCEstick con el reloj de 12Mhz, obtendríamos una señal de 12/3 = 4Mhz. 
 
-Dibujo..
+Las señales de entrada y salida son las siguientes:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-2.png)
+
+Vemos que clk_out tiene un periodo Tout 3 veces mayor que Tin (La tercera parte de su frecuencia). Aunque **el ciclo de trabajo es diferente**. Clk_in está el mismo tiempo a nivel alto que bajo, mientras que clk_out está dos tercios del periodo a nivel bajo y uno a nivel alto. Para temas de temporización, **el ciclo de trabajo es indiferente**. Lo importante es la frecuencia.
+
 
 
