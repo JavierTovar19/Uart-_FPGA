@@ -122,6 +122,10 @@ El resultado de la simulación es:
 
 Vemos cómo el periodo de la señal de salida clk_out es 3 veces el de la señal de entrada
 
+### div3: Síntesis y pruebas
+
+Dibujo
+
 ## Divisor entre M
 
 
