@@ -32,9 +32,24 @@ Para implementar este divisor hola mundo, hay que utilizar por tanto un **contad
 
 ## Contador módulo 3
 
-Este componente es un contador que al cabo de 3 pulsos vuelve al comienzo, repitiendo la cuenta 0, 1, 2, 0, 1, 2, 0, 1, 2...
-
 En general,  un **contador módulo M** se inicializa al cabo de M pulsos. Empieza en 0 y va contando 1, 2, 3, 4... hasta M-1. En el siguiente pulso pasa de nuevo a 0 y vuelve a empezar
 
+El contador módulo 3 repite la cuenta: 0, 1, 2, 0, 1, 2, 0, 1, 2...
 
+El esquema del hardware para implementarlo se muestra a continuación:
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-4.png)
+
+Un **registro de 2 bits** almacena la cuenta actual, que sale por data. A través del **comparador** se comprueba si el valor es igual a 2. Si es así, se activa la entrada de selección 1 por lo que la cuenta se inicializa a 0. Si no, se activa la otra entrada por la que entra la **salida del registro más 1**, y el registro se incrementa.
+
+Este **contador módulo 3** se puede describir en **Verilog** de una forma muy sencilla:
+
+    reg [3:0] data = 0;
+    
+    always @(posedge clk)
+      if (data == 2) 
+        data <= 0;
+      else 
+        data <= data + 1;
+
+**NOTA**: estamos usando always @(posedge clk) en vez de always @(posedge(clk)). Son equivalentes
