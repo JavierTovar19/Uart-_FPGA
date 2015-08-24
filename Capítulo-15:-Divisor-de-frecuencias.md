@@ -24,5 +24,8 @@ Las señales de entrada y salida son las siguientes:
 
 Vemos que clk_out tiene un periodo Tout 3 veces mayor que Tin (La tercera parte de su frecuencia). Aunque **el ciclo de trabajo es diferente**. Clk_in está el mismo tiempo a nivel alto que bajo, mientras que clk_out está dos tercios del periodo a nivel bajo y uno a nivel alto. Para temas de temporización, **el ciclo de trabajo es indiferente**. Lo importante es la frecuencia.
 
-Un **divisor de frecuencia entre M** se implementa usando un **contador módulo M**, y tomando como **salida** el **bit de mayor peso**
+Un **divisor de frecuencia entre M** se implementa usando un **contador módulo M**, y tomando como **salida** el **bit de mayor peso**.
+
+Para este divisor hola mundo, hay que utilizar un contador módulo 3
+
 
