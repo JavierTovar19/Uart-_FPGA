@@ -12,7 +12,7 @@ Dividir la frecuencia de una señal entre 2 es muy sencillo: colocamos un presca
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divisor-1.png)
 
-Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y periodo Tin. Como salida tiene otra señal (clk_out) cuya frecuencia es la de la entrada dividia entre M
+Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y periodo Tin. Como salida tiene otra señal (clk_out) cuya frecuencia es la de la **entrada dividia entre M**. O si lo vemos con el **periodo**, el de la señal de salida es **M veces mayor que el de la entrada**
 
 ## "Hola mundo": Divisor entre 3
 
