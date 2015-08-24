@@ -75,7 +75,9 @@ Ya tenemos todos los elementos para implementar el divisor entre 3. El código c
     
     endmodule
 
-Para similarlo cremos un **banco de pruebas muy sencillo**, que simplemente instancie el componente, genere una señal de reloj e inicialice la simulación
+### div3.v: Simulación
+
+Para simularlo cremos un **banco de pruebas muy sencillo**, que simplemente instancie el componente, genere una señal de reloj e inicialice la simulación
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/div3_tb.png)
 
@@ -109,4 +111,15 @@ El código Verilog es:
       $finish;
     end
     endmodule
+
+Ejecutamos el comando:
+
+    $ make sim
+
+El resultado de la simulación es:
+
+Figure
+
+## Divisor entre M
+
 
