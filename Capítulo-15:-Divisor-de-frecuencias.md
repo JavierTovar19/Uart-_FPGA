@@ -12,7 +12,7 @@ Dividir la frecuencia de una señal entre 2 es muy sencillo: colocamos un presca
 
 Dibujo
 
-Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y periodo Tin. Como salida tiene otra señal, clk_out cuya frecuencia es la de la entrada dividia entre M
+Es un componente que tiene una señal de entrada (clk_in), con frecuencia fin y periodo Tin. Como salida tiene otra señal (clk_out) cuya frecuencia es la de la entrada dividia entre M
 
 ## "Hola mundo": Divisor entre 3
 
