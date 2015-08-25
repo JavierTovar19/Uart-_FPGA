@@ -181,11 +181,13 @@ Para simular ejecutamos:
 
     $ make sim
 
-En el simulador veremos:
+En el simulador veremos cómo el contador "cuenta":
 
-![]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T16-countsec/images/T16-countsec-sim-1.png)
 
 ## Ejercicios propuestos
+* **Ejercicio 1**: Cambiar la frecuencia del contador a 2 Hz
+* **Ejercicio 2**: Cambiar la frecuencia de forma que el contador cuente décimas de segundo, en vez de segundos
 
 ## Conclusiones
 TODO
