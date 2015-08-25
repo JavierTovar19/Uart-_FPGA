@@ -48,7 +48,7 @@ Un **registro de 2 bits** almacena la cuenta actual, que sale por data. A travé
 
 Este **contador módulo 3** se puede describir en **Verilog** de una forma muy sencilla:
 
-    reg [3:0] data = 0;
+    reg [1:0] data = 0;
     
     always @(posedge clk)
       if (data == 2) 
