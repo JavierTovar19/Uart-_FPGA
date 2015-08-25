@@ -4,7 +4,7 @@ Con los **prescalers** conseguimos obtener señales de reloj de una frecuencia m
 
 Con estos divisores conseguimos **generar señales de frecuencias exactas**. Son muy importantes para aplicaciones de comunicaciones (uarts, spi, bus i2c...), refresco de pantallas gráficas, generación de señales PWM, cronómetros, temporizadores, generación de tonos audibles, etc.
 
-En este capítulo ....
+En este capítulo implementaremos un divisor de frecuencia genérico y lo usaremos para hacer parpadear un led a la frecuencia de 1 Hz (una vez por segundo)
 
 ## El divisor de frecuencias
 
@@ -154,6 +154,8 @@ Para conseguir más frecuencias de salida necesitamos usar un **divisor genéric
 * Tiene un  **registro de N bits**, donde N está dimensionado para poder almacenar el número genérico M
 * La señal clk_out será el bit de mayor peso del registro: el **bit genérico N - 1**
 
+### divM.v: Descripción del hardware
+
 El código verilog es el siguiente:
 
     //- divM.v
@@ -207,4 +209,5 @@ Este mismo **cálculo** se puede hacer en **python** de la siguiente forma:
 
 nos devuelve el resultado de **N = 24**. Es decir, que para **generar una señal de 1Hz necesitamos un contador de 24 bits**.
 
+### divM.v: Síntesis
 
