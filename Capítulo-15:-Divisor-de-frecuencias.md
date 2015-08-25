@@ -237,5 +237,34 @@ El led empezará a parpadear con un frecuencia de exactamente 1 Hz: una vez por 
 
 ### divM.v: Simulación
 
+El banco de pruebas es similar al del divisor entre 3, pero ahora al instanciar el divisor genérico establecemos su parámetro M. Para que la simulación no lleve mucho tiempo, usaremos **valores bajos de M**. Comenzamos por un valor de **M = 5**, para dividir la frecuencia de la señal entre 5
 
+    //-- divM.v
+    module divM_tb();
+    
+    //-- Registro para generar la señal de reloj
+    reg clk = 0;
+    wire clk_out;
+    
+    //-- Instanciar el componente y establecer el valor del divisor
+    divM #(5)
+      dut(
+        .clk_in(clk),
+        .clk_out(clk_out)
+      );
+    
+    //-- Generador de reloj. Periodo 2 unidades
+    always #1 clk = ~clk;
+    
+    //-- Proceso al inicio
+    initial begin
+    
+      //-- Fichero donde almacenar los resultados
+      $dumpfile("divM_tb.vcd");
+      $dumpvars(0, divM_tb);
+    
+      # 30 $display("FIN de la simulacion");
+      $finish;
+    end
+    endmodule
 
