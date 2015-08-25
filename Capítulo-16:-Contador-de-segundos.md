@@ -40,3 +40,9 @@ Usaremos el divisor de frecuencia del capítulo pasado, pero con algunas mejoras
     
     endmodule
 
+La primera mejora es la inclusión del fichero **divisor.vh** donde se han **definido varias constantes** para facilitar la generación de señales de determinadas frecuencias. En vez de utilizar un número para los divisores, es más claro asociarlos a sus respectivas frecuencias mediante definiciones. Así por ejemplo, para obtener una señal de 1 Hz, basta con usar la constante F_1Hz en vez del número 12_000_000
+
+
+
+
+
