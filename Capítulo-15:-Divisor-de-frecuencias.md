@@ -211,3 +211,31 @@ nos devuelve el resultado de **N = 24**. Es decir, que para **generar una señal
 
 ### divM.v: Síntesis
 
+El esquema es el mismo que para el divisor entre 3: la entrada de reloj de 12Mhz se usa para conectar clk_in, y la señal de salida de 1Hz se saca por el led
+
+Realizamos la síntesis ejecutando el comando:
+
+    $ make sint2
+
+(el 2 hace referencia al proyecto 2 el capítulo)
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 8 / 160
+|BRAMs     | 0 / 16
+
+Para cargar en la FPGA ejecutamos el comando:
+
+    $ sudo iceprog divM.bin
+
+El led empezará a parpadear con un frecuencia de exactamente 1 Hz: una vez por segundo
+
+(VIDEO)
+
+### divM.v: Simulación
+
+
+
