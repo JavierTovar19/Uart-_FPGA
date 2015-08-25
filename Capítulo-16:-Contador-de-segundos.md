@@ -140,7 +140,7 @@ Lo cargamos en la FPGA con el comando:
 
 Los leds empezarán a encenderse. Al cabo de 16 segundos se volverá al comienzo:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/btzHsdh0Pys/0.jpg)](https://www.youtube.com/watch?v=btzHsdh0Pys)
 
 ## Simulación
 
