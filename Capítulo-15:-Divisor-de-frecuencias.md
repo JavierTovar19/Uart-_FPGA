@@ -221,7 +221,7 @@ Realizamos la síntesis ejecutando el comando:
 
     $ make sint2
 
-(el 2 hace referencia al proyecto 2 el capítulo)
+(el 2 hace referencia al proyecto 2 del capítulo)
 
 Los recursos empleados son:
 
