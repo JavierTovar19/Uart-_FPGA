@@ -148,8 +148,9 @@ Cargamos en la FPGA con el comando:
 
 ## Divisor entre M
 
-Para conseguir más frecuencias de salida necesitamos usar un divisor genérico, que pueda dividir la frecuencia de entrada entre M. Es similar al divisor entre 3, con las siguientes consideraciones:
+Para conseguir más frecuencias de salida necesitamos usar un **divisor genérico**, que pueda dividir la frecuencia de entrada entre M. Es similar al divisor entre 3, con las siguientes consideraciones:
 
-* Usa un contador módulo M
-* Tiene un  registro de N bits, donde N está dimensionado para poder almacenar el número genérico M
+* Usa un **contador módulo M**
+* Tiene un  **registro de N bits**, donde N está dimensionado para poder almacenar el número genérico M
+* La señal clk_out será el bit de mayor peso del registro: el **bit genérico N - 1**
 
