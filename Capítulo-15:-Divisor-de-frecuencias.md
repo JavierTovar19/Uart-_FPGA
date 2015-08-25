@@ -268,3 +268,27 @@ El banco de pruebas es similar al del divisor entre 3, pero ahora al instanciar 
     end
     endmodule
 
+Para realizar la simulación, ejecutamos:
+
+    $ make sim2
+
+La salida de gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divM_sim_M5.png)
+
+Vamos a comprobar otro valor del divisor: M = 7.  En el banco de pruebas hay que modificar:
+
+    divM #(7)
+
+Ahora la salida de gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/divM_sim_M7.png)
+
+Efectivamente, la señal de salida tiene un periodo igual a 7 ciclos de la señal de entrada
+
+## Ejercicios propuestos
+* **Ejercicio 1**: Modificar el valor del divisor para que el led parpadee a una frecuencia de 0.5Hz
+* **Ejercicio 2**: Pensar cómo se puede hacer que el led parpadee a una frecuencia de 1Hz pero con una señal con ciclo de trabajo del 50%, es decir, que el led esté encendido durante 0.5seg y apagado otros 0.5seg
+
+## Conclusiones
+TODO
