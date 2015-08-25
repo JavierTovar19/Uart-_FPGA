@@ -4,4 +4,6 @@
 
 ## Introducción
 
-TODO
+Para practicar con los divisores de frecuencia, vamos a implementar un contador que se incremente cada segundo. La cuenta la mostraremos por los leds de la iCEstick
+
+## divisor.v: Descripción del hardware
