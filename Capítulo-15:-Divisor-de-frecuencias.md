@@ -237,7 +237,7 @@ Para cargar en la FPGA ejecutamos el comando:
 
 El led empezará a parpadear con un frecuencia de exactamente 1 Hz: una vez por segundo
 
-(VIDEO)
+[![Click to see the youtube video](http://img.youtube.com/vi/AJ9isM8d5zo/0.jpg)](https://www.youtube.com/watch?v=AJ9isM8d5zo)
 
 ### divM.v: Simulación
 
