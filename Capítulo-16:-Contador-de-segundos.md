@@ -68,8 +68,51 @@ La **extensión .vh** es la que se usa en verilog para la declaración de consta
 
 En los siguientes capítulos se irá ampliando, a medida que usemos más frecuencias e los ejemplos
 
-## countsec.v: Descripción del hardware
+## countsec.v: Contador de segundos
 
+Implementaremos un contador de segundos de 4 bits, que saca por los leds la cuenta
 
+### Descripción del hardware
 
+El diseño está formado por un **contador de 4 bits** a cuya entrada de reloj se le ha acoplado un **divisor de frecuencia** para generar una señal de 1Hz
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T16-countsec/images/countsec-2.png)
+
+El código Verilog es el siguiente:
+
+    //-- countsec.v
+    //-- Incluir las constantes del modulo del divisor
+    `include "divider.vh"
+    
+    //-- Parameteros:
+    //-- clk: Reloj de entrada de la placa iCEstick
+    //-- data: Valor del contador de segundos, a sacar por los leds de la iCEstick
+    module countsec(input wire clk, output wire [3:0] data);
+    
+    //-- Parametro del divisor. Fijarlo a 1Hz
+    //-- Se define como parametro para poder modificarlo desde el testbench
+    //-- para hacer pruebas
+    parameter M = `F_1Hz;
+    
+    //-- Señal de reloj de 1Hz. Salida del divisor
+    wire clk_1HZ;
+    
+    //-- Contador de segundos
+    reg [3:0] counter = 0;
+    
+    //-- Instanciar el divisor
+    divider #(M)
+      DIV (
+        .clk_in(clk),
+        .clk_out(clk_1HZ)
+      );
+    
+    //-- Incrementar el contador en cada flanco de subida de la señal de 1Hz
+    always @(posedge clk_1HZ)
+      counter <= counter + 1;
+    
+    //-- Sacar los datos del contador hacia los leds
+    assign data = counter;
+    
+    endmodule
 
