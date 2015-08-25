@@ -8,7 +8,7 @@ Con los **prescalers** conseguimos obtener señales de reloj de una frecuencia m
 
 Con estos divisores conseguimos **generar señales de frecuencias exactas**. Son muy importantes para aplicaciones de comunicaciones (uarts, spi, bus i2c...), refresco de pantallas gráficas, generación de señales PWM, cronómetros, temporizadores, generación de tonos audibles, etc.
 
-En este capítulo implementaremos un divisor de frecuencia genérico y lo usaremos para hacer parpadear un led a la frecuencia de 1 Hz (una vez por segundo)
+En este capítulo implementaremos un **divisor de frecuencia genérico** y lo usaremos para **hacer parpadear un led a la frecuencia de 1 Hz** (una vez por segundo)
 
 ## El divisor de frecuencias
 
