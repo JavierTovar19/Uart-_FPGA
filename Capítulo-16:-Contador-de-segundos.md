@@ -54,6 +54,21 @@ Otra majera es la de utilizar el **operador ? :**  en vez de **if-else** para la
     always @(posedge clk_in)
       divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;
 
+## divisor.vh: Constantes
+
+La **extensión .vh** es la que se usa en verilog para la declaración de constantes y macros. La definición de constantes es similar a cómo se hace en C, usando la palabra clave **`define** . El archivo tiene definidas las siguientes constantes:
+
+    //-- Megaherzios  MHz
+    `define F_4MHz 3
+    `define F_1MHz 12
+    
+    //-- Hertzios (Hz)
+    `define F_2Hz   6_000_000
+    `define F_1Hz   12_000_000
+
+En los siguientes capítulos se irá ampliando, a medida que usemos más frecuencias e los ejemplos
+
+## countsec.v: Descripción del hardware
 
 
 
