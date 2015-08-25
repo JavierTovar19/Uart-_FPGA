@@ -116,3 +116,37 @@ El código Verilog es el siguiente:
     
     endmodule
 
+### Síntesis
+
+Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y la salida data a los leds
+
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T16-countsec/images/countsec-1.png)
+
+ejecutamos el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 10 / 160
+|BRAMs     | 0 / 16
+
+Lo cargamos en la FPGA con el comando:
+
+    $ sudo iceprog countsec.bin
+
+Los leds empezarán a encenderse. Al cabo de 16 segundos se volverá al comienzo:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+## Simulación
+
+## Ejercicios propuestos
+
+## Conclusiones
+TODO
+
+
