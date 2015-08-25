@@ -128,7 +128,7 @@ Para sintetizar conectamos el reloj de 12Mhz de la iCEstick a clk_in y mandamos 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/div3-sintesis.png)
 
-Como la frecuencia de salida es de 4Mhz, no veremos el led parpadear, simplemente veremos que se enciende. Tendremos que conectar un osciloscopio para poder comprobar que efectivamente la señal es de 4Mhz
+Como **la frecuencia de salida es de 4Mhz, NO veremos el led parpadear**, simplemente veremos que se enciende. Tendremos que conectar un osciloscopio para poder comprobar que efectivamente la señal es de 4Mhz
 
 Sintetizamos con el comando:
 
@@ -148,4 +148,8 @@ Cargamos en la FPGA con el comando:
 
 ## Divisor entre M
 
+Para conseguir más frecuencias de salida necesitamos usar un divisor genérico, que pueda dividir la frecuencia de entrada entre M. Es similar al divisor entre 3, con las siguientes consideraciones:
+
+* Usa un contador módulo M
+* Tiene un  registro de N bits, donde N está dimensionado para poder almacenar el número genérico M
 
