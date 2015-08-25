@@ -124,7 +124,27 @@ Vemos cómo el periodo de la señal de salida clk_out es 3 veces el de la señal
 
 ### div3: Síntesis y pruebas
 
-Dibujo
+Para sintetizar conectamos el reloj de 12Mhz de la iCEstick a clk_in y mandamos clk_out a uno de los leds
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T15-divisor/images/div3-sintesis.png)
+
+Como la frecuencia de salida es de 4Mhz, no veremos el led parpadear, simplemente veremos que se enciende. Tendremos que conectar un osciloscopio para poder comprobar que efectivamente la señal es de 4Mhz
+
+Sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 2 / 96
+|PLBs      | 1 / 160
+|BRAMs     | 0 / 16
+
+Cargamos en la FPGA con el comando:
+
+    $ sudo iceprog div3.bin
 
 ## Divisor entre M
 
