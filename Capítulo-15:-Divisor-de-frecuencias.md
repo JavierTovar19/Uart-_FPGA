@@ -195,7 +195,7 @@ Para mejorar la legibilidad del valor, y no confundirse, **los dígitos** de los
 
 **La constante N es local**, y NO puede ser modificada fuera del módulo divM. Esto se consigue declarándola del tipo  **localparam**
 
-**N define el número de bits necesarios para almacenar el valor M**. Por ejemplo, si M es 3, necesitamos 2 bits. Si M es 200, necesitamos 8 bits.  Esta cálculo se realiza usando la **función de Verilog $clog2(M)**. Matemáticamente se consigue haciendo el logaritmo en base 2 de M, y obteniendo el valor enterio inmediatamente superior (operación ceiling). 
+**N define el número de bits necesarios para almacenar el valor M**. Por ejemplo, si M es 3, necesitamos 2 bits. Si M es 200, necesitamos 8 bits.  Esta cálculo se realiza usando la **función de Verilog $clog2(M)**. Matemáticamente se consigue haciendo el logaritmo en base 2 de M, y obteniendo el valor entero inmediatamente superior (operación ceiling). 
 
 Este mismo **cálculo** se puede hacer en **python** de la siguiente forma:
 
