@@ -185,4 +185,26 @@ El código verilog es el siguiente:
     
     endmodule
 
+El contador módulo M es igual al módulo 3, pero ahora se usa la **constante M**. Para la conexión del bit más significativo del contador a clk_out se usa la **constante N**
+
+**M es un parámetro del divisor**, que se puede establecer al instanciarlo desde otro componente. Por defecto se ha establecido a un valor de 12000000 (12M) para conseguir una frecuencia de salida de 1Hz:
+
+fout = fin / M  =  12Mhz  / 12M = 1Hz
+
+Para mejorar la legibilidad del valor, y no confundirse, **los dígitos** de los números en verilog se pueden **separar usando el guión bajo** (**_**).  De esta forma, el valor de 12 millones se puede escribir como 12_000_000
+
+**La constante N es local**, y NO puede ser modificada fuera del módulo divM. Esto se consigue declarándola del tipo  **localparam**
+
+**N define el número de bits necesarios para almacenar el valor M**. Por ejemplo, si M es 3, necesitamos 2 bits. Si M es 200, necesitamos 8 bits.  Esta cálculo se realiza usando la **función de Verilog $clog2(M)**. Matemáticamente se consigue haciendo el logaritmo en base 2 de M, y obteniendo el valor enterio inmediatamente superior (operación ceiling). 
+
+Este mismo **cálculo** se puede hacer en **python** de la siguiente forma:
+
+    import math as m
+    
+    M = 12000000
+    N = int( m.ceil( m.log(M,2) ) )
+    print (N)
+
+nos devuelve el resultado de **N = 24**. Es decir, que para **generar una señal de 1Hz necesitamos un contador de 24 bits**.
+
 
