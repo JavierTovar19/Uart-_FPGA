@@ -17,4 +17,5 @@
 13 [[Inicializando registros|Capítulo 13: Inicializando registros]]  
 14 [[Registro de N bits con reset síncrono|Capítulo 14: Registro de N bits con reset síncrono]]  
 15 [[Divisor de frecuencias|Capítulo 15: Divisor de frecuencias]]  
-[[Capítulo 16: Contador de segundos]]
+16 [[Capítulo 16: Contador de segundos]]  
+
