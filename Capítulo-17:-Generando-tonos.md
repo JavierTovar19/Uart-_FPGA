@@ -3,3 +3,14 @@
 ## Introducción
 TODO
 
+## Tonos de 1, 2, 3 y 4Khz
+
+## tones.v: Descripción del hardware
+
+## Ejercicios propuestos
+
+## Conclusiones
+
+## Referencias
+
+
