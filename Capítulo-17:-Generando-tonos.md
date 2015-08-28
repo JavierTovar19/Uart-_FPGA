@@ -109,9 +109,9 @@ A continuación **se instancian los 4 divisores**, cada uno con su frecuencia y 
 
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y las salidas de los 4 canales por los pines 44, 45, 47 y 48 a los que se tiene acceso en la parte inferior derecha de la placa
 
-A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es más fácil utilizar un único **altavoz** (o zumbador) y conectarlo manualmente al canal que se quiere escuchar
-
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-1.png)
+
+A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es más fácil utilizar un único **altavoz** (o zumbador) y conectarlo manualmente al canal que se quiere escuchar
 
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
 
