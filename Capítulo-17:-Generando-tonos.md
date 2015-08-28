@@ -27,7 +27,7 @@ En la siguiente tabla se muestran los valores de los divisores para generar tono
 **Los divisores tienen que ser números enteros**. De manera que si al dividir f_in entre f_t **se obtiene un valor decimal, tendremos que redondearlo**
 
 En el fichero **divisor.vh** se definen estos pares como constantes, para usarlos más fácilmente en el código verilog:
-
+``` verilog
     //-- divisor.vh
     //-- Megaherzios  MHz
     `define F_4MHz 3
@@ -44,6 +44,7 @@ En el fichero **divisor.vh** se definen estos pares como constantes, para usarlo
     //-- Hertzios (Hz)
     `define F_2Hz   6_000_000
     `define F_1Hz   12_000_000
+```
 
 ## tones.v: Descripción del hardware
 Como ejemplo, **generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz**. Cada canal está compuesto por su correspondiente divisor de frecuencia, con los valores calculados anteriormente
@@ -54,6 +55,7 @@ A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es
 
 La descripción del componente en Verilog es:
 
+``` verilog
     //-- Incluir las constantes del modulo del divisor
     `include "divider.vh"
     
@@ -99,6 +101,7 @@ La descripción del componente en Verilog es:
       );
     
     endmodule
+```
 
 Se **definen los parámetros F0, F1, F2 y F3** para establecer las frecuencias. De esta manera se pueden cambiar desde el banco de pruebas para comprobar que funcionan.
 
