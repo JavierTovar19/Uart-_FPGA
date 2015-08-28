@@ -26,7 +26,7 @@ En la siguiente tabla se muestran los valores de los divisores para generar tono
 
 **Los divisores tienen que ser números enteros**. De manera que si al dividir f_in entre f_t **se obtiene un valor decimal, tendremos que redondearlo**
 
-En el fichero divisor.vh se definen estos pares como constantes, para usarlos más fácilmente en el código verilog:
+En el fichero **divisor.vh** se definen estos pares como constantes, para usarlos más fácilmente en el código verilog:
 
     //-- divisor.vh
     //-- Megaherzios  MHz
