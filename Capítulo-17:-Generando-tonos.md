@@ -46,7 +46,8 @@ En el fichero **divisor.vh** se definen estos pares como constantes, para usarlo
     `define F_1Hz   12_000_000
 
 ## tones.v: Descripción del hardware
-Como ejemplo, generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz. Cada canal está compuesto por su correspondiente divisor de frecuencia, con los valores calculados anteriormente
+Como ejemplo, **generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz**. Cada canal está compuesto por su correspondiente divisor de frecuencia, con los valores calculados anteriormente
+
 
 
 ## Síntesis y pruebas
