@@ -7,7 +7,7 @@
 Utilizaremos el **divisor de frecuencia** para **generar tonos** de 1, 2, 3 y 4Khz que se pueden escuchar conectando un altavoz o un zumbador a su salida
 
 ## Generación de un tono
-En nuestro sistema digital tenemos una señal de reloj de entrada f_in, que en la iCEstick es de 12MHz. Para generar un tono de frecuencia f_t tenemos que calcular el valor del divisor usando la fórmula:
+En nuestro sistema digital tenemos una señal de reloj de entrada f_in, que en la iCEstick es de 12MHz. Para generar un tono de frecuencia f_t tenemos que calcular **el valor del divisor** usando la **fórmula**:
 
 Poner...
 
