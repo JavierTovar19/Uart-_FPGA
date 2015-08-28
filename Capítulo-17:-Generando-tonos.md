@@ -9,7 +9,7 @@ Utilizaremos el **divisor de frecuencia** para **generar tonos** de 1, 2, 3 y 4K
 ## Generación de un tono
 En nuestro sistema digital tenemos una señal de reloj de entrada f_in, que en la iCEstick es de 12MHz. Para generar un tono de frecuencia f_t tenemos que calcular **el valor del divisor** usando la **fórmula**:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-tones-icestick-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-formula-divisor.png)
 
 ## tones.v: Descripción del hardware
 
