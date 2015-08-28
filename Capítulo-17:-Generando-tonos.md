@@ -1,3 +1,5 @@
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-tones-icestick-1.png" width="400" align="center">
+
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T17-tones)
 
 ## Introducción
