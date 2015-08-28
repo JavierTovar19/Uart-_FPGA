@@ -50,6 +50,12 @@ Como ejemplo, **generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz**. Cada 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-1.png)
 
+A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es más fácil utilizar un único **altavoz** (o zumbador) y conectarlo manualmente al canal que se quiere escuchar
+
+La descripción del componente en Verilog es:
+
+--
+
 ## Síntesis y pruebas
 
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
