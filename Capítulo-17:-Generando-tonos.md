@@ -28,22 +28,22 @@ En la siguiente tabla se muestran los valores de los divisores para generar tono
 
 En el fichero **divisor.vh** se definen estos pares como constantes, para usarlos más fácilmente en el código verilog:
 ``` verilog
-    //-- divisor.vh
-    //-- Megaherzios  MHz
-    `define F_4MHz 3
-    `define F_3MHz 4
-    `define F_2MHz 6
-    `define F_1MHz 12
+//-- divisor.vh
+//-- Megaherzios  MHz
+`define F_4MHz 3
+`define F_3MHz 4
+`define F_2MHz 6
+`define F_1MHz 12
     
-    //-- Kilohercios KHz
-    `define F_4KHz 3_000
-    `define F_3KHz 4_000
-    `define F_2KHz 6_000
-    `define F_1KHz 12_000
+//-- Kilohercios KHz
+`define F_4KHz 3_000
+`define F_3KHz 4_000
+`define F_2KHz 6_000
+`define F_1KHz 12_000
     
-    //-- Hertzios (Hz)
-    `define F_2Hz   6_000_000
-    `define F_1Hz   12_000_000
+//-- Hertzios (Hz)
+`define F_2Hz   6_000_000
+`define F_1Hz   12_000_000
 ```
 
 ## tones.v: Descripción del hardware
@@ -56,51 +56,51 @@ A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es
 La descripción del componente en Verilog es:
 
 ``` verilog
-    //-- Incluir las constantes del modulo del divisor
-    `include "divider.vh"
+//-- Incluir las constantes del modulo del divisor
+`include "divider.vh"
     
-    //-- Parameteros:
-    //-- clk: Reloj de entrada de la placa iCEstick
-    //-- data: Valor del contador de segundos, a sacar por los leds de la iCEstick
-    module tones(input wire clk, output wire ch0, ch1, ch2, ch3);
+//-- Parameteros:
+//-- clk: Reloj de entrada de la placa iCEstick
+//-- data: Valor del contador de segundos, a sacar por los leds de la iCEstick
+module tones(input wire clk, output wire ch0, ch1, ch2, ch3);
     
-    //-- Parametro del divisor. Fijarlo a 1Hz
-    //-- Se define como parametro para poder modificarlo desde el testbench
-    //-- para hacer pruebas
-    parameter F0 = `F_1KHz;
-    parameter F1 = `F_2KHz;
-    parameter F2 = `F_3KHz;
-    parameter F3 = `F_4KHz;
+//-- Parametro del divisor. Fijarlo a 1Hz
+//-- Se define como parametro para poder modificarlo desde el testbench
+//-- para hacer pruebas
+parameter F0 = `F_1KHz;
+parameter F1 = `F_2KHz;
+parameter F2 = `F_3KHz;
+parameter F3 = `F_4KHz;
     
-    //-- Generador de tono 0
-    divider #(F0)
-      CH0 (
-        .clk_in(clk),
-        .clk_out(ch0)
-      );
+//-- Generador de tono 0
+divider #(F0)
+  CH0 (
+    .clk_in(clk),
+    .clk_out(ch0)
+  );
     
-    //-- Generador de tono 1
-    divider #(F1)
-      CH1 (
-        .clk_in(clk),
-        .clk_out(ch1)
-      );
+//-- Generador de tono 1
+divider #(F1)
+  CH1 (
+    .clk_in(clk),
+    .clk_out(ch1)
+  );
     
-    //-- Generador de tono 2
-    divider #(F2)
-      CH2 (
-        .clk_in(clk),
-        .clk_out(ch2)
-      );
+//-- Generador de tono 2
+divider #(F2)
+  CH2 (
+    .clk_in(clk),
+    .clk_out(ch2)
+  );
     
-    //-- Generador de tono 3
-    divider #(F3)
-      CH3 (
-        .clk_in(clk),
-        .clk_out(ch3)
-      );
+//-- Generador de tono 3
+divider #(F3)
+  CH3 (
+    .clk_in(clk),
+    .clk_out(ch3)
+  );
     
-    endmodule
+endmodule
 ```
 
 Se **definen los parámetros F0, F1, F2 y F3** para establecer las frecuencias. De esta manera se pueden cambiar desde el banco de pruebas para comprobar que funcionan.
