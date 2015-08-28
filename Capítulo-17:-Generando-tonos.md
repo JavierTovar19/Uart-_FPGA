@@ -48,7 +48,7 @@ En el fichero **divisor.vh** se definen estos pares como constantes, para usarlo
 ## tones.v: Descripción del hardware
 Como ejemplo, **generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz**. Cada canal está compuesto por su correspondiente divisor de frecuencia, con los valores calculados anteriormente
 
-
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-1.png)
 
 ## Síntesis y pruebas
 
