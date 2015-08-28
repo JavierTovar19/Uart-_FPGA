@@ -13,7 +13,7 @@ En nuestro sistema digital tenemos una señal de reloj de entrada f_in, que en l
 
 Así, para generar un tono de 1Khz tenemos que aplicar un divisor de valor:
 
-Calculo...
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-calculo-divisor-1Khz.png)
 
 ## tones.v: Descripción del hardware
 
