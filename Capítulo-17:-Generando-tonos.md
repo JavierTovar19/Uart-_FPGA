@@ -113,6 +113,24 @@ Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceS
 
 A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es más fácil utilizar un único **altavoz** (o zumbador) y conectarlo manualmente al canal que se quiere escuchar
 
+Para sintetizar ejecutamos el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 7 / 96
+|PLBs      | 24 / 160
+|BRAMs     | 0 / 16
+
+Lo cargamos en la FPGA con el comando:
+
+    $ sudo iceprog tones.bin
+
+Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. Introducimos con un cable la señal del canal que queremos escuchar:
+
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
 
 ## Ejercicios propuestos
