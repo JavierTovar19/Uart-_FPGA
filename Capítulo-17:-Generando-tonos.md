@@ -134,9 +134,11 @@ Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. Introducim
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
 
 ## Ejercicios propuestos
+* Optimizar el diseño para que se ocupen menos PLBs. Para ello hay que sacar "factor común" en los divisores. La señal de reloj se pasará primero por un divisor común a todos los canales, y luego habrá 1 divisor para cada canal, pero de menos bits.
 
 ## Conclusiones
+TODO
 
 ## Referencias
-
+* [Kit de robótica](http://www.bq.com/es/kit-de-robotica)
 
