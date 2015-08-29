@@ -105,7 +105,7 @@ Se **definen los parámetros F0, F1, F2 y F3** para establecer las frecuencias. 
 
 A continuación **se instancian los 4 divisores**, cada uno con su frecuencia y conectados a la señal de reloj de entrada clk. La salida de cada divisor se saca por las salidas ch0, ch1, ch2 y ch3 del componente
 
-## Síntesis y pruebas
+## Síntesis
 
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y las salidas de los 4 canales por los pines 44, 45, 47 y 48 a los que se tiene acceso en la parte inferior derecha de la placa
 
@@ -125,11 +125,17 @@ Los recursos empleados son:
 |PLBs      | 24 / 160
 |BRAMs     | 0 / 16
 
+## Pruebas
+
 Lo cargamos en la FPGA con el comando:
 
     $ sudo iceprog tones.bin
 
-Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. Introducimos con un cable la señal del canal que queremos escuchar:
+Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. 
+
+(Figura)
+
+Introducimos con un cable la señal del canal que queremos escuchar. En este vídeo de youtube se muestra el diseño en acción:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
 
