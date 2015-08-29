@@ -131,9 +131,11 @@ Lo cargamos en la FPGA con el comando:
 
     $ sudo iceprog tones.bin
 
-Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. 
+Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema es el siguiente: 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-3.png)
+
+Como zumbador hemos utilizado el que viene en **mi primer kit de robótica**[1]
 
 Introducimos con un cable la señal del canal que queremos escuchar. En este vídeo de youtube se muestra el diseño en acción:
 
@@ -199,5 +201,6 @@ Se puede comprobar que los 4 canales están funcionando con sus divisores corres
 TODO
 
 ## Referencias
-* [Kit de robótica](http://www.bq.com/es/kit-de-robotica)
+* [1]: http://www.bq.com/es/kit-de-robotica
+
 
