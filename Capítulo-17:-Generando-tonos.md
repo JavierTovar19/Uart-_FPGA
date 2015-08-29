@@ -141,7 +141,56 @@ Introducimos con un cable la señal del canal que queremos escuchar. En este ví
 
 ## Simulación
 
+No se simula la generación de los tonos de 1,2,3 y 4Khz porque llevaría muchísimo tiempo. En vez de eso se comprueba que los 4 divisores están funcionando correctamente con los valores de 3,5,7 y 10
 
+``` verilog
+//-- tones_tb.v
+module tones_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Salidas de los canales
+wire ch0, ch1, ch2, ch3;
+
+//-- Instanciar el componente y establecer el valor del divisor
+//-- Se pone un valor bajo para simular (de lo contrario tardaria mucho)
+tones #(3, 5, 7, 10)
+  dut(
+    .clk(clk),
+    .ch0(ch0),
+    .ch1(ch1),
+    .ch2(ch2),
+    .ch3(ch3)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("tones_tb.vcd");
+  $dumpvars(0, tones_tb);
+
+  # 100 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
+Para realizar la simulación ejecutamos:
+
+    $ make sim
+
+y el resultado es este:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-tones-sim1.png)
+
+Se puede comprobar que los 4 canales están funcionando con sus divisores correspondientes, y que son independientes
 
 ## Ejercicios propuestos
 * Optimizar el diseño para que se ocupen menos PLBs. Para ello hay que sacar "factor común" en los divisores. La señal de reloj se pasará primero por un divisor común a todos los canales, y luego habrá 1 divisor para cada canal, pero de menos bits.
