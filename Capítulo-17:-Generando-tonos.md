@@ -133,11 +133,15 @@ Lo cargamos en la FPGA con el comando:
 
 Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. 
 
-(Figura)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-3.png)
 
 Introducimos con un cable la señal del canal que queremos escuchar. En este vídeo de youtube se muestra el diseño en acción:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/uMFJ4ET1wcg/0.jpg)](https://www.youtube.com/watch?v=uMFJ4ET1wcg)
+
+## Simulación
+
+
 
 ## Ejercicios propuestos
 * Optimizar el diseño para que se ocupen menos PLBs. Para ello hay que sacar "factor común" en los divisores. La señal de reloj se pasará primero por un divisor común a todos los canales, y luego habrá 1 divisor para cada canal, pero de menos bits.
