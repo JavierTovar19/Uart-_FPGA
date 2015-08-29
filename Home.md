@@ -26,7 +26,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 ## Agradecimientos
 * Este tutorial no habría sido posible sin las increibles herramientas libres del proyecto Icestorm y Arachne-pnr, por **Clifford Wolf**, **Mathias Lasser** y **Cotton Seed**. Representan un increible avance para el patrimonio tecnólogico de la humanidad ¡Muchísimas gracias! 
 
-* A (BQ)[http://bq.com], por financiar el material usado en el tutorial. Soy un verdadero privilegiado por trabajar en una empresa donde fomentan el espíritu maker y apoyan las iniciativas de exploración y experimentación con tecnologías Libres ¡Muchas gracias!
+* A [BQ](http://bq.com), por financiar el material usado en el tutorial. Soy un verdadero privilegiado por trabajar en una empresa donde fomentan el espíritu maker y apoyan las iniciativas de exploración y experimentación con tecnologías Libres ¡Muchas gracias!
 
 * A **Jesús Arroyo**, por hacer la compra de las placas iCEStick y empezar con el empaquetado para Debian/Ubuntu de las herramientas Arachne-pnr y las del proyecto icestorm. ¡Muchas Gracias!
 
