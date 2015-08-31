@@ -3,10 +3,13 @@
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T18-notas)
 
 ## Introducción
+Diseñaremos un circuito con 8 canales, cada uno emitiendo **una nota musical**: do, re, mi, fa, sol, la, si, do. Al conectar cada canal a un altavoz / zumbador oiremos las notas.
 
-TODO
+El circuito es similar al del capítulo anterior. Sólo necesitamos **calcular los valores de los divisores** para obtener las frecuencias de las notas
 
-Calculo notas en python:
+## Frecuencias de las notas musicales
+
+Cálculo notas en python:
 
 freq en Hz:
 
