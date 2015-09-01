@@ -26,7 +26,7 @@ En la siguiente tabla se resumen las **frecuencias** y **valores de los divisore
 | LA#   | 25743             |  466.164 Hz
 | SI    | 24298             |  493.883 Hz
 
-La frecuencia de las notas, según su octava, se obtiene mediante esta ecuación (cuya nota de referencia es LA de la 4ª octava, con una frecuencia de 440 Hz):
+La frecuencia de las notas, según su octava, se obtiene mediante esta ecuación (cuya nota de referencia es LA de la 4ª octava, con una frecuencia de 440 Hz)
 
 Ec.
 
