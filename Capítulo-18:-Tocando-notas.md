@@ -403,7 +403,7 @@ Lo cargamos en la fpga con:
 
 Hacemos el mismo conexionado que en el capítulo anterior. Introducimos con un cable la señal del canal que queremos escuchar. En **este vídeo de youtube** se muestra el diseño en acción, seleccionándose los 8 canales manualmente para escuchar la escala:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/pkqy3xJv16k/0.jpg)](https://www.youtube.com/watch?v=pkqy3xJv16k)
 
 ## Simulación
 
