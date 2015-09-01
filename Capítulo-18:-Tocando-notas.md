@@ -1,5 +1,7 @@
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-1.png)
 
+![][hola]
+
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T18-notas)
 
 ## Introducción
@@ -472,3 +474,5 @@ TODO
 ## Referencias
 
 [1] [Frecuencia de las notas musicales](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales). Por Vic (**La Tecla de Escape**) [Última consulta: 1-Sep-2015]
+
+[hola]: tutorial/T18-notas/images/notas-1.png
