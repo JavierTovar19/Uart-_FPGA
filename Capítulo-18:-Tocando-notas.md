@@ -26,13 +26,13 @@ En la siguiente tabla se resumen las **frecuencias** y **valores de los divisore
 | LA#   | 25743             |  466.164 Hz
 | SI    | 24298             |  493.883 Hz
 
-La frecuencia de las notas, según su octava, se obtiene mediante esta ecuación (cuya nota de referencia es LA de la 4ª octava, con una frecuencia de 440 Hz)
+**Las frecuencias de las notas**, según su **octava**, se obtiene mediante esta ecuación (cuya nota de referencia es LA de la 4ª octava, con una frecuencia de 440 Hz)
 
-Ec.
+![Ecuación para las frecuencias de las notas, según su octava](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-2.png)
 
-Donde
+Donde **o** es la **octava** (toma valores desde 0 hasta 10) y **n** la **nota** (valores desde 1 hasta 12), siendo n = 1 el DO
 
-ddddd
+En [1](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales) se hay una explicación muy buena sobre las frecuencias de las notas así como del desarrollo de esa ecuación
 
 ## Pendiente
 [1]
@@ -50,4 +50,4 @@ nota = n=1 para Do, n=2 para Do#... n=12 para Si
 
 ## Referencias
 
-[1] [Frecuencia de las notas musicales](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales). Por Vic (**La Tecla de Escape**)
+[1] [Frecuencia de las notas musicales](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales). Por Vic (**La Tecla de Escape**) [Última consulta: 1-Sep-2015]
