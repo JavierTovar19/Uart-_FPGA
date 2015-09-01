@@ -50,7 +50,7 @@ Así, para conocer por ejemplo la **frecuencia de la nota DO de la 4ª octava**,
 >>> freq(1, 4)
 261.6255653005986
 ```
-y el **valor del divisor** para generar esa nota en la iCEstick lo obtenemos diviendo 12Mhz entre su frecuencia:
+y el **valor del divisor** para generar esa nota en la iCEstick lo obtenemos dividiendo 12Mhz entre su frecuencia:
 
 ``` python
 >>> 12000000 / freq(1, 4)
