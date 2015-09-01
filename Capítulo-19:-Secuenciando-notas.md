@@ -3,4 +3,8 @@
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T19-secnotas)
 
 ## Introducción
-TODO
+Utilizaremos un secuenciador de los que ya conocemos para tocar continuamente tres notas y un silencio: DO, RE, MI, (silencio). Esto nos abre la puerta a la creación de melodías sencillas :-)
+
+## secnotas.v: Descripción del hardware
+
+
