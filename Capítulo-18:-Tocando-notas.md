@@ -294,6 +294,11 @@ El nuevo archivo con todas las constantes para usar nuestro divisor queda:
 `define LAs_10  403 //-- 29834.481 Hz
 `define SI_10   380 //-- 31608.531 Hz
 ```
+## notas.v: Descripción del hardware
+
+El diseño de ejemplo tiene 8 canales independientes, cada uno emitiendo una nota distinta. Es esquema es el siguiente:
+
+Dibujo
 
 
 ## Referencias
