@@ -34,19 +34,41 @@ Donde **o** es la **octava** (toma valores desde 0 hasta 10) y **n** la **nota**
 
 En [ [1] ](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales) se hay una explicación muy buena sobre las frecuencias de las notas así como del desarrollo de esa ecuación
 
-## Pendiente
-[1]
+Con esta **función en python** calculamos las frecuencias:
 
-Cálculo notas en python:
+``` python
+import math as m
 
-freq en Hz:
+def freq(note, octave):
+	return 440.0 * m.exp(((octave-4)+(note-10)/12.0) * m.log(2))
+```
 
-f = 440.0 * m.exp(((octava-4)+(nota-10)/12.0) * m.Log(2)));
+Así, para conocer por ejemplo la **frecuencia de la nota DO de la 4ª octava**, ejecutamos freq:
+``` python
+>>> freq(1, 4)
+261.6255653005986
+```
+y el **valor del divisor** para generar esa nota en la iCEstick lo obtenemos diviendo 12Mhz entre su frecuencia:
 
-octava = 0 - 10
-nota = n=1 para Do, n=2 para Do#... n=12 para Si
+``` python
+>>> 12000000 / freq(1, 4)
+45867.07719565716
+```
+Ese número lo tenemos que redondear para que sea entero, quedando: 45867
 
+La función en python para calcular directamente el valor del divisor es:
 
+``` python
+def divisor(note, octave):
+	return int(round(12000000 / freq(note, octave)))
+```
+
+El valor del divisor para la nota DO de la cuarta octava la obtenemos con:
+
+``` python
+>>> divisor(1, 4)
+45867
+```
 
 ## Referencias
 
