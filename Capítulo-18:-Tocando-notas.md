@@ -9,12 +9,24 @@ El circuito es similar al del capítulo anterior. Sólo necesitamos **calcular l
 
 ## Frecuencias de las notas musicales
 
-En la siguiente tabla se resumen las frecuencias y valores del divisor para generar las 12 notas de la **cuarta octava**:
+En la siguiente tabla se resumen las **frecuencias** y **valores de los divisores** para generar las **12 notas** de la **cuarta octava**:
 
-| NOTA  | Frecuencia (Hz)  |  Valor divisor
-|-------|------------------|---------------
+| NOTA  | Valor del divisor |  Frecuencia (Hz)
+|-------|-------------------|---------------
+| DO    | 45868             |  261.626 Hz 
+| DO#   | 43293             |  277.183 Hz
+| RE    | 40863             |  293.665 Hz
+| RE#   | 38570             |  311.127 Hz
+| MI    | 36405             |  329.628 Hz
+| FA    | 34362             |  349.228 Hz
+| FAs   | 32433             |  369.994 Hz
+| SOL   | 30613             |  391.995 Hz
+| SOL#  | 28895             |  415.305 Hz
+| LA    | 27273             |  440.000 Hz
+| LA#   | 25743             |  466.164 Hz
+| SI    | 24298             |  493.883 Hz
 
-
+## Pendiente
 [1]
 
 Cálculo notas en python:
