@@ -34,6 +34,8 @@ Donde **o** es la **octava** (toma valores desde 0 hasta 10) y **n** la **nota**
 
 En [ [1] ](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales) se hay una explicación muy buena sobre las frecuencias de las notas así como del desarrollo de esa ecuación
 
+## notas_gen.py: Obteniendo las tabla de frecuencias y divisores
+
 Con esta **función en python** calculamos las frecuencias:
 
 ``` python
@@ -68,6 +70,43 @@ El valor del divisor para la nota DO de la cuarta octava la obtenemos con:
 ``` python
 >>> divisor(1, 4)
 45867
+```
+
+Este **programa** en python **genera automáticamente una tabla con las frecuencias y divisores**, en formato Verilog, para poder ser copiado al fichero divisor.vh:
+
+``` python
+import math as m
+
+##-- Diccionario con los nombres de las notas
+nname = {1: 'DO',   2: 'DOs', 3: 'RE',   4 : 'REs',
+         5: 'MI',   6: 'FA',  7: 'FAs',  8: 'SOL',
+         9: 'SOLs', 10: 'LA', 11: 'LAs', 12: 'SI'};
+
+#-- Calcular la frecuencia de una nota de una octava
+def freq(note, octave = 4):
+	return 440.0 * m.exp(((octave-4)+(note-10)/12.0) * m.log(2))
+	
+#-- Calcular el valor del divisor para tocar la nota en la FPGA
+#-- de la placa iCEstick
+def divisor(note, octave = 4):
+	return int(round(12000000 / freq(note, octave)))
+
+#-- Imprimir la table, con salida verilog
+def print_table(octave = 4):
+	print("//-- Octava: {}".format(octave))
+	for note in range(12):
+		#-- Print table in verilog sintax
+		print("`define {}_{} {} //-- {:.3f} Hz".format(
+		       nname[note + 1], 
+		       octave, 
+		       divisor(note+1, octave), 
+		       freq(note+1, octave)))
+	print("\n")
+
+#-- Programa principal
+#-- Sacar la tabla por la pantalla
+for oct in range(11):
+	print_table(oct)
 ```
 
 ## Referencias
