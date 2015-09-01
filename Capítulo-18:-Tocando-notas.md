@@ -39,6 +39,7 @@ En [ [1] ](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicale
 Con esta **función en python** calculamos las frecuencias:
 
 ``` python
+#-- notas_gen.py
 import math as m
 
 def freq(note, octave):
