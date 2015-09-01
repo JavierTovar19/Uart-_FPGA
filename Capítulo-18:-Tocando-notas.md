@@ -34,7 +34,7 @@ Donde **o** es la **octava** (toma valores desde 0 hasta 10) y **n** la **nota**
 
 En [ [1] ](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales) se hay una explicación muy buena sobre las frecuencias de las notas así como del desarrollo de esa ecuación
 
-## notas_gen.py: Obteniendo las tabla de frecuencias y divisores
+## Obteniendo la tabla de frecuencias y divisores
 
 Con esta **función en python** calculamos las frecuencias:
 
