@@ -458,9 +458,16 @@ Para realizar la simulación ejecutamos:
 
 y el resultado es este:
 
-Dib.
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/T18-notas-sim-1.png)
 
 Se comprueba que los 8 canales están funcionando con sus divisores correspondientes, y que son independientes
+
+## Ejercicios propuestos
+* Modificar el ejemplo para reproducir las notas de la octava 5
+* Pensar en cómo se podría hacer para generar una secuencia de 3 notas (DO, RE, MI por ejemplo), para escucharla en el mismo altavoz (sin tener que cambiar manualmente el cable)
+
+## Conclusiones
+TODO
 
 ## Referencias
 
