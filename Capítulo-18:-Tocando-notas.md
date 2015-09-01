@@ -406,6 +406,61 @@ Hacemos el mismo conexionado que en el capítulo anterior. Introducimos con un c
 [![Click to see the youtube video](http://img.youtube.com/vi/pkqy3xJv16k/0.jpg)](https://www.youtube.com/watch?v=pkqy3xJv16k)
 
 ## Simulación
+No se simula la generación de las notas reales porque llevaría muchísimo tiempo. En vez de eso se comprueba que los 8 divisores están funcionando correctamente con los valores de 2, 3, 4, 5, 6, 7, 8 y 9.
+
+``` verilog
+module notas_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Salidas de los canales
+wire ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7;
+
+
+//-- Instanciar el componente y establecer el valor del divisor
+//-- Se pone un valor bajo para simular (de lo contrario tardaria mucho)
+notas #(2, 3, 4, 5, 6, 7, 8, 9)
+  dut(
+    .clk(clk),
+    .ch0(ch0),
+    .ch1(ch1),
+    .ch2(ch2),
+    .ch3(ch3),
+    .ch4(ch4),
+    .ch5(ch5),
+    .ch6(ch6),
+    .ch7(ch7)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("notas_tb.vcd");
+  $dumpvars(0, notas_tb);
+
+  # 200 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
+Para realizar la simulación ejecutamos:
+
+    $ make sim
+
+y el resultado es este:
+
+Dib.
+
+Se comprueba que los 8 canales están funcionando con sus divisores correspondientes, y que son independientes
 
 ## Referencias
 
