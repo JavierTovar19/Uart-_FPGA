@@ -20,3 +20,4 @@
 16 [[Capítulo 16: Contador de segundos]]  
 17 [[Generando tonos audibles|Capítulo 17: Generando tonos audibles]]  
 18 [[Tocando notas|Capítulo 18: Tocando notas]]  
+[[Capítulo 19: Secuenciando notas]]
