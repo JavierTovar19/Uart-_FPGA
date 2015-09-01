@@ -19,4 +19,4 @@
 15 [[Divisor de frecuencias|Capítulo 15: Divisor de frecuencias]]  
 16 [[Capítulo 16: Contador de segundos]]  
 17 [[Generando tonos audibles|Capítulo 17: Generando tonos audibles]]  
-[[Capítulo 18: Tocando notas]]  
+18 [[Tocando notas|Capítulo 18: Tocando notas]]  
