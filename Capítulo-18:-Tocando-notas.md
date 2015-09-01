@@ -378,6 +378,35 @@ divider #(N7)
 endmodule
 ```
 
+## Síntesis
+Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y las salidas de los 8 canales por los pines 44, 45, 47, 48, 56, 60, 61 y 62 a los que se tiene acceso en la parte inferior derecha de la placa
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-1.png)
+
+Igual que en el ejemplo anterior, usamos un único altavoz que vamos conectando al canal con la nota a escuchar (Selección manual)
+
+Lo sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 9 / 96
+|PLBs      | 45 / 160
+|BRAMs     | 0 / 16
+
+Lo cargamos en la fpga con:
+
+    $ sudo iceprog tones.bin
+
+Hacemos el mismo conexionado que en el capítulo anterior. Introducimos con un cable la señal del canal que queremos escuchar. En este vídeo de youtube se muestra el diseño en acción, seleccionándose los 8 canales manualmente para escuchar la escala:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+## Simulación
+
 ## Referencias
 
 [1] [Frecuencia de las notas musicales](http://latecladeescape.com/h/2015/08/frecuencia-de-las-notas-musicales). Por Vic (**La Tecla de Escape**) [Última consulta: 1-Sep-2015]
