@@ -330,7 +330,6 @@ divider #(N0)
     .clk_out(ch0)
   );
 
-
 //-- Generador de tono 1
 divider #(N1)
   CH1 (
