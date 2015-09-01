@@ -110,7 +110,7 @@ for oct in range(11):
 	print_table(oct)
 ```
 
-Al ejecutarlo, se nos genera por pantalla la tabla completa, que pegaremos en el archivo divider.dh:
+Al ejecutarlo, se nos genera por pantalla la tabla completa, que pegaremos en el archivo **divider.dh**:
 
     $ python notas_gen.py
 
