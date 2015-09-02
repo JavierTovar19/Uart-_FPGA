@@ -125,7 +125,11 @@ Lo cargamos en la FPGA con el comando:
 
 Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema es el siguiente: 
 
-![]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-3.png)
+
+Se escuchará la secuencia de tres notas, como se muestra en este **vídeo de youtube**:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
 
 ## Simulación
 
