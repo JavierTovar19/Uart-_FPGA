@@ -32,9 +32,9 @@ module secnotas(input wire clk, output reg ch_out);
 //-- Parametros: notas a tocar
 //-- Se define como parametro para poder modificarlas desde el testbench
 //-- para hacer pruebas
-parameter N0 = `DO;
-parameter N1 = `RE;
-parameter N2 = `MI;
+parameter N0 = `DO_4;
+parameter N1 = `RE_4;
+parameter N2 = `MI_4;
 parameter DUR = `T_250ms;
 
 //-- Cables de salida de los canales
@@ -104,6 +104,20 @@ En el ejemplo se usa una duración de **250ms**
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y la de salida al pin 44, donde colocaremos el zumbador al hacer las pruebas
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/T19-secnotas/images/secnotas-1.png)
+
+Para sintetizar ejecutamos el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 26 / 160
+|BRAMs     | 0 / 16
+
+## Pruebas
 
 ## Simulación
 
