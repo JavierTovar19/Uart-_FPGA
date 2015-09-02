@@ -127,7 +127,11 @@ Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-3.png)
 
-Se escuchará la secuencia de tres notas, como se muestra en este **vídeo de youtube**:
+En esta foto se muestra el zumbador conectado a la iCEstick, listo para hacer las pruebas:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-4.png)
+
+En este **vídeo de youtube** se muestra el ejemplo en acción, tocando las tres notas:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/iSH8HCGW-l0/0.jpg)](https://www.youtube.com/watch?v=iSH8HCGW-l0)
 
