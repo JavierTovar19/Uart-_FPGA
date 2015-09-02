@@ -14,6 +14,6 @@ La entrada de selección la conectamos a un **contador de 2 bits**, de forma que
 
 El esquema del circuito se muestra en esta figura:
 
-Dibujo
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-2.png)
 
 
