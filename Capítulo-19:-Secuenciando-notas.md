@@ -119,6 +119,14 @@ Los recursos empleados son:
 
 ## Pruebas
 
+Lo cargamos en la FPGA con el comando:
+
+    $ sudo iceprog secnotas.bin
+
+Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema es el siguiente: 
+
+![]()
+
 ## Simulación
 
 ## Ejercicios propuestos
