@@ -101,6 +101,10 @@ En el ejemplo se usa una duración de **250ms**
 
 ## Síntesis
 
+Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y la de salida al pin 44, donde colocaremos el zumbador al hacer las pruebas
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/T19-secnotas/images/secnotas-1.png)
+
 ## Simulación
 
 ## Ejercicios propuestos
