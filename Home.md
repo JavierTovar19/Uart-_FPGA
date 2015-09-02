@@ -1,6 +1,16 @@
 # Diseño Digital para FPGAs, con herramientas libres
 
-TODO  
+## Descripción
+
+Tutorial para aprender a diseñar sistemas digitales sintetizables en FPGAs usando **SOLO** herramientas libres. Descripción del hardware en lenguaje **Verilog**
+* **Placa de desarrollo**: [iCEStick](http://www.latticesemi.com/icestick). Con la FPGA iCE40HX-1k de Lattice
+* **Simulador de Verilog**: [ícarus Verilog](http://iverilog.icarus.com/) 
+* **Visualizador de señales**: [Gtkwave](http://gtkwave.sourceforge.net/)
+* **Sintetizador**: [Yosys](http://www.clifford.at/yosys/) ([Repo en github](https://github.com/cliffordwolf/yosys))
+* **Place & route**: [Arachne-prn](https://github.com/cseed/arachne-pnr) (en github)
+* **Utilidades y descarga en FPGA**: [Proyecto icetorm](http://www.clifford.at/icestorm/)
+
+## TODO  
 Why libre?  
 Por donde íbamos? --> Retomar artículos sobre el tema  
 --> convirtiendo hw en sw  
