@@ -90,10 +90,20 @@ divider #(DUR)
 
 endmodule
 ```
-En el fichero **divider.vh** se han añadido constantes para indicar la **duración de las notas**. Por defecto se han puesto un tiempo de **250ms**:
+En el fichero **divider.vh** se han añadido constantes para indicar la **duración de las notas**
 
 ```verilog
 `define T_1s     12000000
 `define T_500ms  6000000
 `define T_250ms  3000000
 ```
+En el ejemplo se usa una duración de **250ms** 
+
+## Síntesis
+
+## Simulación
+
+## Ejercicios propuestos
+
+## Conclusiones
+TODO
