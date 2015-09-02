@@ -136,6 +136,51 @@ En este **vídeo de youtube** se muestra el ejemplo en acción, tocando las tres
 [![Click to see the youtube video](http://img.youtube.com/vi/iSH8HCGW-l0/0.jpg)](https://www.youtube.com/watch?v=iSH8HCGW-l0)
 
 ## Simulación
+No se simula la generación de las notas reales porque llevaría muchísimo tiempo. En vez de eso se comprueba que por el canal de salida salen alternativamente las señales de entrada al multiplexor
+
+```verilog
+//-- Fichero: secnotas_tb.v
+module secnotas_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Salidas de los canales
+wire ch_out;
+
+//-- Instanciar el componente y establecer el valor del divisor
+//-- Se pone un valor bajo para simular (de lo contrario tardaria mucho)
+secnotas #(.N0(2), .N1(3), .N2(4), .DUR(10))
+  dut(
+    .clk(clk),
+    .ch_out(ch_out)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("secnotas_tb.vcd");
+  $dumpvars(0, secnotas_tb);
+
+  # 200 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Para realizar la simulación se ejecuta:
+
+    $ make sim
+
+El resultado es:
+
+![]()
+
 
 ## Ejercicios propuestos
 
