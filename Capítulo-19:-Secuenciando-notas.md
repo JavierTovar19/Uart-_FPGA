@@ -179,10 +179,13 @@ Para realizar la simulación se ejecuta:
 
 El resultado es:
 
-![]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/T19-secnotas-sim-1.png)
 
+Las señales ch0, ch1 y ch2 son las salidas de los divisores. Cada una de una frecuencia. La entrada de selección del multiplexor cambia cíclicamente: 00, 01, 10, 11 (en binario). Finalmente se observa cómo en la salida aparece el canal que está seleccionado. Cuando es el 3, la salida está a cero (silencio). 
 
 ## Ejercicios propuestos
+* **Ejercicio 1**: Modificar los valores de los divisores para que salga otra secuencia de notas diferente
+* **Ejercicio 2**: Colocar más divisores y un multiplexor de 8 a 1 para tocar una secuencia de 8 notas (todas de la misma duración)
 
 ## Conclusiones
 TODO
