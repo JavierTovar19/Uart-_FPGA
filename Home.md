@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Tutorial para aprender a diseñar sistemas digitales sintetizables en FPGAs usando **SOLO** herramientas libres. Descripción del hardware en lenguaje **Verilog**
+Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs usando **SOLO** herramientas libres. Descripción del hardware en lenguaje **Verilog**
 * **Placa de desarrollo**: [iCEStick](http://www.latticesemi.com/icestick). Con la FPGA iCE40HX-1k de Lattice
 * **Simulador de Verilog**: [ícarus Verilog](http://iverilog.icarus.com/) 
 * **Visualizador de señales**: [Gtkwave](http://gtkwave.sourceforge.net/)
