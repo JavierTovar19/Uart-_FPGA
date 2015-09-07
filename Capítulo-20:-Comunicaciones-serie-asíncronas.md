@@ -6,6 +6,8 @@
 
 Una forma de intercambiar datos entre dos sistemas digitales es mediante las **comunicaciones serie asíncronas**. Durante los siguientes capítulos aprenderemos a diseñar nuestra propia **unidad de comunicaciones serie asíncronas** (UART) que nos permitirá comunicar la FPGA con el pc y otras placas micocontroladoras (como Arduino, BQ zum, etc).
 
+(dibujo bits)
+
 En este capítulo empezaremos por lo más simple: reenviar al PC todo lo recibido tirando un cable en la FPGA  que una el canal de recepción (Rx) con el de transmisión (Tx).
 
 ## Comunicaciones serie asíncronas
