@@ -8,7 +8,7 @@ Una forma de intercambiar datos entre dos sistemas digitales es mediante las **c
 
 (dibujo portatil - icestick)
 
-En este capítulo empezaremos por lo más simple: reenviar al PC todo lo recibido tirando un cable en la FPGA  que una el canal de recepción (Rx) con el de transmisión (Tx).
+En este capítulo empezaremos por lo más simple: reenviar al PC todo lo recibido tirando un cable en la FPGA  que una el canal de recepción (Rx) con el de transmisión (Tx). Nos aseguramos así que el **nivel físico está controlado**.
 
 ## Comunicaciones serie asíncronas
 
