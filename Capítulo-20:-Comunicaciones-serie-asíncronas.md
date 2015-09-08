@@ -1,12 +1,10 @@
-(Dibujo)
+(Dibujo) (dibujo portatil - icestick)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T20-serialcomm-1)
 
 ## Introducción
 
 Una forma de intercambiar datos entre dos sistemas digitales es mediante las **comunicaciones serie asíncronas**. Durante los siguientes capítulos aprenderemos a diseñar nuestra propia **unidad de comunicaciones serie asíncronas** (UART) que nos permitirá comunicar la FPGA con el pc y otras placas micocontroladoras (como Arduino, BQ zum, etc).
-
-(dibujo portatil - icestick)
 
 En este capítulo empezaremos por lo más simple: reenviar al PC todo lo recibido tirando un cable en la FPGA  que una el canal de recepción (Rx) con el de transmisión (Tx). Nos aseguramos así que el **nivel físico está controlado**.
 
