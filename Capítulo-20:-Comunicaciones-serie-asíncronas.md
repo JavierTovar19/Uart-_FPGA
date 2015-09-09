@@ -25,6 +25,12 @@ La placa iCEstick incluye un **conversor USB-serie** (chip FTDI) por el que lleg
 
 Los **puertos serie**, además de Tx y Rx para la transferencia de datos, **incorporan otras señales de control**. Dos muy empleadas se denominan **RTS** y **DTR**, y van en sentido **PC -> FPGA**.  Son 2 bits que podemos usar para próposito general. Por ejemplo, en las placas compatibles Arduino el PC usa una de estas señales para hacer _reset_ y comenzar así la carga de programas. 
 
+Para trabajar con la iCEstick, en estos tutorial, lo que nos importa es lo resumido en la siguiente figura:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T20-serialcomm-1/images/serialcomm-4.png)
+
+Para nosotros será como si **nuestro PC tuviese un puerto serie nativo** cuyas señales Tx, Rx, DTR, CTS están conectadas directamente a los pines de la FPGA. A partir de ahí empezaremos a "jugar" :-)
+
 ## Comunicaciones serie en el PC
 
 -> Permisos
