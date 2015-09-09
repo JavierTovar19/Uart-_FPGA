@@ -87,6 +87,22 @@ assign tx = rx;
 endmodule
 ```
 
+Lo sintetizamos con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 0 / 160
+|BRAMs     | 0 / 16
+
+Para probarlo lanzamos el **gtkterm**. Presionando la **F7** cambiamos el estado de **DTR** y por tanto, cambia el **led**. Con la tecla **F8** hacemos lo mismo pero con la señal **RTS**.
+
+Cualquier carácter que pulsemos se enviará a la FPGA y se hará eco. El terminal saca por pantalla todo lo recibido. **El resultado es que veremos en la pantalla todo lo que escribimos**.
+
 ## Experimento 2: Conectando tx y rx mediante cable externo
 
 ## Ejercicios propuestos
