@@ -55,7 +55,13 @@ Si es la primera vez que lo arrancamos, posiblemente obtengamos un mensaje de er
 
 **Nota**: En ubuntu 15.04, al pinchar la iCEstick nos aparecen 2 puertos serie. El que nos permite acceder a la FPGA como puerto serie es el /dev/ttyUSB1
 
-## Experimento 1: Conectando tx y rx directamente
+Le damos al OK. Para recordar esta configuración pinchamos en la opción _configuration / save configuration_ y le damos al ok.
+
+El terminal tiene esta pinta:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-2.png)
+
+## Experimento 1: Comprobando tx, rx, dtr y rts
 
 
 ## Experimento 2: Conectando tx y rx mediante cable externo
