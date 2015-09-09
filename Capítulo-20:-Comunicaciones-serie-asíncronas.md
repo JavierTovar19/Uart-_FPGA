@@ -105,6 +105,8 @@ Cualquier carácter que pulsemos se enviará a la FPGA y se hará **eco**. El te
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-3.png)
 
+(VIDEO)
+
 ### Simulación
 
   Haremos una simulación muy básica para comprobar que está todo en orden. El banco de trabajo es el siguiente:
