@@ -45,11 +45,11 @@ Para **tener permisos de acceso al puerto serie**, tenemos que meter a nuestro u
 
 Es necesario **salir de la sesión y volver a entrar** para que tenga efecto. Si instalamos el entorno de arduino, los permisos se nos crearán automáticamente sin necesidad de usar ningún comando
 
-Ahora ejecutamos el terminal:
+Conectamos la placa iCEstick al USB y ejecutamos el gtkterm:
 
     $ gtkterm
 
-
+Si es la primera vez que lo arrancamos, posiblemente obtengamos un mensaje de error. No hay problema. Primero tenemos que configurar el puerto serie pinchando en la opción  
 
 ## Experimento 1: Conectando tx y rx directamente
 
