@@ -63,6 +63,7 @@ El terminal tiene esta pinta:
 
 ## Experimento 1: Comprobando tx, rx, dtr y rts
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-5.png)
 
 ## Experimento 2: Conectando tx y rx mediante cable externo
 
