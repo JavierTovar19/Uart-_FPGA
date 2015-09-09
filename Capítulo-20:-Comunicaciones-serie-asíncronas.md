@@ -164,7 +164,7 @@ Para simular ejecutamos:
 
 Y el resultado es:
 
-!()[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire1-sim.png]
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire1-sim.png)
 
 Se han agrupado por colores las señales que deben tener la misma forma. Se comprueba que todo funciona como se espera
 
