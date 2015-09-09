@@ -49,7 +49,11 @@ Conectamos la placa iCEstick al USB y ejecutamos el gtkterm:
 
     $ gtkterm
 
-Si es la primera vez que lo arrancamos, posiblemente obtengamos un mensaje de error. No hay problema. Primero tenemos que configurar el puerto serie pinchando en la opción  
+Si es la primera vez que lo arrancamos, posiblemente obtengamos un mensaje de error. No hay problema. Primero tenemos que configurar el puerto serie pinchando en la opción _configuration / port_ y se nos abrirá una ventana de configuración. Establecemos como puerto serie el **/dev/ttyUSB1**, a la velocidad de **115200**.
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-1.png)
+
+**Nota**: En ubuntu 15.04, al pinchar la iCEstick nos aparecen 2 puertos serie. El que nos permite acceder a la FPGA como puerto serie es el /dev/ttyUSB1
 
 ## Experimento 1: Conectando tx y rx directamente
 
