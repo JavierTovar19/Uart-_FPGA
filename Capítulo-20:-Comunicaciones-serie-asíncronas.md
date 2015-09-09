@@ -170,6 +170,12 @@ Se han agrupado por colores las señales que deben tener la misma forma. Se comp
 
 ## Experimento 2: Conectando tx y rx mediante cable externo
 
+Modificaremos el ejemplo anterior para que la **conexión entre Tx y Rx se haga mediante un cable externo**. De esta forma si quitamos el cable se interrumpirá la comunicación. Y en cuanto lo pongamos el eco volverá. 
+
+El esquema del componente es:
+
+
+
 ## Ejercicios propuestos
 
 ## Conclusiones
