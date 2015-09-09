@@ -29,12 +29,27 @@ Para trabajar con la iCEstick, en estos tutorial, lo que nos importa es lo resum
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T20-serialcomm-1/images/serialcomm-4.png)
 
-Para nosotros será como si **nuestro PC tuviese un puerto serie nativo** cuyas señales Tx, Rx, DTR, CTS están conectadas directamente a los pines de la FPGA. A partir de ahí empezaremos a "jugar" :-)
+Para nosotros será como si **nuestro PC tuviese un puerto serie nativo** cuyas señales Tx, Rx, DTR, RTS están conectadas directamente a los pines de la FPGA. A partir de ahí empezaremos a "jugar" :-)
 
 ## Comunicaciones serie en el PC
 
--> Permisos
--> Gtkterm
+Para **acceder al puerto serie del PC**, que nos permita enviar datos a la FPGA, actuar sobre las señales DTR y RTS y recebir datos desde la FPGA, tenemos que instalar un **terminal de comunicaciones**. Podemos utilizar el que queramos, como por ejemplo el monitor serie del entorno Arudino. El que se utiliza en uno muy sencillo, llamado [gtkterm](https://github.com/martinxyz/gtkterm).
+
+En ubuntu se instala muy fácilmente con:
+
+    $ sudo apt-get install gtkterm
+
+Para **tener permisos de acceso al puerto serie**, tenemos que meter a nuestro usuario dentro del **grupo dialout**, ejecutando el comando:
+
+    $ sudo adduser $USER dialout
+
+Es necesario **salir de la sesión y volver a entrar** para que tenga efecto. Si instalamos el entorno de arduino, los permisos se nos crearán automáticamente sin necesidad de usar ningún comando
+
+Ahora ejecutamos el terminal:
+
+    $ gtkterm
+
+
 
 ## Experimento 1: Conectando tx y rx directamente
 
