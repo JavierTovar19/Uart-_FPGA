@@ -33,7 +33,7 @@ Para nosotros será como si **nuestro PC tuviese un puerto serie nativo** cuyas 
 
 ## Comunicaciones serie en el PC
 
-Para **acceder al puerto serie del PC** tenemos que instalar un **terminal de comunicaciones**. Con él podremos enviar datos a la FPGA, actuar sobre las señales DTR y RTS y recebir datos.  El que utilizaremos en este tutorial es el [gtkterm](https://github.com/martinxyz/gtkterm), aunque podemos utilizar cualquier otro, como por ejemplo el monitor serie del entorno Arudino.
+Para **acceder al puerto serie del PC** tenemos que instalar un **terminal de comunicaciones**. Con él podremos enviar datos a la FPGA, actuar sobre las señales DTR y RTS y recibir datos.  El que utilizaremos en este tutorial es el [gtkterm](https://github.com/martinxyz/gtkterm), aunque podemos utilizar cualquier otro, como por ejemplo el monitor serie del entorno Arudino.
 
 En ubuntu se instala muy fácilmente con:
 
