@@ -19,7 +19,9 @@ Los pines **tx** y **rx** forman parte del denominado **puerto serie**. Y se uti
 
 ## Comunicaciones serie en la placa iCEstick
 
-(Dibujo)
+La placa iCEstick incluye un **conversor USB-serie** (chip FTDI) por el que llegan las señales de **Tx** y **Rx** a la FPGA, a través de los **pines 8 y 9**. De esta forma tenemos **conexión directa** entre el **puerto serie del PC** y la **FPGA**, y podremos implementar nuestra UART para la transferencia de datos.
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-3.png)
 
 ## Comunicaciones serie en el PC
 
