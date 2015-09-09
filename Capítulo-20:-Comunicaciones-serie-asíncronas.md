@@ -101,7 +101,70 @@ Los recursos empleados son:
 
 Para probarlo lanzamos el **gtkterm**. Presionando la **F7** cambiamos el estado de **DTR** y por tanto, cambia el **led**. Con la tecla **F8** hacemos lo mismo pero con la señal **RTS**.
 
-Cualquier carácter que pulsemos se enviará a la FPGA y se hará eco. El terminal saca por pantalla todo lo recibido. **El resultado es que veremos en la pantalla todo lo que escribimos**.
+Cualquier carácter que pulsemos se enviará a la FPGA y se hará **eco**. El terminal saca por pantalla todo lo recibido. **El resultado es que veremos en la pantalla todo lo que escribimos**.
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-3.png)
+
+### Simulación
+
+  Haremos una simulación muy básica para comprobar que está todo en orden. El banco de trabajo es el siguiente:
+
+```verilog
+//-- Fichero echowire1_tb.v
+module echowire1_tb();
+
+//-- Declaracion de los cables
+reg dtr = 0;
+reg rts = 0;
+reg rx = 0;
+wire tx, led1, led2;
+
+//-- Instanciar el componente
+echowire1
+  dut(
+    .dtr(dtr),
+    .rts(rts),
+    .D1(led1),
+    .D2(led2),
+    .tx(tx),
+    .rx(rx)
+  );
+
+//-- Generar cambios en dtr. Los mismos deben reflejarse en el cable D1
+always
+  #2 dtr <= ~dtr;
+
+//-- Generar cambios en rts. Se deben reflejar en el cable D2
+always
+  #3 rts = ~rts;
+
+//-- Generar cambios en rs. Se reflejan en TX
+always
+  #1 rx <= ~rx;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("echowire1_tb.vcd");
+  $dumpvars(0, echowire1_tb);
+
+  # 200 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
+Para simular ejecutamos:
+
+    $ make sim
+
+Y el resultado es:
+
+!()[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire1-sim.png]
+
+Se han agrupado por colores las señales que deben tener la misma forma. Se comprueba que todo funciona como se espera
 
 ## Experimento 2: Conectando tx y rx mediante cable externo
 
