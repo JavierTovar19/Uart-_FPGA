@@ -66,6 +66,27 @@ Comprobaremos que todas las señales funcionan correctamente. Para ello haremos 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-5.png)
 
+La descripción en Verilog es inmediata:
+
+```verilog
+//-- echowire1.v
+module echowire1(input wire dtr,
+                 input wire rts,
+                 input wire rx,
+                 output wire tx,
+                 output wire D1,
+                 output wire D2);
+
+//-- Sacar senal dtr y rts por los leds
+assign D1 = dtr;
+assign D2 = rts;
+
+//-- Conectar rx a tx para que se haga un eco "cableado"
+assign tx = rx;
+
+endmodule
+```
+
 ## Experimento 2: Conectando tx y rx mediante cable externo
 
 ## Ejercicios propuestos
