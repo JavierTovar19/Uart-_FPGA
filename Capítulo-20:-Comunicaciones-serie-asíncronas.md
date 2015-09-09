@@ -62,6 +62,7 @@ El terminal tiene esta pinta:
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-2.png)
 
 ## Experimento 1: Comprobando tx, rx, dtr y rts
+Comprobaremos que todas las señales funcionan correctamente. Para ello haremos un circuito que simplemente haga un **cableado entre señales**: las señales **rts y dtr se conectan a los pines de los leds**. Esto nos permite visualizar su estado, y cambiarlo desde el PC. La señal **RX se conecta físicamente a TX**, de forma que todos los caracteres recibidos se reenvían de nuevo al PC, a nivel físico (no hay procesamiento del carácter en la fpga, es un simple cable)
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-5.png)
 
