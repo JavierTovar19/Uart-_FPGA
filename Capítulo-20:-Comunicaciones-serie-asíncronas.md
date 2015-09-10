@@ -107,7 +107,7 @@ Cualquier carácter que pulsemos se enviará a la FPGA y se hará **eco**. El te
 
 En este **vídeo de youtube** se muestra el ejemplo de funcionamiento. Con las teclas F7 y F8 se cambia el estado de las señales DTR y RTS por lo que los leds cambian. También se comprueba el eco
 
-[![Click to see the youtube video](http://img.youtube.com/vi/iSH8HCGW-l0/0.jpg)](https://www.youtube.com/watch?v=UrUbZUQY5Eg)
+[![Click to see the youtube video](http://img.youtube.com/vi/UrUbZUQY5Eg/0.jpg)](https://www.youtube.com/watch?v=UrUbZUQY5Eg)
 
 ### Simulación
 
