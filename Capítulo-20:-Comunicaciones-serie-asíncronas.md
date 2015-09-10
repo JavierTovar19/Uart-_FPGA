@@ -226,7 +226,7 @@ Las pruebas las hacemos igual que en el ejemplo anterior, pero ahora colocamos u
 
 (dibujo)
 
-Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá.
+Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá, como se puede ver en este **vídeo de youtube**
 
 [![Click to see the youtube video](http://img.youtube.com/vi/fDhtMBKYPBg/0.jpg)](https://www.youtube.com/watch?v=fDhtMBKYPBg)
 
