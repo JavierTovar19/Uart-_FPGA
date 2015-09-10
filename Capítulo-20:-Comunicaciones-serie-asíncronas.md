@@ -99,6 +99,10 @@ Los recursos empleados son:
 |PLBs      | 0 / 160
 |BRAMs     | 0 / 16
 
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog echowire1.bin
+
 Para probarlo lanzamos el **gtkterm**. Presionando la **F7** cambiamos el estado de **DTR** y por tanto, cambia el **led**. Con la tecla **F8** hacemos lo mismo pero con la señal **RTS**.
 
 Cualquier carácter que pulsemos se enviará a la FPGA y se hará **eco**. El terminal saca por pantalla todo lo recibido. **El resultado es que veremos en la pantalla todo lo que escribimos**.
@@ -181,6 +185,7 @@ El esquema del componente es:
 y su descripción en Verilog:
 
 ```verilog
+//-- echowire2.v
 module echowire2(input wire dtr,
                  input wire rts,
                  input wire rx,
@@ -200,6 +205,32 @@ assign tx = tx2;
 
 endmodule
 ```
+
+Lo sintetizamos con el comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 5 / 96
+|PLBs      | 0 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog echowire2.bin
+
+Las pruebas las hacemos igual que en el ejemplo anterior, pero ahora colocamos un cable externo que una los pines 44 y 45:
+
+(dibujo)
+
+Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá.
+
+(Video?)
+
+### Simulación
 
 ## Ejercicios propuestos
 
