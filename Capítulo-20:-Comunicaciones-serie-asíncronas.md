@@ -224,7 +224,7 @@ y lo cargamos en la FPGA con:
 
 Las pruebas las hacemos igual que en el ejemplo anterior, pero ahora colocamos un cable externo que una los pines 44 y 45:
 
-(dibujo)
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire2-icestick.png" width="400" align="center">
 
 Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá, como se puede ver en este **vídeo de youtube**
 
