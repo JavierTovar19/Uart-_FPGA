@@ -176,7 +176,30 @@ Modificaremos el ejemplo anterior para que la **conexión entre Tx y Rx se haga 
 
 El esquema del componente es:
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-6.png)
 
+y su descripción en Verilog:
+
+```verilog
+module echowire2(input wire dtr,
+                 input wire rts,
+                 input wire rx,
+                 input wire tx2,
+                 output wire tx,
+                 output wire rx2,
+                 output wire D1,
+                 output wire D2);
+
+//-- Sacar senal dtr y rts por los leds
+assign D1 = dtr;
+assign D2 = rts;
+
+//-- Sacar señales tx y rx al exterior
+assign rx2 = rx;
+assign tx = tx2;
+
+endmodule
+```
 
 ## Ejercicios propuestos
 
