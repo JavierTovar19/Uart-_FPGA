@@ -20,5 +20,5 @@
 16 [[Capítulo 16: Contador de segundos]]  
 17 [[Generando tonos audibles|Capítulo 17: Generando tonos audibles]]  
 18 [[Tocando notas|Capítulo 18: Tocando notas]]  
-19 [[Secuenciando notas|Capítulo 19: Secuenciando notas]]
-20 [[Comunicaciones serie asíncronas: toma de contacto|Capítulo 20: Comunicaciones serie asíncronas]]
+19 [[Secuenciando notas|Capítulo 19: Secuenciando notas]]  
+20 [[Comunicaciones serie asíncronas|Capítulo 20: Comunicaciones serie asíncronas]]  
