@@ -228,7 +228,7 @@ Las pruebas las hacemos igual que en el ejemplo anterior, pero ahora colocamos u
 
 Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá.
 
-(Video?)
+[![Click to see the youtube video](http://img.youtube.com/vi/fDhtMBKYPBg/0.jpg)](https://www.youtube.com/watch?v=fDhtMBKYPBg)
 
 ### Simulación
 
