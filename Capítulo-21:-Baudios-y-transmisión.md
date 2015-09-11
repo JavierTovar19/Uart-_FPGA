@@ -17,7 +17,7 @@ Así, para transmitir un dato, la línea (tx) tomará lo siguientes valores. Ini
 
 Como ejemplo veremos cómo transmitir el caracter ASCII "K". Su valor en hexadecimal es 0x4B y en binario: 01001011. La línea de transmisión a lo largo del tiempo tendrá esta forma:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-format.png)
 
 **Todos los bits tienen la misma duración**, que denominaremos **periodo de bit** (Tb)
 
