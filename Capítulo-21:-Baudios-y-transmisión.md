@@ -27,8 +27,14 @@ La línea de transmisión a lo largo del tiempo tendrá esta forma:
 
 ## Velocidad de transmisión: Baudios
 
-* Velocidades estándares
-* Baudios = bps
+La **velocidad de transmisión** se mide en **baudios**. Como estamos usando una transmisión binaria, en la que sólo hay dos valores (0 y 1), **un baudio equivale a un bit por segundo** (bps)
+
+Para que diferentes circuitos se puedan comunicar entre ellos, **las velocidades están normalizadas**. Pueden tener los siguientes valores: 115200, 56700, 38400, 19200, 9600, 4800, 2400, 1200, 600 y 300 baudios. Nosotros la fijaremos a la máxima: **115200 baudios**
+
+Para transmitir a una velocidad de **X baudios**, necesitamos generar una **señal de cuadrada cuya frecuencia sea igual X**. Cada flanco de subida de esta señal indica cuándo enviar el siguiente bit:
+
+
+
 * Reloj de periodo Tb -->  frecuencia = baudios
 * Divisor para generar reloj de frec = baudios
 
