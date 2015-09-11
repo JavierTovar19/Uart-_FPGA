@@ -15,7 +15,11 @@ La trama comienza con un **bit a 0**, que se llama **bit de start**. A continuac
 
 Así, para transmitir un dato, la línea (tx) tomará lo siguientes valores. Inicialmente estará en reposo (tx = 1). Se transmite primero el bit de start, por lo que tx = 0. A continuación el bit de menor peso: tx = bit0, luego el siguiente, tx = bit1, y el siguiente tx = bit2 hasta llegar al de mayor peso tx = bit7. Por último se envía el bit de stop, poniendo tx = 1. tx Permanece a 1 hasta que se envíe la siguiente trama.
 
-Como ejemplo veremos cómo transmitir el caracter ASCII "K". Su valor en hexadecimal es 0x4B y en binario: 01001011. La línea de transmisión a lo largo del tiempo tendrá esta forma:
+Como ejemplo veremos cómo **transmitir el caracter ASCII "K"**. Su valor en hexadecimal es 0x4B y en binario: 01001011
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/k-car.png)
+
+La línea de transmisión a lo largo del tiempo tendrá esta forma:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-format.png)
 
