@@ -25,3 +25,10 @@ La línea de transmisión a lo largo del tiempo tendrá esta forma:
 
 **Todos los bits tienen la misma duración**, que denominaremos **periodo de bit** (Tb)
 
+## Velocidad de transmisión: Baudios
+
+* Velocidades estándares
+* Baudios = bps
+* Reloj de periodo Tb -->  frecuencia = baudios
+* Divisor para generar reloj de frec = baudios
+
