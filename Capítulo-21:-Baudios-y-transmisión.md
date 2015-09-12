@@ -35,12 +35,12 @@ Para transmitir a una velocidad de **X baudios**, necesitamos generar una **señ
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-3.png)
 
-## baudgen.v: Generador de señal de reloj para la transmisión
+## Generador de señal de reloj para la transmisión
 
 Lo primero que necesitamos para transmitir datos es **generar la señal de reloj** con la frecuencia adecuada. Esto ya lo sabemos hacer: usaremos un **divisor de frecuencias**.
 
 Cuando trabajamos con la placa iCEstick, **el divisor para conseguir una velocidad de B baudios** viene dado por la ecuación: M = 12000000 / B
 
-Para transmitir a **115200 baudios** necesitamos un divisor de:  M = 12000000 / 115200  = 104.16 -> **M = 104**
+Por tanto, para transmitir a **115200 baudios** necesitamos un divisor de:  M = 12000000 / 115200  = 104.16 -> **M = 104**
 
 
