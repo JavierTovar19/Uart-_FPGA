@@ -43,4 +43,22 @@ Cuando trabajamos con la placa iCEstick, **el divisor para conseguir una velocid
 
 Por tanto, para transmitir a **115200 baudios** necesitamos un divisor de:  M = 12000000 / 115200  = 104.16 -> **M = 104**
 
+Los **valores de los divisores** para **transmitir a las velocidades estándares** están calculados con la fórmula anterior y se encuentran en el fichero **baudgen.vh**:
+
+```verilog
+//-- Fichero baudgen.vh
+`define B115200 104
+`define B57600  208
+`define B38400  313
+
+`define B19200  625
+`define B9600   1250
+`define B4800   2500
+`define B2400   5000
+`define B1200   10000
+`define B600    20000
+`define B300    40000
+```
+
+
 
