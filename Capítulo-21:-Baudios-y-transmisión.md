@@ -174,6 +174,14 @@ Los recursos ocupados son:
 |PLBs      | 8 / 160
 |BRAMs     | 0 / 16
 
+Lo cargamos en la FPGA con:
+
+    $ sudo iceprog baudtx.bin
+
+Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto sea el **/dev/ttyUSB1** a la velocidad de **115200 baudios**. Con la **tecla F7** cambiamos el estado de la **señal DTR**. La primera vez que pulsamos aparecerá una "K" en la pantalla. La siguiente vez DTR cambia de estado, pero no ocurre nada. Si volvemos a pulsar aparecerá otra "K". Cada dos pulsaciones de F7 obtendremos una "K". Si dejamos apretada F7, aparecerán multiples "K"s
+
+(Pantallazo)
+
 ## CRÉDITOS
 
 * Aunque este transmisor se ha escrito desde cero, me he inspirado en la UART del [proyecto swapforth](https://github.com/jamesbowman/swapforth), de **James Bowman**. ¡Muchas gracias!
