@@ -71,9 +71,9 @@ divider #(`B115200)
 
 ## Ejemplo 1: baudtx.v. Transmitiendo el caracter "K"
 
-Para realizar una transmisión del dato usaremos un **registro de desplazamiento**, con **carga paralela**. La salida serie se conecta directamente a la linea de transmisión tx. Cuando la señal de carga está a 0, el registro se carga con un valor de 10 bits: el dato "K", seguido del bit de start (0) y seguido por un 1 para que la línea esté en reposo. 
+Para realizar una transmisión del dato usaremos un **registro de desplazamiento**, con **carga paralela**. La **salida serie** se conecta directamente a la linea de transmisión **tx**. Cuando la señal de carga está a 0, el registro se carga con un valor de 10 bits: el dato "K", seguido de los bits 01 (bit de start y bit de reposo). 
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1.png)
 
 Cuando la carga está a 1 se realiza el desplazamiento hacia la derecha y por la izquierda se inserta un 1. De esta forma, al transmitirse la trama completa, el bit menos significativo será un 1, para que la línea tx permanezca a 1 (en reposo)
 
