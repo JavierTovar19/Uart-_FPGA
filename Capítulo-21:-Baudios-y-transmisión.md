@@ -156,10 +156,9 @@ Para simular ejecutamos el comando:
 
 El resultado es:
 
-(screenshot)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-sim.png)
 
-Cuando dtr se pone a cero se carga el registro y en al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
-
+La primera señal el reloj para la transmisión de los bits a 115200 baudios. Cuando dtr se pone a cero se carga el registro.  Al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
 
 ### Síntesis y pruebas
 
