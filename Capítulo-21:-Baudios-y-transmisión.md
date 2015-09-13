@@ -184,6 +184,8 @@ Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto se
 
 ## Ejemplo 2: Transmisión continua
 
+## Ejemplo 3: Transmisión periódica
+
 ## CRÉDITOS
 
 * Aunque este transmisor se ha escrito desde cero, me he inspirado en la UART del [proyecto swapforth](https://github.com/jamesbowman/swapforth), de **James Bowman**. ¡Muchas gracias!
