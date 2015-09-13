@@ -69,7 +69,11 @@ divider #(`B115200)
   );
 ```
 
-## Ejemplo 1: baudtx.v. Transmitiendo el caracter "K"
+## Ejemplo 1: Transmitiendo el caracter "K"
+
+Este primer ejemplo envía el carácter "K" desde la FPGA al ordenador cada vez que la señal dtr pasa de 0 a 1, a la velocidad de 115200 baudios
+
+### Funcionamiento
 
 Para realizar una transmisión del dato usaremos un **registro de desplazamiento**, con **carga paralela**. La **salida serie** se conecta directamente a la linea de transmisión **tx**, a través de un multiplexor. Cuando la señal de load está a 0, el registro se carga con un valor de 10 bits: el dato "K", seguido de los bits 01 (bit de start y bit de reposo). 
 
@@ -80,6 +84,9 @@ Cuando la carga está a 1 se realiza el desplazamiento hacia la derecha y por la
 **El multiplexor de salida** pone en reposo (a 1) la linea de transmisión cuando se está cargando el registro. Se usa para que **no se envíen caracteres "basura"** por la línea tx en el momento del arranque. El registro de desplazamiento inicialmente tiene el valor 0 en todos sus bits, por lo tx se pondría a 0 y receptor lo interpretaría como que es un bit de start, recibiendo un carácter "basura" que no quería ser enviado.
 
 Para hacer las pruebas, **load está conectada a la señal dtr**, por lo que la podremos **controlar manualmente desde el pc**.  Al ponerla a 1 se empieza la transmisión. Cuando se haya enviado el carácter K, el registro de desplazamiento tendrá todos sus bits a 1 y lo que sale por tx será siepre un 1. Es decir, que no habrá transmisión. Al poner load a 0, se carga con el nuevo valor, y cuando pase a 1 se enviará el nuevo dato. 
+
+### baudtx.v: Descripción del hardware
+
 
 
 (Dibujo)
