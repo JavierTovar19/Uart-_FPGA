@@ -180,7 +180,9 @@ Lo cargamos en la FPGA con:
 
 Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto sea el **/dev/ttyUSB1** a la velocidad de **115200 baudios**. Con la **tecla F7** cambiamos el estado de la **señal DTR**. La primera vez que pulsamos aparecerá una "K" en la pantalla. La siguiente vez DTR cambia de estado, pero no ocurre nada. Si volvemos a pulsar aparecerá otra "K". Cada dos pulsaciones de F7 obtendremos una "K". Si dejamos apretada F7, aparecerán multiples "K"s
 
-(Pantallazo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-gtkterm.png)
+
+## Ejemplo 2: Transmisión continua
 
 ## CRÉDITOS
 
