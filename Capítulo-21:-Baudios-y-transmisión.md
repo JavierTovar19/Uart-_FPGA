@@ -68,6 +68,8 @@ divider #(`B115200)
     .clk_out(clk_baud)
   );
 ```
+## CRÉDITOS
 
+* Aunque este transmisor se ha escrito desde cero, me he inspirado en la UART del [proyecto swapforth](https://github.com/jamesbowman/swapforth), de **James Bowman**. ¡Muchas gracias!
 
 
