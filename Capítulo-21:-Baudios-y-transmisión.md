@@ -87,6 +87,64 @@ Para hacer las pruebas, **load está conectada a la señal dtr**, por lo que la 
 
 ### baudtx.v: Descripción del hardware
 
+La descripción en lenguaje Verilog del circuito anterior es la siguiente:
+
+``` verilog
+//-- Fichero: baudtx.v
+`default_nettype none
+
+`include "baudgen.vh"
+
+//--- Modulo que envia un caracter fijo con cada flanco de subida de la señal dtr
+module baudtx(input wire clk,          //-- Reloj del sistema (12MHz en ICEstick)
+              input wire dtr,          //-- Señal dtr
+              output wire tx           //-- Salida de datos serie (hacia el PC)
+             );
+
+//-- Parametro: velocidad de transmision
+parameter BAUD =  `B115200;
+
+//-- Registro de 10 bits para almacenar la trama a enviar:
+//-- 1 bit start + 8 bits datos + 1 bit stop
+reg [9:0] shifter;
+
+//-- Reloj para la transmision
+wire clk_baud;
+
+
+//-- Registro de desplazamiento, con carga paralela
+//-- Cuando DTR es 0, se carga la trama
+//-- Cuando DTR es 1 se desplaza hacia la derecha, y se 
+//-- introducen '1's por la izquierda
+always @(posedge clk_baud)
+  if (dtr == 0)
+    shifter <= {"K",2'b01};
+  else
+    shifter <= {1'b1, shifter[9:1]};
+
+//-- Sacar por tx el bit menos significativo del registros de desplazamiento
+//-- Cuando estamos en modo carga (dtr == 0), se saca siempre un 1 para 
+//-- que la linea este siempre a un estado de reposo. De esta forma en el 
+//-- inicio tx esta en reposo, aunque el valor del registro de desplazamiento
+//-- sea desconocido
+assign tx = (dtr) ? shifter[0] : 1;
+
+
+//-- Divisor para obtener el reloj de transmision
+divider #(BAUD)
+  BAUD0 (
+    .clk_in(clk),
+    .clk_out(clk_baud)
+  );
+
+endmodule
+```
+La primera línea de código es nueva:
+
+``` verilog
+`default_nettype none
+```
+Por defecto en Verilog, si aparecen **etiquetas no declaras** se asumen que son cables (tipo wire). Esto podría parecer muy útil pero es una fuente de problemas en la depuración. Cuando el diseño es complejo y se tienen muchos cables, puede ocurrir que uno de ellos se escriba mal. El compilador, en vez de dar un error, supondrá que se trata de un cable nuevo. Este comportamiento se puede cambiar con la instrucción anterior. Al definir el tipo de cable a **none**, cada vez que se detecte un identificador no declarado, saltará un mensaje de error
 
 
 (Dibujo)
