@@ -95,10 +95,10 @@ La descripción en lenguaje Verilog del circuito anterior es la siguiente:
 
 `include "baudgen.vh"
 
-//--- Modulo que envia un caracter fijo con cada flanco de subida de la señal dtr
-module baudtx(input wire clk,          //-- Reloj del sistema (12MHz en ICEstick)
-              input wire dtr,          //-- Señal dtr
-              output wire tx           //-- Salida de datos serie (hacia el PC)
+//--- Modulo que envia un caracter cunado load esta a 1
+module baudtx(input wire clk,       //-- Reloj del sistema (12MHz en ICEstick)
+              input wire load,      //-- Señal de cargar / desplazamiento
+              output wire tx        //-- Salida de datos serie (hacia el PC)
              );
 
 //-- Parametro: velocidad de transmision
@@ -111,13 +111,12 @@ reg [9:0] shifter;
 //-- Reloj para la transmision
 wire clk_baud;
 
-
 //-- Registro de desplazamiento, con carga paralela
 //-- Cuando DTR es 0, se carga la trama
 //-- Cuando DTR es 1 se desplaza hacia la derecha, y se 
 //-- introducen '1's por la izquierda
 always @(posedge clk_baud)
-  if (dtr == 0)
+  if (load == 0)
     shifter <= {"K",2'b01};
   else
     shifter <= {1'b1, shifter[9:1]};
@@ -127,8 +126,7 @@ always @(posedge clk_baud)
 //-- que la linea este siempre a un estado de reposo. De esta forma en el 
 //-- inicio tx esta en reposo, aunque el valor del registro de desplazamiento
 //-- sea desconocido
-assign tx = (dtr) ? shifter[0] : 1;
-
+assign tx = (load) ? shifter[0] : 1;
 
 //-- Divisor para obtener el reloj de transmision
 divider #(BAUD)
@@ -146,8 +144,28 @@ La primera línea de código es nueva:
 ```
 Por defecto en Verilog, si aparecen **etiquetas no declaras** se asumen que son cables (tipo wire). Esto podría parecer muy útil pero es una fuente de problemas en la depuración. Cuando el diseño es complejo y se tienen muchos cables, puede ocurrir que uno de ellos se escriba mal. El compilador, en vez de dar un error, supondrá que se trata de un cable nuevo. Este comportamiento se puede cambiar con la instrucción anterior. Al definir el tipo de cable a **none**, cada vez que se detecte un identificador no declarado, saltará un mensaje de error
 
+En el componente se instancia el divisor para generar la señal de reloj para transmitir a 115200 baudios. Esta señal se usa como reloj para el registro de desplazamiento
 
-(Dibujo)
+### Simulación
+
+Para simular ejecutamos el comando:
+
+    $ make sim
+
+
+### Síntesis y pruebas
+
+Para sintetizar ejecutamos el comando:
+
+    $ make sint
+
+Los recursos ocupados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 8 / 160
+|BRAMs     | 0 / 16
 
 ## CRÉDITOS
 
