@@ -69,7 +69,7 @@ divider #(`B115200)
   );
 ```
 
-## baudtx.v: Transmitiendo el caracter K
+## Ejemplo 1: baudtx.v. Transmitiendo el caracter K
 
 
 
