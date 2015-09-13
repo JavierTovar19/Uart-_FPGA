@@ -59,6 +59,15 @@ Los **valores de los divisores** para **transmitir a las velocidades estándares
 `define B600    20000
 `define B300    40000
 ```
+Para generar la señal de reloj para  transmitir a una velocidad (por ejemplo 115200 baudios) es tan sencillo como instanciar el divisor que ya conocemos usando las constantes anteriores:
+
+```verilog
+divider #(BAUD)
+  BAUD0 (
+    .clk_in(clk),
+    .clk_out(clk_baud)
+  );
+```
 
 
 
