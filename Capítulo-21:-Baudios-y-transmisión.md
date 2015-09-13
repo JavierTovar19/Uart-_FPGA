@@ -148,9 +148,17 @@ En el componente se instancia el divisor para generar la señal de reloj para tr
 
 ### Simulación
 
+El banco de pruebas instancia el componente baudtx, se establece un proceso para generar el relog y otro que genera 3 pulsos en dtr para que se envíen 3 characteres
+
 Para simular ejecutamos el comando:
 
     $ make sim
+
+El resultado es:
+
+(screenshot)
+
+Cuando dtr se pone a cero se carga el registro y en al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
 
 
 ### Síntesis y pruebas
