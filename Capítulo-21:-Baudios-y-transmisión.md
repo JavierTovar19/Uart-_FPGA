@@ -483,6 +483,7 @@ Los resultados son:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-sim.png)
 
+Se observa cómo con cada pulso de load se envía un dato nuevo. También se puede observar como las señales _load_ y _load2_ son ligeramente diferente. La distancia entre ellas va variando debido a que **_load_ es asíncrona**, pero _load2_ ya está sincronizada. 
 
 ### Síntesis y pruebas
 
