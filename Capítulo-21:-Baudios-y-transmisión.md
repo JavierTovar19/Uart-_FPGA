@@ -353,7 +353,13 @@ En este ejemplo enviaremos el carácter K cada 250ms, sin tener que usar el DTR
 
 ### Funcionamiento
 
+Este circuito **no tiene entrada exterior para la carga del registro**, sino que se ha añadido un **divisor** para generar una **señal de 250ms** y que se cargue periódicamente. De esta forma, cada 250ms, se envía el carácter K:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-1.png)
+
+La señal de carga no se conecta directamente desde el divisor, sino que se pasa por **un registro con entrada de reloj clk_baud**. Se ha añadido para que **la señal de load esté sincronizada con la de clk_baud**, y que sus distancias relativas sean siempre las mismas. Si no se pone, pueden ocurrir situaciones en tengan los flancos de subida muy cercanos y se capturen datos incorrectos
+
+(Dibujo)
 
 ### baudtx3.v: Descripción del hardware
 
