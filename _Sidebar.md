@@ -22,5 +22,4 @@
 18 [[Tocando notas|Capítulo 18: Tocando notas]]  
 19 [[Secuenciando notas|Capítulo 19: Secuenciando notas]]  
 20 [[Comunicaciones serie asíncronas|Capítulo 20: Comunicaciones serie asíncronas]]  
-
-[[Capítulo 21: Baudios y transmisión]]
+21 [[Baudios y transmisión|Capítulo 21: Baudios y transmisión]]  
