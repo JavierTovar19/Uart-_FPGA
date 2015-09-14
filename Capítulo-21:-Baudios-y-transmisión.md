@@ -187,6 +187,10 @@ Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máx
 
 (Dibujo cronograma)
 
+Esquema:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx2-1.png)
+
 ## Ejemplo 3: Transmisión periódica
 
 ## CRÉDITOS
