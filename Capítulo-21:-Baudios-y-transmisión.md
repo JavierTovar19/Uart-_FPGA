@@ -185,11 +185,21 @@ Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto se
 ## Ejemplo 2: Transmisión continua
 Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente. 
 
-(Dibujo cronograma)
+El cronograma de transmisión continua para el caracter K se muestra en esta figura:
 
-Esquema:
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-4.png)
+
+Las líneas verticales punteadas muestran el comienzo y fin de los caracteres enviados. Sin embargo, si no tenemos esas referencias visuales, es **imposible distinguir donde empieza y acaba la trama**. Esto mismo le pasa al receptor serie del PC. Si hacemos que la FPGA envíe constantemente caracteres y arrancamos el programa gtkterm para leerlos, puede ocurrir que **se interprete como bit de start otro diferente del correcto**, recibiéndose una ráfaga de caracteres incorrectos. En el dibujo se ha marcado en rojo otro punto, llamado A, que podría ser leido como bit de arranque. Si esto ocurre, tanto receptor como transmisor quedarán desincronizados hasta que la línea alcance el estado de reposo.
+
+Es una de las razones por las que **se usa la señal DTR para arrancar la transmisión de datos** en ejemplo. Así garantizamos que siempre haya sincronización.
+
+Para lograr la transmisión continúa sólo hay que hacer un pequeño cambio en el ejemplo anterior: Ahora en vez de introducir "1"s por la izquierda del registro de desplazamiento, **haremos que se inserten los bits enviados**, **conectando la ser_out con ser_in**, de manera que construimos un anillo en el que todos los bits de la trama se están constantemente enviando
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx2-1.png)
+
+
+
+
 
 ## Ejemplo 3: Transmisión periódica
 
