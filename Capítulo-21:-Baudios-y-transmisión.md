@@ -259,6 +259,91 @@ Ahora por la izquierda se inserta shifter[0] en vez de un bit a 1
 
 ### Simulación
 
+El banco de pruebas es muy parecido al del ejemplo anterior. Se ha cambiado la temporización de la señal dtr
+
+``` verilog
+`include "baudgen.vh"
+
+module baudtx2_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Linea de tranmision
+wire tx;
+
+//-- Simulacion de la señal dtr
+reg dtr = 0;
+
+//-- Instanciar el componente para que funcione a 115200 baudios
+baudtx2 #(`B115200)
+  dut(
+    .clk(clk),
+    .load(dtr),
+    .tx(tx)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("baudtx2_tb.vcd");
+  $dumpvars(0, baudtx2_tb);
+
+  //-- Primer envio: cargar y enviar
+  #10 dtr <= 0;
+  #300 dtr <= 1;
+ 
+  //-- Segundo envio
+  #10000 dtr <=0;
+  #2000 dtr <=1;
+
+  //-- Tercer envio
+  #10000 dtr <=0;
+  #2000 dtr <=1;
+
+  #5000 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Para hacer la simulación ejecutamos:
+
+    $ make sim2
+
+Y el resultado de la simulación es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-2-sim.png)
+
+Cuando dtr se pone a 1, se observa la transmisión continua. Cuando se pone a 0 se deja de transmitir y la línea permanece en reposo. Nuevamente se pone a 1 y comienza otra ráfaga de transmisión
+
+### Síntesis y pruebas
+
+Para sintetizar ejecutamos el comando:
+
+    $ make sint2
+
+Los recursos ocupados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 7 / 160
+|BRAMs     | 0 / 16
+
+Lo cargamos en la FPGA con:
+
+    $ sudo iceprog baudtx2.bin
+
+Abrimos el gtkterm y pulsamos F7 para cambiar el DTR. Empezarán a aparecer Ks llenando rápidamente la pantalla completa del terminal:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-2-gtkterm.png)
 
 ## Ejemplo 3: Transmisión periódica
 
