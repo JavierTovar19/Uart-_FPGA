@@ -359,11 +359,130 @@ Este circuito **no tiene entrada exterior para la carga del registro**, sino que
 
 La señal de carga no se conecta directamente desde el divisor, sino que se pasa por **un registro con entrada de reloj clk_baud**. Se ha añadido para que **la señal de load esté sincronizada con la de clk_baud**, y que sus distancias relativas sean siempre las mismas. Si no se pone, pueden ocurrir situaciones en tengan los flancos de subida muy cercanos y se capturen datos incorrectos
 
-(Dibujo)
-
 ### baudtx3.v: Descripción del hardware
 
+La descripción del circuito en verilog es:
+
+```verilog
+//-- baudtx3.v
+`default_nettype none
+
+`include "baudgen.vh"
+`include "divider.vh"
+
+//--- Modulo que envia un caracter cunado load esta a 1
+module baudtx3(input wire clk,       //-- Reloj del sistema (12MHz en ICEstick)
+               output wire tx        //-- Salida de datos serie (hacia el PC)
+              );
+
+//-- Parametro: velocidad de transmision
+parameter BAUD =  `B115200;
+parameter DELAY = `T_250ms;
+
+//-- Registro de 10 bits para almacenar la trama a enviar:
+//-- 1 bit start + 8 bits datos + 1 bit stop
+reg [9:0] shifter;
+
+//-- Reloj para la transmision
+wire clk_baud;
+
+//-- Señal de carga periodica
+wire load;
+
+//-- Señal de load sincronizada con clk_baud
+reg load2;
+
+//-- Registro de desplazamiento, con carga paralela
+//-- Cuando DTR es 0, se carga la trama
+//-- Cuando DTR es 1 se desplaza hacia la derecha, y se 
+//-- introducen '1's por la izquierda
+always @(posedge clk_baud)
+  if (load2 == 0)
+    shifter <= {"K",2'b01};
+  else
+    shifter <= {1'b1, shifter[9:1]};
+
+//-- Sacar por tx el bit menos significativo del registros de desplazamiento
+//-- Cuando estamos en modo carga (dtr == 0), se saca siempre un 1 para 
+//-- que la linea este siempre a un estado de reposo. De esta forma en el 
+//-- inicio tx esta en reposo, aunque el valor del registro de desplazamiento
+//-- sea desconocido
+assign tx = (load2) ? shifter[0] : 1;
+
+//-- Sincronizar la señal load con clk_baud
+//-- Si no se hace, 1 de cada X caracteres enviados tendrá algún bit
+//-- corrupto (en las pruebas con la icEstick salian mal 1 de cada 13 aprox
+always @(posedge clk_baud)
+  load2 <= load;
+
+//-- Divisor para obtener el reloj de transmision
+divider #(BAUD)
+  BAUD0 (
+    .clk_in(clk),
+    .clk_out(clk_baud)
+  );
+
+//-- Divisor para generar la señal de carga periodicamente
+divider #(DELAY)
+  DIV0 (
+    .clk_in(clk),
+    .clk_out(load)
+  );
+
+endmodule
+```
+La señal de carga del registro es _load2_, en vez de _load_, que está sincronizada con _clk_baud_
+
 ### Simulación
+
+El banco de pruebas es como el de los otros ejemplos, salvo que al instanciar el componente baudtx3 se añade el **parámetro DELAY**. En la simulación se pone otro más corto que 250ms, para que no se haga la simulación eterna :-)
+
+```verilog
+//-- Fichero baudtx3_tb.v
+`include "baudgen.vh"
+
+module baudtx3_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Linea de tranmision
+wire tx;
+
+
+//-- Instanciar el componente para que funcione a 115200 baudios
+baudtx3 #(.BAUD(`B115200), .DELAY(4000))
+  dut(
+    .clk(clk),
+    .tx(tx)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("baudtx3_tb.vcd");
+  $dumpvars(0, baudtx3_tb);
+
+  #40000 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Realizamos la simulación con el comando:
+
+    $ make sim3
+
+Los resultados son:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-sim.png)
+
 
 ### Síntesis y pruebas
 
