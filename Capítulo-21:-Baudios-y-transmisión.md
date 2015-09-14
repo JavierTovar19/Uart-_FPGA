@@ -345,7 +345,15 @@ Abrimos el gtkterm y pulsamos F7 para cambiar el DTR. Empezarán a aparecer Ks l
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-2-gtkterm.png)
 
-## Ejemplo 3: Transmisión periódica
+Al pulsar F7 nuevamente la ráfaga se para
+
+## Ejemplo 3: Transmisión periódica 
+
+### Funcionamiento
+
+### Simulación
+
+### Síntesis y pruebas
 
 ## CRÉDITOS
 
