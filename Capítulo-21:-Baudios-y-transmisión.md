@@ -487,6 +487,40 @@ Se observa cómo con cada pulso de load se envía un dato nuevo. También se pue
 
 ### Síntesis y pruebas
 
+Para sintetizar ejecutamos el comando:
+
+    $ make sint3
+
+Los recursos ocupados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 19 / 160
+|BRAMs     | 0 / 16
+
+Lo cargamos en la FPGA con:
+
+    $ sudo iceprog baudtx3.bin
+
+Al arrancar el gtkterm empezarán a aparecer Ks en la pantalla, a la velocidad de 4 por segundo.
+
+Si la señal de _load_ **NO está sincronizada**, se pueden obtener resultado como estos:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-3-gtkterm.png) 
+
+Se observa que periódicamente un carácter se recibe incorrectamente.
+
+Cuando está todo sincronizado bien, el resultado es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-3-gtkterm-ok.png)
+
+## Ejercicios
+* Probar el último ejemplo pero cambiando las velocidades de transmisión a 19600 y 9600 baudios
+
+## CONCLUSIONES
+TODO
+
 ## CRÉDITOS
 
 * Aunque este transmisor se ha escrito desde cero, me he inspirado en la UART del [proyecto swapforth](https://github.com/jamesbowman/swapforth), de **James Bowman**. ¡Muchas gracias!
