@@ -183,6 +183,9 @@ Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto se
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-gtkterm.png)
 
 ## Ejemplo 2: Transmisión continua
+Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente. 
+
+(Dibujo cronograma)
 
 ## Ejemplo 3: Transmisión periódica
 
