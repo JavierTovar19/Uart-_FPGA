@@ -355,6 +355,8 @@ En este ejemplo enviaremos el carácter K cada 250ms, sin tener que usar el DTR
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-1.png)
 
+### baudtx3.v: Descripción del hardware
+
 ### Simulación
 
 ### Síntesis y pruebas
