@@ -183,7 +183,9 @@ Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto se
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-gtkterm.png)
 
 ## Ejemplo 2: Transmisión continua
-Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente. 
+Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente
+
+### Funcionamiento
 
 El cronograma de transmisión continua para el caracter K se muestra en esta figura:
 
@@ -193,12 +195,69 @@ Las líneas verticales punteadas muestran el comienzo y fin de los caracteres en
 
 Es una de las razones por las que **se usa la señal DTR para arrancar la transmisión de datos** en ejemplo. Así garantizamos que siempre haya sincronización.
 
-Para lograr la transmisión continúa sólo hay que hacer un pequeño cambio en el ejemplo anterior: Ahora en vez de introducir "1"s por la izquierda del registro de desplazamiento, **haremos que se inserten los bits enviados**, **conectando la ser_out con ser_in**, de manera que construimos un anillo en el que todos los bits de la trama se están constantemente enviando
+Para lograr la transmisión continúa sólo hay que hacer un pequeño cambio en el ejemplo anterior: Ahora en vez de introducir "1"s por la izquierda del registro de desplazamiento, **haremos que se inserten los bits enviados**, **conectando la _ser_out_ con _ser_in_**, de manera que construimos un anillo en el que todos los bits de la trama se están constantemente enviando
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx2-1.png)
 
+### baudtx2.v: Descripción del hardware
 
+La nueva descripción en Verilog queda como la siguiente:
 
+```verilog
+`default_nettype none
+
+`include "baudgen.vh"
+
+//--- Modulo que envia un caracter cunado load esta a 1
+module baudtx2(input wire clk,       //-- Reloj del sistema (12MHz en ICEstick)
+               input wire load,      //-- Señal de cargar / desplazamiento
+               output wire tx        //-- Salida de datos serie (hacia el PC)
+              );
+
+//-- Parametro: velocidad de transmision
+parameter BAUD =  `B115200;
+
+//-- Registro de 10 bits para almacenar la trama a enviar:
+//-- 1 bit start + 8 bits datos + 1 bit stop
+reg [9:0] shifter;
+
+//-- Reloj para la transmision
+wire clk_baud;
+
+//-- Registro de desplazamiento, con carga paralela
+//-- Cuando DTR es 0, se carga la trama
+//-- Cuando DTR es 1 se desplaza hacia la derecha, y se 
+//-- introducen '1's por la izquierda
+always @(posedge clk_baud)
+  if (load == 0)
+    shifter <= {"K",2'b01};
+  else
+    shifter <= {shifter[0], shifter[9:1]};
+
+//-- Sacar por tx el bit menos significativo del registros de desplazamiento
+//-- Cuando estamos en modo carga (dtr == 0), se saca siempre un 1 para 
+//-- que la linea este siempre a un estado de reposo. De esta forma en el 
+//-- inicio tx esta en reposo, aunque el valor del registro de desplazamiento
+//-- sea desconocido
+assign tx = (load) ? shifter[0] : 1;
+
+//-- Divisor para obtener el reloj de transmision
+divider #(BAUD)
+  BAUD0 (
+    .clk_in(clk),
+    .clk_out(clk_baud)
+  );
+
+endmodule
+```
+La diferencia con respecto al ejemplo anterior está en esta línea:
+
+```verilog
+shifter <= {shifter[0], shifter[9:1]};
+```
+Ahora por la izquierda se inserta shifter[0] en vez de un bit a 1
+
+### Simulación
 
 
 ## Ejemplo 3: Transmisión periódica
