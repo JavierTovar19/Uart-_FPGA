@@ -349,6 +349,8 @@ Al pulsar F7 nuevamente la ráfaga se para
 
 ## Ejemplo 3: Transmisión periódica 
 
+En este ejemplo enviaremos el carácter K cada 250ms, sin tener que usar el DTR
+
 ### Funcionamiento
 
 ### Simulación
