@@ -24,4 +24,4 @@
 20 [[Comunicaciones serie asíncronas|Capítulo 20: Comunicaciones serie asíncronas]]  
 21 [[Baudios y transmisión|Capítulo 21: Baudios y transmisión]]  
 
-[[Capítulo 22: Unidad de transmisión]]
+[[Capítulo 22: Transmisor mejorado]]
