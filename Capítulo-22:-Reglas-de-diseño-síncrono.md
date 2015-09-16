@@ -10,10 +10,11 @@ Los **sistemas digitales complejos son síncronos**: existe **una señal de relo
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/sync-corazon.png)
 
+A la hora de diseñar circuitos digitales síncronos conviene tener **una serie de reglas en la cabeza**, que nos ahorrarán muchos problemas, sobre todo cuando se hacen diseños más complejos. Algunas de estas reglas **se han violado** en los ejemplos presentados hasta ahora. Se trata de ejemplos sencillos, que nos han permitido introducir conceptos y hacer pruebas rápidamente en nuestra FPGA.  Ahora es el momento de aprender **reglas de diseño más potentes**, y aplicarlas.
+
+
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
-
-
 
 ## Créditos
 * [Corazón](https://commons.wikimedia.org/wiki/File:Coraz%C3%B3n.svg#/media/File:Coraz%C3%B3n.svg). Licensed under CC BY-SA 3.0 via Wikimedia Commons 
