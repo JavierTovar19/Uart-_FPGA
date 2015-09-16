@@ -1,3 +1,7 @@
+(dibujo)
+
+Ejemplos de este capítulo en github
+
 ## Introducción
 
 ## Mejoras
