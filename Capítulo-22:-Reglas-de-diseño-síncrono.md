@@ -13,8 +13,7 @@ Los **sistemas digitales complejos son síncronos**: existe **una señal de relo
 A la hora de diseñar circuitos digitales síncronos conviene tener **una serie de reglas en la cabeza**, que nos ahorrarán muchos problemas, sobre todo cuando se hacen diseños más complejos. Algunas de estas reglas **se han violado** en los ejemplos presentados hasta ahora. Se trata de ejemplos sencillos, que nos han permitido introducir conceptos y hacer pruebas rápidamente en nuestra FPGA.  Ahora es el momento de aprender **reglas de diseño más potentes**, y aplicarlas.
 
 ## Reglas de diseño síncrono
-
-1 Un único reloj para gobernarlos a todos
+### Regla 1: Un único reloj para gobernarlos a todos
 
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
