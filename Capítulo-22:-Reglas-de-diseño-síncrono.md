@@ -8,6 +8,8 @@ En este capítulo se explican algunas **reglas de diseño síncrono** [1] para l
 ## Sistemas síncronos
 Los **sistemas digitales complejos son síncronos**: existe **una señal de reloj** (clk) que marca los tiempos en los que el resto de señales cambian. Es un reloj "corazón", al ritmo de cuyos pulsos se transportan y modifican los bits. En la placa iCEstick, nuestro reloj es de 12Mhz
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/sync-corazon.png)
+
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
 
