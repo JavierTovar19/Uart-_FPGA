@@ -22,7 +22,7 @@ La realidad es diferente. Así por ejemplo, si estamos usando una **puerta NOT**
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/retardo-not.png)
 
-En la realidad la salida B está retrasada con respecto a la entrada (además de que el cambio de 0 a 1 no es instantáneo).
+En la realidad **la salida B está retrasada con respecto a la entrada** (además de que el cambio de 0 a 1 no es instantáneo).
 
 
 ## Reglas de diseño síncrono
