@@ -16,7 +16,14 @@ Pero antes vamos a conocer un poco más el **origen de los problemas**
 
 ## La causa de los males: el retardo
 
+Los problemas en los diseños están causados por el **retardo en las señales**, debido a la propagación y al tiempo de procesado de las puertas lógicas. En el mundo digital diseñamos la funcionalidad asumiendo que las señales digitales son perfectas, que cambian instantáneamente y todos los bits a la vez.
+
+La realidad es diferente. Así por ejemplo, si estamos usando una **puerta NOT** y la simulamos, vemos el caso ideal, en el que la salida B es la negada de la A en todo momento.
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/retardo-not.png)
+
+En la realidad la salida B está retrasada con respecto a la entrada (además de que el cambio de 0 a 1 no es instantáneo).
+
 
 ## Reglas de diseño síncrono
 ### Regla 1: Un único reloj para gobernarlos a todos
