@@ -16,6 +16,8 @@ Pero antes vamos a conocer un poco más el **origen de los problemas**
 
 ## La causa de los males: el retardo
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/retardo-not.png)
+
 ## Reglas de diseño síncrono
 ### Regla 1: Un único reloj para gobernarlos a todos
 
