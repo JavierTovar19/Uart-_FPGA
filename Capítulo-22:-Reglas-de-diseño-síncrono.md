@@ -27,7 +27,16 @@ La realidad es diferente. Así por ejemplo, si estamos usando una **puerta NOT**
 En la realidad **la salida B está retrasada con respecto a la entrada** (además de que el cambio de 0 a 1 no es instantáneo). ¿Y por qué es un problema? Porque mirando el cronograma, vemos que hay un instante de tiempo donde **NO SE CUMPLE que B sea el negado de A**. Sucede que A=1 y B=1, lo que significa que **NO SE CUMPLEN LAS ECUACIONES BOOLEANAS de la lógica digital** en ese intervalo de tiempo (esto hay que tenerlo en la cabeza). Además, estos retrasos originan **pulsos espúreos transitorios** (glitches)
 
 ### Pulsos espúreos (Glitches)
+
+**Cada señal** de un circuito digital **tiene un retraso diferente** que dependerá de la longitud de sus cables y de las puertas que atraviese. Así, dos señales de entrada llegarán a la misma puerta en tiempos diferentes. Esto provoca la **aparición de pulsos espúreos**, que desaparecen en el régimen permanente.
+
+Vamos a ver su efecto en un circuito combinacional sencillo: una **puerta XOR** de dos entradas.  Las dos entradas están a 0 (y por tanto la salida permanece a 0). En un instante las señales de entrada A y B cambian a 1. Idealmente, lo que se obtiene por la salida es también 0, ya que 1 xor 1 es igual a 0.
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/glitches-xor.png)
+
+Sin embargo, en este ejemplo, debido a los retardos, la señal B ha llegado un poco después que la A. Esto hace que haya un momento en el que A = 1 y B = 0, por lo que la salida es C = 1.  Finalmente, cuando B = 1 la salida se pone a su valor estable: C = 0.
+
+El resultado es que **ha aparecido un pulso** en una señal que **se suponía que debería estar siempre a 0**
 
 ## Reglas de diseño síncrono
 ### Regla 1: Un único reloj para gobernarlos a todos
