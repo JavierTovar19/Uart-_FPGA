@@ -38,7 +38,13 @@ Sin embargo, en este ejemplo, debido a los retardos, la señal B ha llegado un p
 
 El resultado es que **ha aparecido un pulso** en una señal que **se suponía que debería estar siempre a 0**
 
-(Dibujo: xor conectada a la entrada de reloj de un contador) ¡Una bomba de relojería!
+Imaginemos lo que puede pasar si tenemos este circuito conectado a **la entrada de reloj de un contador**
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/xor-contador.png)
+
+Debido al pulso espúreo, **¡el contador hará una cuenta falsa!** ¡Contará cuando NO tiene que contar!. El diseñador, por más que mire y remire el diseño digital, verá que está todo correcto. Y al simularlo idealmente todo funcionará bien... pero al cargarlo en la FPGA: ¡zas! Contará mal. **Estos errores son muy difíciles de detectar**
+
+Para evitar estos problemas es por lo que usamos **las reglas de diseño síncrono**
 
 ## Reglas de diseño síncrono
 ### Regla 1: Un único reloj para gobernarlos a todos
