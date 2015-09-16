@@ -38,6 +38,8 @@ Sin embargo, en este ejemplo, debido a los retardos, la señal B ha llegado un p
 
 El resultado es que **ha aparecido un pulso** en una señal que **se suponía que debería estar siempre a 0**
 
+(Dibujo: xor conectada a la entrada de reloj de un contador) ¡Una bomba de relojería!
+
 ## Reglas de diseño síncrono
 ### Regla 1: Un único reloj para gobernarlos a todos
 
