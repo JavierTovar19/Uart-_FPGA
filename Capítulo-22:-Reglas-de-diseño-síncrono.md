@@ -52,7 +52,7 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-1-mismo-flanco.png)
 
-### Regla 1: Un único reloj para gobernarlos a todos
+### Regla 2: Un único reloj para gobernarlos a todos
 
 
 ## Mejoras en el transmisor serie
