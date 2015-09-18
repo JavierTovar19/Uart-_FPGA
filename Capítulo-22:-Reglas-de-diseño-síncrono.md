@@ -47,7 +47,13 @@ Debido al pulso espúreo, **¡el contador hará una cuenta falsa!** ¡Contará c
 Para evitar estos problemas es por lo que usamos **las reglas de diseño síncrono**
 
 ## Reglas de diseño síncrono
+
+Las reglas son:
+
 ### Regla 1: Un único reloj para gobernarlos a todos
+
+**TODAS las entradas de reloj se deben conectar directamente a un único reloj**, común a todos. Esta regla se ha violado en casi todos los ejemplos de este tutorial hasta ahora, para que fuesen sencillos. A partir de ahora todos los ejemplos respetarán esta regla
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-2-unico-reloj.png)
 
 ### Regla 2: Sensibilidad al mismo flanco: ¡Todos a una, fuenteovejuna!
