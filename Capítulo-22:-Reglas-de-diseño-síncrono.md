@@ -61,7 +61,7 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-1-mismo-flanco.png)
 
-
+### Regla 3: Aviso a las señales: Antes de entrar a un combinacional pasen por registro, por favor
 
 
 ## Mejoras en el transmisor serie
