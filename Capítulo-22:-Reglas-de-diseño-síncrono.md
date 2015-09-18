@@ -50,10 +50,10 @@ Para evitar estos problemas es por lo que usamos **las reglas de diseño síncro
 ### Regla 1: Sensibilidad al mismo flanco: ¡Todos a una, fuenteovejuna!
 Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al de subida o al de bajada, es indiferente, pero **todos sensibles al mismo**
 
-(Dibujo)
-
+!()[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-1-mismo-flanco.png]
 
 ### Regla 1: Un único reloj para gobernarlos a todos
+
 
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
