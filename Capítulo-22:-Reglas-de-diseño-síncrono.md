@@ -65,7 +65,7 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 
 ### Regla 3: Antes de entrar a un circuito combinacional, pase por registro, por favor
 
-**Todas las entradas de los circuitos combacionales** deben estar **conectadas a salidas de circuitos secuenciales**, sincronizadas con el reloj del sistema, o bien a **otros circuitos combinacionales que cumplan esta regla**. Es decir, que **cualquier entrada** de un circuito combinacional **tiene que ser capturada** antes por un registro. 
+**Todas las entradas de los circuitos combacionales** deben estar **conectadas a salidas de circuitos secuenciales**, sincronizadas con el reloj del sistema, o bien a **otros circuitos combinacionales que cumplan esta regla**. Es decir, que **cualquier entrada** de un circuito combinacional **tiene que ser capturada** antes por un registro. Las entradas que cumplen esta regla se denominan **entradas sincronizadas**
 
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
