@@ -87,7 +87,7 @@ Partimos del **transmisor serie** del capítulo anterior (ejemplo 1). Al aplicar
 
 (Dibujo)
 
-1. No hay un reloj global único. La señal de reloj no entra directamente en el registro de desplazamiento. La señal proveniente del divisor NO puede entrar directamente por la entrada de reloj sino que debe haber una entrada nueva sincronizada. Para que el divisor funcione correctamente, el ancho del pulso de salida debe ser de 1 periodo de longitud.
+1. No hay un reloj global único (no se respeta la regla 1). La señal de reloj no entra directamente en el registro de desplazamiento. La señal proveniente del divisor NO puede entrar directamente por la entrada de reloj sino que debe haber una entrada nueva sincronizada. Para que el divisor funcione correctamente, el ancho del pulso de salida debe ser de 1 periodo de longitud.
 
 
 ## Créditos
