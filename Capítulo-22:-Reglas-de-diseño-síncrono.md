@@ -82,11 +82,11 @@ Esta regla nos indica **dónde ponemos conectar la salida de un circuito combina
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-5-salidas-combinacionales.png)
 
-### Mejorando el transmisor serie
+## Mejorando el transmisor serie
 
 Rediseñaremos los ejemplos del transmisor serie para cumplir las reglas
 
-## Aplicando las reglas al ejemplo 1
+### Aplicando las reglas al ejemplo 1
 Observamos varias violaciones de las reglas del diseño síncrono:
 
 (Dibujo)
