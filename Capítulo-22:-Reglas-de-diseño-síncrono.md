@@ -72,9 +72,15 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 ## Regla 4: Antes de entrar a un circuito secuencial, pase por registro por favor
 **Todas las entradas de los circuitos secuenciales** deben provenir de **las salidas de otros circuitos secuenciales** o bien de **combinacionales que cumplan la regla 3**. Es decir, que incluso para entrar en los circuitos secuenciales, es necesario que **las señales estén sincronizadas**.
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-4-entradas-sec-sincronizadas.png)
 
 Combinando la regla 3 y la 4, llegamos a la conclusión de que **cualquier entrada a nuestro circuito síncrono tiene que estar registrada**.
+
+### Regla 5: Salidas de un combinacional: Sólo a entradas de otro combinacional, entradas síncronas o salidas del circuito síncrono
+
+Esta regla nos indica **dónde ponemos conectar la salida de un circuito combinacional**. Bien a la **entrada de otro combinacional**, a **la entrada síncrona de un secuencial** o bien como **salida directa de nuestro circuito**. Queda terminantemente prohibido conectarlas a las entradas del propio combinacional (nada de realimentaciones directas) o a la entrada de la señal de reloj
+
+(dibujo)
 
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
