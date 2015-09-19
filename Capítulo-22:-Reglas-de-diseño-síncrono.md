@@ -72,6 +72,10 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 ## Regla 4: Antes de entrar a un circuito secuencial, pase por registro por favor
 **Todas las entradas de los circuitos secuenciales** deben provenir de **las salidas de otros circuitos secuenciales** o bien de **combinacionales que cumplan la regla 3**. Es decir, que incluso para entrar en los circuitos secuenciales, es necesario que **las señales estén sincronizadas**.
 
+(dibujo)
+
+Combinando la regla 3 y la 4, llegamos a la conclusión de que **cualquier entrada a nuestro circuito síncrono tiene que estar registrada**.
+
 ## Mejoras en el transmisor serie
 * Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
 
