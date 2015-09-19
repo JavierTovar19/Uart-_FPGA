@@ -87,7 +87,8 @@ Partimos del **transmisor serie** del capítulo anterior (ejemplo 1). Al aplicar
 
 (Dibujo)
 
-* violación 1
+1. No hay un reloj global único. La señal de reloj no entra directamente en el registro de desplazamiento
+
 
 ## Créditos
 * [Corazón](https://commons.wikimedia.org/wiki/File:Coraz%C3%B3n.svg#/media/File:Coraz%C3%B3n.svg). Licensed under CC BY-SA 3.0 via Wikimedia Commons 
