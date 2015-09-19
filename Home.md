@@ -8,7 +8,7 @@ Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs 
 * **Visualizador de señales**: [Gtkwave](http://gtkwave.sourceforge.net/)
 * **Sintetizador**: [Yosys](http://www.clifford.at/yosys/) ([Repo en github](https://github.com/cliffordwolf/yosys))
 * **Place & route**: [Arachne-prn](https://github.com/cseed/arachne-pnr) (en github)
-* **Utilidades y descarga en FPGA**: [Proyecto icetorm](http://www.clifford.at/icestorm/)
+* **Utilidades y descarga en FPGA**: [Proyecto icestorm](http://www.clifford.at/icestorm/)
 
 ## TODO  
 Why libre?  
