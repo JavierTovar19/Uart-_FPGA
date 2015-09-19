@@ -69,7 +69,7 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/c5baf5771fea985001de3c0976583c5f0f3b1e9f/tutorial/T22-syncrules/images/regla-3-entradas-sincronizadas.png)
 
-## Regla 4: Antes de entrar a un circuito secuencial, pase por registro por favor
+### Regla 4: Antes de entrar a un circuito secuencial, pase por registro por favor
 **Todas las entradas de los circuitos secuenciales** deben provenir de **las salidas de otros circuitos secuenciales** o bien de **combinacionales que cumplan la regla 3**. Es decir, que incluso para entrar en los circuitos secuenciales, es necesario que **las señales estén sincronizadas**.
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-4-entradas-sec-sincronizadas.png)
