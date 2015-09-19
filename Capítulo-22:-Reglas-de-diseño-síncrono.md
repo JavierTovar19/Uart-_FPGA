@@ -93,7 +93,7 @@ Partimos del **transmisor serie** del capítulo anterior (ejemplo 1). Al aplicar
 
 3. La salida TX proviene de un circuito combinacional y se puede sacar directamente sin violar ninguna regla. Sin embargo al estar conectada a un bus asíncrono, cualquier pulso espúreo enviado será interpretado como una dato y provocará un error en las comunicaciones. Por ello es más seguro registrar esta salida.
 
-### Modificación del divisor
+### Baudgen.v: Modificación del divisor
 
 
 ## Créditos
