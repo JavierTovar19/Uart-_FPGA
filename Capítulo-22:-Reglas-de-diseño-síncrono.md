@@ -95,6 +95,7 @@ Partimos del **transmisor serie** del capítulo anterior (ejemplo 1). Al aplicar
 
 ### Baudgen.v: Modificación del divisor
 
+### txtest.v: Modificación del transmisor
 
 ## Créditos
 * [Corazón](https://commons.wikimedia.org/wiki/File:Coraz%C3%B3n.svg#/media/File:Coraz%C3%B3n.svg). Licensed under CC BY-SA 3.0 via Wikimedia Commons 
