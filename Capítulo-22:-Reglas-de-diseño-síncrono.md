@@ -82,8 +82,12 @@ Esta regla nos indica **dónde ponemos conectar la salida de un circuito combina
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-5-salidas-combinacionales.png)
 
-## Mejoras en el transmisor serie
-* Reloj del sistema (clk) en vez de clk_baud (reglas de diseño síncrono)
+## Aplicando las reglas al transmisor serie
+Partimos del transmisor serie del capítulo anterior (ejemplo 1). Al aplicar las reglas observamos varias violaciones:
+
+(Dibujo)
+
+* violación 1
 
 ## Créditos
 * [Corazón](https://commons.wikimedia.org/wiki/File:Coraz%C3%B3n.svg#/media/File:Coraz%C3%B3n.svg). Licensed under CC BY-SA 3.0 via Wikimedia Commons 
