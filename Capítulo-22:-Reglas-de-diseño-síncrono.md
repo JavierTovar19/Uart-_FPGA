@@ -56,6 +56,8 @@ Las reglas son:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-2-unico-reloj.png)
 
+Esta regla nos **prohibe conectar a la entrada del reloj cualquier otra cosa que NO sea el reloj del sistema**. De forma que no podemos conectar ningún circuito combinacional (por ej. la puerta xor de la explicación de los pulsos espúreos) ni tampoco secuencial (por ejemplo la salida de un contador para usarlo como divisor). En las siguientes secciones veremos qué añadir a los circuitos para que cumplan esta regla.
+
 ### Regla 2: Sensibilidad al mismo flanco: ¡Todos a una, fuenteovejuna!
 Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al de subida o al de bajada, es indiferente, pero **todos sensibles al mismo**
 
