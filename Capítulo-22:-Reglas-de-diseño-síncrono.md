@@ -105,6 +105,9 @@ Observamos varias violaciones de las reglas del diseño síncrono:
 3. La **salida TX** proviene de un circuito combinacional y se puede sacar directamente sin violar ninguna regla. Sin embargo al estar conectada a un **bus asíncrono**, cualquier pulso espúreo enviado será interpretado como una dato y provocará un **error en las comunicaciones**. Por ello es más seguro registrar esta salida.
 
 ### Baudgen.v: Modificación del divisor
+Diseñaremos un **divisor específico para usar en el transmisor**. Puesto que la salida del divisor NO se puede introducir directamente por la entrada de reloj del registro de desplazamiento del transmisor (prohibido por las reglas de diseño síncrono), se conectará a una entrada nueva síncrona. Sin embargo, será necesario que el **pulso sea sólo de 1 periodo de longitud**
+
+Como mejora, pondremos una señal de habilitación del divisor (clk_ena) de forma que cuando clk_ena = 1 se producirán los pulsos y en caso contrario la salida (clk_out) permanecerá a 0.
 
 ### txtest.v: Modificación del transmisor
 
