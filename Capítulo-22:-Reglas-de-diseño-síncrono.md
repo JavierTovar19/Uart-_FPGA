@@ -107,7 +107,11 @@ Observamos varias violaciones de las reglas del diseño síncrono:
 ### Baudgen.v: Modificación del divisor
 Diseñaremos un **divisor específico para usar en el transmisor**. Puesto que la salida del divisor NO se puede introducir directamente por la entrada de reloj del registro de desplazamiento del transmisor (prohibido por las reglas de diseño síncrono), se conectará a una entrada nueva síncrona. Sin embargo, será necesario que el **pulso sea sólo de 1 periodo de longitud**
 
-Como mejora, pondremos una señal de habilitación del divisor (clk_ena) de forma que cuando clk_ena = 1 se producirán los pulsos y en caso contrario la salida (clk_out) permanecerá a 0.
+Como mejora, pondremos **una señal de habilitación del divisor** (**clk_ena**) de forma que cuando clk_ena = 1 se producirán los pulsos y en caso contrario la salida (clk_out) permanecerá a 0
+
+El esquema del circuito es el siguiente:
+
+(Dibujo)
 
 ### txtest.v: Modificación del transmisor
 
