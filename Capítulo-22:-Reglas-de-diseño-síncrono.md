@@ -116,6 +116,7 @@ El esquema del circuito es el siguiente:
 y la descripción en verilog:
 
 ```verilog
+//-- Fichero baudgen.v
 `include "baudgen.vh"
 
 //-- ENTRADAS:
@@ -125,7 +126,7 @@ y la descripción en verilog:
 //--            0: Inicializado y parado. No se emiten pulsos
 //
 //-- SALIDAS:
-//--     - clk_out. Señal de salida para lograr la velocidad en baudios indicada
+//--     - clk_out. Señal de salida que marca el tiempo entre bits
 //--                Anchura de 1 periodo de clk. SALIDA NO REGISTRADA
 module baudgen(input wire clk,
                input wire clk_ena, 
