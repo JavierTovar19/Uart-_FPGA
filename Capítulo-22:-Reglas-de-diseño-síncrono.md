@@ -94,15 +94,15 @@ Partimos del ejemplo baudtx, donde se envía el carácter "K" con el flanco de s
 
 El esquema del circuito es el siguiente:
 
-(Dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/baudtx-1-errors.png)
 
 Observamos varias violaciones de las reglas del diseño síncrono:
 
-1. No hay un reloj global único (no se respeta la regla 1). La señal de reloj no entra directamente en el registro de desplazamiento. La señal proveniente del divisor NO puede entrar directamente por la entrada de reloj sino que debe haber una entrada nueva sincronizada. Para que el divisor funcione correctamente, el ancho del pulso de salida debe ser de 1 periodo de longitud.
+1. **No hay un reloj global único** (no se respeta la regla 1). La señal de reloj no entra directamente en el registro de desplazamiento. La señal proveniente del divisor **NO puede entrar directamente por la entrada de reloj** sino que debe haber una entrada nueva sincronizada. Para que el divisor funcione correctamente, el ancho del pulso de salida deberá ser de 1 periodo de longitud.
 
-2. La entrada load NO está registrada (se viola la regla 3)
+2. **La entrada load NO está registrada** (se viola la regla 3)
 
-3. La salida TX proviene de un circuito combinacional y se puede sacar directamente sin violar ninguna regla. Sin embargo al estar conectada a un bus asíncrono, cualquier pulso espúreo enviado será interpretado como una dato y provocará un error en las comunicaciones. Por ello es más seguro registrar esta salida.
+3. La **salida TX** proviene de un circuito combinacional y se puede sacar directamente sin violar ninguna regla. Sin embargo al estar conectada a un **bus asíncrono**, cualquier pulso espúreo enviado será interpretado como una dato y provocará un **error en las comunicaciones**. Por ello es más seguro registrar esta salida.
 
 ### Baudgen.v: Modificación del divisor
 
