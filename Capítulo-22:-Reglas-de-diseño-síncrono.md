@@ -158,7 +158,7 @@ assign clk_out = (divcounter == 0) ? clk_ena : 0;
 
 endmodule
 ```
-El funcionamiento del nuevo divisor se puede ver en este cronograma. En el ciclo siguiente a activarse clk_enable aparece un pulso de 1 periodo de longitud, que se repite cada M ciclos de reloj. Cuando clk_ena es 0, no se generan pulsos
+El funcionamiento del nuevo divisor se puede ver en **este cronograma**. En el ciclo siguiente a activarse _clk_enable_ aparece un pulso de 1 periodo de longitud, que se repite cada M ciclos de reloj. Cuando _clk_ena_ es 0, no se generan pulsos
 
 (dibujo)
 
