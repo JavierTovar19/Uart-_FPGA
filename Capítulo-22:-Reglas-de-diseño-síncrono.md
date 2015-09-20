@@ -160,7 +160,7 @@ endmodule
 ```
 El funcionamiento del nuevo divisor se puede ver en **este cronograma**. En el ciclo siguiente a activarse _clk_enable_ aparece un pulso de 1 periodo de longitud, que se repite cada M ciclos de reloj. Cuando _clk_ena_ es 0, no se generan pulsos
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/34459e41edf1a66b8319585446144ad7ab098da1/tutorial/T22-syncrules/images/baudgen-chronogram.png)
 
 ### txtest.v: Modificación del transmisor
 
