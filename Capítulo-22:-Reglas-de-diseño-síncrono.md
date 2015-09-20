@@ -86,10 +86,17 @@ Esta regla nos indica **dónde ponemos conectar la salida de un circuito combina
 
 Rediseñaremos los ejemplos del transmisor serie para cumplir las reglas
 
-### Aplicando las reglas al ejemplo 1
-Observamos varias violaciones de las reglas del diseño síncrono:
+### Ejemplo 1: txtest.v
+
+Partimos del ejemplo baudtx, donde se envía el carácter "K" con el flanco de subida de la señal DTR
+
+### Aplicando las reglas de diseño síncrono
+
+El esquema del circuito es el siguiente:
 
 (Dibujo)
+
+Observamos varias violaciones de las reglas del diseño síncrono:
 
 1. No hay un reloj global único (no se respeta la regla 1). La señal de reloj no entra directamente en el registro de desplazamiento. La señal proveniente del divisor NO puede entrar directamente por la entrada de reloj sino que debe haber una entrada nueva sincronizada. Para que el divisor funcione correctamente, el ancho del pulso de salida debe ser de 1 periodo de longitud.
 
