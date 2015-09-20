@@ -92,7 +92,7 @@ Partimos del ejemplo baudtx, donde se envía el carácter "K" con el flanco de s
 
 ### Aplicando las reglas de diseño síncrono
 
-El esquema del circuito es el siguiente:
+El esquema del circuito original es el siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/baudtx-1-errors.png)
 
