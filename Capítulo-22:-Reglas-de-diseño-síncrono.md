@@ -371,6 +371,8 @@ Por defecto las pruebas están a la velocidad de **300 baudios**, que es la más
 
 Si dejamos apretada la tecla F7, se recibirán continuamente Ks. Se puede observar cómo **de vez en cuando se recibe un carácter erroneo**. Esto dependerá del PC en el que lo probemos. El problema está en que si por alguna razón **la señal DTR se desactiva mientras se está enviando un carácter**, lo que se recibirá es "basura". Esto será algo que tendremos que solucionar en el próximo capítulo mediante la introducción de un **controlador**, implementado con autómatas finitos.
 
+Pasando al modo de vista hexadecimal (View / Hexadecimal) se puede ver exactamente cuál es el **carácter basura recibido**: **0xCB**, cuando se debería recibir el **0x4B**. Analizando los bits se observa que el cambio es en el **bit de mayor peso**, que cambia de 0 a 1, convirtiendo 4B en CB. Justo el bit de mayor peso es el último que se envía
+
 ### txtest2.v: Ejemplo de transmisión continua
 (dibujo)
 #### Síntesis
