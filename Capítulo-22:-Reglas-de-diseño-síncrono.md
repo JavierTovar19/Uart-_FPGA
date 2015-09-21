@@ -168,7 +168,109 @@ El nuevo esquema se muestra a continuación. Además de **cumplir con las reglas
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-diagram.png)
 
+El nuevo **registro de desplazamiento**, en verilog es el siguiente:
+
+```verilog
+always @(posedge clk)
+  //-- Modo carga
+  if (load_r == 0)
+    shifter <= {"K",2'b01};
+
+  //-- Modo desplazamiento
+  else if (load_r == 1 && clk_baud == 1)
+    shifter <= {1'b1, shifter[9:1]};
+```
+
+Ahora **depende de la señal de reloj global**, para cumplir con la regla 1. Además es en **flanco de subida**, porque el resto de circuitos los hemos hecho así y por la regla 2 todos tienen que ser sensibles al mismo flanco
+
+La señal de carga usada es _load_r_, que es la señal _load_ registrada:
+
+```verilog
+always @(posedge clk)
+  load_r <= load;
+```
+El registro desplaza los bits hacia la derecha cuando no estamos en modo carga (load_r == 1) y **la señal clk_baud está a 1**. Por este motivo, la señal _clk_baud_ **sólo puede estar a 1 durante 1 ciclo de reloj**. Si el ancho del pulso fuera mayor, se realizaría un desplazamiento con cada flanco de reloj global, perdiéndose la temporización.
+
+La **salida TX de salida está registrada**, para garantizar que **entra totalmente limpia en el bus asíncrono** y que no se envían pulsos espúreos.
+
+```verilog
+always @(posedge clk)
+  tx <= (load_r) ? shifter[0] : 1;
+```
+
+El código completo se muestra a continuación:
+
+```verilog
+//-- Fichero: txtest.v
+`default_nettype none
+
+`include "baudgen.vh"
+
+//--- Modulo que envia un caracter cuando load esta a 1
+//--- La salida tx ESTA REGISTRADA
+module txtest(input wire clk,       //-- Reloj del sistema (12MHz en ICEstick)
+              input wire load,      //-- Señal de cargar / desplazamiento
+              output reg tx         //-- Salida de datos serie (hacia el PC)
+             );
+
+//-- Parametro: velocidad de transmision
+//-- Pruebas del caso peor: a 300 baudios
+parameter BAUD =  `B300;
+
+//-- Registro de 10 bits para almacenar la trama a enviar:
+//-- 1 bit start + 8 bits datos + 1 bit stop
+reg [9:0] shifter;
+
+//-- Señal de load registrada
+reg load_r; 
+
+//-- Reloj para la transmision
+wire clk_baud;
+
+//-- Registrar la entrada load
+//-- (para cumplir con las reglas de diseño sincrono)
+always @(posedge clk)
+  load_r <= load;
+
+//-- Registro de desplazamiento, con carga paralela
+//-- Cuando load_r es 0, se carga la trama
+//-- Cuando load_r es 1 y el reloj de baudios esta a 1 se desplaza hacia
+//-- la derecha, enviando el siguiente bit 
+//-- Se introducen '1's por la izquierda
+always @(posedge clk)
+  //-- Modo carga
+  if (load_r == 0)
+    shifter <= {"K",2'b01};
+
+  //-- Modo desplazamiento
+  else if (load_r == 1 && clk_baud == 1)
+    shifter <= {1'b1, shifter[9:1]};
+
+//-- Sacar por tx el bit menos significativo del registros de desplazamiento
+//-- Cuando estamos en modo carga (load_r == 0), se saca siempre un 1 para 
+//-- que la linea este siempre a un estado de reposo. De esta forma en el 
+//-- inicio tx esta en reposo, aunque el valor del registro de desplazamiento
+//-- sea desconocido
+//-- ES UNA SALIDA REGISTRADA, puesto que tx se conecta a un bus sincrono
+//-- y hay que evitar que salgan pulsos espureos (glitches)
+always @(posedge clk)
+  tx <= (load_r) ? shifter[0] : 1;
+
+//-- Divisor para obtener el reloj de transmision
+baudgen #(BAUD)
+  BAUD0 (
+    .clk(clk),
+    .clk_ena(load_r),
+    .clk_out(clk_baud)
+  );
+
+endmodule
+```
+
 #### Síntesis
+
+
+
 #### Simulación y pruebas
 
 ### txtest2.v: Ejemplo de transmisión continua
