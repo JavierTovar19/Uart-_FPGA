@@ -267,8 +267,85 @@ baudgen #(BAUD)
 endmodule
 ```
 #### Simulación
+El banco de pruebas **se ha mejorado para poder simular a cualquier velocidad**. Por defecto la simulación está a 115200 baudios para que se ejecute rápidamente. Si simulamos a 300 baudios, los tiempos son mayores por lo que hay que emplear un tiempo de simulación mayor y tardará más tiempo en realizarse.
 
+El banco de pruebas genera **2 pulsos en la señal dtr**. El circuito debe enviar por la línea serie el carácter K. El código es:
 
+```verilog
+//-- Fichero txtest.v
+`include "baudgen.vh"
+
+module txtest_tb();
+
+//-- Baudios con los que realizar la simulacion
+//-- A 300 baudios, la simulacion tarda mas en realizarse porque los
+//-- tiempos son mas largos. A 115200 baudios la simulacion es mucho
+//-- mas rapida
+localparam BAUD = `B115200;
+
+//-- Tics de reloj para envio de datos a esa velocidad
+//-- Se multiplica por 2 porque el periodo del reloj es de 2 unidades
+localparam BITRATE = (BAUD << 1);
+
+//-- Tics necesarios para enviar una trama serie completa, mas un bit adicional
+localparam FRAME = (BITRATE * 11);
+
+//-- Tiempo entre dos bits enviados
+localparam FRAME_WAIT = (BITRATE * 4);
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Linea de tranmision
+wire tx;
+
+//-- Simulacion de la señal dtr
+reg dtr = 0;
+
+//-- Instanciar el componente
+txtest #(.BAUD(BAUD))
+  dut(
+    .clk(clk),
+    .load(dtr),
+    .tx(tx)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("txtest_tb.vcd");
+  $dumpvars(0, txtest_tb);
+
+  #1 dtr <= 0;
+
+  //-- Enviar primer caracter
+  #FRAME_WAIT dtr <= 1;
+  #FRAME dtr <=0;
+
+  //-- Segundo envio
+  #FRAME_WAIT dtr <=1;
+  #FRAME dtr <=0;
+
+  #FRAME_WAIT $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Los simulamos con el comando:
+
+    $ make sim
+
+El resultado en gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-1-sim.png)
+
+Observamos que efectivamente al llegar un **flanco de subida en dtr**, el circuito envía el carácter. También vemos que la señal de reloj de los bits sólo está funcionando en el momento de transmitir los bits. En cuanto dtr se pone a 0 la señal se para.
 
 #### Síntesis y pruebas
 
