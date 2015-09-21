@@ -168,6 +168,24 @@ El nuevo esquema se muestra a continuación. Además de **cumplir con las reglas
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-diagram.png)
 
+#### Síntesis
+#### Simulación y pruebas
+
+### txtest2.v: Ejemplo de transmisión continua
+(dibujo)
+#### Síntesis
+#### Simulación y pruebas
+
+### txtest3.v: Ejemplo de transmisión temporizada
+(dibujo)
+### Síntesis
+### Simulación y pruebas
+
+## Lo que le falta al transmisor
+## Ejercicios propuestos
+## Conclusiones
+TODO
+
 ## Créditos
 * [Corazón](https://commons.wikimedia.org/wiki/File:Coraz%C3%B3n.svg#/media/File:Coraz%C3%B3n.svg). Licensed under CC BY-SA 3.0 via Wikimedia Commons 
 * [Puerta XOR](https://commons.wikimedia.org/wiki/File:Puerta_XOR.svg#/media/File:Puerta_XOR.svg) by Dnu72 - Own work. Licensed under CC BY-SA 3.0 via Wikimedia Commons
