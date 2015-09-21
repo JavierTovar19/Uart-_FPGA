@@ -365,9 +365,11 @@ y lo cargamos en la FPGA con:
 
     $ sudo iceprog txtest.bin
 
+Por defecto las pruebas están a la velocidad de **300 baudios**, que es la más lenta. Abrimos el gtkterm. Cada vez que enviamos un pulso en la señal de DTR, se recibe el carácter K:
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-1-gtkterm.png)
 
-
+Si dejamos apretada la tecla F7, se recibirán continuamente Ks. Se puede observar cómo **de vez en cuando se recibe un carácter erroneo**. Esto dependerá del PC en el que lo probemos. El problema está en que si por alguna razón **la señal DTR se desactiva mientras se está enviando un carácter**, lo que se recibirá es "basura". Esto será algo que tendremos que solucionar en el próximo capítulo mediante la introducción de un **controlador**, implementado con autómatas finitos.
 
 ### txtest2.v: Ejemplo de transmisión continua
 (dibujo)
