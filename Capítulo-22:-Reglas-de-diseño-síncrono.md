@@ -198,7 +198,7 @@ always @(posedge clk)
   tx <= (load_r) ? shifter[0] : 1;
 ```
 
-El código completo se muestra a continuación:
+El **código completo** se muestra a continuación:
 
 ```verilog
 //-- Fichero: txtest.v
