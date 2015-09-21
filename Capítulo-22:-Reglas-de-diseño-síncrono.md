@@ -266,12 +266,31 @@ baudgen #(BAUD)
 
 endmodule
 ```
-
-#### Síntesis
-
+#### Simulación
 
 
-#### Simulación y pruebas
+
+#### Síntesis y pruebas
+
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 5 / 96
+|PLBs      | 17 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog txtest.bin
+
+
+
+
 
 ### txtest2.v: Ejemplo de transmisión continua
 (dibujo)
