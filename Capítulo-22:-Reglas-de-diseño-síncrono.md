@@ -164,7 +164,7 @@ El funcionamiento del nuevo divisor se puede ver en **este cronograma**. En el c
 
 ### txtest.v: Modificación del transmisor
 
-El nuevo esquema se muestra a continuación. Además de **cumplir con las reglas del diseño síncrono**, se ha añadido **una mejora**: desde que se recibe el flanco hasta que se empieza a transmitir sólo transcurre 1 ciclo de reloj. Antes había que esperar a que además llegase un 1 en la señal de los baudios, por lo que este tiempo variaba. Para lograrlo se controla baudgen mediante su nueva entrada de habilitación: _clk_ena_.  Cuando no hay transmisión de información, la señal de baudios está deshabilitada.
+El nuevo esquema se muestra a continuación. Además de **cumplir con las reglas del diseño síncrono**, se ha añadido **una mejora**: desde que se recibe el flanco hasta que se empieza a transmitir **sólo transcurre 1 ciclo de reloj**. Antes había que esperar a que además llegase un 1 en la señal de los baudios, por lo que este tiempo variaba. Para lograrlo se controla _baudgen_ mediante su nueva entrada de habilitación: _clk_ena_.  Cuando no hay transmisión de información, la señal de baudios está deshabilitada.
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-diagram.png)
 
