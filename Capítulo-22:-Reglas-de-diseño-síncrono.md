@@ -467,10 +467,30 @@ Se simula con el comando:
 
 El resultado en gtkwave es:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-2-sim.png)
 
+Se observa cómo envían 3 caracteres "K" en cada ráfaga de activación del dtr
 
 #### Síntesis y pruebas
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 5 / 96
+|PLBs      | 13 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog txtest2.bin
+
+La prueba se ha hecho a 300 baudios. Al apretar F7 para que cortar la ráfaga de transmisiones se obtienen caracteres basura, porque la transmisión está a medias y se aborta
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-2-gtkterm.png)
 
 ### txtest3.v: Ejemplo de transmisión temporizada
 (dibujo)
