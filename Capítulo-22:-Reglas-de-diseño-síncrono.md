@@ -649,6 +649,26 @@ Se puede ver que los trenes de pulsos enviados por tx son periódicos
 
 ### Síntesis y pruebas
 
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint3
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 5 / 96
+|PLBs      | 28 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog txtest3.bin
+
+Abrimos el **gtkterm** para probarlo, a la velocidad de 300 baudios. Vemos cómo recibimos el carácter K periódicamente. Ahora no se debe recibir ningún carácter "basura" ya que no se corta ninguno por la mitad. Sin embargo si se baja el tiempo de repetición (por ejemplo a 100ms) entonces los caracteres saldrán mal (a 300 baudios)
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-gtkterm.png)
+
 ## Lo que le falta al transmisor
 ## Ejercicios propuestos
 ## Conclusiones
