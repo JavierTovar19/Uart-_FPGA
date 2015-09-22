@@ -493,7 +493,13 @@ La prueba se ha hecho a 300 baudios. Al apretar F7 para que cortar la ráfaga de
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-2-gtkterm.png)
 
 ### txtest3.v: Ejemplo de transmisión temporizada
-(dibujo)
+
+En este ejemplo **se transmite el carácter K periódicamente**, cada **250ms**. Para ello se ha añadido el divisor clásico (el que hemos estado usando hasta ahora) gobernado por el reloj global. Su salida se pasa por un registro para sincronizar la señal y se usa como señar de carga
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-diagram.png)
+
+Observamos que hay **5 elementos** que tienen **entrada de reloj**, y **TODOS** ellos están **conectados al reloj del sistema** (Regla 1 de diseño síncrono)
+
 ### Simulación
 ### Síntesis y pruebas
 
