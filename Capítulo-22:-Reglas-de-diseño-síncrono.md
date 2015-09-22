@@ -375,13 +375,13 @@ Pasando al modo de vista hexadecimal (View / Hexadecimal) se puede ver exactamen
 
 ### txtest2.v: Ejemplo de transmisión continua
 (dibujo)
-#### Síntesis
-#### Simulación y pruebas
+#### Simulación
+#### Síntesis y pruebas
 
 ### txtest3.v: Ejemplo de transmisión temporizada
 (dibujo)
-### Síntesis
-### Simulación y pruebas
+### Simulación
+### Síntesis y pruebas
 
 ## Lo que le falta al transmisor
 ## Ejercicios propuestos
