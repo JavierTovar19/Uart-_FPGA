@@ -501,6 +501,12 @@ En este ejemplo **se transmite el carácter K periódicamente**, cada **250ms**.
 Observamos que hay **5 elementos** que tienen **entrada de reloj**, y **TODOS** ellos están **conectados al reloj del sistema** (Regla 1 de diseño síncrono)
 
 ### Simulación
+
+El banco de pruebas es más sencillo porque no hay que generar impulsos a introducir por el dtr. Sólo esperar un tiempo a ver la señal que sale por tx
+
+```verilog
+```
+
 ### Síntesis y pruebas
 
 ## Lo que le falta al transmisor
