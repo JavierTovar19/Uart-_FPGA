@@ -44,4 +44,4 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 ## FAQs
 * **¿Por qué Verilog y no VHDL?**
-Verilog es el lenguaje que soporta el [http://www.clifford.at/icestorm/ proyecto icestorm] de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog
+Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog
