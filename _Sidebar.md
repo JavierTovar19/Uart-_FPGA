@@ -25,3 +25,5 @@
 21 [[Baudios y transmisión|Capítulo 21: Baudios y transmisión]]  
 22 [[Reglas de diseño síncrono|Capítulo 22: Reglas de diseño síncrono]]  
 
+[[Capítulo 23: Controladores y autómatas finitos]]  
+
