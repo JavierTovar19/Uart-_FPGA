@@ -590,7 +590,6 @@ El banco de pruebas es más sencillo porque no hay que generar impulsos a introd
 `include "baudgen.vh"
 `include "divider.vh"
 
-
 module txtest3_tb();
 
 //-- Baudios con los que realizar la simulacion
@@ -631,7 +630,6 @@ initial begin
   $dumpfile("txtest3_tb.vcd");
   $dumpvars(0, txtest3_tb);
 
-
   #(FRAME * 10) $display("FIN de la simulacion");
 
   $finish;
@@ -639,7 +637,15 @@ end
 
 endmodule
 ```
+Se simula con el comando:
 
+    $ make sim3
+
+El resultado en gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-sim.png)
+
+Se puede ver que los trenes de pulsos enviados por tx son periódicos
 
 ### Síntesis y pruebas
 
