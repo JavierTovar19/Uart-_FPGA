@@ -374,7 +374,24 @@ Si dejamos apretada la tecla F7, se recibirán continuamente Ks. Se puede observ
 Pasando al modo de vista hexadecimal (View / Hexadecimal) se puede ver exactamente cuál es el **carácter basura recibido**: **0xCB**, cuando se debería recibir el **0x4B**. Analizando los bits se observa que el cambio es en el **bit de mayor peso**, que cambia de 0 a 1, convirtiendo 4B en CB. Justo el bit de mayor peso es el último que se envía
 
 ### txtest2.v: Ejemplo de transmisión continua
-(dibujo)
+
+Este ejemplo es similar al anterior, pero **la salida serie del registro de desplazamiento se realimenta por la entrada**, de manera que cuando la señal dtr esté a 1, se realiza una **transmisión continua del carácter K**. Esto permite comprobar que funciona correctamente a su máxima velocidad
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest2-diagram.png)
+
+El código es igual que el de txtest.v, pero cambiando ligeramente el registro de desplazamiento:
+
+```verilog
+always @(posedge clk)
+  //-- Modo carga
+  if (load_r == 0)
+    shifter <= {"K",2'b01};
+
+  //-- Modo desplazamiento
+  else if (load_r == 1 && clk_baud == 1)
+    shifter <= {shifter[0], shifter[9:1]};
+```
+
 #### Simulación
 #### Síntesis y pruebas
 
