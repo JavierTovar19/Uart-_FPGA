@@ -670,7 +670,11 @@ Abrimos el **gtkterm** para probarlo, a la velocidad de 300 baudios. Vemos cómo
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-gtkterm.png)
 
 ## Lo que le falta al transmisor
+Todavía no tenemos terminado el transmisor. Ya tenemos lista una parte: su **ruta de datos**. Nos falta el controlador, que es el que emite las diferentes señales (microórdenes) para gobernar esta ruta. Para ellos tendremos que aprender a hacer **máquinas de estados**. 
+
 ## Ejercicios propuestos
+* Probar los ejemplos a diferentes baudios para comprobar su funcionamiento
+
 ## Conclusiones
 TODO
 
