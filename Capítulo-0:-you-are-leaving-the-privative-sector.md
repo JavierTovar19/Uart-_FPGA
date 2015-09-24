@@ -63,6 +63,10 @@ Instalación de Icarus Verilog y GTKwave
 ```
 sudo dnf install iverilog gtkwave
 ```
+Adicionalmente, para poder ejecutar "sudo iceprog" hay que enlazar:
+```
+sudo ln -s /usr/local/bin/iceprog /usr/bin/iceprog
+```
 
 # Placa ICEStick
 
