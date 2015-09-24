@@ -19,6 +19,48 @@ Entorno: Ubuntu Linux 15.04
 
 # Instalación
 
+Fedora 22
+--
+
+Dependencias:
+```
+sudo dnf install ftdi-devel tcl-devel readline-devel flex clang bison gawk libffi-devel git mercurial graphviz python python3
+```
+
+Instalación de IceStorm Tools (icepack, icebox, iceprog):
+```
+git clone https://github.com/cliffordwolf/icestorm.git icestorm
+cd icestorm
+make -j$(nproc)
+sudo make install
+```
+**NOTA:** si aparecen errores relacionados con "ftdi.h" puede ser necesario enlazar la librería FTDI de este modo:
+```
+sudo ln -s /usr/lib64/libftdi1.so /usr/local/lib/libftdi.so
+sudo ln -s /usr/include/libftdi1/ftdi.h /usr/local/include/ftdi.h
+```
+
+Instalación de Arachne-PNR (the place&route tool):
+```
+git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
+cd arachne-pnr
+make -j$(nproc)
+sudo make install
+```
+
+Instalación de Yosys (Verilog synthesis):
+```
+git clone https://github.com/cliffordwolf/yosys.git yosys
+cd yosys
+make -j$(nproc)
+sudo make install
+```
+
+Instalación de Icarus Verilog y GTKwave
+```
+sudo dnf install iverilog gtkwave
+```
+
 # Placa ICEStick
 
 Esta es la placa que usaremos para probar todos los diseños digitales de este tutorial:
