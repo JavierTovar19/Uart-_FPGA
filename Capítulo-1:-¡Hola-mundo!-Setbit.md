@@ -98,6 +98,8 @@ El led D1 de la ICEStick se encenderá:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
+**Nota:** Puede que los otros LED se enciendan parcialmente; esto es normal y debido a que no les hemos asignado ninguna señal (internamente están conectados "al aire").
+
 ## Simulación
 
 ### Primero simulamos, luego sintetizamos
