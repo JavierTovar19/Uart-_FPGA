@@ -43,5 +43,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 * A **David Sánchez Falero**, por enseñarme cómo resaltar código Verilog en los markdown de github :-) ¡Esto ha hecho que el código sea muchísimo más legible! ¡Muchas Gracias! 
 
 ## FAQs
+* **¿Qué diferencia hay entre una FPGA y Arduino? ¿Qué hace una FPGA que no pueda hacer Arduino?**
+TODO
+
 * **¿Por qué Verilog y no VHDL?**
 Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog
