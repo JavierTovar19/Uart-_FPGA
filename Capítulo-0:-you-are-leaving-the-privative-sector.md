@@ -22,7 +22,7 @@ Entorno: Ubuntu Linux 15.04
 Fedora 22
 --
 
-Dependencias:
+Instalación de dependencias:
 ```
 sudo dnf install ftdi-devel tcl-devel readline-devel flex clang bison gawk libffi-devel git mercurial graphviz python python3
 ```
@@ -33,6 +33,7 @@ git clone https://github.com/cliffordwolf/icestorm.git icestorm
 cd icestorm
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 **NOTA:** si aparecen errores relacionados con "ftdi.h" puede ser necesario enlazar la librería FTDI de este modo:
 ```
@@ -46,6 +47,7 @@ git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
 cd arachne-pnr
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 
 Instalación de Yosys (Verilog synthesis):
@@ -54,6 +56,7 @@ git clone https://github.com/cliffordwolf/yosys.git yosys
 cd yosys
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 
 Instalación de Icarus Verilog y GTKwave
