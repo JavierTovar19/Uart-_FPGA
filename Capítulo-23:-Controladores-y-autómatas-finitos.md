@@ -5,7 +5,7 @@
 # Introducción
 Los **controladores** son la parte de los circuitos digitales que se **encargan de generar todas las señales** (microórdenes) **que gobiernan  el resto de componentes**. Se implementan mediante **autómatas finitos** (también denominadas **máquinas de estados**). En este capítulo diseñaremos un controlador para nuestro **transmisor serie**
 
-# Arquitectura genérica de los circuitos digitales
+# Arquitectura genérica
 ## Ruta de datos
 ## Controlador
 ## Autómatas finitos
