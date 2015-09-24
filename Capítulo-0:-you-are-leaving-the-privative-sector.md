@@ -1,7 +1,7 @@
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/checkpoint-charlie.png" 
 width="400" align="center">
 
-_You are leaving the privative sector_ ... ¡y estás entrando en el sector LIBRE! ¡Bienvenido! De aquí en adelante sólo usaremos herramientas del patrimonio tecnológico de la humanidad
+_You are leaving the privative sector_ ... ¡y estás entrando en el sector LIBRE! ¡Bienvenido! De aquí en adelante **sólo usaremos herramientas del patrimonio tecnológico de la humanidad**
 
 # Introducción
 
