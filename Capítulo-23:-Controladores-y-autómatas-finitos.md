@@ -113,13 +113,24 @@ assign m2 = (state == ESTADO3) ? 1 : 0;
 ```
 El código queda mucho más compacto.
 
-# Arquitectura del transmisor serie
+# Transmisor serie mejorado
+
+Aplicaremos esta arquitectura al transmisor serie, dividiéndolo en su ruta de datos y el controlador 
+
+## fsmtx.v: Transmisión continua
+Haremos un transmisor que envíe el **carácter A** cuando se ponga a 1 la **señal de entrada _start_**, que la controlaremos a través de la **señal dtr** (como en los ejemplos del capítulo anterior). Sin embargo, esta señal no controla directamente la transmisión, sino que **sólo la inicia**. Será el controlador el que controle esta transmisión. De esta manera, **nunca se quedará un carácter a medio transmitir** como pasaba en el capítulo anterior.
+
+ El esquema es el siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-1.png)
 
 ## Ruta de datos
-## Controlador
+En la **ruta de datos** se encuentra el **registro de desplazamiento** que hace la serialización de los datos, el **generador de baudios**, el inicializador, un **contador de 4 bits** para llevar la cuenta de bits enviados y los **flip-flops** para registrar señales y cumplir con las normas de diseño síncrono
 
+El contador lleva la cuenta de **cuántos bits se han enviado** y servirá para que el controlador sepa cuándo ha finalizado la transmisión. La señal de "load" sirve para **ponerlo a cero**, y es la misma que se usa para realizar la carga del registro de desplazamiento
+
+## Controlador
+Para controlar la ruta de datos se necesitan 2 microórdenes, load y baudgen, para cargar 
 
 # Test
 
