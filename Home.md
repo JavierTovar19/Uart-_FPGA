@@ -45,7 +45,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 * A **Carlos García Saura***, por las instrucciones de instalación de las herramientas icestorm en Fedora. ¡Muchas gracias!
 
 ## FAQs
-* **¿Qué diferencia hay entre una FPGA y Arduino? Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
+* **¿Qué diferencia hay entre una FPGA y Arduino?** Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
 
 * **¿Qué hace una FPGA que no pueda hacer Arduino?** Muchas aplicaciones se pueden hacer tanto por software (programando) o por hardware. Por ejemplo un contador. La diferencia está en que al hacerlo por hardware conseguimos velocidades muchísimo mayor. Además, el hardware se puede "clonar" directamente. Tener en software varias cosas funcionando en paralelo no es inmediato.
 
