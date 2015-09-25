@@ -130,7 +130,12 @@ En la **ruta de datos** se encuentra el **registro de desplazamiento** que hace 
 El contador lleva la cuenta de **cuántos bits se han enviado** y servirá para que el controlador sepa cuándo ha finalizado la transmisión. La señal de "load" sirve para **ponerlo a cero**, y es la misma que se usa para realizar la carga del registro de desplazamiento
 
 ## Controlador
+
+El **diagrama de estados** del controlador es el siguiente:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-2.png)
+
+
 Para controlar la ruta de datos se necesitan 2 microórdenes, load y baudgen, para cargar 
 
-# Test
 
