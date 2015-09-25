@@ -40,6 +40,37 @@ reg [1:0] state;
 Las **transiciones** entre estados las modelamos mediante un **proceso que depende del reloj** y que al recibir el **reset** se inicializa en el **estado inicial**. Usando un _**case**_ definimos las transiciones para cada estado:
 
 ```verilog
+always @(posedge clk)
+  if (rst)
+    //-- Establecer el estado inicial al arrancar
+    state <= ESTADO0;
+  else 
+    case (state)
+      ESTADO0:
+        //-- Cambio de estado condicional
+        if (a) state <= ESTADO1;
+        else state <= ESTADO0;
+
+      ESTADO1:
+        //-- Cabmio de estado condidiconal
+        if (b) state <= ESTADO2;
+        else state <= ESTADO1;
+
+      ESTADO2:
+        //-- Cambiar de estado en el próximo ciclo
+        state <= ESTADO3;
+
+      ESTADO3:
+        //-- Cabmio de estado condidiconal
+        if (c) state <= ESTADO0;
+        else state <= ESTADO3;
+
+      default:
+        //-- Siempre hay que ponerlo, para evitar
+        //-- latches en la síntesis
+        state <= ESTADO0;
+
+    endcase
 ```
 
 
