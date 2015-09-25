@@ -19,7 +19,8 @@ El controlador **toma decisiones** y genera unas microórdenes u otras en funci�
 
 Los controladores se implementan mediante [autómatas finitos](https://es.wikipedia.org/wiki/Aut%C3%B3mata_finito) (también denominados máquinas de estados). Es necesario primero definir **los estados** del circuito y **las transiciones** entre estos estados según las condiciones del circuito. Luego, en función de estos estados se generan las **microórdenes**. 
 
-## Autómatas finitos
+# Máquinas de estado en verilog
+
 
 # Arquitectura del transmisor serie
 ## Ruta de datos
