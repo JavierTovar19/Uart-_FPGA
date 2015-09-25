@@ -24,7 +24,7 @@ Fedora 22
 
 Instalación de dependencias:
 ```
-sudo dnf install ftdi-devel tcl-devel readline-devel flex clang bison gawk libffi-devel git mercurial graphviz python python3
+sudo dnf install libftdi-devel tcl-devel readline-devel flex clang bison gawk libffi-devel git mercurial graphviz python python3
 ```
 
 Instalación de IceStorm Tools (icepack, icebox, iceprog):
