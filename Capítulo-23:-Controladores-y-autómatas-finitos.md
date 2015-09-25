@@ -105,7 +105,7 @@ always @*
     end
   endcase
 ```
-Usar el **case** es la manera directa, pero hay que **definir el valor de todas las microórdenes para cada estado**. Mediante **assignaciones directas** se puede reducir el código sustancialmente. En el ejemplo anterior, vemos que la microórden m2 sólo se activa en el ESTADO3 y en el resto está desactivada. Para m1 vemos que se activa en los estados ESTADO1 y ESTADO3. Esto lo podemos describir así:
+Usar el **case** es la manera directa, pero hay que **definir el valor de todas las microórdenes para cada estado**. Mediante **assignaciones directas** se puede reducir el código sustancialmente. En el ejemplo anterior, vemos que la microórden **m2** sólo se activa en el ESTADO3 y en el resto está desactivada. Para **m1** vemos que se activa en los estados ESTADO1 y ESTADO3. Esto lo podemos describir así:
 
 ```verilog
 assign m1 = (state == ESTADO1 || state == ESTDO3) ? 1 : 0;
