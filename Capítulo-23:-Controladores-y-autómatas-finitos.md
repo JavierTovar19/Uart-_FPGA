@@ -138,9 +138,9 @@ El **diagrama de estados** del controlador es el siguiente:
 El transmisor puede estar en 3 estados:
 
 * **IDLE**: Estado de reposo. No se está transmitiendo nada. Se espera a que se active la señal de start para comenzar con la transmisión del carácter "A"
-* **START**: Comienzo de transmisión. Se carga el dato en el registro de desplazamiento. Se arranca el reloj para la temporización de los bits a la velocidad configurada. Se pone el contador de bits a cero
-* **TRANS**: Estado de transmisión. Permanece en este estado durante la trasmisión del carácter
+* **START**: Comienzo de transmisión. Se carga el dato en el registro de desplazamiento. Se arranca el reloj para la temporización de los bits a la velocidad configurada. Se pone el contador de bits a cero. Es un estado transitorio que dura 1 ciclo de reloj.
+* **TRANS**: Estado de transmisión. Permanece en este estado durante la trasmisión del carácter. En cuanto el contador de bits alcanza el valor 11 (10 bits ya transmitidos) se pasa al estado inicial de reposo
 
-Para controlar la ruta de datos se necesitan 2 microórdenes, load y baudgen, para cargar 
+Para controlar la ruta de datos se necesitan **2 microórdenes**, _load_ y _baudgen_. La se usa para cargar el dato en el registro de desplazamiento y poner a cero el contador de bits. La segunda es la habilitación del temporizador de bits (generador de baudios) 
 
 
