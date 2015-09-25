@@ -135,6 +135,9 @@ El **diagrama de estados** del controlador es el siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-2.png)
 
+El transmisor puede estar en 3 estados:
+
+* IDLE: 
 
 Para controlar la ruta de datos se necesitan 2 microórdenes, load y baudgen, para cargar 
 
