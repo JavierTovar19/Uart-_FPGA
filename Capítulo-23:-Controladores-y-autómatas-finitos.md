@@ -383,7 +383,9 @@ y el resultado en gtkwave es:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-sim-1.png)
 
+La línea superior es la de **start**. Observamos cómo esta señal se pone a 0 antes de que termine el primer carácter, pero se  sigue enviando. Al terminar, se vuelve a poner a 1 para enviar el siguiente. Esta vez se deja subido más tiempo, de forma que se envían 2 caracteres más (En total se envían 30 bits, por lo que hay 30 pulsos de la señal _clk_baud_).
 
+En las línea inferiores se ve el contador de bits y los estados por los que pasa el controlador
 
 ### Síntesis y pruebas
 
