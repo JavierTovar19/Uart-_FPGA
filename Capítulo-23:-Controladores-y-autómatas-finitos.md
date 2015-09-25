@@ -389,6 +389,26 @@ En las línea inferiores se ve el contador de bits y los estados por los que pas
 
 ### Síntesis y pruebas
 
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 21 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog fsmtx.bin
+
+Desde el **gtkterm**, cada vez que le damos al **F7** para modificar la **señal DTR** se empezarán a enviar los **caracteres A** (por defecto a la velocidad de 300 baudios). Si ahora dejamos pulsada F7 o la apretamos aleatoriamente, veremos que **no aparecen caracteres basura**, porque el controlador nos garantiza que siempre se envíe el caracter
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-gtkterm-1.png)
+
 ## fsmtx.v: Transmisión temporizada
 ### Simulación
 ### síntesis y pruebas
