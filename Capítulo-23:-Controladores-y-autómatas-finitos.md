@@ -409,9 +409,16 @@ Desde el **gtkterm**, cada vez que le damos al **F7** para modificar la **señal
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-gtkterm-1.png)
 
-## fsmtx.v: Transmisión temporizada
+## fsmtx2.v: Transmisión temporizada
+
+Esquema del circuito:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-1.png)
+
+Descripción en Verilog:
 
 ```verilog
+//-- Fichero: fsmtx2.v
 `default_nettype none
 
 `include "baudgen.vh"
