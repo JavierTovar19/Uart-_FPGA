@@ -72,7 +72,39 @@ always @(posedge clk)
 
     endcase
 ```
+En todos los estados salvo el ESTADO2 las **transiciones son condicionales**: según el estado de las señales a,b y c se salta a un estado o a otro.  **El ESTADO2 sólo dura 1 ciclo**. En cuanto se entra en él, se salta al ESTADO3 **incondicionalmente**, en el siguiente ciclo de reloj.
 
+Ahora falta la parte de **generación de las microórdenes**. Supondremos que este circuito tiene 2 microórdenes: **m1** y **m2**. Dependiendo del estado en el que se encuentre, se asignarán diferentes valores. Lo implementamos como un **proceso combinacional** con un **case**:
+
+```verilog
+always @*
+  case (state)
+    ESTADO0: begin
+      m1 <= 0;
+      m2 <= 0;
+    end
+
+    ESTADO1: begin
+      m1 <= 1;
+      m2 <= 0;
+    end
+
+    ESTADO2: begin
+      m1 <= 0;
+      m2 <= 0;
+    end
+
+    ESTADO3: begin
+      m1 <= 1;
+      m2 <= 1;
+    end
+
+    default: begin
+      m1 <= 0;
+      m2 <= 0;
+    end
+  endcase
+```
 
 # Arquitectura del transmisor serie
 ## Ruta de datos
