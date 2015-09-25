@@ -114,10 +114,10 @@ assign m2 = (state == ESTADO3) ? 1 : 0;
 El código queda mucho más compacto.
 
 # Arquitectura del transmisor serie
-## Ruta de datos
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-1.png)
 
+## Ruta de datos
 ## Controlador
 
 
