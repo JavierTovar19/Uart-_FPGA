@@ -27,6 +27,17 @@ Partimos de este **diagrama de 4 estados**, para explicar cómo describirlo en V
 
 **Inicialmente** el circuito se encuentra en el **estado 0** y el controlador generará las microórdenes necesarias (no mostradas en el dibujo). Mientras que la **señal a** esté a 0, se mantendrá siempre en ese estado. En cuanto se ponga a 1 se pasará al **estado 1**, donde se generarán otras microórdenes. En este estado, según el valor de la **señal b**, bien se volverá al estado inicial o se avanzará al **estado 2**. El estado 2 **no tiene condiciones**, por lo que **en el siguiente ciclo de reloj** se pasa al **estado 4**. Cuando la **señal c** valga 0, se vuelve al estado inicial.
 
+Primero definimos las** etiquetas para los estados** mediante **parámetros locales**, y un **registro** para **almacenar el estado**. Como tenemos 4 estados, este registro será de **2 bits**:
+
+```verilog
+localparam ESTADO0 = 0;
+localparam ESTADO1 = 1;
+localparam ESTADO2 = 2;
+localparam ESTADO3 = 3;
+
+reg [1:0] state;
+```
+
 # Arquitectura del transmisor serie
 ## Ruta de datos
 
