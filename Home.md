@@ -42,6 +42,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **David Sánchez Falero**, por enseñarme cómo resaltar código Verilog en los markdown de github :-) ¡Esto ha hecho que el código sea muchísimo más legible! ¡Muchas Gracias! 
 
+* A **Carlos García Saura***, por las instrucciones de instalación de las herramientas icestorm en Fedora. ¡Muchas gracias!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino? ¿Qué hace una FPGA que no pueda hacer Arduino?**
 TODO
