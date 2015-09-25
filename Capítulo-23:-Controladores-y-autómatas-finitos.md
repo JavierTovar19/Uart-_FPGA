@@ -37,6 +37,11 @@ localparam ESTADO3 = 3;
 
 reg [1:0] state;
 ```
+Las **transiciones** entre estados las modelamos mediante un **proceso que depende del reloj** y que al recibir el **reset** se inicializa en el **estado inicial**. Usando un _**case**_ definimos las transiciones para cada estado:
+
+```verilog
+```
+
 
 # Arquitectura del transmisor serie
 ## Ruta de datos
