@@ -137,7 +137,9 @@ El **diagrama de estados** del controlador es el siguiente:
 
 El transmisor puede estar en 3 estados:
 
-* IDLE: 
+* **IDLE**: Estado de reposo. No se está transmitiendo nada. Se espera a que se active la señal de start para comenzar con la transmisión del carácter "A"
+* **START**: Comienzo de transmisión. Se carga el dato en el registro de desplazamiento. Se arranca el reloj para la temporización de los bits a la velocidad configurada. Se pone el contador de bits a cero
+* **TRANS**: Estado de transmisión. Permanece en este estado durante la trasmisión del carácter
 
 Para controlar la ruta de datos se necesitan 2 microórdenes, load y baudgen, para cargar 
 
