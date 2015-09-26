@@ -625,7 +625,79 @@ endmodule
 ```
 
 ### Simulación
+El banco de pruebas sólo genera los pulsos de reloj para comprobar el funcionamiento. No se simulan los 100ms, para que vaya más rápido. La señal de start se cambia a 8Khz
+
+El código verilog es:
+
+```verilog
+//-- Fichero fsmtx2_tb.v
+`include "baudgen.vh"
+
+module fsmtx2_tb();
+
+//-- Baudios con los que realizar la simulacion
+//-- A 300 baudios, la simulacion tarda mas en realizarse porque los
+//-- tiempos son mas largos. A 115200 baudios la simulacion es mucho
+//-- mas rapida
+localparam BAUD = `B115200;
+
+//-- Tiempo entre caracteres
+localparam DELAY = `F_8KHz;
+
+//-- Tics de reloj para envio de datos a esa velocidad
+//-- Se multiplica por 2 porque el periodo del reloj es de 2 unidades
+localparam BITRATE = (BAUD << 1);
+
+//-- Tics necesarios para enviar una trama serie completa, mas un bit adicional
+localparam FRAME = (BITRATE * 11);
+
+//-- Tiempo entre dos bits enviados
+localparam FRAME_WAIT = (BITRATE * 4);
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Linea de tranmision
+wire tx;
+
+//-- Instanciar el componente
+fsmtx2 #(.BAUD(BAUD), .DELAY(DELAY))
+  dut(
+    .clk(clk),
+    .tx(tx)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("fsmtx2_tb.vcd");
+  $dumpvars(0, fsmtx2_tb);
+
+  #(FRAME_WAIT * 10) $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Lo simulamos ejecutando el comando:
+
+    $ make sim2
+
+y el resultado en gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-sim.png)
+
+La señal superior se corresponde con tx y la que está debajo a _clk_baud_, que marca el tiempo de envío de los bits. En la simulación se ve cómo se envían 2 caracteres completos y el comienzo del tercero.
+
+La señal periódica _start_ es la inferior. Se pueden ver los tres pulsos y cómo por cada uno de ellos se manda un carácter
+
 ### Síntesis y pruebas
+
 
 # Ejercicios propuestos
 # Conclusiones
