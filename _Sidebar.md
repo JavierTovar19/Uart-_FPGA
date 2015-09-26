@@ -24,6 +24,5 @@
 20 [[Comunicaciones serie asíncronas|Capítulo 20: Comunicaciones serie asíncronas]]  
 21 [[Baudios y transmisión|Capítulo 21: Baudios y transmisión]]  
 22 [[Reglas de diseño síncrono|Capítulo 22: Reglas de diseño síncrono]]  
-
-[[Capítulo 23: Controladores y autómatas finitos]]  
+23 [[Controladores y autómatas finitos|Capítulo 23: Controladores y autómatas finitos]]  
 
