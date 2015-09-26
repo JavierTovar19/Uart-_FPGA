@@ -697,8 +697,29 @@ La señal superior se corresponde con tx y la que está debajo a _clk_baud_, que
 La señal periódica _start_ es la inferior. Se pueden ver los tres pulsos y cómo por cada uno de ellos se manda un carácter
 
 ### Síntesis y pruebas
+Hacemos la síntesis con el siguiente comando:
 
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 6 / 96
+|PLBs      | 24 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog fsmtx2.bin
+
+Al abrir el gtkterm a la 115200 baudios veremos cómo van apareciendo los caracteres A periódicamente:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-gtkterm.png)
 
 # Ejercicios propuestos
+* Probar los ejemplos a diferentes baudios y cambiando de retardo de envío de caracteres en el segundo
+* Modificar el controlador para que se genere una señal de salida **ready**, que se pogna a 1 cuando el transmisor esté listo para enviar el siguiente carácter y pemanezca a 0 cuando esté ocupado
+
 # Conclusiones
 TODO
