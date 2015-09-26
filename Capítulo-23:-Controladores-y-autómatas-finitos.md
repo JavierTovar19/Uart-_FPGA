@@ -410,12 +410,15 @@ Desde el **gtkterm**, cada vez que le damos al **F7** para modificar la **señal
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-gtkterm-1.png)
 
 ## fsmtx2.v: Transmisión temporizada
+Este circuito **transmite periódicamente el carácter "A" cada 100ms**. El circuito es similar al del ejemplo anterior pero la señal de start se toma de un divisor de 100ms en vez de la señal externa DTR
 
-Esquema del circuito:
+Para que solo se envíe 1 caracter cada vez, el **divisor** está modificado para generar **un pulso de 1 ciclo de anchura**.
+
+El esquema del circuito es:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-1.png)
 
-Descripción en Verilog:
+y la descripción en Verilog:
 
 ```verilog
 //-- Fichero: fsmtx2.v
@@ -582,7 +585,44 @@ always @(posedge clk)
 
 endmodule
 ```
+### dividerp1.v: Divisor de pulsos de anchura de 1 ciclo
+El divisor que hemos usado en otros ejemplos está modificado para que la anchura sea de 1 ciclo de reloj:
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-2.png)
+
+Su descripción en Verilog es:
+
+```verilog
+//-- Fichero: dividerp1.v
+`include "divider.vh"
+
+//-- ENTRADAS:
+//--     -clk: Senal de reloj del sistema (12 MHZ en la iceStick)
+//
+//-- SALIDAS:
+//--     - clk_out. Señal de salida para lograr la velocidad en baudios indicada
+//--                Anchura de 1 periodo de clk. SALIDA NO REGISTRADA
+module dividerp1(input wire clk,
+                 output wire clk_out);
+
+//-- Valor por defecto de la velocidad en baudios
+parameter M = `T_100ms;
+
+//-- Numero de bits para almacenar el divisor de baudios
+localparam N = $clog2(M);
+
+//-- Registro para implementar el contador modulo M
+reg [N-1:0] divcounter = 0;
+
+//-- Contador módulo M
+always @(posedge clk)
+    divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;
+
+//-- Sacar un pulso de anchura 1 ciclo de reloj si el generador
+assign clk_out = (divcounter == 0) ? 1 : 0;
+
+endmodule
+```
 
 ### Simulación
 ### Síntesis y pruebas
