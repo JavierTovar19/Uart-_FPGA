@@ -26,3 +26,4 @@
 22 [[Reglas de diseño síncrono|Capítulo 22: Reglas de diseño síncrono]]  
 23 [[Controladores y autómatas finitos|Capítulo 23: Controladores y autómatas finitos]]  
 
+[[Capítulo 24: Unidad de transmisión serie asíncrona]]  
