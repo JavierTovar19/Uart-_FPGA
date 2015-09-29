@@ -4,3 +4,17 @@
 
 # Introducción
 **Completaremos** la unidad de transmisión serie asíncrona y haremos dos **ejemplos de uso**, que envían la cadena "Hola!...". Uno de manera contínua al activarse la señal de DTR y otro cada segundo
+
+# Módulo UART-TX
+
+La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
+
+## Descripción de los pines
+
+## Cronograma
+
+## Descripción del módulo en Verilog
+
+# Ejemplo 1: Enviando cadenas continuamente
+# Ejemplo 2: Enviando una cadena cada segundo
+
