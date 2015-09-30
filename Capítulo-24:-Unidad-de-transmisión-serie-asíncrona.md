@@ -11,12 +11,34 @@ Se trata de la **última versión de la unidad de transmisión**, que quedará l
 
 La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
 
-## Descripción de los pines
+## Descripción de la interfaz
+
+(Dibujo de la interfaz del modulo)
 
 ## Cronograma
+
+(Dibujo del cronograma de uso)
+
+## Diagrama de bloques
+
+(Dibujo con el diagrama de bloques)
 
 ## Descripción del módulo en Verilog
 
 # Ejemplo 1: Enviando cadenas continuamente
-# Ejemplo 2: Enviando una cadena cada segundo
 
+## Diagrama de bloques
+## scicad1.v: Descripción en verilog
+## Simulación
+## Síntesis y pruebas
+
+# Ejemplo 2: Enviando una cadena cada segundo
+## scicad2.v: Descripción en verilog
+## Simulación
+## Síntesis y pruebas
+
+# Ejercicios propuestos
+* Modificar cualquiera de los dos ejemplos para enviar la cadena "Hola como estas "
+
+# Conclusiones
+TODO
