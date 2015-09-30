@@ -13,7 +13,7 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
 
 ## Descripción de la interfaz
 
-(Dibujo de la interfaz del modulo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-2.png)
 
 ## Cronograma
 
