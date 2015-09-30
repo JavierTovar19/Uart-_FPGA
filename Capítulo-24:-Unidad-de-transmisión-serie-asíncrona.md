@@ -21,7 +21,7 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
 
 ## Diagrama de bloques
 
-(Dibujo con el diagrama de bloques)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-1.png)
 
 ## Descripción del módulo en Verilog
 
