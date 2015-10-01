@@ -13,7 +13,15 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
 
 ## Descripción de la interfaz
 
+La unidad de transmisión tiene 4 entradas y 2 salidas:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-2.png)
+
+* **Entradas**:
+    * **clk**: Reloj del sistema (12MHz en la ICEstick)
+    * **rstn**: Reset negado. Cuando rstn es 0, se hace un reset síncrono de la unidad de transmisión
+    * **start**: Comienzo de la transmisión. Cuando está a 1, se captura el carácter que entra por data y se empieza a enviar
+    * **data**:  Dato de 8 bits a enviar
 
 ## Cronograma
 
