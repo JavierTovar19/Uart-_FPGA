@@ -22,6 +22,9 @@ La unidad de transmisión tiene 4 entradas y 2 salidas:
     * **rstn**: Reset negado. Cuando rstn es 0, se hace un reset síncrono de la unidad de transmisión
     * **start**: Comienzo de la transmisión. Cuando está a 1, se captura el carácter que entra por data y se empieza a enviar
     * **data**:  Dato de 8 bits a enviar
+* **Salidas**:
+    * **tx**: Salida serie del dato. Conectar a la línea de transmisión
+    * **ready**: Estado de la transmisión. Cuando ready es 1, la unidad está lista para transmitir. Y empezará en cuanto start se ponga a 1. Si ready es 0 la unidad está ocupada con el envío de un carácter
 
 ## Cronograma
 
