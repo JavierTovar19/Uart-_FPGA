@@ -1,4 +1,4 @@
-(Dibujo diagrama ejemplo 1)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T24-uart-tx)
 
@@ -40,6 +40,8 @@ La unidad de transmisión tiene 4 entradas y 2 salidas:
 # Ejemplo 1: Enviando cadenas continuamente
 
 ## Diagrama de bloques
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
+
 ## scicad1.v: Descripción en verilog
 ## Simulación
 ## Síntesis y pruebas
