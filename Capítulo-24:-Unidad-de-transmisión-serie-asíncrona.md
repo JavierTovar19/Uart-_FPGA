@@ -29,7 +29,9 @@ La unidad de transmisión tiene 4 entradas y 2 salidas:
 
 ## Cronograma
 
-(Dibujo del cronograma de uso)
+Para transmitir primero se poner el **carácter de 8 bits en la entrada _data_** y **se activa la señal _start_**. Se comienza a transmitir por _tx_. La **señal _ready_** se pone a **0** para indicar que **la unidad está ocupada**. Cuando el carácter se ha terminado de enviar, **_ready_ se pone de nuevo a 1**.
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-4.png)
 
 ## Diagrama de bloques
 
