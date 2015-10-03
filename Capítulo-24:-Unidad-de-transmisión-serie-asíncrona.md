@@ -37,13 +37,11 @@ Para transmitir primero se poner el **carácter de 8 bits en la entrada _data_**
 
 El diagrama de bloques del transmisor se muestra en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-1.png)
 
 El diseño, como hicimos en el capítulo pasado, está dividido en su **ruta de datos** y su **controlador**. Hay **dos microórdenes** que genera el controlador: _bauden_ y _load_, con las que activa el temporizador de bits y la carga del registro de desplazamiento respectivamente. _Load_ también se usa para poner a cero el contador de bits
 
 El dato a transmitir se recibe por _data_, y se registra para cumplir con las **normas del diseño síncrono**. El controlador genera también la **señal ready** para indicar cuándo se ha terminado de transmitir
-
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-1.png)
 
 ## Descripción del módulo en Verilog
 
