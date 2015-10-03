@@ -508,7 +508,9 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Al apretar la tecla **F7** para **activar el DTR**, se envía la cadena "**Hola!...**" continuamente. Al volver a apretar F7 se para. Observamos que ahora **en ningún momento aparecen caracteres extraños**. Da igual si dejamos pulsado el F7 y la señal de dtr se pone a oscilar
 
-![]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad1-gtkterm.png)
+
+En este vídeo de youtube se puede ver el ejemplo en acción:
 
 
 # Ejemplo 2: Enviando una cadena cada segundo
