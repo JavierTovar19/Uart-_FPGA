@@ -515,6 +515,9 @@ En este **vídeo de youtube** se puede ver el ejemplo en acción:
 [![Click to see the youtube video](http://img.youtube.com/vi/hWNw9ULRMvw/0.jpg)](https://www.youtube.com/watch?v=hWNw9ULRMvw)
 
 # Ejemplo 2: Enviando una cadena cada segundo
+
+Este circuito de ejemplo es similar al anterior, pero ahora **el envío de la cadena se hace cada segundo**, en vez de tener que activar el DTR
+
 ## Diagrama de bloques
 ## scicad2.v: Descripción en verilog
 ## Simulación
