@@ -490,6 +490,26 @@ En este pantallazo del gtkwave sólo se muestra la transmisión de la **primera 
 Se observa cómo en cuanto **transmit** se pone a **1**, se **empieza la transmisión** (tx se pone a 0 para tranmitir el bit de start). La señal de **ready** se pone a 1 cada vez que se ha enviado un carácter. Al enviarse el octavo, permanece a 1 (porque transmit está a 0, que indica que no se quiere transmitir más)
 
 ## Síntesis y pruebas
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 8 / 96
+|PLBs      | 25 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog scicad1.bin
+
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Al apretar la tecla **F7** para **activar el DTR**, se envía la cadena "**Hola!...**" continuamente. Al volver a apretar F7 se para. Observamos que ahora **en ningún momento aparecen caracteres extraños**. Da igual si dejamos pulsado el F7 y la señal de dtr se pone a oscilar
+
+![]()
+
 
 # Ejemplo 2: Enviando una cadena cada segundo
 ## scicad2.v: Descripción en verilog
