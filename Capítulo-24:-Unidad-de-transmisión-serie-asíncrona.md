@@ -209,9 +209,32 @@ endmodule
 
 # Ejemplo 1: Enviando cadenas continuamente
 
+En este primer ejemplo de utilización del módulo de transmisión **enviaremos la cadena "Hola!..."** de forma continua, mientras que la **señal de dtr esté activada**
+
 ## Diagrama de bloques
 
+El circuito sigue el mismo esquema de ruta de datos / controlador
 
+### Ruta de datos
+
+Los **8 caracteres** de la cadena están cableados a un **multiplexor de 8 a 1**, cuya entrada de selección está controlada por un **contador de 3 bits**, de forma que se vayan sacando los caracteres uno a uno. El caracter a transmitir se registra y se introduce por la entrada data del transmisor.
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
+
+### Controlador
+
+El controlador tiene las siguientes **entradas**:
+* **car_count**: Contador de caracteres. Es la salida del contador de 3 bits. Indica el carácter que se está enviando
+* **ready**: Señal proveniente de la unidad de transmisión para saber cuándo está lista para enviar el siguiente caracter
+* **transmit**: Señal proveniente del exterior del circuito para indicar que comience la transmisión de la cadena. Está conectada a la señal DTR que controla el usuario
+
+Las **microórdenes** que genera son:
+* **start**: Para comenzar la transmisión de un carácter
+* **cena**: Counter enable. Activar el contador para acceder al siguiente caracter a enviar
+
+El comportamiento del controlador queda definido por esta máquina de estados:
+
+(Diagrama máquina estados)
 
 ## scicad1.v: Descripción en verilog
 ## Simulación
