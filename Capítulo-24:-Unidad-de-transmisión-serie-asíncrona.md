@@ -510,8 +510,9 @@ Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Al apretar la tec
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad1-gtkterm.png)
 
-En este vídeo de youtube se puede ver el ejemplo en acción:
+En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
+[![Click to see the youtube video](http://img.youtube.com/vi/hWNw9ULRMvw/0.jpg)](https://www.youtube.com/watch?v=hWNw9ULRMvw)
 
 # Ejemplo 2: Enviando una cadena cada segundo
 ## scicad2.v: Descripción en verilog
