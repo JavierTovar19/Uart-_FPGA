@@ -230,7 +230,7 @@ Las **microórdenes** que genera son:
 * **start**: Para comenzar la transmisión de un carácter
 * **cena**: Counter enable. Activar el contador para acceder al siguiente caracter a enviar
 
-El comportamiento del controlador queda definido por esta máquina de estados:
+Este es el diagrama de estados del autómata:
 
 (Diagrama máquina estados)
 
