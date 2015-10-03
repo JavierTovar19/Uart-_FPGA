@@ -515,6 +515,7 @@ En este **vídeo de youtube** se puede ver el ejemplo en acción:
 [![Click to see the youtube video](http://img.youtube.com/vi/hWNw9ULRMvw/0.jpg)](https://www.youtube.com/watch?v=hWNw9ULRMvw)
 
 # Ejemplo 2: Enviando una cadena cada segundo
+## Diagrama de bloques
 ## scicad2.v: Descripción en verilog
 ## Simulación
 ## Síntesis y pruebas
