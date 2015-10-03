@@ -414,7 +414,7 @@ endmodule
 
 ## Simulación
 
-El banco de pruebas envía dos pulsos en la señal dtr, para que se envíe la cadena 2 veces. El código verilog es el siguiente:
+El banco de pruebas **envía dos pulsos en la señal dtr**, para que se envíe la cadena 2 veces. El código verilog es el siguiente:
 
 ```verilog
 //-- Fichero: scicad1_tb.v
@@ -456,7 +456,6 @@ scicad1 #(.BAUD(BAUD))
 always 
   # 1 clk <= ~clk;
 
-
 //-- Proceso al inicio
 initial begin
 
@@ -480,6 +479,15 @@ end
 
 endmodule
 ```
+Para simular ejecutamos el comando:
+
+    $ make sim
+
+En este pantallazo del gtkwave sólo se muestra la transmisión de la **primera cadena**
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad1-sim.png)
+
+Se observa cómo en cuanto **transmit** se pone a **1**, se **empieza la transmisión** (tx se pone a 0 para tranmitir el bit de start). La señal de **ready** se pone a 1 cada vez que se ha enviado un carácter. Al enviarse el octavo, permanece a 1 (porque transmit está a 0, que indica que no se quiere transmitir más)
 
 ## Síntesis y pruebas
 
