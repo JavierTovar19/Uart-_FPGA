@@ -711,7 +711,96 @@ endmodule
 ```
 
 ## Simulación
+
+El banco de pruebas sólo tiene que generar el reloj del sistema y esperar un cierto tiempo para completar la simulación
+
+```verilog
+//-- Fichero: scicad2_tb.v
+`include "baudgen.vh"
+
+
+module scicad2_tb();
+
+//-- Baudios con los que realizar la simulacion
+localparam BAUD = `B115200;
+localparam DELAY = 10000;
+
+//-- Tics de reloj para envio de datos a esa velocidad
+//-- Se multiplica por 2 porque el periodo del reloj es de 2 unidades
+localparam BITRATE = (BAUD << 1);
+
+//-- Tics necesarios para enviar una trama serie completa, mas un bit adicional
+localparam FRAME = (BITRATE * 11);
+
+//-- Tiempo entre dos bits enviados
+localparam FRAME_WAIT = (BITRATE * 4);
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Linea de tranmision
+wire tx;
+
+//-- Instanciar el componente
+scicad2 #(.BAUD(BAUD), .DELAY(DELAY))
+  dut(
+    .clk(clk),
+    .tx(tx)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("scicad2_tb.vcd");
+  $dumpvars(0, scicad2_tb);
+
+  #(FRAME * 20) $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+Para simular ejecutamos el comando:
+
+    $ make sim2
+
+En este pantallazo del gtkwave se muestra la transmisión periódica de la cadena:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad2-gtkterm.png)
+
+Se observa cómo la señal transmit se pone a 1 periódicamente, transmitiéndose la cadena
+
 ## Síntesis y pruebas
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 8 / 96
+|PLBs      | 37 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog scicad2.bin
+
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Aparecerá la cadena "**Hola!...**" cada segundo
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad2-sim.png)
+
+En este **vídeo de youtube** se puede ver el ejemplo en acción:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
 
 # Ejercicios propuestos
 * Modificar cualquiera de los dos ejemplos para enviar la cadena "Hola como estas "
