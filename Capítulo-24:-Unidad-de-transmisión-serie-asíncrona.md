@@ -799,8 +799,7 @@ Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Aparecerá la cad
 
 En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
-
+[![Click to see the youtube video](http://img.youtube.com/vi/gKz9vYfRkdI/0.jpg)](https://www.youtube.com/watch?v=gKz9vYfRkdI)
 
 # Ejercicios propuestos
 * Modificar cualquiera de los dos ejemplos para enviar la cadena "Hola como estas "
