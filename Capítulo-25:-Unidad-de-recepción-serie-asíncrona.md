@@ -6,6 +6,9 @@
 
 # Módulo UART-RX
 ## Descripción de la interfaz
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-1.png)
+
 ## Cronograma
 ## Diagrama de bloques
 ## Descripción en verilog
