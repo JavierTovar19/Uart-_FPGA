@@ -25,5 +25,4 @@
 21 [[Baudios y transmisión|Capítulo 21: Baudios y transmisión]]  
 22 [[Reglas de diseño síncrono|Capítulo 22: Reglas de diseño síncrono]]  
 23 [[Controladores y autómatas finitos|Capítulo 23: Controladores y autómatas finitos]]  
-
-[[Capítulo 24: Unidad de transmisión serie asíncrona]]  
+24 [[Unidad de transmisión serie asíncrona|Capítulo 24: Unidad de transmisión serie asíncrona]]  
