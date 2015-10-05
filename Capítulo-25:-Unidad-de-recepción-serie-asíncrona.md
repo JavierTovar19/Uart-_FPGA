@@ -15,6 +15,8 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-rx**
 
 La unidad tiene 3 entradas y 2 salidas:
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-1.png)
+
 * **Entradas**:
     * **clk**: Reloj del sistema (12MHz en la ICEstick)
     * **rstn**: Reset negado. Cuando rstn es 0, se hace un reset síncrono de la unidad de transmisión
@@ -24,7 +26,7 @@ La unidad tiene 3 entradas y 2 salidas:
     * **rcv**: Notificación de carácter recibido. Es un pulso de 1 ciclo de ancho
     * **data**: Dato de recibido (8 bits)
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-1.png)
+
 
 ## Cronograma
 ## Diagrama de bloques
