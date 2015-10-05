@@ -58,7 +58,11 @@ En el cronograma se puede ver cómo al recebir el **flanco de bajada** del bit d
 
 ### Controlador
 
+(Diagrama de estados)
+
 ## Descripción en verilog
+### baudgen_rx.v
+### uart_rx.v
 
 # Ejemplo 1: Visualizando en los leds
 ## Descripción 
