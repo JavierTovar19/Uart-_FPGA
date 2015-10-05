@@ -36,7 +36,19 @@ Inicialmente, cuando **la línea está en reposo** y no se ha recibido nada, la 
 
 ## Diagrama de bloques
 
+El diagrama de bloques completo del receptor se muestra en la siguiente figura:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-2.png)
+
+### Ruta de datos
+
+La **señal rx se registra**, para cumplir con las normas de diseño síncrono, y se introduce por el bit más significativo de un **registro de desplazamiento** de 10 bits. El desplazamiento se realiza cuando llega un pulso por la señal **clk_baud**, proveniente del **generador de baudios**. Este generador sólo funciona cuando la miroorden **bauden** está activada.
+
+Un **contador de 4 bits** realiza la cuenta de los bits recibidos (cuenta cada pulso de clk_baud). Se pone a 0 con la microórden **clear**
+
+Por último tenemos el **controlador**, que genera las microórdenes **baudgen**, **load**, **clear** y la señal de interfaz **rcv**. La señal load se activa para que el dato recibido se almacene en el **registro de datos de 8 bits**, de manera que se mantenga estable durante la recepción del siguiente carácter
+
+### baudgen_rx: Generador de baudios para recepción
 
 ## Descripción en verilog
 
