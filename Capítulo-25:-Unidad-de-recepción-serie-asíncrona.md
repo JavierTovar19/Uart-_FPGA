@@ -58,7 +58,7 @@ En el cronograma se puede ver cómo al recebir el **flanco de bajada** del bit d
 
 ### Controlador
 
-El controlador está modelado como una máquina de 4 estados:
+El controlador está modelado como una máquina de **4 estados**:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-5.png)
 
@@ -70,7 +70,62 @@ Los estados son:
 * **DAV**: (Data AVailable). Señalización de que existe un **dato disponible**. Se pone a uno la señal **rcv** para que los circuitos externos puedan capturar el dato
 
 ## Descripción en verilog
+
+La **unidad de recepción** se compone de dos ficheros: el generador de baudios de recepción (_baudgen_rx.v_) y el propio receptor (_uart_rx.v_)
+
 ### baudgen_rx.v
+
+Este componente es similar al generador de baudios del transmisor, pero una vez habilitado el pulso se envía transcurrida la mitad del periodo
+
+El código verilog es el siguiente:
+
+```verilog
+//-- Fichero: baudgen_rx.v
+`include "baudgen.vh"
+
+//-- ENTRADAS:
+//--     -clk: Senal de reloj del sistema (12 MHZ en la iceStick)
+//--     -clk_ena: Habilitacion. 
+//--            1. funcionamiento normal. Emitiendo pulsos
+//--            0: Inicializado y parado. No se emiten pulsos
+//
+//-- SALIDAS:
+//--     - clk_out. Señal de salida para lograr la velocidad en baudios indicada
+//--                Anchura de 1 periodo de clk. SALIDA NO REGISTRADA
+module baudgen_rx(input wire clk,
+               input wire clk_ena, 
+               output wire clk_out);
+
+//-- Valor por defecto de la velocidad en baudios
+parameter M = `B115200;
+
+//-- Numero de bits para almacenar el divisor de baudios
+localparam N = $clog2(M);
+
+//-- Valor para llegar a la mitad del periodo
+localparam M2 = (M >> 1);
+
+//-- Registro para implementar el contador modulo M
+reg [N-1:0] divcounter = 0;
+
+//-- Contador módulo M
+always @(posedge clk)
+
+  if (clk_ena)
+    //-- Funcionamiento normal
+    divcounter <= (divcounter == M - 1) ? 0 : divcounter + 1;
+  else
+    //-- Contador "congelado" al valor maximo
+    divcounter <= M - 1;
+
+//-- Sacar un pulso de anchura 1 ciclo de reloj si el generador
+//-- esta habilitado (clk_ena == 1)
+//-- en caso contrario se saca 0
+assign clk_out = (divcounter == M2) ? clk_ena : 0;
+
+endmodule
+```
+
 ### uart_rx.v
 
 # Ejemplo 1: Visualizando en los leds
