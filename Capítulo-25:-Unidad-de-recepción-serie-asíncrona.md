@@ -58,7 +58,16 @@ En el cronograma se puede ver cómo al recebir el **flanco de bajada** del bit d
 
 ### Controlador
 
-(Diagrama de estados)
+El controlador está modelado como una máquina de 4 estados:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-5.png)
+
+Los estados son:
+
+* **IDLE**: Estado de reposo. Esperando a recibir el bit de start por rx.  En cuanto se recibe se pasa al siguiente estado
+* **RCV**: Recibiendo datos. Se activa **el temporizador de bits** mediante la microorden **baudgen** y se van recibiendo todos los bits, que se almacenan en **el registro de desplazamiento**. Cuando se han recibido 10 bits (1 de start + 8 de datos + 1 de stop) la salida del **contador** (**bitc**) estará a 10 y se pasa al siguiente estado
+* **LOAD**: Almacenamiento del dato recibido. Se activa la microorden **load** para guardar el dato recibido (8 bits) en el **registro de datos**
+* **DAV**: (Data AVailable). Señalización de que existe un **dato disponible**. Se pone a uno la señal **rcv** para que los circuitos externos puedan capturar el dato
 
 ## Descripción en verilog
 ### baudgen_rx.v
