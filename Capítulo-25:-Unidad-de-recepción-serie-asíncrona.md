@@ -266,9 +266,65 @@ Como primer ejemplo de uso de la **unidad de recepción**, haremos un circuito q
 
 La **línea rx** se envía directamente al **led verde** para ver la actividad (se envía negada para que normalmente esté el led apagado, y cuando se reciban caracteres parpadee)
 
-## Descripción 
+## rxleds.v: Descripción 
+
+El Diagrama de bloques del circuito se muestra a continuación:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-1.png)
+
+Simplemente **se instancia la unidad de recepción** y se colocan un **inicializador** para hacer el reset y **un registro** para capturar el dato recibido. Este registro tiene un **enable** para capturar cuando se reciba el dato (indicándose por la señal rcv)
+
+Descripción del código en verilog:
+
+```verilog
+`default_nettype none
+
+`include "baudgen.vh"
+
+//-- Top design
+module rxleds(input wire clk,         //-- Reloj del sistema
+              input wire rx,          //-- Linea de recepcion serie
+              output reg [3:0] leds,  //-- 4 leds rojos
+              output wire act);       //-- Led de actividad (verde)
+
+//-- Parametro: Velocidad de transmision
+localparam BAUD = `B115200;
+
+//-- Señal de dato recibido
+wire rcv;
+
+//-- Datos recibidos
+wire [7:0] data;
+
+//-- Señal de reset
+reg rstn = 0;
+
+//-- Inicializador
+always @(posedge clk)
+  rstn <= 1;
+
+//-- Instanciar la unidad de recepcion
+uart_rx #(BAUD)
+  RX0 (.clk(clk),      //-- Reloj del sistema
+       .rstn(rstn),    //-- Señal de reset
+       .rx(rx),        //-- Linea de recepción de datos serie
+       .rcv(rcv),      //-- Señal de dato recibido
+       .data(data)     //-- Datos recibidos
+      );
+
+//-- Sacar los 4 bits menos significativos del dato recibido por los leds
+//-- El dato se registra
+always @(posedge clk)
+    //-- Capturar el dato cuando se reciba
+    if (rcv == 1'b1)
+      leds <= data[3:0]; 
+
+//-- Led de actividad
+//-- La linea de recepcion negada se saca por el led verde
+assign act = ~rx;
+
+endmodule
+```
 
 ## Simulación
 
