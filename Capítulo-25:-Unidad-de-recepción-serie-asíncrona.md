@@ -261,6 +261,9 @@ endmodule
 ```
 
 # Ejemplo 1: Visualizando en los leds
+
+Como primer ejemplo de uso de la **unidad de recepción**, haremos un circuito que **captura en un registro el dato recibido** por el puerto serie, a la **velocidad de 115200 baudios** y sus 4 bits menos significativos los saca por los **leds rojos** de la placa ICEstick
+
 ## Descripción 
 ## Simulación
 ## Síntesis y pruebas
