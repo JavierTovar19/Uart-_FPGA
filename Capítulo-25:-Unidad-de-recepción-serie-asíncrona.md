@@ -267,7 +267,11 @@ Como primer ejemplo de uso de la **unidad de recepción**, haremos un circuito q
 La **línea rx** se envía directamente al **led verde** para ver la actividad (se envía negada para que normalmente esté el led apagado, y cuando se reciban caracteres parpadee)
 
 ## Descripción 
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-1.png)
+
 ## Simulación
+
 ## Síntesis y pruebas
 
 # Ejemplo 2: eco
