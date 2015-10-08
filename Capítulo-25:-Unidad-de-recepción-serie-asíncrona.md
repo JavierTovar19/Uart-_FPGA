@@ -466,9 +466,11 @@ y lo cargamos en la FPGA con:
 
     $ sudo iceprog rxleds.bin
 
-Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Si pulsamos teclas, veremos cómo cambian los leds de la ICEstick. Por ejemplo, si pulsamos el 7, se envía el número 0x37, cuyos 4 bits menos significativos coinciden con el número 7 (el código ASCII se diseño adrede para cumplir con esta propiedad). En binario es 0111.  Veremos cómo se encienden los leds 0, 1 y 3.   Si ahora pulsamos la tecla 0, todos los leds estarán apagados:
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Si pulsamos teclas, veremos cómo cambian los leds de la ICEstick. Por ejemplo, si pulsamos el 7, se envía el número 0x37, cuyos 4 bits menos significativos coinciden con el número 7 (el código ASCII se diseño adrede para cumplir con esta propiedad). En binario es 0111.  Veremos cómo se encienden los leds 0, 1 y 3.   
 
-(Imagen del numero 7 en los leds)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-test.png)
+
+Si ahora pulsamos la tecla 0, todos los leds estarán apagados
 
 En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
