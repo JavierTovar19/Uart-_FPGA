@@ -634,8 +634,9 @@ Para realizar la simulación ejecutamos el comando:
 
 El resultado en gtkwave es:
 
-(Dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-gtkwave.png)
 
+Se observa cómo en cuanto llega un caracter se vuelve a enviar de vuelta
 
 ## Síntesis y pruebas
 
