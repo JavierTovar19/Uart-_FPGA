@@ -661,5 +661,7 @@ Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Todo lo que escri
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-gtkwave.png)
 
 # Ejercicios propuestos
+TODO
+
 # Conclusiones
 TODO
