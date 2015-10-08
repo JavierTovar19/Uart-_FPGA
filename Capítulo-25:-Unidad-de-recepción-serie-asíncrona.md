@@ -656,7 +656,9 @@ y lo cargamos en la FPGA con:
 
     $ sudo iceprog echo.bin
 
-Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Todo lo que escribamos se enviará a la FPGA y de mostrará de vuelta en la pantalla
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Todo lo que escribamos se enviará a la FPGA y se mostrará de vuelta en la pantalla
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-gtkwave.png)
 
 # Ejercicios propuestos
 # Conclusiones
