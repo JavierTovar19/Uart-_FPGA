@@ -474,7 +474,7 @@ Si ahora pulsamos la tecla 0, todos los leds estarán apagados
 
 En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/G9gO11ggUPg/0.jpg)](https://www.youtube.com/watch?v=G9gO11ggUPg)
 
 
 
