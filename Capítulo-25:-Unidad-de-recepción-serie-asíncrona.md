@@ -327,8 +327,154 @@ endmodule
 ```
 
 ## Simulación
+El banco de pruebas genera el reloj del sistema y envía dos caracteres en serie.  Para facilitar el envío y poder realizar bancos de pruebas más elaborados, que puedan enviar mayor cantidad de datos, se ha creado la **tarea _send_car_**.  En Verilog, las tareas son como las funciones en C (pero sin devolver ningún valor). Permiten reutilizar el código y hacer que los bancos de prueba sean más sencillos y legibles
+
+El código de **send_car** es:
+
+```verilog
+task send_car;
+    input [7:0] car;
+  begin
+    rx <= 0;                 //-- Bit start 
+    #BITRATE rx <= car[0];   //-- Bit 0
+    #BITRATE rx <= car[1];   //-- Bit 1
+    #BITRATE rx <= car[2];   //-- Bit 2
+    #BITRATE rx <= car[3];   //-- Bit 3
+    #BITRATE rx <= car[4];   //-- Bit 4
+    #BITRATE rx <= car[5];   //-- Bit 5
+    #BITRATE rx <= car[6];   //-- Bit 6
+    #BITRATE rx <= car[7];   //-- Bit 7
+    #BITRATE rx <= 1;        //-- Bit stop
+    #BITRATE rx <= 1;        //-- Esperar a que se envie bit de stop
+  end
+  endtask
+```
+
+Recibe como **argumento** un **carácter de 8 bits** y saca por la señal rx la trama serie, comenzando por el bit de start, luego los de datos y finalmente el bit de stop. Se hace a la velocidad indicada por el parametro BITRATE que se define en función de la velocidad en baudios.
+
+Para enviar un caracter sólo hay que **invocar a la tarea** y pasar este caracter como parámetro. Por ejemplo, para enviar una "A" en ascii sólo habría que ejecutar:
+
+senc_car("A");
+
+El código completo del banco de pruebas es el siguiente:
+
+```verilog
+//-- Fichero rxleds_tb.v
+`include "baudgen.vh"
+
+module rxleds_tb();
+
+localparam BAUD = `B115200;
+
+//-- Tics de reloj para envio de datos a esa velocidad
+//-- Se multiplica por 2 porque el periodo del reloj es de 2 unidades
+localparam BITRATE = (BAUD << 1);
+
+//-- Tics necesarios para enviar una trama serie completa, mas un bit adicional
+localparam FRAME = (BITRATE * 10);
+
+//-- Tiempo entre dos bits enviados
+localparam FRAME_WAIT = (BITRATE * 4);
+
+//----------------------------------------
+//-- Tarea para enviar caracteres serie  
+//----------------------------------------
+  task send_car;
+    input [7:0] car;
+  begin
+    rx <= 0;                 //-- Bit start 
+    #BITRATE rx <= car[0];   //-- Bit 0
+    #BITRATE rx <= car[1];   //-- Bit 1
+    #BITRATE rx <= car[2];   //-- Bit 2
+    #BITRATE rx <= car[3];   //-- Bit 3
+    #BITRATE rx <= car[4];   //-- Bit 4
+    #BITRATE rx <= car[5];   //-- Bit 5
+    #BITRATE rx <= car[6];   //-- Bit 6
+    #BITRATE rx <= car[7];   //-- Bit 7
+    #BITRATE rx <= 1;        //-- Bit stop
+    #BITRATE rx <= 1;        //-- Esperar a que se envie bit de stop
+  end
+  endtask
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Cables para las pruebas
+reg rx = 1;
+wire act;
+wire [3:0] leds;
+
+//-- Instanciar el modulo rxleds
+rxleds #(BAUD)
+  dut(
+    .clk(clk),
+    .rx(rx),
+    .act(act),
+    .leds(leds)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("rxleds_tb.vcd");
+  $dumpvars(0, rxleds_tb);
+
+  //-- Enviar datos de prueba
+  #BITRATE    send_car(8'h55);
+  #FRAME_WAIT send_car("K");
+
+  #(FRAME_WAIT*4) $display("FIN de la simulacion");
+  $finish;
+end
+```
+Se envían dos caracteres de prueba. Primero el 0x55, que en binario es 01010101 (se alternan los ceros y los unos). El segundo es el carácter K
+
+
+Para realizar la simulación ejecutamos el comando:
+
+    $ make sim
+
+Y el resultado en gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-gtkwave.png)
+
+La simulación comienza con la **línea rx en reposo** (a 1) y a continuación se envía el **valor 0x55** en serie al receptor. Cuando se ha terminado se ve en la simulación cómo aparece un **pulso en la señal rcv** y cómo el **valor 0x55** se guarda en el **registro de datos** (_data_). Además, por los leds se sacan los 4 bits menos significativos (que tienen el valor 5 en hexadecimal). 
+
+A continuación, pasado un tiempo, se envía el carácter (K), y comprobamos que se recibe correctamente
 
 ## Síntesis y pruebas
+
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 7 / 96
+|PLBs      | 25 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog rxleds.bin
+
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Si pulsamos teclas, veremos cómo cambian los leds de la ICEstick. Por ejemplo, si pulsamos el 7, se envía el número 0x37, cuyos 4 bits menos significativos coinciden con el número 7 (el código ASCII se diseño adrede para cumplir con esta propiedad). En binario es 0111.  Veremos cómo se encienden los leds 0, 1 y 3.   Si ahora pulsamos la tecla 0, todos los leds estarán apagados:
+
+(Imagen del numero 7 en los leds)
+
+En este **vídeo de youtube** se puede ver el ejemplo en acción:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+
 
 # Ejemplo 2: eco
 ## Descripción
