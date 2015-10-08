@@ -640,6 +640,24 @@ Se observa cómo en cuanto llega un caracter se vuelve a enviar de vuelta
 
 ## Síntesis y pruebas
 
+Hacemos la síntesis con el siguiente comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 10 / 96
+|PLBs      | 40 / 160
+|BRAMs     | 0 / 16
+
+y lo cargamos en la FPGA con:
+
+    $ sudo iceprog echo.bin
+
+Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Todo lo que escribamos se enviará a la FPGA y de mostrará de vuelta en la pantalla
+
 # Ejercicios propuestos
 # Conclusiones
 TODO
