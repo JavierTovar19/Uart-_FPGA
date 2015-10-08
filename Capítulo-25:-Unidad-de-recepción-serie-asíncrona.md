@@ -478,9 +478,71 @@ En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
 # Ejemplo 2: eco
 
-Este segundo ejemplo es el **clásico programa de "eco"**: que transmite todo lo que recibe. Es una manera de comprobar que los caracteres se están recibiendo correctamente. Este ejemplo amplía el anterior. Además de sacar la info por los leds se envían de vuelta por tx.
+Este segundo ejemplo es el **clásico programa de "eco"**: que transmite todo lo que recibe. Es una manera de comprobar que los caracteres se están recibiendo correctamente
 
 ## Descripción
+
+El diagrama de bloques se muestra a continuación:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-1.png)
+
+Sólo se instancian la unidad de transmisión y recepción, y se conectan de manera que lo recibido por una llegue a la otra
+
+El código verilog es el siguiente:
+
+```verilog
+
+`default_nettype none
+
+`include "baudgen.vh"
+
+//-- Top design
+module echo(input wire clk,         //-- Reloj del sistema
+            input wire rx,          //-- Linea de recepcion serie
+            output wire tx          //-- Linea de transmision serie
+            );
+
+//-- Parametro: Velocidad de transmision
+localparam BAUD = `B115200;
+
+//-- Señal de dato recibido
+wire rcv;
+
+//-- Datos recibidos
+wire [7:0] data;
+
+//-- Señal de reset
+reg rstn = 0;
+
+//-- Señal de transmisor listo
+wire ready;
+
+//-- Inicializador
+always @(posedge clk)
+  rstn <= 1;
+
+//-- Instanciar la unidad de recepcion
+uart_rx #(BAUD)
+  RX0 (.clk(clk),      //-- Reloj del sistema
+       .rstn(rstn),    //-- Señal de reset
+       .rx(rx),        //-- Linea de recepción de datos serie
+       .rcv(rcv),      //-- Señal de dato recibido
+       .data(data)     //-- Datos recibidos
+      );
+
+//-- Instanciar la unidad de transmision
+uart_tx #(BAUD)
+  TX0 ( .clk(clk),        //-- Reloj del sistema
+         .rstn(rstn),     //-- Reset global (activo nivel bajo)
+         .start(rcv),     //-- Comienzo de transmision
+         .data(data),     //-- Dato a transmitir
+         .tx(tx),         //-- Salida de datos serie (hacia el PC)
+         .ready(ready)    //-- Transmisor listo / ocupado
+       );
+
+endmodule
+```
+
 ## Simulación
 ## Síntesis y pruebas
 
