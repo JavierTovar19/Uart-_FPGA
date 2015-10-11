@@ -27,3 +27,5 @@
 23 [[Controladores y autómatas finitos|Capítulo 23: Controladores y autómatas finitos]]  
 24 [[Unidad de transmisión serie asíncrona|Capítulo 24: Unidad de transmisión serie asíncrona]]  
 25 [[Unidad de recepción serie asíncrona|Capítulo 25: Unidad de recepción serie asíncrona]]  
+
+[[Capítulo 26: Memoria ROM]]  
