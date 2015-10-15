@@ -29,3 +29,7 @@
 25 [[Unidad de recepción serie asíncrona|Capítulo 25: Unidad de recepción serie asíncrona]]  
 
 [[Capítulo 26: Memoria ROM]]  
+27 Memoria ROM paramétrica
+28 Memoria RAM
+29 Puestar tri-estado
+30 Fin: Hacia el microprocesador y más allá
