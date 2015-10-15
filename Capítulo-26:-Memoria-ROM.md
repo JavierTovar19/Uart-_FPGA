@@ -9,7 +9,7 @@ Mostraremos cómo se modelan las **memorias ROM** (de sólo lectura) en verilog 
 
 # Memoria ROM 32x4
 
-Comenzaremos por una rom muy sencilla, que puede almacenar 32 valores de 4 bits. Las direcciones de memoria van desde la 0 hasta la 31. Se necesitan 5 bits para representarlas
+Comenzaremos por una **rom muy sencilla**, que puede almacenar 32 valores de 4 bits. Las direcciones de memoria van desde la 0 hasta la 31. Se necesitan **5 bits** para representarlas
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/rom32x4-1.png)
 
