@@ -279,8 +279,7 @@ El diseño se carga con:
 
 La secuencia que aparece en los leds se puede ver en este vídeo de youtube:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
-
+[![Click to see the youtube video](http://img.youtube.com/vi/HKHM_NONhKg/0.jpg)](https://www.youtube.com/watch?v=HKHM_NONhKg)
 
 # Cargando la ROM desde un fichero
 
