@@ -1,4 +1,4 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/dd0c4778741eef3730722ed14989cafe7404c200/tutorial/T26-rom/images/romleds-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T26-rom)
 
