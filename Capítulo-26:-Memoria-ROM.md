@@ -121,6 +121,26 @@ El valor que se obtiene es 5 (que es lo que se ha almacenado en la posición de 
 
 ## Síntesis y pruebas
 
+La síntesis se realiza con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 1 / 160
+|BRAMs     | 1 / 16
+
+Observamos que ahora se está usando **1 bloque de memoria** (BRAM, Block RAM) de los 16 que tiene la FPGA. El sintetizador ha detectado que hay una memoria en nuestro diseño y la ha sintetizado mediante un bloque de memoria.
+
+El diseño se carga con:
+
+    $ sudo iceprog romhw.bin
+
+(imagen)
+
 # Ejemplo 2: Secuencia de luces
 
 # Cargando la ROM desde un fichero
