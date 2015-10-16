@@ -76,7 +76,7 @@ Como primer ejemplo, instanciaremos la memoria rom anterior (rom32x4) y mostrare
 
 El esquema es muy sencillo:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
 
 La **salida de datos** de la rom se conecta directamente a los **4 leds rojos de la placa ICEStick**, para visualizar el dato que sale.  Colocamos una **dirección fija** por la entrada **addr**. El contenido de esa dirección se mostrará por los leds. Dependiendo de la dirección, por los leds se mostrará un dato u otro
 
