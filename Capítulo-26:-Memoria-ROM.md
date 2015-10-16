@@ -282,6 +282,18 @@ La secuencia que aparece en los leds se puede ver en este vídeo de youtube:
 [![Click to see the youtube video](http://img.youtube.com/vi/HKHM_NONhKg/0.jpg)](https://www.youtube.com/watch?v=HKHM_NONhKg)
 
 # Cargando la ROM desde un fichero
+La **carga de las roms** se puede hacer tamién desde **un fichero**. Esto es especialmente útil si lo que se está cargando es el código máquina de un programa. El ensamblador genera este código máquina en un fichero de texto que posteriormente se carga en nuestra rom
+
+La lectura desde fichero se realiza con las funciones **$readmemh** y **$readmemb**
+
+## romfile16x4.v: Descripción en Verilog
+
+Esta es una memoria de 16x4 cuyo contenido se carga desde el fichero **rom1.list**. El código verilog es:
+
+```verilog
+
+```
+
 
 # Ejemplo 3: Otra secuencia
 
