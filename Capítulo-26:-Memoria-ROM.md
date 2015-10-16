@@ -147,6 +147,7 @@ Por los leds se visualizará esto:
 
 # Ejemplo 2: Secuencia de luces
 ## Diagrama de bloques
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/dd0c4778741eef3730722ed14989cafe7404c200/tutorial/T26-rom/images/romleds-1.png)
 ## Descripción en Verilog
 ## Simulación
 ## Síntesis y pruebas
