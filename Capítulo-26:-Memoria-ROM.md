@@ -315,7 +315,7 @@ end
 
 endmodule
 ```
-Al instanciar la memoria, el fichero pasado en el parámetro ROMFILE se usa para inicializar la memoria. Por defecto se usa el fichero rom1.list, cuyo contenido es:
+Al instanciar la memoria, el fichero pasado en el parámetro **ROMFILE** se usa para inicializar la memoria. Por defecto se usa el fichero **rom1.list**, cuyo contenido es:
 
 ```
 //-- Fichero rom1.list
