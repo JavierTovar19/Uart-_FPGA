@@ -76,7 +76,7 @@ Como primer ejemplo, instanciaremos la memoria rom anterior (rom32x4) y mostrare
 
 El esquema es muy sencillo:
 
-![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romhw-1.png)
 
 La **salida de datos** de la rom se conecta directamente a los **4 leds rojos de la placa ICEStick**, para visualizar el dato que sale.  Colocamos una **dirección fija** por la entrada **addr**. El contenido de esa dirección se mostrará por los leds. Dependiendo de la dirección, por los leds se mostrará un dato u otro
 
@@ -153,7 +153,7 @@ Como segundo ejemplo vamos a generar una **secuencia de luces en los leds**. Los
 
 La memoria se direcciona mediante un contador de 4 bits, de forma que se recorre la memoria desde la dirección 0 hasta la 15. El valor de cada posición se envía directamente a los leds. El contador se incrementa cada medio segundo, mediante un temporizador
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/dd0c4778741eef3730722ed14989cafe7404c200/tutorial/T26-rom/images/romleds-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
 
 Simplemente cambiando los valores almacenados en la memoria, se consigue una secuencia diferente
 
