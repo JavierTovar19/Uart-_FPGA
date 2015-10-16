@@ -248,6 +248,10 @@ endmodule
 ```
 
 ## Simulación
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds-sim.png)
+
+
 ## Síntesis y pruebas
 
 # Cargando la ROM desde un fichero
