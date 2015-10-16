@@ -107,6 +107,18 @@ El **parámetro ADDR** se usa para establecer la dirección constante que querem
 
 ## Simulación
 
+El banco de pruebas es muy sencillo. Sólo instancia el circuito romhw y genera la señal de reloj para que funcione
+
+La simulación se realiza con:
+
+    $ make sim
+
+y los resultados obtenidos en gtkwave son:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-sim.png)
+
+El valor que se obtiene es 5 (que es lo que se ha almacenado en la posición de memoria 5 de la rom)
+
 ## Síntesis y pruebas
 
 # Ejemplo 2: Secuencia de luces
