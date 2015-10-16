@@ -139,10 +139,23 @@ El diseño se carga con:
 
     $ sudo iceprog romhw.bin
 
-(imagen)
+Por los leds se visualizará esto:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-test.png)
+
+(led superior e inferior encendidos)
 
 # Ejemplo 2: Secuencia de luces
+## Diagrama de bloques
+## Descripción en Verilog
+## Simulación
+## Síntesis y pruebas
 
 # Cargando la ROM desde un fichero
 
 # Ejemplo 3: Otra secuencia
+
+# Ejercicios propuestos
+
+# CONCLUSIONES
+TODO
