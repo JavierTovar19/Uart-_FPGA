@@ -284,16 +284,61 @@ La secuencia que aparece en los leds se puede ver en este vídeo de youtube:
 # Cargando la ROM desde un fichero
 La **carga de las roms** se puede hacer tamién desde **un fichero**. Esto es especialmente útil si lo que se está cargando es el código máquina de un programa. El ensamblador genera este código máquina en un fichero de texto que posteriormente se carga en nuestra rom
 
-La lectura desde fichero se realiza con las funciones **$readmemh** y **$readmemb**
+La lectura desde fichero se realiza con las funciones **$readmemh** y **$readmemb**. El primero es para leer un fichero con datos en hexadecimal, y el segundo en binario.
 
 ## romfile16x4.v: Descripción en Verilog
 
 Esta es una memoria de 16x4 cuyo contenido se carga desde el fichero **rom1.list**. El código verilog es:
 
 ```verilog
+//-- Fichero romfile16x4
+module romfile16x4 (input clk,
+                    input wire [3:0] addr,
+                    output reg [3:0] data);
+
+//-- Parametro: Nombre del fichero con el contenido de la ROM
+parameter ROMFILE = "rom1.list";
+
+  //-- Memoria
+  reg [3:0] rom [0:31];
+
+  //-- Lectura de la memoria
+  always @(negedge clk) begin
+    data <= rom[addr];
+  end
+
+//-- Cargar en la memoria el fichero ROMFILE
+//-- Los valores deben estan dados en hexadecimal
+initial begin
+  $readmemh(ROMFILE, rom);
+end
+
+endmodule
+```
+Al instanciar la memoria, el fichero pasado en el parámetro ROMFILE se usa para inicializar la memoria. Por defecto se usa el fichero rom1.list, cuyo contenido es:
 
 ```
-
+//-- Fichero rom1.list
+//-- Cada linea se corresponde con una posicion de memoria
+//-- Se pueden poner comentarios
+//-- ROM1: contiene los numeros del 0 al 15 (en hexadecimal)
+0   //-- Posicion 0
+1   //-- Posicion 1
+2
+3
+4
+5
+6
+7
+8
+9
+A
+B
+C
+D
+E
+F  //-- Posicion 15
+```
 
 # Ejemplo 3: Otra secuencia
 
