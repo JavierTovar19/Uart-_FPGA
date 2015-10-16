@@ -64,11 +64,26 @@ module rom32x4 (input clk,
     rom[7] = 4'h7;
    end
 
+Los valores almacenados pueden ser cualquiera. Esta memoria se ha inicializado sólo con 8 valores, iguales a su número de dirección:  En la dirección 0 hay un 0,en la 1 un 1, etc. El resto de posiciones permanece a 0
+
 endmodule
 ```
 
 # Ejemplo 1: ¡Hello world ROM!
 
+Como primer ejemplo, instanciaremos la memoria rom anterior (rom32x4) y mostraremos el contenido de una dirección por los leds
+
+## Diagrama de bloques
+
+El esquema es muy sencillo:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-1.png)
+
+La **salida de datos** de la rom se conecta directamente a los **4 leds rojos de la placa ICEStick**, para visualizar el dato que sale.  Colocamos una **dirección fija** por la entrada **addr**. El contenido de esa dirección se mostrará por los leds. Dependiendo de la dirección, por los leds se mostrará un dato u otro
+
+## Simulación
+
+## Síntesis y pruebas
 
 # Ejemplo 2: Secuencia de luces
 
