@@ -63,11 +63,9 @@ module rom32x4 (input clk,
     rom[6] = 4'h6;
     rom[7] = 4'h7;
    end
-
-Los valores almacenados pueden ser cualquiera. Esta memoria se ha inicializado sólo con 8 valores, iguales a su número de dirección:  En la dirección 0 hay un 0,en la 1 un 1, etc. El resto de posiciones permanece a 0
-
 endmodule
 ```
+Los valores almacenados pueden ser cualesquiera. Esta memoria se ha inicializado sólo con 8 valores, iguales a su número de dirección:  En la dirección 0 hay un 0,en la 1 un 1, etc. El resto de posiciones permanece a 0
 
 # Ejemplo 1: ¡Hello world ROM!
 
