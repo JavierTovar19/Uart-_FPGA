@@ -146,9 +146,21 @@ Por los leds se visualizará esto:
 (led superior e inferior encendidos)
 
 # Ejemplo 2: Secuencia de luces
+
+Como segundo ejemplo vamos a generar una **secuencia de luces en los leds**. Los valores están almacenados en una memoria rom de 16x4
+
 ## Diagrama de bloques
+
+La memoria se direcciona mediante un contador de 4 bits, de forma que se recorre la memoria desde la dirección 0 hasta la 15. El valor de cada posición se envía directamente a los leds. El contador se incrementa cada medio segundo, mediante un temporizador
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/dd0c4778741eef3730722ed14989cafe7404c200/tutorial/T26-rom/images/romleds-1.png)
+
+Simplemente cambiando los valores almacenados en la memoria, se consigue una secuencia diferente
+
 ## Descripción en Verilog
+### Memoria ROM de 16x4
+### romleds.v: Secuenciador
+
 ## Simulación
 ## Síntesis y pruebas
 
