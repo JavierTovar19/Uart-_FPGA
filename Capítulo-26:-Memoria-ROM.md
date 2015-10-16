@@ -34,6 +34,7 @@ Para acceder a la memoria rom se deposita la dirección el puerto addres. En el 
 El código verilog de la memoria rom de 32x4 es el siguiente:
 
 ```verilog
+//-- Fichero rom32x4.v
 `default_nettype none
 
 module rom32x4 (input clk,
@@ -78,6 +79,31 @@ El esquema es muy sencillo:
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-1.png)
 
 La **salida de datos** de la rom se conecta directamente a los **4 leds rojos de la placa ICEStick**, para visualizar el dato que sale.  Colocamos una **dirección fija** por la entrada **addr**. El contenido de esa dirección se mostrará por los leds. Dependiendo de la dirección, por los leds se mostrará un dato u otro
+
+## romhw.v: Descripción en Verilog
+
+El código verilog es el siguiente:
+
+```verilog
+//-- Fichero romhw.v
+`default_nettype none
+
+module romhw (input wire clk,
+              output wire [3:0] leds);
+
+localparam ADDR = 5'h5;  //-- Direccion 5 por defecto
+
+//-- Instanciar la memoria rom
+rom32x4 
+  ROM (
+        .clk(clk),
+        .addr(ADDR),
+        .data(leds)
+      );
+
+endmodule
+```
+El **parámetro ADDR** se usa para establecer la dirección constante que queremos visualizar en los leds. Por defecto se ha elegido la dirección 5
 
 ## Simulación
 
