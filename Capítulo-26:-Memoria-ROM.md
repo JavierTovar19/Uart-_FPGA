@@ -159,7 +159,93 @@ Simplemente cambiando los valores almacenados en la memoria, se consigue una sec
 
 ## Descripción en Verilog
 ### Memoria ROM de 16x4
+La memoria rom es igual que la de 32x4, pero inicializada con los valores de la secuencia:
+
+```verilog
+//-- Fichero: rom16x4.v
+module rom16x4 (input clk,
+                input wire [3:0] addr,
+                output reg [3:0] data);
+
+  //-- Memoria
+  reg [3:0] rom [0:31];
+
+  always @(negedge clk) begin
+    data <= rom[addr];
+  end
+
+
+//-- ROM2: Secuencia
+initial begin
+    rom[0] = 4'h1; 
+    rom[1] = 4'h2;
+    rom[2] = 4'h4;
+    rom[3] = 4'h8;
+    rom[4] = 4'h1; 
+    rom[5] = 4'h8;
+    rom[6] = 4'h4;
+    rom[7] = 4'h2;
+    rom[8] = 4'h1; 
+    rom[9] = 4'hF;
+    rom[10] = 4'h0;
+    rom[11] = 4'hF;
+    rom[12] = 4'hC; 
+    rom[13] = 4'h3;
+    rom[14] = 4'hC;
+    rom[15] = 4'h3;
+   end
+
+endmodule
+```
 ### romleds.v: Secuenciador
+
+La descripción del ejemplo completo es:
+
+```verilog
+//-- Fichero: romleds.v
+`default_nettype none
+
+`include "divider.vh"
+
+module romleds (input wire clk,
+                 output wire [3:0] leds);
+
+//- Tiempo de envio
+parameter DELAY = `T_500ms; //`T_1s;
+
+reg [3:0] addr;
+reg rstn = 0;
+wire clk_delay;
+
+//-- Instanciar la memoria rom
+rom16x4
+  ROM (
+        .clk(clk),
+        .addr(addr),
+        .data(leds)
+      );
+
+//-- Contador
+always @(negedge clk)
+  if (rstn == 0)
+    addr <= 0;
+  else if (clk_delay)
+    addr <= addr + 1;
+
+//---------------------------
+//--  Temporizador
+//---------------------------
+dividerp1 #(.M(DELAY))
+  DIV0 ( .clk(clk),
+         .clk_out(clk_delay)
+       );
+
+//-- Inicializador
+always @(negedge clk)
+  rstn <= 1;
+
+endmodule
+```
 
 ## Simulación
 ## Síntesis y pruebas
