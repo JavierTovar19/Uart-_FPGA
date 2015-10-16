@@ -249,10 +249,38 @@ endmodule
 
 ## Simulación
 
+El banco de pruebas es muy sencillo. Sólo instancia el circuito romleds y genera la señal de reloj para que funcione
+
+La simulación se realiza con:
+
+    $ make sim2
+
+y los resultados obtenidos en gtkwave son:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds-sim.png)
 
 
 ## Síntesis y pruebas
+La síntesis se realiza con el comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 13 / 160
+|BRAMs     | 1 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog romleds.bin
+
+La secuencia que aparece en los leds se puede ver en este vídeo de youtube:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
 
 # Cargando la ROM desde un fichero
 
