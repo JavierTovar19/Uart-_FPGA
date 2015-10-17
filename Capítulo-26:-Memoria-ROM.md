@@ -251,6 +251,44 @@ endmodule
 
 El banco de pruebas es muy sencillo. Sólo instancia el circuito romleds y genera la señal de reloj para que funcione
 
+```verilog
+//-- Fichero: romleds_tb.v
+module romleds_tb();
+
+//-- Para la simulacion se usa un retraso de 2 ciclos de reloj
+parameter DELAY = 2;
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Datos de salida del componente
+wire [3:0] leds;
+
+//-- Instanciar el componente
+romleds #(DELAY)
+  dut(
+    .clk(clk),
+    .leds(leds)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("romleds_tb.vcd");
+  $dumpvars(0, romleds_tb);
+
+  # 100 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
 La simulación se realiza con:
 
     $ make sim2
@@ -398,6 +436,65 @@ endmodule
 ```
 
 ## Simulación
+
+El banco de pruebas es muy sencillo. Sólo instancia el circuito romleds y genera la señal de reloj para que funcione
+
+```verilog
+//-- Fichero: romleds_tb.v
+module romleds2_tb();
+
+//-- Para la simulacion se usa un retraso de 2 ciclos de reloj
+parameter DELAY = 2;
+parameter ROMFILE = "rom1.list";
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Datos de salida del componente
+wire [3:0] leds;
+
+//-- Instanciar el componente
+romleds2 #(.DELAY(DELAY), .ROMFILE(ROMFILE))
+  dut(
+    .clk(clk),
+    .leds(leds)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("romleds2_tb.vcd");
+  $dumpvars(0, romleds2_tb);
+
+  # 100 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
+La simulación se realiza con:
+
+    $ make sim3
+
+y los resultados obtenidos en gtkwave son:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds2-sim1.png)
+
+Se está usando la rom1.list, que tiene en cada posición un valor igual a su dirección, como se puede comprobar en la simulación
+
+Para simular la secuencia con la otra rom, hay que cambiar el fichero rom1.list por rom2.list en esta línea del banco de pruebas:
+```verilog
+parameter ROMFILE = "rom2.list";
+```
+Ahora al simular vemos una secuencia diferente:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds2-sim2.png)
 
 ## Síntesis y pruebas
 
