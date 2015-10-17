@@ -151,7 +151,7 @@ Como segundo ejemplo vamos a generar una **secuencia de luces en los leds**. Los
 
 ## Diagrama de bloques
 
-La memoria se direcciona mediante un contador de 4 bits, de forma que se recorre la memoria desde la dirección 0 hasta la 15. El valor de cada posición se envía directamente a los leds. El contador se incrementa cada medio segundo, mediante un temporizador
+La memoria se direcciona mediante un **contador de 4 bits**, de forma que se recorre la memoria desde la dirección 0 hasta la 15. El valor de cada posición se envía directamente a los leds. El contador se incrementa cada **medio segundo**, mediante un temporizador
 
 ![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
 
