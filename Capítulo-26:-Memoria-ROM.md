@@ -498,6 +498,30 @@ Ahora al simular vemos una secuencia diferente:
 
 ## Síntesis y pruebas
 
+Primero **seleccionamos el fichero con el contenido de la rom** y lo ponemos en esta línea del fichero **romleds2.v**:
+
+```verilog
+parameter ROMFILE = "rom1.list"; //--  rom2.list
+```
+
+La síntesis se realiza con el comando:
+
+    $ make sint3
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 4 / 96
+|PLBs      | 12 / 160
+|BRAMs     | 1 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog romleds2.bin
+
+Igual que en el ejemplo 2, veremos cómo leds siguen una secuencia, dada por los valores que hayamos colocado en la rom
+
 # Ejercicios propuestos
 * Crear una secuencia en los leds con 32 valores, que se carguen desde un fichero
 
