@@ -19,7 +19,7 @@ Los puertos de acceso a la memoria son:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/rom32x4-2.png)
 
-* **clk**: Señal de reloj del sistemas.  Es un circuito síncrono, que nos devuelve los datos en el flanco activo del reloj
+* **clk**: Señal de reloj del sistema.  Es un circuito síncrono, que nos devuelve los datos en el flanco activo del reloj
 * **addr**: Entrada: Dirección a leer (5 bits)
 * **data**: Salida: Dato almacenado en esa posición
 
