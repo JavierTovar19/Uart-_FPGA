@@ -9,6 +9,8 @@ Crearemos una memoria rom genérica y la utilizaremos en dos ejemplo: uno para r
 
 # Memoria rom paramétrica
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-1.png)
+
 # Ejemplo 1: secuencia en los leds
 
 # Ejemplo 2: Tocando musica
