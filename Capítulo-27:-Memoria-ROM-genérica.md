@@ -17,6 +17,10 @@ La memoria tiene 3 parámetros que se asignan al instanciarse.
 * **AW** (Address width): Anchura de las direcciones (en bits)
 * **ROMFILE**: Fichero con el contenido de la rom
 
+Los puertos de la rom son los clásicos, pero ahora su tamaño no está especificado:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-2.png)
+
 # Ejemplo 1: secuencia en los leds
 
 # Ejemplo 2: Tocando musica
