@@ -249,11 +249,73 @@ El diseño se carga con:
 
 Se podrá ver por los leds la secuencia de cuenta
 
-# Ejemplo 2: Tocando musica
+# Ejemplo 2: Tocando la marcha imperial
+
+En el segundo ejemplo tocaremos un fragmento de [la marcha imperial](https://es.wikipedia.org/wiki/Marcha_Imperial) de star wars. Esto es un clásico en el grupo de [Clone wars](http://www.reprap.org/wiki/Proyecto_Clone_Wars), tocándose con los motores paso a paso para comprobar su funcionamiento. Pues bien, **una FPGA no la tendrás dominada hasta que no toques con ella la marcha imperial** :-)
 
 ## Diagrama de bloques
 
+El diseño consta de una **memoria ROM de 64 posiciones de 16 bits**. En cada una de ellas se almacena el valor del divisor para generar una nota musical. Los **5 bits menos significativos** de cada valor de la nota **se envían a los leds**, para ver la actividad
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-1.png)
+
+El generador de notas (**notegen**) es similar al que se hizo en el [capítulo 17](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-17%3A-Generando-tonos-audibles) pero adaptándolo a las reglas del diseño síncrono y haciendo que **módulo del contador** se pasa como una entrada más, en vez de ser un valor fijo. Además, se ha modificado para que la señal cuadrada generada tenga siempre un **ciclo de trabajo del 50%** (y que todas las notas suenen con la misma intensidad)
+
+La **duración de cada nota** se ha establecido en **200ms**. Colocando la misma nota en dos posiciones consecutivas de la memoria rom, su duración será el doble (400ms). De esta forma se controla de forma sencilla la duración de todas las notas y los silencios
+
 ## Descripción en verilog
+
+Los dos ficheros principales son el **notegen.v**, que contiene el componente de generación de las notas musicales y **romnotes.v** que tiene el reproductor completo
+
+### notegen.v:
+
+```verilog
+module notegen(input wire clk,          //-- Senal de reloj global
+               input wire rstn,         //-- Reset
+               input wire [15:0] note,  //-- Divisor
+               output reg clk_out);     //-- Señal de salida
+
+wire clk_tmp;
+
+//-- Registro para implementar el contador modulo note
+reg [15:0] divcounter = 0;
+
+//-- Contador módulo note
+always @(posedge clk)
+
+  //-- Reset
+  if (rstn == 0)
+    divcounter <= 0;      
+
+  //-- Si la nota es 0 no se incrementa contador
+  else if (note == 0)
+    divcounter <= 0;
+
+  //-- Si se alcanza el tope, poner a 0
+  else if (divcounter == note - 1)
+    divcounter <= 0;
+
+  //-- Incrementar contador
+  else
+    divcounter <= divcounter + 1;
+
+//-- Sacar un pulso de anchura 1 ciclo de reloj si el generador
+assign clk_tmp = (divcounter == 0) ? 1 : 0;
+
+//-- Divisor de frecuencia entre 2, para obtener como salida una señal
+//-- con un ciclo de trabajo del 50%
+always @(posedge clk)
+  if (rstn == 0)
+    clk_out <= 0;
+
+  else if (note == 0)
+    clk_out <= 0;
+
+  else if (clk_tmp == 1)
+    clk_out <= ~clk_out;
+ 
+endmodule
+```
 
 ## Fichero rom1.list
 
