@@ -225,7 +225,7 @@ El banco de pruebas es el mismo que en el capítulo anterior. Para simular ejecu
 
 y en el gtkwave vemos lo siguiente:
 
-![https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-sim-1.png]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-sim-1.png)
 
 Por los leds aparece la secuencia de cuenta, desde 0 hasta 31 (en hexadecimal)
 
