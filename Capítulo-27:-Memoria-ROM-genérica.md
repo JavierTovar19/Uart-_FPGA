@@ -262,5 +262,7 @@ Se podrá ver por los leds la secuencia de cuenta
 ## Síntesis y pruebas
 
 # Ejercicios
+* Completar la marcha imperial, aumentando la memoria y añadiendo el resto de notas
 
 # Conclusiones
+TODO
