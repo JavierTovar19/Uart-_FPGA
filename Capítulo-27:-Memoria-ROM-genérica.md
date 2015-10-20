@@ -9,7 +9,13 @@ Crearemos una memoria rom genérica y la utilizaremos en dos ejemplo: uno para r
 
 # Memoria rom paramétrica
 
+La memoria tiene 3 parámetros que se asignan al instanciarse.
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-1.png)
+
+* **DW** (Data width): Anchura de los datos (en bits)
+* **AW** (Address width): Anchura de las direcciones (en bits)
+* **ROMFILE**: Fichero con el contenido de la rom
 
 # Ejemplo 1: secuencia en los leds
 
