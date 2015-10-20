@@ -3,7 +3,7 @@
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T27-rom-param)
 
 # Introducción
-Las **memorias** son **elementos muy comunes**, que useremos mucho en nuestros diseños. En vez de estar haciendo memorias con un tamaño determinado, es más versátil crear una **memoria genérica** cuyos parámetros de longitud de datos y de direcciones se establezcan al instanciarlas.
+Las **memorias** son **elementos muy comunes**, que usaremos mucho en nuestros diseños. En vez de estar haciendo memorias con un tamaño determinado, es más versátil crear una **memoria genérica** cuyos parámetros de longitud de datos y de direcciones se establezcan al instanciarlas.
 
 Crearemos una memoria rom genérica y la utilizaremos en dos ejemplo: uno para reproducir una secuencia de luces en los leds y otro para tocar una melodía: **la marcha imperial**
 
@@ -104,7 +104,33 @@ genrom
 
 # Ejemplo 1: secuencia en los leds
 
+En este ejemplo reproduciremos una **secuencia en los leds**, igual que en los ejemplos del capítulo anterior, pero usando una rom genérica
+
+## Diagrama de bloques
+
+Utilizaremos 5 leds para la secuencia, por lo que la anchura de los datos será de 5 bits (DW = 5), y una anchura de direcciones también de 5 bits (AW = 5, para tener 32 posiciones). La secuencia es un contador. En cada posición de la memoria se almacena su número de dirección
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-3.png)
+
+## Descripción en verilog
+
+## Fichero rom1.list
+
+## Simulación
+
+## Síntesis y pruebas
+
 # Ejemplo 2: Tocando musica
+
+## Diagrama de bloques
+
+## Descripción en verilog
+
+## Fichero rom1.list
+
+## Simulación
+
+## Síntesis y pruebas
 
 # Ejercicios
 
