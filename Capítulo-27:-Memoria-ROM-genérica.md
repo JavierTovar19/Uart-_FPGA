@@ -112,11 +112,123 @@ Utilizaremos 5 leds para la secuencia, por lo que la anchura de los datos será 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-3.png)
 
-## Descripción en verilog
+## genromleds.v: Descripción en verilog
+
+La descripción en verilog del ejemplo es:
+
+```verilog
+//-- Fichero: genromleds.v
+`default_nettype none
+
+`include "divider.vh"
+
+module genromleds (input wire clk,
+                   output wire [4:0] leds);
+
+//- Tiempo de envio
+parameter DELAY = `T_500ms;
+
+//-- Fichero con la rom
+parameter ROMFILE = "rom1.list";
+
+//-- Numero de bits de la direccione
+parameter AW = 5;
+parameter DW = 5;
+
+//-- Cable para direccionar la memoria
+reg [AW-1: 0] addr;
+
+reg rstn = 0;
+wire clk_delay;
+
+//-- Instanciar la memoria rom
+genrom 
+  #( .ROMFILE(ROMFILE),
+     .AW(AW),
+     .DW(DW))
+  ROM (
+        .clk(clk),
+        .addr(addr),
+        .data(leds)
+      );
+
+//-- Contador
+always @(negedge clk)
+  if (rstn == 0)
+    addr <= 0;
+  else if (clk_delay)
+    addr <= addr + 1;
+
+//---------------------------
+//--  Temporizador
+//---------------------------
+dividerp1 #(.M(DELAY))
+  DIV0 ( .clk(clk),
+         .clk_out(clk_delay)
+       );
+
+//-- Inicializador
+always @(negedge clk)
+  rstn <= 1;
+
+endmodule
+```
 
 ## Fichero rom1.list
 
+El fichero que se graba en la rom, con la secuencia de ejemplo (contador) es el siguiente:
+
+```verilog
+//-- Fichero rom1.list
+//-- Cada linea se corresponde con una posicion de memoria
+//-- Se pueden poner comentarios
+//-- ROM1: contiene los numeros del 0 al 31 (en hexadecimal)
+0   //-- Posicion 0
+1   //-- Posicion 1
+2
+3
+4
+5
+6
+7
+8
+9
+A
+B
+C
+D
+E
+F 
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+1A
+1B
+1C
+1D
+1E
+1F
+```
+
 ## Simulación
+
+El banco de pruebas es el mismo que en el capítulo anterior. Para simular ejecutamos:
+
+    $ make sim
+
+y en el gtkwave vemos lo siguiente:
+
+![https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-sim-1.png]()
+
+Por los leds aparece la secuencia de cuenta, desde 0 hasta 31 (en hexadecimal)
+
 
 ## Síntesis y pruebas
 
