@@ -108,7 +108,7 @@ En este ejemplo reproduciremos una **secuencia en los leds**, igual que en los e
 
 ## Diagrama de bloques
 
-Utilizaremos 5 leds para la secuencia, por lo que la anchura de los datos será de 5 bits (DW = 5), y una anchura de direcciones también de 5 bits (AW = 5, para tener 32 posiciones). La secuencia es un contador. En cada posición de la memoria se almacena su número de dirección
+Utilizaremos **5 leds para la secuencia**, por lo que la **anchura de los datos** será de 5 bits (**DW = 5**), y una **anchura de direcciones** también de 5 bits (**AW = 5**, para tener 32 posiciones). La secuencia es un contador. En cada posición de la memoria se almacena su número de dirección
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-3.png)
 
@@ -229,8 +229,25 @@ y en el gtkwave vemos lo siguiente:
 
 Por los leds aparece la secuencia de cuenta, desde 0 hasta 31 (en hexadecimal)
 
-
 ## Síntesis y pruebas
+
+Para sintetizar hay que ejecutar el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 7 / 96
+|PLBs      | 16 / 160
+|BRAMs     | 1 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog genromleds.bin
+
+Se podrá ver por los leds la secuencia de cuenta
 
 # Ejemplo 2: Tocando musica
 
