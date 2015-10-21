@@ -522,6 +522,22 @@ Y en la simulación podremos ver cómo se van enviando los 5 bits menos signific
 
 ## Síntesis y pruebas
 
+La síntesis se realiza con el comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 7 / 96
+|PLBs      | 28 / 160
+|BRAMs     | 1 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog romnotes.bin
+
 # Ejercicios
 * Completar la marcha imperial, aumentando la memoria y añadiendo el resto de notas
 
