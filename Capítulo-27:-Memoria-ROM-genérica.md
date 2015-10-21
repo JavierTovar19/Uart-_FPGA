@@ -466,7 +466,9 @@ La melodía de la marcha imperial está almacenada en este fichero de texto:
 
 Lo que se almacenan son los valores de los divisores (en hexadecimal) para generar las notas. Los valores de las diferentes notas se encuentran en el archivo **notegen.vh**.
 
-Para que una nota dure más tiempo, se reproduce 2 ó más veces, colocándose en memoria las copias de la misma nota
+Para que una nota dure más tiempo, se reproduce 2 ó más veces, colocándose en memoria las copias de la misma nota.
+
+La **nota 0** equivale a **un silencio**
 
 ## Simulación
 
