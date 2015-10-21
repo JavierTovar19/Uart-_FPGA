@@ -538,6 +538,12 @@ El diseño se carga con:
 
     $ sudo iceprog romnotes.bin
 
+El resultado se puede ver en este vídeo de youtube:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
+**¡Que las FPGAs te acompañen!**
+
 # Ejercicios
 * Completar la marcha imperial, aumentando la memoria y añadiendo el resto de notas
 
