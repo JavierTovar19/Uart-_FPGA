@@ -28,8 +28,7 @@
 24 [[Unidad de transmisión serie asíncrona|Capítulo 24: Unidad de transmisión serie asíncrona]]  
 25 [[Unidad de recepción serie asíncrona|Capítulo 25: Unidad de recepción serie asíncrona]]  
 26 [[Memoria ROM|Capítulo 26: Memoria ROM]]  
-
-[[Capítulo 27: Memoria ROM genérica]]   
+27 [[Memoria ROM genérica|Capítulo 27: Memoria ROM genérica]]   
 
 28 Memoria RAM  
 29 Puestar tri-estado  
