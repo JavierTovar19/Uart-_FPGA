@@ -540,7 +540,7 @@ El diseño se carga con:
 
 El resultado se puede ver en este vídeo de youtube:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/IDU8kHAaLTw/0.jpg)](https://www.youtube.com/watch?v=IDU8kHAaLTw)
 
 **¡Que las FPGAs te acompañen!**
 
