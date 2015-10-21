@@ -472,6 +472,54 @@ La **nota 0** equivale a **un silencio**
 
 ## Simulación
 
+El banco de pruebas es el clásico: se instancia el componente romnotes y se genera el reloj para que funcione:
+
+```verilog
+//-- Fichero: romnotes_tb.v
+module romnotes_tb();
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Salidas de los canales
+wire ch_out;
+
+
+//-- Instanciar el componente y establecer el valor del divisor
+//-- Se pone un valor bajo para simular (de lo contrario tardaria mucho)
+romnotes #(.DUR(2))
+  dut(
+    .clk(clk),
+    .ch_out(ch_out)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always 
+  # 1 clk <= ~clk;
+
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("romnotes_tb.vcd");
+  $dumpvars(0, romnotes_tb);
+
+  # 200 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+
+Para simulare ejecutamos:
+
+    $ make sim2
+
+Y en la simulación podremos ver cómo se van enviando los 5 bits menos significativos de la nota a los leds. En la simulación la duración de la nota está puesta a 2 unidades
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-sim-1.png)
+
 ## Síntesis y pruebas
 
 # Ejercicios
