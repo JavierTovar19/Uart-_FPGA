@@ -259,7 +259,7 @@ El diseño consta de una **memoria ROM de 64 posiciones de 16 bits**. En cada un
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-1.png)
 
-El generador de notas (**notegen**) es similar al que se hizo en el [capítulo 17](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-17%3A-Generando-tonos-audibles) pero adaptándolo a las reglas del diseño síncrono y haciendo que **módulo del contador** se pasa como una entrada más, en vez de ser un valor fijo. Además, se ha modificado para que la señal cuadrada generada tenga siempre un **ciclo de trabajo del 50%** (y que todas las notas suenen con la misma intensidad)
+El generador de notas (**notegen**) es similar al que se hizo en el [capítulo 17](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-17%3A-Generando-tonos-audibles) pero adaptándolo a las reglas del diseño síncrono y haciendo que el **módulo del contador** se pase como una entrada más, en vez de ser un valor fijo. Además, se ha modificado para que la señal cuadrada generada tenga siempre un **ciclo de trabajo del 50%** (y que todas las notas suenen con la misma intensidad)
 
 La **duración de cada nota** se ha establecido en **200ms**. Colocando la misma nota en dos posiciones consecutivas de la memoria rom, su duración será el doble (400ms). De esta forma se controla de forma sencilla la duración de todas las notas y los silencios
 
