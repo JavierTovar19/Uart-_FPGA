@@ -270,6 +270,7 @@ Los dos ficheros principales son el **notegen.v**, que contiene el componente de
 ### notegen.v:
 
 ```verilog
+//-- Fichero: notegen.v
 module notegen(input wire clk,          //-- Senal de reloj global
                input wire rstn,         //-- Reset
                input wire [15:0] note,  //-- Divisor
@@ -318,8 +319,154 @@ endmodule
 ```
 ### romnotes.v
 
+La descripción en verilog del circuito reproductor se muestra a continuación:
 
-## Fichero rom1.list
+```verilog
+//-- Fichero romnotes.v
+//-- Incluir las constantes del modulo del divisor
+`include "divider.vh"
+
+//-- Parametros:
+//-- clk: Reloj de entrada de la placa iCEstick
+//-- ch_out: Canal de salida
+module romnotes(input wire clk, 
+                output wire [4:0] leds,
+                output wire ch_out);
+
+//-- Parametros
+//-- Duracion de las notas
+parameter DUR = `T_200ms;
+
+//-- Fichero con las notas para cargar en la rom
+parameter ROMFILE = "imperial.list";
+
+//-- Tamaño del bus de direcciones de la rom
+parameter AW = 6;
+
+//-- Tamaño de las notas
+parameter DW = 16;
+
+//-- Cables de salida de los canales
+wire ch0, ch1, ch2;
+
+//-- Selección del canal del multiplexor
+reg [AW-1: 0] addr = 0;
+
+//-- Reloj con la duracion de la nota
+wire clk_dur;
+reg rstn = 0;
+
+wire [DW-1: 0] note;
+
+//-- Instanciar la memoria rom
+genrom 
+  #( .ROMFILE(ROMFILE),
+     .AW(AW),
+     .DW(DW))
+  ROM (
+        .clk(clk),
+        .addr(addr),
+        .data(note)
+      );
+
+//-- Generador de notas
+notegen
+  CH0 (
+    .clk(clk),
+    .rstn(rstn),
+    .note(note),
+    .clk_out(ch_out)
+  );
+
+//-- Sacar los 5 bits menos significativos de la nota por los leds
+assign leds = note[4:0];
+
+//-- Inicializador
+always @(posedge clk)
+  rstn <= 1;
+
+
+//-- Contador para seleccion de nota
+always @(posedge clk)
+  if (clk_dur)
+    addr <= addr + 1;
+
+//-- Divisor para marcar la duración de cada nota
+dividerp1 #(DUR)
+  TIMER0 (
+    .clk(clk),
+    .clk_out(clk_dur)
+  );
+
+endmodule
+```
+
+El **parámetro DUR** determina la **duración mínima de una nota** (o un silencio), que se ha establecido en **200ms**. Para reproducir una nota del doble de duración, simplemente se toca dos veces. Tocándola N veces durará N * 200ms. 
+
+## Contenido de la ROM: imperial.list
+
+La melodía de la marcha imperial está almacenada en este fichero de texto:
+
+```
+//-- Marcha imperial
+0  //-- Un 0 es un SILENCIO
+0
+0
+0
+0
+0
+0
+0
+0
+471A //-- MI_4
+471A
+0
+471A //-- MI_4
+471A
+0
+471A //-- MI_4
+471A
+0
+5996 //-- DO_4
+5996
+3BCA //-- SOL_4
+471A //-- MI_4
+471A
+0
+5996 //-- DO_4
+5996
+3BCA //-- SOL_4
+471A //-- MI_4
+471A
+//----------- Segundo trozo
+0
+0
+0
+2F75  //-- SI_4
+2F75
+0
+2F75  //-- SI_4
+2F75
+0
+2F75  //-- SI_4
+2F75
+0
+2CCB  //-- DO_5
+2CCB
+3BCA //-- SOL_4
+471A //-- MI_4
+471A
+0
+5996 //-- DO_4
+5996
+3BCA //-- SOL_4
+471A //-- MI_4
+471A
+```
+
+Lo que se almacenan son los valores de los divisores (en hexadecimal) para generar las notas. Los valores de las diferentes notas se encuentran en el archivo **notegen.vh**.
+
+Para que una nota dure más tiempo, se reproduce 2 ó más veces, colocándose en memoria las copias de la misma nota
 
 ## Simulación
 
