@@ -1,4 +1,4 @@
-(dibujo)
+![]()
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T28-ram)
 
@@ -12,6 +12,23 @@ Crearemos una **memoria RAM genérica**, síncrona, con una entrada de datos par
 La memoria RAM genérica la denominaremos genram
 
 ## Puertos y parámetros
+
+Los puertos y parámetros se muestran esta figura:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/genram-1.png)
+
+Los **parámetros** son los mismos que en la memoria ROM:
+* **DW** (Data width): Anchura de los datos (en bits)
+* **AW** (Address width): Anchura de las direcciones (en bits)
+* **ROMFILE**: Fichero con el contenido inicial precargado de la ram
+
+Los **puertos** son:
+* **data_in**: Entrada de datos, para escritura
+* **data_out**: Salida de datos, en la lectura
+* **addr**: Dirección de acceso, tanto para escritura como para lectura
+* **rw**: Modo de acceso: lectura (rw = 1) o escritura (rw = 0)
+
+## Cronograma
 
 ## Descripción en verilog
 
