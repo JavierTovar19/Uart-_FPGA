@@ -32,5 +32,5 @@
 
 [[Capítulo 28: Memoria RAM]]
 
-29 Puestar tri-estado  
+29 Puestas tri-estado  
 30 Fin: Hacia el microprocesador y más allá  
