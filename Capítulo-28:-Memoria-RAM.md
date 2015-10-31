@@ -30,7 +30,7 @@ Los **puertos** son:
 
 ## Cronograma
 
-En este cronograma se muestran dos ciclos de lectura y uno de escritura intercalado:
+En este cronograma se muestran **dos ciclos de lectura** y **uno de escritura** intercalado:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/genram-2.png)
 
