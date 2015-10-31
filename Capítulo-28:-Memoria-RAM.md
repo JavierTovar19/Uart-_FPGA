@@ -93,7 +93,13 @@ endmodule
 
 # Ejemplo: Buffer
 
+Para probar la memoria ram, implementaremos un **buffer de 16 bytes**. Se comienza volcando el buffer a través del puerto serie (tiene unos datos iniciales que establecemos en el fichero bufferini.list). Los siguientes caracteres recibidos por el puerto serie, se van almacenando en la memoria, comenzando por la dirección 0. Una vez llenada la memoria, se procede a su volcado
+
 ## Diagrama de bloques
+
+La arquitectura del circuito es la clásica: una ruta de datos y un controlador:
+
+(dibujo)
 
 ## Descripción en verilog
 
