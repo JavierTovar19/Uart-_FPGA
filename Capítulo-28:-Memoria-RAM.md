@@ -30,6 +30,21 @@ Los **puertos** son:
 
 ## Cronograma
 
+En este cronograma se muestran dos ciclos de lectura y uno de escritura intercalado:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/genram-2.png)
+
+**Ciclo de lectura**:
+* Se coloca la dirección de lectura en **addr**
+* Se pone la **señal rw a 1** para indicar que se quiere leer
+* En el siguiente **flanco de subida** se **devolverá el dato** por el puerto **data_out**
+
+**Ciclo de escritura**:
+* Se coloca la **dirección** de escritura en** addr**
+* Se coloca el **dato a escribir** en el puerto **data_in**
+* Se pone la **señal rw a 0** para indicar **escritura**
+* En el siguiente **flanco de subida** del reloj se escribirá el **dato en la memoria**
+
 ## Descripción en verilog
 
 # Ejemplo: Buffer
