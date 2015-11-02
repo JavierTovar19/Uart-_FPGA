@@ -474,7 +474,7 @@ Si abrimos primero el gtkterm y luego cargamos el bitstream, lo primero que vere
 
 El resultado se puede ver en este vídeo de youtube:
 
-[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Click to see the youtube video](http://img.youtube.com/vi/36yny_7dFH4/0.jpg)](https://www.youtube.com/watch?v=36yny_7dFH4)
 
 # Ejercicios propuestos
 TODO
