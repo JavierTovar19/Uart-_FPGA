@@ -47,7 +47,7 @@ En este cronograma se muestran **dos ciclos de lectura** y **uno de escritura** 
 
 ## Descripción en verilog
 
-El código es similar al de la memoria rom pero añadiendo un proceso nuevo que se encarga de la escritura en cada flanco de subida del reloj, usando la señal rw como habilitación
+El código es similar al de la memoria rom pero añadiendo un proceso nuevo que se encarga de **la escritura en cada flanco de subida del reloj**, usando la señal rw como habilitación
 
 ```verilog
 module genram #(             //-- Parametros
