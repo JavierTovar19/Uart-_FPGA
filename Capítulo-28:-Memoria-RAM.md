@@ -442,11 +442,9 @@ Veremos los resultados de la simulación por partes. Primero el volcado inicial.
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-1.png)
 
-A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." al buffer
+A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." y se recibe por **data_in** para escribirlo en la memoria ram
 
-
-
-(simulación 2)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-2.png)
 
 y por último esta cadena recibida y almacenada en memoria se vuelca de nuevo por el puerto serie:
 
