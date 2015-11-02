@@ -102,15 +102,20 @@ La arquitectura del circuito es la clásica: una ruta de datos y un controlador:
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-1.png)
 
 ### Ruta de datos
-En la ruta de datos se instancian la unidad de transmisión de serie (**uart_tx.v**), la de recepción (**uart_rx.v**) y la memoria ram genérica (**genram.v**). El resto de componentes son: un contador para direccionar la memoria, un comparador para detectar cuando hay overflow en el contador (paso de 0xF a 0) y un inicializador
+En la ruta de datos se instancian la unidad de transmisión de serie (**uart_tx.v**), la de recepción (**uart_rx.v**) y la memoria ram genérica (**genram.v**). El resto de componentes son: un **contador** para direccionar la memoria, un **comparador** para detectar cuando hay overflow en el **contador** (paso de 0xF a 0) y un inicializador
 
 El **contador es de 4 bits** (para direccionar la memoria de 16 posiciones). Tiene una entrada de enable controlada por la microórden **cena** para habilitar su cuenta. Cuando está a 1 se incrementa. Su salida se compara con el valor 0xF para activar la **señal de overflow ov**, que indica que se ha llegado a la última posición de la memoria.
 
-La **salida de datos del receptor serie** está conectada directamente a la **entrada de datos de la memoria**, para guardar los datos recibidos en la dirección indicada por el contador. La **salida de datos de la memoria** está conectada a la **entrada de datos del transmisor serie**
-
-
+La **salida de datos del receptor serie** está conectada directamente a la **entrada de datos de la memoria**, para guardar los datos recibidos en la dirección indicada por el contador. La **salida de datos de la memoria** está conectada a la **entrada de datos del transmisor serie**, para su volcado
 
 ### Controlador
+
+El diagrama de estados del autómata es el siguiente:
+
+(dibujo)
+
+
+
 
 ## Descripción en verilog
 
