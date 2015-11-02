@@ -327,6 +327,14 @@ En un segundo **proceso combinacional** se definen los **valores de las microór
 
 Esta forma de escribir autómatas es más compacta que la usada anteriormente
 
+Otra novedad en este código es la manera en la que se calcula el overflow:
+
+```verilog
+wire ov = & addr;
+```
+
+Se incluye en la misma línea la **declaración del cable ov** junto con la **operación de cálculo del overflow** usando el **operador unario & addr**.  Este operador realiza la **operación AND** entre **TODOS LOS BITS de addr**. De manera que si alguno es 0, el resultado será 0, indicando que no hay overflow. El overflow sólo se produce cuando todos los bits están a uno. Y en ese caso la operación & nos devuelve un 1.
+
 ## Simulación
 
 ## Síntesis y pruebas
