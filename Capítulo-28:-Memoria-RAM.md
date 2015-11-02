@@ -438,11 +438,13 @@ La simulación se realiza con:
 
     $ make sim
 
-Veremos los resultados de la simulación por partes. Primero el volcado inicial. Se observa que se transmiten todos los caracteres de la cadena: "ola k ase......."
+Veremos los resultados de la simulación por partes. Primero el volcado inicial. Se observa que se transmiten todos los caracteres de la cadena: "ola k ase.......", que salen por la línea **data_out** de la memoria
 
-(simulacion 1)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-1.png)
 
 A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." al buffer
+
+
 
 (simulación 2)
 
