@@ -470,13 +470,14 @@ El diseño se carga con:
 
 Si abrimos primero el gtkterm y luego cargamos el bitstream, lo primero que veremos es la cadena volcada: "ola k ase......". A continuación escribirmos una cadena de 16 caracteres. Al teclear el último carácter se vuelca la cadena completa:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-test-1.png)
 
 El resultado se puede ver en este vídeo de youtube:
 
 [![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
 
 # Ejercicios propuestos
+TODO
 
 # Conclusiones
 TODO
