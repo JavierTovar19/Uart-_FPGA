@@ -448,7 +448,7 @@ A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." y se rec
 
 y por último esta cadena recibida y almacenada en memoria se vuelca de nuevo por el puerto serie:
 
-(simulacion 3)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-3.png)
 
 ## Síntesis y pruebas
 
