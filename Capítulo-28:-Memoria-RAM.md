@@ -129,7 +129,10 @@ El funcionamiento es similar, se comienza con **WAIT_RX**, esperando a recibir u
 
 ## Descripción en verilog
 
+El código del buffer en Verilog es el siguiente:
+
 ```verilog
+//--Fichero: buffer.v
 `default_nettype none
 
 `include "baudgen.vh"
@@ -301,6 +304,28 @@ end
 endmodule
 ```
 
+Observamos que **la máquina de estados** se ha hecho de una **forma diferente** a como se había hecho en los otros ejemplos. Es otra modalidad para hacer autómatas. En esta se definen el **registro de estado** (**state**) y su **siguiente valor** (**next_state**):
+
+```verilog
+//-- Estado del automata
+reg [1:0] state;
+reg [1:0] next_state;
+```
+
+Se define un proceso que simplemente actualiza el estado actual con el siguiente:
+
+```verilog
+//-- Transiones de estados
+always @(posedge clk) 
+  if (!rstn)
+    state <= TX_WAIT;
+  else
+    state <= next_state;
+```
+
+En un segundo **proceso combinacional** se definen los **valores de las microórdenes** y las **transiciones** entre estados
+
+Esta forma de escribir autómatas es más compacta que la usada anteriormente
 
 ## Simulación
 
