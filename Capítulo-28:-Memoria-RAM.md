@@ -428,12 +428,27 @@ initial begin
    #(FRAME_WAIT * 2) send_car("-");
    #(FRAME_WAIT * 2) send_car(".");
 
-   #(FRAME_WAIT * 20) $display("FIN de la simulacion");
+   #(FRAME_WAIT * 40) $display("FIN de la simulacion");
   $finish;
 end
 
 endmodule
 ```
+La simulación se realiza con:
+
+    $ make sim
+
+Veremos los resultados de la simulación por partes. Primero el volcado inicial. Se observa que se transmiten todos los caracteres de la cadena: "ola k ase......."
+
+(simulacion 1)
+
+A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." al buffer
+
+(simulación 2)
+
+y por último esta cadena recibida y almacenada en memoria se vuelca de nuevo por el puerto serie:
+
+(simulacion 3)
 
 ## Síntesis y pruebas
 
