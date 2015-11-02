@@ -452,6 +452,30 @@ y por último esta cadena recibida y almacenada en memoria se vuelca de nuevo po
 
 ## Síntesis y pruebas
 
+La síntesis se realiza con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 12 / 96
+|PLBs      | 47 / 160
+|BRAMs     | 1 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog buffer.bin
+
+Si abrimos primero el gtkterm y luego cargamos el bitstream, lo primero que veremos es la cadena volcada: "ola k ase......". A continuación escribirmos una cadena de 16 caracteres. Al teclear el último carácter se vuelca la cadena completa:
+
+(dibujo)
+
+El resultado se puede ver en este vídeo de youtube:
+
+[![Click to see the youtube video](http://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+
 # Ejercicios propuestos
 
 # Conclusiones
