@@ -110,9 +110,21 @@ La **salida de datos del receptor serie** está conectada directamente a la **en
 
 ### Controlador
 
+Las **microórdenes** que genera el controlador son:
+
+* **cena**:  Habilitación del contador (counter enable). Cuando está a 1 se incrementa en una unidad el contador
+* **rw**:  Selección de lectura (1) o escritura (0) en la memoria
+* **transmit**: Realizar la transmisión serie de un carácter
+
 El diagrama de estados del autómata es el siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-2.png)
+
+Comienza en el estado **WAIT_TX**. Se queda esperando hasta que el transmisor esté listo para transmitir (cuando ready está a 1). Se pasa al estado **READ_TX** donde se lee el dato de la memoria y se inicia la transmisión por el puerto serie. Se habilita el contador para que se incremente la dirección. Se vuelve al estado WAIT_TX hasta que se pueda enviar el siguiente.
+
+Permanece en ese bucle hasta que se alcanza la **dirección 0xF**, activándose la **señal de overflow ov**. En estos primeros dos estados se vuelca el contenido completo de la memoria. En los siguientes estados se almacenan los datos recibidos desde el puerto serie.
+
+El funcionamiento es similar, se comienza con **WAIT_RX**, esperando a recibir un dato. Una vez recibido se pasa a **WRITE_RX** donde se escribe en la ram y se incrementa el contador de direcciones. Se repite el bucle hasta que se han almacenado los 16 caracteres. Y se procede al estado inicial, para comenzar su volcado
 
 
 ## Descripción en verilog
