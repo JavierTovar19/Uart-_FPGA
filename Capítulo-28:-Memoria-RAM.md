@@ -112,9 +112,7 @@ La **salida de datos del receptor serie** está conectada directamente a la **en
 
 El diagrama de estados del autómata es el siguiente:
 
-(dibujo)
-
-
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-2.png)
 
 
 ## Descripción en verilog
