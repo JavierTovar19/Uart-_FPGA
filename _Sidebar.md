@@ -17,7 +17,7 @@
 13 [[Inicializando registros|Capítulo 13: Inicializando registros]]  
 14 [[Registro de N bits con reset síncrono|Capítulo 14: Registro de N bits con reset síncrono]]  
 15 [[Divisor de frecuencias|Capítulo 15: Divisor de frecuencias]]  
-16 [[Capítulo 16: Contador de segundos]]  
+16 [[Contador de segundos|Capítulo 16: Contador de segundos]]  
 17 [[Generando tonos audibles|Capítulo 17: Generando tonos audibles]]  
 18 [[Tocando notas|Capítulo 18: Tocando notas]]  
 19 [[Secuenciando notas|Capítulo 19: Secuenciando notas]]  
