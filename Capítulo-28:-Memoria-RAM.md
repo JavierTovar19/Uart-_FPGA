@@ -9,7 +9,7 @@ Crearemos una **memoria RAM genérica**, síncrona, con una entrada de datos par
 
 # Memoria RAM genérica
 
-La memoria RAM genérica la denominaremos genram
+La memoria RAM genérica la denominaremos **genram**
 
 ## Puertos y parámetros
 
