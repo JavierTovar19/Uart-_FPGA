@@ -40,7 +40,7 @@ En este cronograma se muestran **dos ciclos de lectura** y **uno de escritura** 
 * En el siguiente **flanco de subida** se **devolverá el dato** por el puerto **data_out**
 
 **Ciclo de escritura**:
-* Se coloca la **dirección** de escritura en** addr**
+* Se coloca la **dirección** de escritura en **addr**
 * Se coloca el **dato a escribir** en el puerto **data_in**
 * Se pone la **señal rw a 0** para indicar **escritura**
 * En el siguiente **flanco de subida** del reloj se escribirá el **dato en la memoria**
