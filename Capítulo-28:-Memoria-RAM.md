@@ -480,4 +480,4 @@ El resultado se puede ver en este vídeo de youtube:
 TODO
 
 # Conclusiones
-TODO
+Ya conocemos todo lo necesario para empezar a hacer microprocesadores :-)
