@@ -1,4 +1,5 @@
 (dibujo)
 
 # Introducción
-TODO
+([Buffer triestado](https://es.wikipedia.org/wiki/Buffer_triestado))
+
