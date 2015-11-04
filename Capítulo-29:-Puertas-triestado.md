@@ -7,7 +7,14 @@ Las describiremos en Verilog, las simularemos y documentaremos las **LIMITACIONE
 
 # Puertas triestado
 ## Funcionamiento
-Las puertas
+Las puertas triestado se comportan como **interruptores** que conectan la entrada con la salida cuando su señal de habilitación está activada:
+
+(dibujo)
+
+Tiene 3 puertos de 1 bit:
+* **entrada**:  Señal de entrada
+* **salida**: Señal de salida
+* **enable**: Señal de habilitación
 
 ## Descripción en Verilog
 
