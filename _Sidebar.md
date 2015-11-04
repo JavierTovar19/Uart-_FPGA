@@ -31,5 +31,5 @@
 27 [[Memoria ROM genérica|Capítulo 27: Memoria ROM genérica]]   
 28 [[Memoria RAM|Capítulo 28: Memoria RAM]]
 
-29 Puestas tri-estado  
-30 Fin: Hacia el microprocesador y más allá  
+ [[Capítulo 29: Puertas triestado]]  
+ Fin: Hacia el microprocesador y más allá  
