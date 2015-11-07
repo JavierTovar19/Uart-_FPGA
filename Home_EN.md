@@ -2,7 +2,7 @@
 
 ## Description
 
-Tutorial of **synthetizable digital systems** design, using **ONLY** free and open source tools. Hardware description using **Verilog**.
+Tutorial of **synthesizable digital systems** design, using **ONLY** free and open source tools. Hardware description using **Verilog**.
 * **Development board**: [iCEStick](http://www.latticesemi.com/icestick). iCE40HX-1k FPGA from Lattice
 * **Verilog simulator**: [icarus Verilog](http://iverilog.icarus.com/) 
 * **Signal visualizer**: [Gtkwave](http://gtkwave.sourceforge.net/)
@@ -38,7 +38,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * To [BQ](http://bq.com), for financing the material used in this tutorial. I'm truly privileged for being able to work in a company that encourages the maker spirit, and support research and experimentation initiatives with free technologies. Thank you!
 
-* To **Jesús Arroyo**, for actually go buying the iCEStick boards and begin making the Debian/Ubuntu packaging of the IceStorm and Arachne-pnr projects' tools. Thank you! 
+* To **Jesús Arroyo**, for actually going buying the iCEStick boards and begin the making of Debian/Ubuntu packages for the IceStorm and Arachne-pnr projects' tools. Thank you! 
 
 * To **David Sánchez Falero**, for teaching me how to highlight verilog code in github's markdown. :-) This made the code way more readable! Thank you! 
 
@@ -52,4 +52,4 @@ Arduino boards have a microcontroller, that we program. With an FPGA is not the 
 A lot of applicatons can be made out of software (programming) or hardware. A counter, for example. The difference is that when you do it with pure hardware, they work way faster. Plus, hardware can be just "cloned" inside the board, and work in parallel. Having things happening simultaneously by softare is not a trivial thing.
 
 * **Why Verilog and not VHDL?**  
-Verilog is the language is supported by the [IceStorm project](http://www.clifford.at/icestorm/) for now. It is a free project, so the community will eventally add VHDL support. By today (sep-2015), Verilog is required to use free tools and FPGAs.
+Verilog is the language supported by the [IceStorm project](http://www.clifford.at/icestorm/) for now. It is a free project, so the community will eventally add VHDL support. By today (sep-2015), Verilog is required to use free tools and FPGAs.
