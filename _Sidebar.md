@@ -1,4 +1,4 @@
-[[Inicio|Home]] ([[EN|Home[EN]]])  
+[[Inicio|Home]] ([[EN|Home_EN]])  
 
 ## Capítulos
 0 [[You are leaving the privative sector|Capítulo 0: you are leaving the privative sector]] ([[EN|Chapter 0: you are leaving the privative sector]])  
