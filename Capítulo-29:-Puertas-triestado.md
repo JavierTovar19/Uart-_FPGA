@@ -8,8 +8,11 @@ Las **puertas triestado** (También conocidas como [Buffers triestado](https://e
 Las describiremos en Verilog, las simularemos y documentaremos las **LIMITACIONES QUE PRESENTAN** al ser **sintetizadas** con las **herramientas libres** del proyecto icestorm. El soporte de Yosys, Arachne y Icestorm para puertas triestado es muy limitado todavía al día de hoy (Nov - 2015)
 
 # Puertas triestado
+
+Describiremos cómo funcionan y cómo se modelan en verilog
+
 ## Funcionamiento
-Las puertas triestado se comportan como **interruptores** que conectan la entrada con la salida cuando su señal de habilitación está activada:
+Las puertas triestado se comportan como **interruptores** que conectan la entrada con la salida cuando su señal de habilitación está activada. Su símbolo es el siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-1.png)
 
@@ -17,6 +20,8 @@ Tiene 3 puertos de 1 bit:
 * **entrada**:  Señal de entrada
 * **salida**: Señal de salida
 * **enable**: Señal de habilitación
+
+Cuando la señal de habilitacion está a **1**, la **entrada está conectada directamente a la salida**. Sin embargo, cuando está a **0**, **la salida queda desconectada**. Se considera que está en un tercer estado, denominado **alta impedancia**, y se representa con la letra **Z**.  Así, la salida de una puerta triestado puede encontrarse en los **estados 0**, **1** ó **Z**
 
 ## Descripción en Verilog
 
