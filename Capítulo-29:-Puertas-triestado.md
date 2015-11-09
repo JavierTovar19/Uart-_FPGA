@@ -11,7 +11,7 @@ Las describiremos en Verilog, las simularemos y documentaremos las **LIMITACIONE
 ## Funcionamiento
 Las puertas triestado se comportan como **interruptores** que conectan la entrada con la salida cuando su señal de habilitación está activada:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-1.png)
 
 Tiene 3 puertos de 1 bit:
 * **entrada**:  Señal de entrada
