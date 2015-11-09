@@ -25,6 +25,14 @@ Cuando la señal de habilitacion está a **1**, la **entrada está conectada dir
 
 ## Descripción en Verilog
 
+Una puerta triestado se modela de la siguiente forma:
+
+```verilog
+assign salida = (enable) ? entrada : 1'bz;
+```
+
+El sintetizador reconoce que es una puerta triestado porque se **le asigna el valor z** cuando enable es 0
+
 # Ejemplo 1: conexión de un led mediante una puerta triestado
 
 # Ejemplo 2: Conexión de un led a un bus de 1 bit
