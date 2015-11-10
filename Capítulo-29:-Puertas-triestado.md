@@ -35,6 +35,8 @@ El sintetizador reconoce que es una puerta triestado porque se **le asigna el va
 
 # Ejemplo 1: conexión de un led mediante una puerta triestado
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1.png)
+
 # Ejemplo 2: Conexión de un led a un bus de 1 bit
 
 # Limitaciones en síntesis
