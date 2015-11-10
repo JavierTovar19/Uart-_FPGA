@@ -153,6 +153,8 @@ Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
 
 ## Diagrama de bloques
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex2.png)
+
 ## Descripción en verilog
 
 ## Simulación
