@@ -151,6 +151,14 @@ Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
 
 # Ejemplo 2: Conexión de un led a un bus de 1 bit
 
+## Diagrama de bloques
+
+## Descripción en verilog
+
+## Simulación
+
+## Síntesis y pruebas
+
 # Limitaciones en síntesis
 
 # Alternativas a las puertas triestado
