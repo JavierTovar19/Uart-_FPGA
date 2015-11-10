@@ -127,7 +127,7 @@ Y la simulación en gtkwave es:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1-sim.png)
 
-Se puede ver cómo la señal del led permanece a 1 durante 2 ciclos de reloj, y luego a alta impedancia (colo amarillo) durante los otros 2 ciclos
+Se puede ver cómo la señal del led permanece a 1 durante 2 ciclos de reloj, y luego a alta impedancia (color amarillo) durante los otros 2 ciclos
 
 ## Síntesis y pruebas
 
