@@ -52,7 +52,6 @@ El código verilog es el siguiente:
 
 `include "divider.vh"
 
-
 module tristate1  (
          input wire clk,      //-- Entrada de reloj
          output wire led0);   //-- Led a controlar
@@ -82,6 +81,53 @@ endmodule
 ```
 
 ## Simulación
+
+El banco de pruebas sólo instancia el componente tristate1 y genera el reloj. La pausa se pone en 4 ciclos para poderla apreciar mejor en la simulación. El código del banco de pruebas es:
+
+```verilog
+module tristate1_tb();
+
+//-- Pausa pequeña: divisor
+localparam DELAY = 4;
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Led a controlar
+wire led0;
+
+//-- Instanciar el componente
+tristate1 #(.DELAY(DELAY))
+  dut(
+    .clk(clk),
+    .led0(led0)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
+
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("tristate1_tb.vcd");
+  $dumpvars(0, tristate1_tb);
+
+  # 100 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+La simulación se realiza con el siguiente comando:
+
+    $ make sim
+
+Y la simulación en gtkwave es:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1-sim.png)
+
+Se puede ver cómo la señal del led permanece a 1 durante 2 ciclos de reloj, y luego a alta impedancia (colo amarillo) durante los otros 2 ciclos
 
 ## Síntesis y pruebas
 
