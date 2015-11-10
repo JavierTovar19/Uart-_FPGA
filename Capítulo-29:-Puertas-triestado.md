@@ -131,6 +131,24 @@ Se puede ver cómo la señal del led permanece a 1 durante 2 ciclos de reloj, y 
 
 ## Síntesis y pruebas
 
+La síntesis se realiza con el comando:
+
+    $ make sint
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 10 / 160
+|BRAMs     | 0 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog tristate1.bin
+
+Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
+
 # Ejemplo 2: Conexión de un led a un bus de 1 bit
 
 # Limitaciones en síntesis
