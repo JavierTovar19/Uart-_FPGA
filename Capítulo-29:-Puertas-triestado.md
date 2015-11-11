@@ -326,7 +326,10 @@ El código verilog es correcto, por lo que se simula sin problema, mostrándose 
 
 Sin embargo, al sintetizar obtenemos el siguiente mensaje de error:
 
+   $ make sint3
+
 ```
+...
 2.12.2. Executing Verilog-2005 frontend.
 Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/arith_map.v' to AST representation.
 Generating RTLIL representation for module `\_80_ice40_alu'.
@@ -339,7 +342,68 @@ Makefile:143: recipe for target 'error1.bin' failed
 make: *** [error1.bin] Error 134
 ```
 
-## Error2.v:
+## Error2.v: Dos puertas con la misma señal de habilitación
+
+En este ejemplo se conectan dos registros de un bit a un bus de 2 bits mediante dos puertas triestado que usan la misma señal de habilitación: 
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error2-1.png)
+
+La descripción en verilog es:
+
+```verilog
+`default_nettype none
+
+module error2  (
+         input wire clk,            //-- Entrada de reloj
+         output wire [1:0] leds);   //-- Leds a controlar
+
+//-- Senal de habilitacion para las puertas
+wire ena = 1'b1;
+
+//-- Registro de 1 bit
+reg reg0;
+always @(posedge clk)
+  reg0 <= 1'b1;
+
+//-- Registro de 1 bit
+reg reg1;
+always @(posedge clk)
+  reg1 <= 1'b1;
+
+//-- Conectar los registros al cable de 2 bits
+//-- Se controlan con la misma señal de habilitacion
+assign leds[0] = (ena) ? reg0 : 1'bz;
+assign leds[1] = (ena) ? reg1 : 1'bz;
+
+endmodule
+```
+Se simula con el comando:
+
+    $ make sim4
+
+y se obtiene la misma simulación que en el ejemplo error1
+
+Sintetizamos con:
+
+    $ make sint4
+
+y se obtiene el siguiente mensaje de error
+
+```
+arachne-pnr -d 1k -p error2.pcf error2.blif -o error2.txt
+seed: 1
+device: 1k
+read_chipdb +/share/arachne-pnr/chipdb-1k.bin...
+  supported packages: tq144, vq100
+read_blif error2.blif...
+prune...
+read_pcf error2.pcf...
+instantiate_io...
+fatal error: $_TBUF_ gate must drive top-level output or inout port
+Makefile:176: recipe for target 'error2.bin' failed
+make: *** [error2.bin] Error 1
+```
+En este caso es el arachne el que provoca el fallo
 
 # Alternativas a las puertas triestado
 
