@@ -418,6 +418,7 @@ La alternativa es sustituir las puertas triestado por **un multiplexor de 4 a 1*
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex4.png)
 
 # Ejercicios
+Todo
 
 # Conclusiones
 TODO
