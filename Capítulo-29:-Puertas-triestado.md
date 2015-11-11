@@ -409,9 +409,13 @@ En este caso es el arachne el que provoca el fallo
 
 Las puertas triestado se usan normalmente para interconectar elementos a través de un bus****. La **alternativa** es sustituirlas por **multiplexores**
 
-Imaginemos un bus en el que hay 3 registros que pueden escribir en él, y dos que pueden leer:
+Imaginemos un bus en el que hay 3 registros que pueden escribir en él, y dos que pueden leer. El acceso en escritura de los registro se controla mediante las 3 señales de habilitación de las puertas triestado
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex3.png)
+
+La alternativa es sustituir las puertas triestado por **un multiplexor de 4 a 1**, con una señal de selección de 2 bits:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex4.png)
 
 # Ejercicios
 
