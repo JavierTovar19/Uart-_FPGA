@@ -32,4 +32,4 @@
 28 [[Memoria RAM|Capítulo 28: Memoria RAM]]  
 29 [[Puertas triestado|Capítulo 29: Puertas triestado]]  
 
- Hacia el microprocesador y más allá  
+[[Capítulo 30: Hacia el microprocesador y más allá]]  
