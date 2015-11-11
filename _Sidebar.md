@@ -30,6 +30,6 @@
 26 [[Memoria ROM|Capítulo 26: Memoria ROM]]  
 27 [[Memoria ROM genérica|Capítulo 27: Memoria ROM genérica]]   
 28 [[Memoria RAM|Capítulo 28: Memoria RAM]]
+29 [[Puertas triestado|Capítulo 29: Puertas triestado]]  
 
- [[Capítulo 29: Puertas triestado]]  
  Fin: Hacia el microprocesador y más allá  
