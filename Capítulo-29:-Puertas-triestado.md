@@ -407,6 +407,8 @@ En este caso es el arachne el que provoca el fallo
 
 # Alternativas a las puertas triestado
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex3.png)
+
 # Ejercicios
 
 # Conclusiones
