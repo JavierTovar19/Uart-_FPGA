@@ -278,14 +278,66 @@ La versión actual del **sintetizador** usado en el proyecto icestorm (Yosys) ti
 
 Mostraremos una **serie de ejemplos** que sí **funcionan en simulación**, pero que al sintetizarse con las herramientas libres **obtenemos errores**. Se incluyen aquí como documentación, para poder comprobar en las versiones futuras y si ya está solucionado
 
+## Versión de las herramientas
+```
+$ yosys -V
+Yosys 0.5+385 (git sha1 ddf3e2d, clang 3.6.0-2ubuntu1 -fPIC -Os)
+
+$ arachne-pnr -v
+arachne-pnr 0.1+134+0 (git sha1 788cf79, g++ 4.9.2-10ubuntu13 -O2)
+```
+
 ## Error1.v: Conexión de un registro de 2 bits
 
 En este ejemplo conectaremos un registro de 2 bits a dos leds mediante una puerta triestado de 2 bits. El diagrama es el siguiente:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error1-1.png)
+
+La descripción en verilog:
+
+```verilog
+`default_nettype none
 
 
+module error1  (
+         input wire clk,            //-- Entrada de reloj
+         output wire [1:0] leds);   //-- Leds a controlar
 
+wire ena = 1'b1;
+
+//-- Registro de 2 bits
+reg [1:0] reg1;
+
+//-- Cargar el registro con valor inicial
+always @(posedge clk)
+  reg1 <= 2'b11;
+
+//-- Conectar el registro a 2 leds
+assign leds = (ena) ? reg1 : 2'bzz;
+
+endmodule
+```
+
+El código verilog es correcto, por lo que se simula sin problema, mostrándose el número binario 11 por los leds:
+
+    $ make sim3
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error1-sim.png)
+
+Sin embargo, al sintetizar obtenemos el siguiente mensaje de error:
+
+```
+2.12.2. Executing Verilog-2005 frontend.
+Parsing Verilog input from `/usr/local/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+Mapping error1.$ternary$error1.v:42$2 ($tribuf) with simplemap.
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check: __n (which is 1) >= this->size() (which is 1)
+Aborted (core dumped)
+Makefile:143: recipe for target 'error1.bin' failed
+make: *** [error1.bin] Error 134
+```
 
 ## Error2.v:
 
