@@ -248,7 +248,9 @@ Para simular ejecutamos el comando:
 
 En gtkwave obtenemos lo siguiente:
 
-(sim)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex2-sim.png)
+
+Observamos cómo primero se vuelca el registro 0, que saca un 1 por el led. Luego el registro 1, que vuelca un 0, después el 2, que vuelve a volcar un 1 y finalmente todos desconectados, visualizándose la línea amarilla que indica **alta impedancia**.  El ciclo se repite indefinidamente
 
 ## Síntesis y pruebas
 
