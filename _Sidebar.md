@@ -29,7 +29,7 @@
 25 [[Unidad de recepción serie asíncrona|Capítulo 25: Unidad de recepción serie asíncrona]]  
 26 [[Memoria ROM|Capítulo 26: Memoria ROM]]  
 27 [[Memoria ROM genérica|Capítulo 27: Memoria ROM genérica]]   
-28 [[Memoria RAM|Capítulo 28: Memoria RAM]]
+28 [[Memoria RAM|Capítulo 28: Memoria RAM]]  
 29 [[Puertas triestado|Capítulo 29: Puertas triestado]]  
 
- Fin: Hacia el microprocesador y más allá  
+ Hacia el microprocesador y más allá  
