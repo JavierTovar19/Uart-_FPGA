@@ -274,6 +274,21 @@ Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
 
 # Limitaciones en síntesis
 
+La versión actual del **sintetizador** usado en el proyecto icestorm (Yosys) tiene un **soporte para puertas triestado MUY LIMITADO**.  Por ello, de momento **conviene NO USARLAS EN NUESTROS DISEÑOS**
+
+Mostraremos una **serie de ejemplos** que sí **funcionan en simulación**, pero que al sintetizarse con las herramientas libres **obtenemos errores**. Se incluyen aquí como documentación, para poder comprobar en las versiones futuras y si ya está solucionado
+
+## Error1.v: Conexión de un registro de 2 bits
+
+En este ejemplo conectaremos un registro de 2 bits a dos leds mediante una puerta triestado de 2 bits. El diagrama es el siguiente:
+
+(dibujo)
+
+
+
+
+## Error2.v:
+
 # Alternativas a las puertas triestado
 
 # Ejercicios
