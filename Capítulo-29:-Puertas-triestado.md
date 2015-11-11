@@ -151,9 +151,15 @@ Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
 
 # Ejemplo 2: Conexión de un led a un bus de 1 bit
 
+En este ejemplo conectaremos la salida de **tres registros de 1 bit** a un **bus de 1 bit**, mediante puertas triestado
+
 ## Diagrama de bloques
 
+El **bus de un bit** está conectado a un led de salida para poder visualizar lo que ocurre. Los tres biestables están conectados al bus a través de **puertas triestado**. Se inicializan con los valores iniciales 1, 0 y 1 respectivamente.
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex2.png)
+
+Las puertas triestado están habilitadas por los bits 0, 1 y 2 de un **registro de desplazamiento**, que inicialmente tiene el valor binario 0001, y va tomando los valores 0010, 0100 y 1000 por cada pulso de la señal clk_delay (de 1 segundo). De esta forma, primero se vuelca al bus el registro 0, luego el 1, luego el 2 y después ninguno. Al cabo de 4 ciclos de clk_delay se vuelve a comenzar
 
 ## Descripción en verilog
 
