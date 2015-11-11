@@ -254,6 +254,24 @@ Observamos cómo primero se vuelca el registro 0, que saca un 1 por el led. Lueg
 
 ## Síntesis y pruebas
 
+La síntesis se realiza con el comando:
+
+    $ make sint2
+
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 3 / 96
+|PLBs      | 13 / 160
+|BRAMs     | 0 / 16
+
+El diseño se carga con:
+
+    $ sudo iceprog tristate2.bin
+
+Al ejecutarse se verá cómo parpadea el led a la frecuencia de 1 Hz
+
 # Limitaciones en síntesis
 
 # Alternativas a las puertas triestado
