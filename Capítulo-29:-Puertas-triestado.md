@@ -407,6 +407,10 @@ En este caso es el arachne el que provoca el fallo
 
 # Alternativas a las puertas triestado
 
+Las puertas triestado se usan normalmente para interconectar elementos a través de un bus****. La **alternativa** es sustituirlas por **multiplexores**
+
+Imaginemos un bus en el que hay 3 registros que pueden escribir en él, y dos que pueden leer:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex3.png)
 
 # Ejercicios
