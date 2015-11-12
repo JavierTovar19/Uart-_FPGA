@@ -72,6 +72,10 @@ La tabla con los **códigos de operación** es:
 | WAIT  | xx
 | JP    | XX
 
+# Programas de ejemplo
+## Hola mundo
+## Secuencia en los leds
+## Secuencia con repetición infinita
 
 # Implementación de Microbio
 
