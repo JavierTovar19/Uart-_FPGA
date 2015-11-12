@@ -25,9 +25,16 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
     * Temporizador de 100ms
 * Indicador de programa terminado: El led verde se activa cuando se ejecuta la instrucción HALT que detiene el microprocesador
 
-## Pines
+## Interfaz con el exterior
+
+Microbio se comunica con el exterior mediante los siguientes pines:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-1.png)
+
+* **clk**: Entrada de reloj. Se conecta el reloj de 12 MHz de la FPGA
+* **rstn**: Entrada de reset. Está conectada a la señal DTR para poder hacer reset desde el PC. Al hacer un reset, microbio empieza a ejecutar el programa que tiene almacenado a partir de la dirección de memoria 0
+* **stop**: Señal de salida, conectada al led verde de la placa Icestick. Se pone a 1 cuando Microbio ha ejecutado la instrucción HALT y el programa ha terminado
+* **leds**: Puerto de salida de 4 pines. Está conectado a los 4 leds rojos de la icestick
 
 ## Memoria
 
