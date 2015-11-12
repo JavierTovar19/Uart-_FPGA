@@ -1,4 +1,4 @@
-(dibujo)
+dibujo)
 
 # Introducción
 
@@ -6,7 +6,7 @@ Uno de los aspectos que más me apasionan de las FPGAs es la posibilidad de **cr
 
 # Microprocesador Microbio
 
-
+Microbio es un **procesador "hola mundo"**. Es extremadamente simple, pero es perfecto para comprender su funcionamiento: **leer instruciones de la memoria principal** y **ejecutarlas**. 
 
 ## Características
 
