@@ -67,10 +67,10 @@ La tabla con los **códigos de operación** es:
 
 | Instrucción  | Código de operación (binario)
 |----------|-----------
-| HALT  | xx
-| LEDS  | xx
-| WAIT  | xx
-| JP    | XX
+| WAIT  | 00
+| HALT  | 01
+| LEDS  | 10
+| JP    | 11
 
 # Programas de ejemplo
 ## Hola mundo
