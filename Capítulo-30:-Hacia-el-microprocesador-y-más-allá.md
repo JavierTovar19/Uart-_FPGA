@@ -49,7 +49,7 @@ Microbio puede ejecutar las 4 instrucciones siguientes:
 
 ## Memoria
 
-Microbio dispone de una memoria ROM de 64 posiciones donde se almacena el programa a ejecutar. Cada instrucción tiene un ancho de 8 bits
+Microbio dispone de una **memoria ROM** de **64 posiciones** donde se almacena el programa a ejecutar. Cada instrucción tiene un ancho de **8 bits**
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-2.png)
 
