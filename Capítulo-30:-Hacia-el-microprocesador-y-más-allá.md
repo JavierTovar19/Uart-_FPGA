@@ -14,7 +14,7 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 
 ## Características
 
-* Memoria de 64 bytes (6 bits para las direcciones)
+* Memoria ROM de 64 bytes (6 bits para las direcciones)
 * Instrucciones de 8 bits
 * 4 instrucciones: HALT, LEDS, WAIT y JP
 * No puede realizar cálculos: no tiene unidad aritmético lógica
@@ -47,8 +47,11 @@ Microbio puede ejecutar las 4 instrucciones siguientes:
 | WAIT     | no   | Realizar una pausa de 100ms
 | JP       | _dir_    | Saltar a la dirección de memoria indicada por el operador _dir_
 
-
 ## Memoria
+
+Microbio dispone de una memoria ROM de 64 posiciones donde se almacena el programa a ejecutar. Cada instrucción tiene un ancho de 8 bits
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-2.png)
 
 ## Formato de instrucciones
 
