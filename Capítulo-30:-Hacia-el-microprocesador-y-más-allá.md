@@ -36,11 +36,19 @@ Microbio se comunica con el exterior mediante los siguientes pines:
 * **stop**: Señal de salida, conectada al led verde de la placa Icestick. Se pone a 1 cuando Microbio ha ejecutado la instrucción HALT y el programa ha terminado
 * **leds**: Puerto de salida de 4 pines. Está conectado a los 4 leds rojos de la icestick
 
+## Instrucciones
+
+Microbio puede ejecutar las 4 instrucciones siguientes:
+
+* **HALT**: Detener la ejecución. Se activa la señal stop que se muestra por el led verde
+* **LEDS** val: Escribir el dato val en el puerto de salida de 4 bits, para visualizarlo en los leds
+* **WAIT** : Realizar una pausa de 100ms
+* **JP** dir:  Saltar a la dirección de memoria indicada por el operador dir
+
+
 ## Memoria
 
 ## Formato de instrucciones
-
-## Instrucciones
 
 # Implementación de Microbio
 
