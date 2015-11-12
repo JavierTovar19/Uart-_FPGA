@@ -25,6 +25,8 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 
 ## Pines
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-1.png)
+
 ## Memoria
 
 ## Formato de instrucciones
