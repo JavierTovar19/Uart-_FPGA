@@ -18,8 +18,9 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 * No puede realizar cálculos: no tiene unidad aritmético lógica
 * No tiene registros de propósito general para almacenar información o hacer operaciones
 * Tiene 2 **periféricos**:
-** Puerto de salida de 4 bits: conectado a los leds
-** Temporizador de 100ms
+    * Puerto de salida de 4 bits: conectado a los leds
+    * Temporizador de 100ms
+* Indicador de programa terminado: El led verde se activa cuando se ejecuta la instrucción HALT que detiene el microprocesador
 
 ## Pines
 
