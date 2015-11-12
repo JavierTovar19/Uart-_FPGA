@@ -55,6 +55,24 @@ Microbio dispone de una **memoria ROM** de **64 posiciones** donde se almacena e
 
 ## Formato de instrucciones
 
+Todas las instrucciones de microbio tienen el mismo formato, que se muestra a continuación:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-3.png)
+
+Constan de dos campos:
+* **Código de operación** (CO): Campo de **2 bits** que indica el tipo de operación (HALT, LEDS, WAIT o JP)
+* **Campo de datos** (DAT): Campo de **6 bits** que contiene el dato necesario para las instrucciones LEDS y JP
+
+La tabla con los **códigos de operación** es:
+
+| Instrucción  | Código de operación (binario)
+|----------|-----------
+| HALT  | xx
+| LEDS  | xx
+| WAIT  | xx
+| JP    | XX
+
+
 # Implementación de Microbio
 
 # Programación de microbio
