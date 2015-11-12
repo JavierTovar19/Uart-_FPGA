@@ -40,10 +40,12 @@ Microbio se comunica con el exterior mediante los siguientes pines:
 
 Microbio puede ejecutar las 4 instrucciones siguientes:
 
-* **HALT**: Detener la ejecución. Se activa la señal stop que se muestra por el led verde
-* **LEDS** val: Escribir el dato val en el puerto de salida de 4 bits, para visualizarlo en los leds
-* **WAIT** : Realizar una pausa de 100ms
-* **JP** dir:  Saltar a la dirección de memoria indicada por el operador dir
+| Instrucción  | Operando  | Descripción
+|----------|-----------|--------------
+| HALT     | no    | Detener la ejecución. Se activa la señal stop que se muestra por el led verde
+| LEDS     | _val_    | Escribir el dato _val_ en el puerto de salida de 4 bits, para visualizarlo en los leds
+| WAIT     | no   | Realizar una pausa de 100ms
+| JP       | _dir_    | Saltar a la dirección de memoria indicada por el operador _dir_
 
 
 ## Memoria
