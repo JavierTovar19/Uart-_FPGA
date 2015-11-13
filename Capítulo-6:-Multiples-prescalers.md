@@ -86,7 +86,7 @@ La señal de reloj de entrada es la de 12Mhz de la iCEstick que entra por el pin
 
 Para realizar la síntesis ejecutamos:
 
-    $ make sim
+    $ make sint
 
 Los recursos ocupados son:
 
