@@ -42,10 +42,10 @@ Microbio puede ejecutar las 4 instrucciones siguientes:
 
 | Instrucción  | Operando  | Descripción
 |----------|-----------|--------------
-| HALT     | no    | Detener la ejecución. Se activa la señal stop que se muestra por el led verde
-| LEDS     | _val_    | Escribir el dato _val_ en el puerto de salida de 4 bits, para visualizarlo en los leds
-| WAIT     | no   | Realizar una pausa de 100ms
-| JP       | _dir_    | Saltar a la dirección de memoria indicada por el operador _dir_
+| **HALT**     |     | Detener la ejecución. Se activa la señal stop que se muestra por el led verde
+| **LEDS**     | _val_    | Escribir el dato _val_ en el puerto de salida de 4 bits, para visualizarlo en los leds
+| **WAIT**     |    | Realizar una pausa de 100ms
+| **JP**       | _dir_    | Saltar a la dirección de memoria indicada por el operador _dir_
 
 ## Memoria
 
