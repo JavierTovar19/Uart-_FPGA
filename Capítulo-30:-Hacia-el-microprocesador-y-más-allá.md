@@ -275,7 +275,35 @@ INI = 0x00
 
 # Implementación de Microbio
 
+El procesador está formado por su **ruta de datos** y su **unidad de control** que genera las **microórdenes** de gobierno de la ruta de datos
+
 ## Diagrama de bloques
+
+El diagrama de bloques se muestra en la siguiente figura:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-5.png)
+
+Las señales en rojo son las microórdenes, generadas por la unidad de control.
+
+## Ruta de datos
+
+La ruta de datos incluye los siguientes elementos:
+
+* **Memoria ROM**:  Memoria de anchura 8 bits y 64 posiciones (Bus de direcciones de 6 bits). Almacena el programa en código máquina que MICROBIO debe ejecutar. Se lee desde el fichero **prog.list**
+
+* **Contador de programa (CP)**: Registro de **6 bits** que almacena la **dirección de la siguiente instrucción** a ejecutar. Cuando está activada la microórden **cp_inc**, se incrementa en una unidad. Si está activada **cp_load** se carga con un valor nuevo procedente del campo DAT de la instrucción almacenada en el registro de instrucción
+
+* **Registro de instrucción (RI)**: Registro de **8 bits** que almacena **la instrucción leída de memoria**. Cuando está activada la microórden ri_load se carga con el dato proveniente de la memoria
+
+* **Registro LEDS**: Registro de **4 bits**, cuya salida está conectada a los 4 leds rojos de la icestick. Se carga el valor proveniente del campo de datos DAT cuando se activa la microórden leds_load
+
+* **Divisor de 200ms**: Registro que hace de divisor de reloj para generar a su salida una señal que emite un pulso cada 200ms. Este pulso es leído por la unidad de control para generar un retardo de 200ms cuando se está ejecutando la instrucción WAIT
+
+* **Unidad de control**: Máquina de estados que genera las microórdenes
+
+* **Registro de halt**: Registro de 1 bit para encender el led verde al ejecutarse la instrucción HALT.
+
+* **Registro de reset**: Registro de 1 bit para sincronizar la señal de reset (y hacerla síncrona)
 
 ## Controlador
 
