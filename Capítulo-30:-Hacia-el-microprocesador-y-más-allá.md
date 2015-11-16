@@ -606,6 +606,22 @@ En la parte inferior observamos **las microórdenes**. Vemos que en la última e
 
 El **registro de instrucción** inicialmente está a 0 y luego toma los valores 8F y 40, que se corresponden con las instrucciones del programa
 
+Haciendo el seguimiento de todas las señales, concluimos que el micro **ha ejecutado correctamente el programa M0.asm**
+
+## Simulación de M1.asm
+
+De igual manera simulamos el programa M1.asm. Primero lo ensamblamos:
+
+    $ python3 masm.py M1.asm
+
+y lanzamos la simulación:
+
+    $ make sim
+
+Ahora el resultado de la simulación es el siguiente:
+
+(dibujo)
+
 # Síntesis y pruebas
 
 # Referencias
