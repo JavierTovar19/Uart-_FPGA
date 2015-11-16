@@ -620,6 +620,22 @@ y lanzamos la simulación:
 
 Ahora el resultado de la simulación es el siguiente:
 
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T30-microbio/images/M1-asm-sim1.png)
+
+En el **registro de instrucciones** vemos que se cargan TODAS las instrucciones del programa: 81, 00, 82, 00, 84, 00, 88, 00, 81, 40.  El contador de programa llega hasta la dirección 0xA, y se activa la señal de halt
+
+## Simulación de M2.asm
+
+Primero lo ensamblamos:
+
+    $ python3 masm.py M2.asm
+
+y lanzamos la simulación:
+
+    $ make sim
+
+El resultado de la simulación es el siguiente:
+
 (dibujo)
 
 # Síntesis y pruebas
