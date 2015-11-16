@@ -596,7 +596,7 @@ y a continuación **lanzamos la simulación** con:
 
 Se nos abrirá el gtkwave con lo siguiente:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-sim1.png)
 
 # Síntesis y pruebas
 
