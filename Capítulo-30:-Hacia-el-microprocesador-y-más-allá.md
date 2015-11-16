@@ -673,7 +673,13 @@ La secuencia generada en el programa M2.asm es la mostrada en este vídeo:
 # Ejercicios propuestos
 TODO
 
-# Referencias
+# Documentación
+
+Otros microprocesadores para seguir aprendiendo:
+
+* [Microprocesador Simplez en Verilog](https://github.com/Obijuan/simplez-fpga). Implementación en Verilog del micro Simplez, creado por el Profesor Gregorio Fernández. ETSI Telecomunicaciones. UPM
+* [Proyecto navre](http://opencores.org/project,navre). Un micro AVR en verilog
+* [Micro J1a](http://www.excamera.com/sphinx/article-j1a-swapforth.html) CPU mínima de 16 bits. Implementada en Verilog
 
 # Conclusiones
 TODO
