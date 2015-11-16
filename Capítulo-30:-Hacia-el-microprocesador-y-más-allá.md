@@ -539,8 +539,64 @@ endmodule
 ```
 
 # Simulación
+El banco de pruebas de microbio simplemente activa la señal de reset y genera la señal de reloj. El fichero verilog es el siguiente:
+
+```verilog
+module microbio_tb();
+
+//-- Para la simulacion se usa un WAIT_DELAY de 3 ciclos de reloj
+parameter WAIT_DELAY = 3;
+parameter ROMFILE = "prog.list";
+
+//-- Registro para generar la señal de reloj
+reg clk = 0;
+
+//-- Datos de salida del componente
+wire [3:0] leds;
+wire stop;
+reg rstn = 0;
+
+//-- Instanciar el componente
+microbio #(.WAIT_DELAY(WAIT_DELAY), .ROMFILE(ROMFILE))
+  dut(
+    .clk(clk),
+    .rstn_ini(rstn),
+    .leds(leds),
+    .stop(stop)
+  );
+
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
 
 
+//-- Proceso al inicio
+initial begin
+
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("microbio_tb.vcd");
+  $dumpvars(0, microbio_tb);
+
+  #2 rstn <= 1;
+
+  # 160 $display("FIN de la simulacion");
+  $finish;
+end
+
+endmodule
+```
+## Simulación de M0.asm
+
+Para simular el ejemplo hola mundo (**M0.asm**) ensamblamos el programa, con lo que se genera el fichero prog.list con el código máquina a probar:
+
+    $ python3 masm.py M0.asm
+
+y a continuación **lanzamos la simulación** con:
+
+    $ make sim
+
+Se nos abrirá el gtkwave con lo siguiente:
+
+(dibujo)
 
 # Síntesis y pruebas
 
