@@ -664,7 +664,7 @@ y se carga en la FPGA con el comando:
 
 Al ejecutar el programa M1.asm, el resultado es que el led da una vuelta en sentido horario y se enciende el led verde. Se puede ver en este vídeo de youtube:
 
-(video)
+[![Click to see the youtube video](http://img.youtube.com/vi/JT47CFtsEjU/0.jpg)](https://www.youtube.com/watch?v=JT47CFtsEjU)
 
 La secuencia generada en el programa M2.asm es la mostrada en este vídeo:
 
