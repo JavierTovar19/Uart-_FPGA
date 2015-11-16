@@ -119,9 +119,11 @@ Machine code:
 ```
 Nos devuelve la **tabla de símbolos** (en este caso no hay porque no se han definido etiquetas), el **programa en ensamblador**, ya procesado y el programa generado en **código máquina**
 
-## Hola mundo
-## Secuencia en los leds
-## Secuencia con repetición infinita
+**Las fuentes del programa masm.py están disponibles** [en el repositorio de este capítulo](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T30-microbio), de forma que se pueda estudiar cómo funciona y sobre todo mejorarlo y ampliarlo. Por ejemplo, si se amplían las instrucciones de Microbio, será necesario que el ensamblador las soporte
+
+## M0.asm: Hola mundo
+## M1.asm: Secuencia en los leds
+## M2.asm: Secuencia con repetición infinita
 
 # Implementación de Microbio
 
