@@ -84,7 +84,7 @@ Sin embargo, es mucho más sencillo escribir programas en el **lenguaje ensambla
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-4.png)
 
-El ensamblador de microbio se llama masm.py, y ha sido programado en python 3.5. Para ensamblar el programa M0.asm,por ejemplo, hay que ejecutar el siguiente comando:
+El ensamblador de microbio se llama **masm.py**, y ha sido programado en **python 3.5** (Aunque funciona igual en 2.7.9) . Para ensamblar el **programa M0.asm**,por ejemplo, hay que ejecutar el siguiente comando:
 
 ```
 $ python3 masm.py M0.asm
