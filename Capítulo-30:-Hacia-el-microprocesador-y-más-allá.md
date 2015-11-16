@@ -646,6 +646,14 @@ El ejecutarse la **instrucción JP 0** (0xC0) el contador de programa pasa a val
 
 # Síntesis y pruebas
 
+Los recursos empleados son:
+
+| Recurso  | ocupación
+|----------|-----------
+|PIOs      | 9 / 96
+|PLBs      | 24 / 160
+|BRAMs     | 1 / 16
+
 # Referencias
 
 # Conclusiones
