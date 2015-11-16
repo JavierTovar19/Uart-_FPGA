@@ -307,6 +307,31 @@ La ruta de datos incluye los siguientes elementos:
 
 ## Controlador
 
+Las **microórdenes** generadas son por la unidad de control son:
+
+* **cp_inc**: Incrementar contador de programa
+* **cp_load**: Cargar contador de programa
+* **ri_load**: Cargar registro de instrucción
+* **leds_load**: Cargar registro de leds
+* **halt**: Instrucción halt ejecutada
+
+El autómata tiene 3 estados, mostrados en el siguiente diagrama:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-6.png)
+
+Los estados son:
+
+* **INIT**: Estado de reposo. Todas las señales están a 0
+* **FETCH**: Ciclo de carga de la instrucción. Pasa de la memoria rom al registro de instrucción RI
+* **EXEC**: Ciclo de ejecución. Se ejecuta la instrucción correspondiente. Dependiendo de la instrucción que sea, se activan unas microordenes u otras. En el caso de la instrucción JP, se pasa al estado de INIT antes de volver a cargar la siguiente instrucción
+
+Todos los estados duran **1 ciclo**, salvo el de exec al ejecutar la instrucción WAIT (que dura 200ms)
+Al ejecutar la instrucción HALT se activa la microorden halt a 1 y se permanece en el mismo estado hasta que se haga un reset
+
+## Código verilo
+
+
+
 # Simulación y pruebas
 
 # Referencias
