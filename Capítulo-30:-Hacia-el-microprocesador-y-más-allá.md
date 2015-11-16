@@ -159,7 +159,7 @@ En el apartado de simulación y pruebas se muestran más detalles, pero para hac
 
 El resultado de la ejecución será que **se encienden tanto los 4 leds rojos como el led verde** (por ejecutarse la instrucción HALT)
 
-(foto)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-picture.png)
 
 ## M1.asm: Secuencia en los leds
 ## M2.asm: Secuencia con repetición infinita
