@@ -122,12 +122,50 @@ Nos devuelve la **tabla de símbolos** (en este caso no hay porque no se han def
 **Las fuentes del programa masm.py están disponibles** [en el repositorio de este capítulo](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T30-microbio), de forma que se pueda estudiar cómo funciona y sobre todo mejorarlo y ampliarlo. Por ejemplo, si se amplían las instrucciones de Microbio, será necesario que el ensamblador las soporte
 
 ## M0.asm: Hola mundo
+
+El primer programa que haremos en Microbio es el **M0.asm**: Enciende los 4 leds rojos con la instrucción LEDS y se para:
+
+```
+//-- M0.asm:  Ejemplo hola mundo para el procesador MICROBIO
+//-- Encender todos los leds y terminar
+
+LEDS 0xF  //-- Encender todos los leds
+HALT      //-- Terminar
+```
+
+El fichero **prog.list**, con el **código máquina** esamblado a través de masm.py es:
+
+```
+8F   //-- [00] LEDS 0xF
+40   //-- [01] HALT
+```
+
+Sólo ocupa 2 bytes, uno por cada instrucción
+
+En el apartado de simulación y pruebas se muestran más detalles, pero para hacer una primera prueba en la placa icestick, el proceso a seguier es:
+
+* Ensamblar el programa****
+
+    $ python3 masm.py M0.asm
+
+* **Sintetizar**:
+
+    $ make sint
+
+* **Cargar microbio con su programa en la FPGA**:
+
+    $ sudo iceprog microbio.bin
+
+El resultado de la ejecución será que se encienden tanto los 4 leds rojos como el led verde (por ejecutarse la instrucción HALT)
+
+(foto)
+
 ## M1.asm: Secuencia en los leds
 ## M2.asm: Secuencia con repetición infinita
 
 # Implementación de Microbio
 
-# Programación de microbio
+# Simulación y pruebas
 
 # Referencias
 
