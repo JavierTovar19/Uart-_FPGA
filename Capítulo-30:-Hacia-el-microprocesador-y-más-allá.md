@@ -598,6 +598,14 @@ Se nos abrirá el gtkwave con lo siguiente:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-sim1.png)
 
+Para entender la ejecución del programa (que sólo tiene 2 instrucciones: (8F, 40)) nos fijamos en la **señal state**, que nos indica **el estado de la unidad de control**. Sus valores en el tiempo se corresponden con 0, 1, 2, 1, 2 que se corresponden con los estados INIT, FETCH, EXEC, FETCH y EXEC.  Es decir, que efectivamente se ejecutan 2 instrucciones (hay dos ciclos de captura y dos ciclos de ejecución)
+
+En la parte inferior observamos **las microórdenes**. Vemos que en la última ejecución se ha activado **halt a 1** y a partir de ahí la actividad del micro a cesado
+
+**El contador de programa**, CP, toma los valores 0, 1 y 2, para acceder a esas direcciones (A la 2 no accede, pero apunta a ella porque contiene la dirección de la siguiente instrucción a ejecutar, que estaría en esa dirección)
+
+El **registro de instrucción** inicialmente está a 0 y luego toma los valores 8F y 40, que se corresponden con las instrucciones del programa
+
 # Síntesis y pruebas
 
 # Referencias
