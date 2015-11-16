@@ -74,7 +74,7 @@ La tabla con los **códigos de operación** es:
 
 # Programas de ejemplo
 
-Se muestran **tres programas de ejemplo** muy sencillo para probar el procesador microbio y aprender su programación
+Se muestran **tres programas de ejemplo** muy sencillo para probar el procesador microbio y aprender su programación: **M0.asm**, **M1.asm** y **M2.asm**
 
 ## Ensamblador de Microbio
 
