@@ -82,7 +82,7 @@ Las instructiones que entiendo microbio están en **código máquina**: son núm
 
 Sin embargo, es mucho más sencillo escribir programas en el **lenguaje ensamblador de Microbio** y utilizar un **programa ensamblador** para **traducirlos a código máquina**. Este proceso se denomina **ensamblado**
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-4.png)
 
 El ensamblador de microbio se llama masm.py, y ha sido programado en python 3.5. Para ensamblar el programa M0.asm,por ejemplo, hay que ejecutar el siguiente comando:
 
