@@ -683,3 +683,10 @@ Otros microprocesadores para seguir aprendiendo:
 
 # Conclusiones
 TODO
+
+# DESPEDIDA
+Este es el **último capítulo del tutorial**. Ahora que tenemos **herramientas libres** para crear hardware ya no hay límite. Entre todos podemos mejorar y ampliar el **patrimonio tecnológico de la humanidad** con nuestras aportaciones hardware. Ahora tenemos la libertad para poderlo hacer. **¡Hagámoslo!**
+
+Que el hardware libre os acompañe
+
+Saludos, OBIJUAN
