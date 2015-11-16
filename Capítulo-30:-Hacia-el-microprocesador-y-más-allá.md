@@ -155,8 +155,9 @@ En el apartado de simulación y pruebas se muestran más detalles, pero para hac
 * **Cargar microbio con su programa en la FPGA**:
 
     $ sudo iceprog microbio.bin
+* **Desactivar el DTR para hacer RESET**: Ejecutar el programa gtkterm y pulsar la tecla F7 para desactivar el DTR y que se haga un reset del micro. El programa comenzará a ejecutarse
 
-El resultado de la ejecución será que se encienden tanto los 4 leds rojos como el led verde (por ejecutarse la instrucción HALT)
+El resultado de la ejecución será que **se encienden tanto los 4 leds rojos como el led verde** (por ejecutarse la instrucción HALT)
 
 (foto)
 
