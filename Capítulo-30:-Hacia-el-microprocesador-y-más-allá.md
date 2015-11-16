@@ -646,6 +646,10 @@ El ejecutarse la **instrucción JP 0** (0xC0) el contador de programa pasa a val
 
 # Síntesis y pruebas
 
+Una vez ensamblado cualquiera de los programas de prueba: M0.asm, M1.asm ó M2.asm, la sintesis se realiza con el comando:
+
+    $ make sint
+
 Los recursos empleados son:
 
 | Recurso  | ocupación
@@ -653,6 +657,21 @@ Los recursos empleados son:
 |PIOs      | 9 / 96
 |PLBs      | 24 / 160
 |BRAMs     | 1 / 16
+
+y se carga en la FPGA con el comando:
+
+    $ sudo iceprog microbio.bin
+
+Al ejecutar el programa M1.asm, el resultado es que el led da una vuelta en sentido horario y se enciende el led verde. Se puede ver en este vídeo de youtube:
+
+(video)
+
+La secuencia generada en el programa M2.asm es la mostrada en este vídeo:
+
+(video 2)
+
+# Ejercicios propuestos
+TODO
 
 # Referencias
 
