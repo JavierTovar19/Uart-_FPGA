@@ -668,7 +668,7 @@ Al ejecutar el programa M1.asm, el resultado es que el led da una vuelta en sent
 
 La secuencia generada en el programa M2.asm es la mostrada en este vídeo:
 
-(video 2)
+[![Click to see the youtube video](http://img.youtube.com/vi/pTI-yHEmjac/0.jpg)](https://www.youtube.com/watch?v=pTI-yHEmjac)
 
 # Ejercicios propuestos
 TODO
