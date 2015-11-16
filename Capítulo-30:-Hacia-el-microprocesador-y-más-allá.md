@@ -275,6 +275,10 @@ INI = 0x00
 
 # Implementación de Microbio
 
+## Diagrama de bloques
+
+## Controlador
+
 # Simulación y pruebas
 
 # Referencias
