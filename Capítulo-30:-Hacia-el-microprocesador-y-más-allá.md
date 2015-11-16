@@ -162,7 +162,116 @@ El resultado de la ejecución será que **se encienden tanto los 4 leds rojos co
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-picture.png)
 
 ## M1.asm: Secuencia en los leds
+
+Este ejemplo hace **una secuencia de 4 valores en los leds** y termina. En la secuencia se enciende un único led cada vez, que rota en sentido horario. Al llegar la posición inicial se termina
+
+Se utiliza la instrucción **WAIT** que genera un retraso de **200ms**
+
+```
+//-- M1.asm:  Ejemplo de una secuencia simple, sin repeticion
+
+LEDS 0x1  //-- Encender primer led
+WAIT      //-- Esperar
+LEDS 0x2  //-- Segundo led
+WAIT
+LEDS 0x4  //-- Tercer led
+WAIT
+LEDS 0x8  //-- Cuarto led
+WAIT
+LEDS 0x1  //-- Primer led
+HALT      //-- Terminar
+```
+El fichero **prog.list**, con el **código máquina** esamblado a través de masm.py es:
+
+```
+81   //-- [00] LEDS 0x1
+00   //-- [01] WAIT
+82   //-- [02] LEDS 0x2
+00   //-- [03] WAIT
+84   //-- [04] LEDS 0x4
+00   //-- [05] WAIT
+88   //-- [06] LEDS 0x8
+00   //-- [07] WAIT
+81   //-- [08] LEDS 0x1
+40   //-- [09] HALT
+```
+
+Para probarlo hay que seguir los mismos pasos que para el programa M0.asm
+
 ## M2.asm: Secuencia con repetición infinita
+
+Como tercer ejemplo, se ejecuta una **secuencia en los leds infinita**. Tiene dos partes: la primera es una rotación en sentido horario, similar a la del ejemplo anterior (M1.asm). Cuando termina se inicia otra, que tarda el **doble de tiempo**. Para ello se ejecutan seguidas **dos instrucciones WAIT**, lográndose una pausa de **400ms**
+
+Al llegar al final, se comienza desde el principio mediante la **instrucción JP** (jump).
+
+Se utilizan etiquetas para facilitar la escritura del programa en ensamblador, pero se podría directamente usar la instrucción **JP 0** que salta a la dirección 0, en vez de **JP ini**
+
+```
+//-- M2.asm:  Ejemplo de una secuencia infinita
+
+ini:
+      LEDS 0x01
+      WAIT
+      LEDS 0x2
+      WAIT
+      LEDS 0x4
+      WAIT
+      LEDS 0x8
+      WAIT
+      LEDS 0x1
+      WAIT
+      WAIT
+      LEDS 0x3
+      WAIT
+      WAIT
+      LEDS 0x6
+      WAIT
+      WAIT
+      LEDS 0xC
+      WAIT
+      WAIT
+      LEDS 0x9
+      WAIT
+      WAIT
+
+      JP ini      //-- Saltar al comienzo
+```
+
+El código máquina generado por el masm.py es:
+
+```
+81   //-- [00] LEDS 0x1
+00   //-- [01] WAIT
+82   //-- [02] LEDS 0x2
+00   //-- [03] WAIT
+84   //-- [04] LEDS 0x4
+00   //-- [05] WAIT
+88   //-- [06] LEDS 0x8
+00   //-- [07] WAIT
+81   //-- [08] LEDS 0x1
+00   //-- [09] WAIT
+00   //-- [0A] WAIT
+83   //-- [0B] LEDS 0x3
+00   //-- [0C] WAIT
+00   //-- [0D] WAIT
+86   //-- [0E] LEDS 0x6
+00   //-- [0F] WAIT
+00   //-- [10] WAIT
+8C   //-- [11] LEDS 0xC
+00   //-- [12] WAIT
+00   //-- [13] WAIT
+89   //-- [14] LEDS 0x9
+00   //-- [15] WAIT
+00   //-- [16] WAIT
+C0   //-- [17] JP 0x0
+```
+
+Al ensamblar en el modo "verbose", podemos ver cómo la **tabla de símbolos** contiene la **etiqueta INI**, asignada a la dirección 0:
+```
+Symbol table:
+
+INI = 0x00
+```
 
 # Implementación de Microbio
 
