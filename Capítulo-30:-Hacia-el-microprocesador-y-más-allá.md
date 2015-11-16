@@ -636,7 +636,13 @@ y lanzamos la simulación:
 
 El resultado de la simulación es el siguiente:
 
-(dibujo)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M2-asm-sim1.png)
+
+Se puede ver la ejecución de las primeras 13 instrucciones. En este otro pantallazo se puede ver la parte final:
+
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M2-asm-sim2.png)
+
+El ejecutarse la **instrucción JP 0** (0xC0) el contador de programa pasa a valer 0 de nuevo por lo que se vuelven a ejecutar las instrucciones del principio
 
 # Síntesis y pruebas
 
