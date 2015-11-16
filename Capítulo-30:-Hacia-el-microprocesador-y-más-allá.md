@@ -73,6 +73,52 @@ La tabla con los **códigos de operación** es:
 | JP    | 11
 
 # Programas de ejemplo
+
+Se muestran **tres programas de ejemplo** muy sencillo para probar el procesador microbio y aprender su programación
+
+## Ensamblador de Microbio
+
+Las instructiones que entiendo microbio están en **código máquina**: son números almacenados en su memoria rom, que el procesador va leyendo secuencialmente y ejecutando. Podemos programar microbio directamente en código máquina, escribiendo los **números hexadecimales** de sus instrucciones en el fichero **prog.list**
+
+Sin embargo, es mucho más sencillo escribir programas en el **lenguaje ensamblador de Microbio** y utilizar un **programa ensamblador** para **traducirlos a código máquina**. Este proceso se denomina **ensamblado**
+
+(dibujo)
+
+El ensamblador de microbio se llama masm.py, y ha sido programado en python 3.5. Para ensamblar el programa M0.asm,por ejemplo, hay que ejecutar el siguiente comando:
+
+```
+$ python3 masm.py M0.asm
+Assembler for the MICROBIO microprocessor
+Released under the GPL license
+
+File prog.list successfully generated
+```
+
+Esto genera el fichero **prog.list** con el código máquina, que será cargado en la memoria rom de microbio al realizar la **síntesis / simulación**
+
+Si se ejecuta con la opción _-verbose_ se obtiene más información:
+
+```
+$ python3 masm.py M0.asm -verbose
+Assembler for the MICROBIO microprocessor
+Released under the GPL license
+
+File prog.list successfully generated
+
+Symbol table:
+
+Microbio assembly program:
+
+[00] LEDS 0xF
+[01] HALT
+
+Machine code:
+
+8F   //-- [00] LEDS 0xF
+40   //-- [01] HALT
+```
+Nos devuelve la **tabla de símbolos** (en este caso no hay porque no se han definido etiquetas), el **programa en ensamblador**, ya procesado y el programa generado en **código máquina**
+
 ## Hola mundo
 ## Secuencia en los leds
 ## Secuencia con repetición infinita
