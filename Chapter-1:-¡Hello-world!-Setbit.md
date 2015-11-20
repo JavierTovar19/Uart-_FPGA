@@ -28,7 +28,7 @@ assign A = 1;
 endmodule
 ```
 
-## Synthetization into the FPGA
+## Synthesis into the FPGA
 
 In addition to the Verilog file, we'll need to specify which pin of the FPGA we want the component's "A" output to be connected to. This map is made with the setbit.pcf file, (pcf = Physical Constraint File). We will output the "A" signal through the pin 99, that is connected to the D1 LED; but it could be any other pin:
 
