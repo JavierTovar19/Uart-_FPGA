@@ -1,3 +1,6 @@
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/images/tutorial-fpga-logo.png)
+
+
 # Digital designs for FPGAs, with free open source tools
 
 ## Description
