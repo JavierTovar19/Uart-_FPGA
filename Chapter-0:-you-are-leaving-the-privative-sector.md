@@ -71,7 +71,7 @@ sudo ln -s /usr/local/bin/iceprog /usr/bin/iceprog
 # ICEStick board
 
 This is the board that we'll use to try all the digital designs in this tutorial:
-[IceStrick board](http://www.latticesemi.com/icestick)
+[IceStick board](http://www.latticesemi.com/icestick)
 
 If you can't get your hands on one of this boards, don't worry! we'll also simulate the circuits with icarus verilog and gtkwave
 
