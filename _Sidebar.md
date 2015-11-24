@@ -4,7 +4,7 @@
 0 [[You are leaving the privative sector|Capítulo 0: you are leaving the privative sector]] ([[EN|Chapter 0: you are leaving the privative sector]])  
 1 [[¡Hola mundo! |Capítulo 1: ¡Hola mundo! Setbit]] ([[EN|Chapter 1: ¡Hello world! Setbit]])  
 2 [[De un bit a datos|Capítulo 2: De un bit a datos. Fport]] ([[EN|Chapter 2: From bit to data. Fport]])  
-3 [[Puerta NOT|Capítulo 3: Puerta NOT. Inv]]  
+3 [[Puerta NOT|Capítulo 3: Puerta NOT. Inv]]  ([[EN|Chapter 3: NOT Gate. Inv]])  
 4 [[Contador de 26 bits|Capítulo 4: Contador de 26 bits]]  
 5 [[Prescaler de N bits|Capítulo 5: Prescaler de N bits]]  
 6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  
