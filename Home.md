@@ -55,3 +55,7 @@ Muchas aplicaciones se pueden hacer tanto por software (programando) o por hardw
 
 * **¿Por qué Verilog y no VHDL?**  
 Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog
+
+* **¿Dónde puedo comprar la tarjeta IceStick**
+-[Icestick en Mouser España ](http://www.mouser.es/new/Lattice-Semiconductor/lattice-icestick-kit/)
+-[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
