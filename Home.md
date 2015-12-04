@@ -12,6 +12,9 @@ Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs 
 * **Place & route**: [Arachne-prn](https://github.com/cseed/arachne-pnr) (en github)
 * **Utilidades y descarga en FPGA**: [Proyecto icestorm](http://www.clifford.at/icestorm/)
 
+## Grupo de google
+Únete al grupo [FPGA-WARS: explorando el lado libre](https://groups.google.com/forum/#!topic/fpga-wars-explorando-el-lado-libre) para conocer las últimas noticias, preguntar, compartir y colaborar en el desarrollo de hardware libre reconfigurable
+
 ## TODO  
 Why libre?  
 Por donde íbamos? --> Retomar artículos sobre el tema  
