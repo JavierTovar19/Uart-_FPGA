@@ -68,6 +68,24 @@ Adicionalmente, para poder ejecutar "sudo iceprog" hay que enlazar:
 sudo ln -s /usr/local/bin/iceprog /usr/bin/iceprog
 ```
 
+Si lo que quieres es **actualizar** puedes re-utilizar los repositorios que clonaste durante la instalación:
+```
+cd icestorm
+git reset --hard & git pull
+make -j$(nproc)
+sudo make install
+cd ../arachne-pnr
+git reset --hard & git pull
+make -j$(nproc)
+sudo make install
+cd ../yosys
+git reset --hard & git pull
+make -j$(nproc)
+sudo make install
+```
+
+
+
 # Placa ICEStick
 
 Esta es la placa que usaremos para probar todos los diseños digitales de este tutorial:
