@@ -68,7 +68,7 @@ Adicionalmente, para poder ejecutar "sudo iceprog" hay que enlazar:
 sudo ln -s /usr/local/bin/iceprog /usr/bin/iceprog
 ```
 
-Si lo que quieres es **actualizar** las herramientas, puedes re-utilizar los repositorios que clonaste durante la instalación:
+Si lo que quieres es **actualizar** las herramientas, puedes re-utilizar los repositorios que clonaste durante la instalación usando el comando "git pull":
 ```
 cd icestorm
 git reset --hard & git pull
