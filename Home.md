@@ -57,6 +57,9 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
 
 ## Historia
+
+* **2015-12-04**: Se crea [el grupo de FPGA-WARS](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre). Se [anuncia oficialmente en clonewars](https://groups.google.com/d/msg/asrob-uc3m-impresoras-3d/Lv6Tjb_3js8/_C4ZTISADAAJ)
+
 * **2015-11-20**: Terminado el último capítulo del tutorial (30)
 
 * **2015-10-21**: **Marcha imperial** sonando en la icestick. Le envío [este vídeo a Clifford](https://www.youtube.com/watch?v=IDU8kHAaLTw). También le comento que estoy trabajando en estos tutoriales.  Le gusta la idea y **publica el enlace de los tutoriales en la web de icestorm** :-)
