@@ -57,7 +57,11 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
 
 ## Historia
+
+* **2015-08-05**: Se reciben en BQ las dos placas icestick (Y yo de vacaciones con el SAV a tope!!!!)
 * **2015-08-03**: **Jesús Arroyo** compra 2 tarjetas icesticks directamente desde Lattice, para el departamento de innovación y robótica de BQ
+
+* **2015-07-31**: Primeras pruebas. Instalado todo el tool-chain de la web de icestorm en un ubuntu 15.04. ¡Funciona!. Todos los ejemplos de prueba los subo a [este repo](https://github.com/Obijuan/mytests/tree/master/verilog). El SAV se me dispara. Me voy de vacaciones (sin internet durante 10 días). Me llevo PDFs con manuales de verilog para leer y aprender
 
 * **2015-07-30**: Termino [la segunda temporada de los tutoriales de Freecad](http://www.iearobotics.com/wiki/index.php?title=Tutorial_Freecad._Temporada_2). ¡Ya me puedo poner con las FPGAs!
 
