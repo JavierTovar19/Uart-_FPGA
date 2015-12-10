@@ -57,7 +57,7 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
 
 ## Historia
-* **2015-08-10**: Devuelta en Madrid, aunque todavía de vacaciones. Me paso por BQ a recoger una icestick. Logro un hito histórico: Descargo mi primer diseño verilog en la fpga, usando herramientas libres!!! Un programa "hola mundo" que enciende un led!!!!! :-)
+* **2015-08-10**: Devuelta en Madrid, aunque todavía de vacaciones. Me paso por BQ a recoger una icestick. Logro un hito histórico: Descargo mi primer diseño verilog en la fpga, usando herramientas libres!!! Un programa "hola mundo" que enciende un led!!!!! :-)  Comienzo esta wiki para hacer los tutoriales a medida que voy aprendiendo
 
 * **2015-08-05**: Se reciben en BQ las dos placas icestick (Y yo de vacaciones con el SAV a tope!!!!)
 
