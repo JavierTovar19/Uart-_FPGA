@@ -13,7 +13,7 @@ Todos los circuitos digitales se descomponen en sus elementos básicos: **puerta
 
 Esta configuración se consigue **descargando en la FPGA** un fichero binario, denominado **bitstream**, que contiene toda la información necesaria para establecer las conexiones entre los elementos internos de la FPGA
 
-# Generación del bitstream
+## Generación del bitstream
 
 La magia de las FPGAs está en las **herramientas software** que permiten generar el bitstream a partir de la **descripción del circuito** en un lenguaje HDL
 
@@ -25,8 +25,17 @@ Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (H
 
 **2 Emplazado y rutado**. Los componentes del netlist se hacen corresponder con los elementos físicos de la FPGA, se determina su colocación y se realiza el rutado. Toda la información de configuración de la FPGA se condensa en el bitstream. Esta fase sí depende del modelo concreto de FPGA que se disponga
 
-# Entorno libre
-TODO
+## Cautivos del fabricante
+
+Las FPGAs se conocen desde hace 30 años. Son unas herramientas tremendamente útiles con muchísimo potencial. ¡Te permiten diseñar tu propio chip! Sin embargo, los fabricantes de FPGAs nunca han liberado ni el software ni las especificaciones de los formatos de sus bitstreams. 
+
+Esto ha hecho que nadie pueda crear software para trabajar con las FPGAs, sino que sólo se puede utilizar el del fabricante. Y sólo se puede utilizar en los ordenadores que el fabricante te diga. Sólo puedes diseñar lo que el fabricante haya pensado que se puede diseñar con sus herramientas.  Si se te ocure algo nuevo, no soportado por su software, no podrás hacer nada.  Todo esto es bastante frustrante. Y ha hecho que al final mucha gente deje de uilizar las FPGAs.
+
+# Herramientas libres para trabajar con FPGAs
+
+
+
+##dd
 
 Usaremos [icestorm](http://www.clifford.at/icestorm/), yosys y aracne, para la síntesis y descarga en la FPGA
 Entorno: Ubuntu Linux 15.04
