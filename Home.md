@@ -59,6 +59,10 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 ## Historia
 * **2015-11-20**: Terminado el último capítulo del tutorial (30)
 
+* **2015-10-21**: **Marcha imperial** sonando en la icestick. Le envío [este vídeo a Clifford](https://www.youtube.com/watch?v=IDU8kHAaLTw). También le comento que estoy trabajando en estos tutoriales.  Le gusta la idea y **publica el enlace de los tutoriales en la web de icestorm** :-)
+
+* **2015-08-12**: Primer contacto con Clifford wolf (el autor del proyecto icestorm). Le envío un correo dándole las gracias por el proyecto. Me responde :-)
+
 * **2015-08-10**: Devuelta en Madrid, aunque todavía de vacaciones. Me paso por BQ a recoger una icestick. Logro un hito histórico: Descargo mi primer diseño verilog en la fpga, usando herramientas libres!!! Un programa "hola mundo" que enciende un led!!!!! :-)  Comienzo esta wiki para hacer los tutoriales a medida que voy aprendiendo
 
 * **2015-08-05**: Se reciben en BQ las dos placas icestick (Y yo de vacaciones con el SAV a tope!!!!)
