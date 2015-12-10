@@ -15,6 +15,8 @@ Esta configuración se consigue **descargando en la FPGA** un fichero binario, d
 
 ## Generación del bitstream
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/fpga-bitstream1.png)
+
 # Entorno libre
 TODO
 
