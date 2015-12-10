@@ -11,6 +11,10 @@ Todos los circuitos digitales se descomponen en sus elementos básicos: **puerta
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/fpga-config1.png)
 
+Esta configuración se consigue **descargando en la FPGA** un fichero binario, denominado **bitstream**, que contiene toda la información necesaria para establecer las conexiones entre los elementos internos de la FPGA
+
+## Generación del bitstream
+
 # Entorno libre
 TODO
 
