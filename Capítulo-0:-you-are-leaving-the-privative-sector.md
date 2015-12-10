@@ -15,7 +15,15 @@ Esta configuración se consigue **descargando en la FPGA** un fichero binario, d
 
 ## Generación del bitstream
 
+La magia de las FPGAs está en las **herramientas software** que permiten generar el bitstream a partir de la **descripción del circuito** en un lenguaje HDL
+
+Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (HDL), como Verilog o VHDL. Son los ficheros fuentes. La generación del bitstream se hace en dos fases, a partir de las fuentes:
+
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/fpga-bitstream1.png)
+
+**1 Síntesis**: La herramienta de síntesis infiere los elementos hardware básicos a partir de su descripción, y obtiene un fichero **netlist** que describe las uniones entre ellos. Esta fase no depende de la FPGA a usar
+
+**2 Emplazado y rutado**. Los componentes del netlist se hacen corresponder con los elementos físicos de la FPGA, se determina su colocación y se realiza el rutado. Toda la información de configuración de la FPGA se condensa en el bitstream. Esta fase sí depende del modelo concreto de FPGA que se disponga
 
 # Entorno libre
 TODO
