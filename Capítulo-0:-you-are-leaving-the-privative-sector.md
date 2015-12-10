@@ -100,4 +100,4 @@ Si no dispones de esta placa, ¡No problem! También simularemos todos los dise�
 # Créditos
 * "AND ANSI" by jjbeard - Own Drawing, made in Inkscape 0.43. Licensed under Public Domain via Commons - https://commons.wikimedia.org/wiki/File:AND_ANSI.svg#/media/File:AND_ANSI.svg
 * "OR ANSI" by jjbeard - Own Drawing, made in Inkscape 0.43. Licensed under Public Domain via Commons - https://commons.wikimedia.org/wiki/File:OR_ANSI.svg#/media/File:OR_ANSI.svg
-
+* "NOT ANSI" by jjbeard - Own Drawing, made in Inkscape 0.43. Licensed under Public Domain via Commons - https://commons.wikimedia.org/wiki/File:NOT_ANSI.svg#/media/File:NOT_ANSI.svg
