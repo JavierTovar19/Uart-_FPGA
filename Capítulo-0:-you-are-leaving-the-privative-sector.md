@@ -13,7 +13,7 @@ Todos los circuitos digitales se descomponen en sus elementos básicos: **puerta
 
 Esta configuración se consigue **descargando en la FPGA** un fichero binario, denominado **bitstream**, que contiene toda la información necesaria para establecer las conexiones entre los elementos internos de la FPGA
 
-## Generación del bitstream
+# Generación del bitstream
 
 La magia de las FPGAs está en las **herramientas software** que permiten generar el bitstream a partir de la **descripción del circuito** en un lenguaje HDL
 
