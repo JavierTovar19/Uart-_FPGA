@@ -96,3 +96,6 @@ Esta es la placa que usaremos para probar todos los diseños digitales de este t
 Si no dispones de esta placa, ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
 
 # Enlaces
+
+# Créditos
+* "AND ANSI" by jjbeard - Own Drawing, made in Inkscape 0.43. Licensed under Public Domain via Commons - https://commons.wikimedia.org/wiki/File:AND_ANSI.svg#/media/File:AND_ANSI.svg
