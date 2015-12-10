@@ -64,7 +64,7 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 
 * **2015-11-26**: Primera versión del procesador educacional **SIMPLEZ** sintetizado en la icestick, ejecutando un programa que muestra una secuencia por los leds: [Repo](https://github.com/Obijuan/simplez-fpga)
 
-## Historia
+# Historia
 * **2015-11-20**: Terminado el último capítulo del tutorial (30)
 
 * **2015-10-21**: **Marcha imperial** sonando en la icestick. Le envío [este vídeo a Clifford](https://www.youtube.com/watch?v=IDU8kHAaLTw). También le comento que estoy trabajando en estos tutoriales.  Le gusta la idea y **publica el enlace de los tutoriales en la web de icestorm** :-)
