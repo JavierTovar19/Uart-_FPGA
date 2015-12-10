@@ -15,13 +15,6 @@ Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs 
 ## Comunidad: FPGA-WARS
 Únete al grupo [FPGA-WARS: explorando el lado libre](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre) para conocer las últimas noticias, preguntar, compartir y colaborar en el desarrollo de hardware libre reconfigurable
 
-## TODO  
-Why libre?  
-Por donde íbamos? --> Retomar artículos sobre el tema  
---> convirtiendo hw en sw  
---> Hispalinux  
---> JCRA barcelona  
-
 ## Repo
 
 [Repositorio con el código verilog](https://github.com/Obijuan/open-fpga-verilog-tutorial)
@@ -62,3 +55,7 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 * **¿Dónde puedo comprar la tarjeta IceStick**
 -[Icestick en Mouser España ](http://www.mouser.es/new/Lattice-Semiconductor/lattice-icestick-kit/)
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
+
+## Historia
+* **2015-07-03**: La noticia sale en un [post en hack-a-day](http://hackaday.com/2015/07/03/hackaday-prize-entry-they-make-fpgas-that-small/). Me entero de su existencia a través de este post y empiezo a evaluar las herramientas (obijuan)
+* **2015-05-27**: El [proyecto icestorm](http://www.clifford.at/icestorm/) alcanza el primer gran hito: ya se tiene un flujo de trabajo que funciona completamente usando sólo herramientas libres
