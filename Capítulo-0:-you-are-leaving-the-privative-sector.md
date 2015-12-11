@@ -193,8 +193,6 @@ sudo make install
 La placa que usaremos en estos tutoriales es la [IceStrick](http://www.latticesemi.com/icestick)
 Si no dispones de ella (o de otra similar), ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
 
-## Manual
-TODO
 ## Configuración
 La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener **permisos de acceso**.
 
@@ -225,8 +223,13 @@ $ iceprog bitstream.bin
 
 * [Hoja de datos FPGA iCE40LPHXF](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf)(PDF)
 
-
 # Enlaces
+* [Proyecto Icestorm](http://www.clifford.at/icestorm/) ([Github](https://github.com/cliffordwolf/yosys))
+* [Página personal de Clifford Wolf](http://www.clifford.at/)
+* [Sintetizador Yosys](http://www.clifford.at/yosys/) ([Github](https://github.com/cliffordwolf/icestorm))
+* [Emplazamiento y enrutado: arachne-pnr](https://github.com/cseed/arachne-pnr)
+* [Gtkwave](http://gtkwave.sourceforge.net/)
+* [Icarus Verilog](http://iverilog.icarus.com/) ([Github](https://github.com/steveicarus/iverilog))
 
 # Créditos
 * "AND ANSI" by jjbeard - Own Drawing, made in Inkscape 0.43. Licensed under Public Domain via Commons - https://commons.wikimedia.org/wiki/File:AND_ANSI.svg#/media/File:AND_ANSI.svg
