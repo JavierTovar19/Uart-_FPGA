@@ -196,7 +196,7 @@ Si no dispones de ella (o de otra similar), ¡No problem! También simularemos t
 ## Manual
 TODO
 ## Configuración
-La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca (https://www.intra2net.com/en/developer/libftdi/)[libftdi]. Para ello es necesario tener permisos de acceso.
+La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener permisos de acceso.
 
 Una manera es utilizar sudo al ejecutar iceprog, descargando con el comando:
 
