@@ -45,9 +45,8 @@ En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez
 
 * **Repositorios de Hardware libre reconfigurable**: Llegó el momento de "reinventar la rueda libre". Ya es posible crear repositorios de diseños de hw libre que nos pertenezcan a todos y que los podamos hacer evolucionar entre todos. Compartirlos. Mejorarlos. Estos diseños se podrán sintetizar con las herramientas libres. Y es un conocimiento que perdurará en el tiempo
 
+## Las herramientas del proyecto Icestorm
 
-
-##dd
 
 Usaremos [icestorm](http://www.clifford.at/icestorm/), yosys y aracne, para la síntesis y descarga en la FPGA
 Entorno: Ubuntu Linux 15.04
