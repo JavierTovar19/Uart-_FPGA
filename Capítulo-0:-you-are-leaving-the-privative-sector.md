@@ -80,8 +80,12 @@ $ iceprog test.bin
 
 ## Herramientas libres para simulación
 
+Para diseñar los circuitos es fundamental disponer de un simulador de verilog. Las herramientas libres que usaremos son:
+
 * **Simulador de Verilog**: [ícarus Verilog](http://iverilog.icarus.com/) 
 * **Visualizador de señales**: [Gtkwave](http://gtkwave.sourceforge.net/)
+
+**Icarus verilog** crea un fichero ejecutable a partir del código Verilog. Al ejecutarlo se realiza la simulación. Los resultados se vuelcan a un **fichero .vcd** que se visualiza con la herramienta **Gtkwave**. Esto nos permite inspeccionar las señales para comprobar su correcto funcionamiento
 
 # Instalación
 
