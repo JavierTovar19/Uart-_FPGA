@@ -78,7 +78,12 @@ $ icepack test.txt test.bin
 $ iceprog test.bin
 ```
 
+## Herramientas para simulación
+
 # Instalación
+
+## Ubuntu 3.10
+
 
 Fedora 22
 --
