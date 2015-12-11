@@ -69,6 +69,15 @@ En la siguiente figura se muestran las diferentes herramientas usadas en las eta
 
 Se parte de los ficheros **fuente en verilog** (.v). Usando el sintetizador **Yosys**, se generan los ficheros **netlist** (.blif). El emplazado y rutado se realiza con **arachne-pnr**, generándose el **bitstream en formato ascii** (.txt). Con **icepack** se crea el **bitstream binario** (.bin) que finalmente se envía a la FPGA con **iceprog**
 
+En la **linea de comandos**, los pasos a seguir para llevar el fichero test.v hasta la FPGA serían:
+
+```
+$ yosys -p "synth_ice40 -blif test.blif" test.v
+$ arachne-pnr -d 1k -p test.pcf test.blif -o test.txt
+$ icepack test.txt test.bin
+$ iceprog test.bin
+```
+
 # Instalación
 
 Fedora 22
