@@ -49,7 +49,7 @@ En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez
 
 Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de soft/hw libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
 
-Las herramientas del proyecto icestorm acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
+Las herramientas del [proyecto icestorm](http://www.clifford.at/icestorm/) acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
 * Sólo sirven para las **FPGAs de Lattice**, modelos: **HX1K-TQ144** y **HX8K-CT256**
 * Las herramientas sólo cubren el bajo nivel: se usan en la **línea de comandos**. No hay un entorno gráfico que permita gestionar proyectos. Hay que hacerlo a base de makefiles
 * El soporte a puertas triestado todavía es muy limitado
