@@ -89,7 +89,7 @@ Para diseñar los circuitos es fundamental disponer de un simulador de verilog. 
 
 # Instalación
 
-## Ubuntu 15.10
+## Ubuntu 14.04, 15.10
 
 Instalación de **dependencias**:
 ```
