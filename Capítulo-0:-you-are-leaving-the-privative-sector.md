@@ -220,6 +220,11 @@ Ahora ya se puede hacer la descarga directamente ejecutando:
 ```
 $ iceprog bitstream.bin
 ```
+## Documentación
+* [Manual de la ICEstick](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf)(PDF)
+
+* [Hoja de datos FPGA iCE40LPHXF](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf)(PDF)
+
 
 # Enlaces
 
