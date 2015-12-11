@@ -78,7 +78,7 @@ $ icepack test.txt test.bin
 $ iceprog test.bin
 ```
 
-## Herramientas para simulación
+## Herramientas libres para simulación
 
 # Instalación
 
