@@ -190,10 +190,15 @@ sudo make install
 
 # Placa ICEStick
 
-Esta es la placa que usaremos para probar todos los diseños digitales de este tutorial:
 [Placa IceStrick](http://www.latticesemi.com/icestick)
-
 Si no dispones de esta placa, ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
+
+## Manual
+## Configuración
+
+
+
+
 
 # Enlaces
 
