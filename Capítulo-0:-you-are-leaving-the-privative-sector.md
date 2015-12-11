@@ -201,6 +201,7 @@ Una manera es utilizar **sudo** al ejecutar **iceprog**, descargando con el coma
     $ sudo icprog bitstream.com
 
 Esto tiene el inconveniente de que hay que estar metiendo la clave cada cierto tiempo.
+
 La otra forma es **configurar el sistema [udev](https://es.wikipedia.org/wiki/Udev)** para que al conectar la icestick al USB **el usuario tenga permisos**. Para ello hay que hacer lo siguiente:
 
 * Crear el archivo **/etc/udev/rules.d/80-icestick.rules** con el siguiente contenido
