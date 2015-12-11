@@ -80,6 +80,9 @@ $ iceprog test.bin
 
 ## Herramientas libres para simulación
 
+* **Simulador de Verilog**: [ícarus Verilog](http://iverilog.icarus.com/) 
+* **Visualizador de señales**: [Gtkwave](http://gtkwave.sourceforge.net/)
+
 # Instalación
 
 ## Ubuntu 3.10
