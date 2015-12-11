@@ -65,7 +65,7 @@ Las herramientas libres para trabajar con las FPGAs de lattice son las siguiente
 
 En la siguiente figura se muestran las diferentes herramientas usadas en las etapas, y las extensiones de los archivos que se van generando:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/899c16736a0218e2923775a8bf275364ba110a0c/tutorial/T00-Intro/images/icestorm-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/71283234d239e07ed431e74952fc7eaa95ecaaa5/tutorial/T00-Intro/images/icestorm-1.png)
 
 Se parte de los ficheros **fuente en verilog** (.v). Usando el sintetizador **Yosys**, se generan los ficheros **netlist** (.blif). El emplazado y rutado se realiza con **arachne-pnr**, generándose el **bitstream en formato ascii** (.txt). Con **icepack** se crea el **bitstream binario** (.bin) que finalmente se envía a la FPGA con **iceprog**
 
