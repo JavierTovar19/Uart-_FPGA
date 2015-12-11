@@ -89,7 +89,7 @@ Para diseñar los circuitos es fundamental disponer de un simulador de verilog. 
 
 # Instalación
 
-## Ubuntu 3.10
+## Ubuntu 15.10
 
 
 Fedora 22
