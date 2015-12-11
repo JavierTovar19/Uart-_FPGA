@@ -28,7 +28,7 @@ Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs 
 Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Créditos
-* [Proyecto icestorm](http://www.clifford.at/icestorm/ ), por Clifford Wolf and Mathias Lasser
+* [Proyecto icestorm](http://www.clifford.at/icestorm/), por Clifford Wolf and Mathias Lasser
 * [Arachne-pnr](https://github.com/cseed/arachne-pnr), por Cotton Seed 
 
 ## Agradecimientos
@@ -41,6 +41,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 * A **David Sánchez Falero**, por enseñarme cómo resaltar código Verilog en los markdown de github :-) ¡Esto ha hecho que el código sea muchísimo más legible! ¡Muchas Gracias! 
 
 * A **Carlos García Saura***, por las instrucciones de instalación de las herramientas icestorm en Fedora. ¡Muchas gracias!
+
+* A **Javibc (J Bc)**, por las instrucciones para relanzar el udev al configurar la icestick ¡Gracias!
 
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
