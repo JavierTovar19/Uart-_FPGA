@@ -51,8 +51,9 @@ Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libr
 
 Las herramientas del proyecto icestorm acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
 * Sólo sirven para las **FPGAs de Lattice**, modelos: **HX1K-TQ144** y **HX8K-CT256**
-
-
+* Las herramientas sólo cubren el bajo nivel: se usan en la **línea de comandos**. No hay un entorno gráfico que permita gestionar proyectos. Hay que hacerlo a base de makefiles
+* El soporte a puertas triestado todavía es muy limitado
+* No hay soporte para análisis de tiempo post-rutado
 
 ## Las herramientas del proyecto Icestorm
 
