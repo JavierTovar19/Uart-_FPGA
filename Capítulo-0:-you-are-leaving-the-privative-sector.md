@@ -45,6 +45,15 @@ En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez
 
 * **Repositorios de Hardware libre reconfigurable**: Llegó el momento de "reinventar la rueda libre". Ya es posible crear repositorios de diseños de hw libre que nos pertenezcan a todos y que los podamos hacer evolucionar entre todos. Compartirlos. Mejorarlos. Estos diseños se podrán sintetizar con las herramientas libres. Y es un conocimiento que perdurará en el tiempo
 
+## Limitaciones
+
+Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de soft/hw libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
+
+Las herramientas del proyecto icestorm acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
+* Sólo sirven para las **FPGAs de Lattice**, modelos: **HX1K-TQ144** y **HX8K-CT256**
+
+
+
 ## Las herramientas del proyecto Icestorm
 
 
