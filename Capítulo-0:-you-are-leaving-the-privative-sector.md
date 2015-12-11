@@ -196,14 +196,14 @@ Si no dispones de ella (o de otra similar), ¡No problem! También simularemos t
 ## Manual
 TODO
 ## Configuración
-La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener permisos de acceso.
+La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener **permisos de acceso**.
 
-Una manera es utilizar sudo al ejecutar iceprog, descargando con el comando:
+Una manera es utilizar **sudo** al ejecutar **iceprog**, descargando con el comando:
 
     $ sudo icprog bitstream.com
 
 Esto tiene el inconveniente de que hay que estar metiendo la clave cada cierto tiempo.
-La otra forma es configurar el sistema udev para que al conectar la icestick al USB pertenezca al usuario. Para ello hay que hacer los siguiente:
+La otra forma es **configurar el sistema [udev](https://es.wikipedia.org/wiki/Udev)** para que al conectar la icestick al USB **el usuario tenga permisos**. Para ello hay que hacer lo siguiente:
 
 * Crear el archivo **/etc/udev/rules.d/80-icestick.rules** con el siguiente contenido
 ```
@@ -213,6 +213,12 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="601
 
 ```
 $ sudo udevadm control --reload-rules && sudo udevadm trigger 
+```
+
+Ahora ya se puede hacer la descarga directamente ejecutando:
+
+```
+$ iceprog bitstream.bin
 ```
 
 # Enlaces
