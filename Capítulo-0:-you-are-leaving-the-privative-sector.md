@@ -57,6 +57,7 @@ Las herramientas del [proyecto icestorm](http://www.clifford.at/icestorm/) acaba
 
 ## Las herramientas del proyecto Icestorm
 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/899c16736a0218e2923775a8bf275364ba110a0c/tutorial/T00-Intro/images/icestorm-1.png)
 
 Usaremos [icestorm](http://www.clifford.at/icestorm/), yosys y aracne, para la síntesis y descarga en la FPGA
 Entorno: Ubuntu Linux 15.04
