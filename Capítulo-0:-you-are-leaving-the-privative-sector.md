@@ -190,10 +190,11 @@ sudo make install
 
 # Placa ICEStick
 
-[Placa IceStrick](http://www.latticesemi.com/icestick)
-Si no dispones de esta placa, ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
+La placa que usaremos en estos tutoriales es la [IceStrick](http://www.latticesemi.com/icestick)
+Si no dispones de ella (o de otra similar), ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
 
 ## Manual
+TODO
 ## Configuración
 La descarga del bitstream a la placa icestick se hace directamente por **USB**, usándose la biblioteca (https://www.intra2net.com/en/developer/libftdi/)[libftdi]. Para ello es necesario tener permisos de acceso.
 
