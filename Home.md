@@ -14,7 +14,7 @@ Tutorial para aprender a diseñar **sistemas digitales sintetizables** en FPGAs 
 
 Es un **tutorial incremental**, en el que los conceptos se van introduciendo progresivamente, a la vez que se van probando en un hardware real. Los circuitos presentados inicialmente no están diseñados siguiendo las reglas de diseño habituales, sino que se prima la simplicidad. Luego poco a poco, según se avanza en el tutorial, se van refinando y mejorando.
 
-El viaje comienza con el circuito más sencillo posible: un cable. Y termina con el diseño de un microprocesador muy simple: MICROBIO
+El viaje comienza con el circuito más sencillo posible: un cable. Y termina con el diseño de **un microprocesador muy simple**: MICROBIO
 
 ## Comunidad: FPGA-WARS
 Únete al grupo [FPGA-WARS: explorando el lado libre](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre) para conocer las últimas noticias, preguntar, compartir y colaborar en el desarrollo de hardware libre reconfigurable
