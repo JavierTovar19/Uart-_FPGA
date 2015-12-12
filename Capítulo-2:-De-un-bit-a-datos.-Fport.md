@@ -79,7 +79,7 @@ El banco de pruebas (**Fport_tb.v**) consta de tres elementos:
 
 El código del banco de pruebas es:
 
-```
+```verilog
 //-- Fport_tb.v
 module Fport_tb;
     
