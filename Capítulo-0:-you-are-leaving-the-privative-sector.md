@@ -25,6 +25,8 @@ Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (H
 
 **2 Emplazado y rutado**. Los componentes del netlist se hacen corresponder con los elementos físicos de la FPGA, se determina su colocación y se realiza el rutado. Toda la información de configuración de la FPGA se condensa en el bitstream. Esta fase sí depende del modelo concreto de FPGA que se disponga
 
+**NOTA SOBRE TERMINOLOGÍA**: Aunque técnicamente la fase de síntesis en sólo una parte de la generación del bitstream, coloquialmente **cuando se habla de síntesis nos solemos referir al proceso completo**. Así, si decimos que "hemos sintetizado este circuito en la FPGA", nos estamos refiriendo a que se han realizado todas las fase: síntesis, emplazado y rutado, generación del bitstream y carga en la FPGA
+
 ## Cautivos del fabricante
 
 Las FPGAs se conocen desde hace 30 años. Son unas herramientas tremendamente útiles con muchísimo potencial. ¡Te permiten diseñar tu propio chip! Sin embargo, los fabricantes de FPGAs nunca han liberado ni el software ni las especificaciones de los formatos de sus bitstreams. 
