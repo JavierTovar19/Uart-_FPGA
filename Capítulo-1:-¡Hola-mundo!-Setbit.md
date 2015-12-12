@@ -56,7 +56,7 @@ Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y
     |  purpose with or without fee is hereby granted, provided that the above    |
     ...
 
-Saldrán muchos más mensajes. En mi portátil tarda en sintetizar menos de 1 segundos. Los mensajes finales que se obtienen son:
+Saldrán muchos más mensajes. En mi portátil tarda en sintetizar **menos de 1 segundo**. Los mensajes finales que se obtienen son:
 
     ...
     After placement:
@@ -73,11 +73,13 @@ Saldrán muchos más mensajes. En mi portátil tarda en sintetizar menos de 1 se
     icepack setbit.txt setbit.bin
     $
 
-Al terminar se habrá generado el fichero setbit.bin que es el que descargaremos en la FPGA para configurarla. Introducimos la iCEStick en el USB y ejecutamos este comando:
+Al terminar se habrá generado el fichero **setbit.bin** que es el que cargaremos en la FPGA para configurarla. Introducimos la iCEStick en el USB y ejecutamos este comando:
 
     $ sudo iceprog setbit.bin
 
-El proceso dura aproximadamente 30 segundos (con la versión actual del iceprog. Este tiempo se irá reduciendo según se vaya mejorando el software por la comunidad). Los mensajes que aparecen son:
+**NOTA**: _Si tenemos configurada la ICEStick como se indica en el capítulo 0, la carga se puede hacer sin necesidad de usar sudo_
+
+El proceso dura aproximadamente **3 segundos**. Los mensajes que aparecen son:
 
     [sudo] password for obijuan: 
     init..
@@ -94,7 +96,7 @@ El proceso dura aproximadamente 30 segundos (con la versión actual del iceprog.
     Bye.
     $
 
-El led D1 de la ICEStick se encenderá:
+El **led D1** de la ICEStick **se encenderá**:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
@@ -104,7 +106,7 @@ El led D1 de la ICEStick se encenderá:
 
 ### Primero simulamos, luego sintetizamos
 
-El ejemplo anterior lo hemos descargado directamente en la FPGA porque el diseño ya **ESTABA PROBADO PREVIAMENTE**. Cuando trabajamos con FPGAs **estamos haciendo hardware** y tenemos que tener siempre mucho cuidado. Podemos escribir un código que por ejemplo tenga un cortocircuito. Y podría ocurrir que las herramientas de síntesis no nos avisen con un warning (sobre todo con estas primeras versiones que todavía están en estado alfa). Si lo descargamos en la fpga la podríamos estropear parcialmente.
+El ejemplo anterior lo hemos cargado directamente en la FPGA porque el diseño ya **ESTABA PROBADO PREVIAMENTE**. Cuando trabajamos con FPGAs **estamos haciendo hardware** y tenemos que tener siempre mucho cuidado. Podemos escribir un código que por ejemplo tenga un cortocircuito. Y podría ocurrir que las herramientas de síntesis no nos avisen con un **warning** (sobre todo con estas primeras versiones que todavía están en estado alfa). Si lo cargamoss en la fpga la podríamos estropear parcialmente.
 
 Por ello, **SIEMPRE** hay que **simular el código** que hagamos. Y una vez que estamos lo bastante seguros de que funciona (o que no tiene error gordos) es cuando lo cargamos en la FPGA.
 
