@@ -164,7 +164,7 @@ endmodule
 
 ## ¡Simulando!
 
-Para simular utilizamos las herramientas icarus verilog y GTKwave. Ejecutamos el comando:
+Para simular utilizamos las herramientas **Icarus Verilog** y **GTKwave**. Ejecutamos el comando:
 
     $ make sim
 
@@ -175,15 +175,16 @@ y automáticamente se nos abrirá una ventana con el resultado de la simulación
 A un golpe de vista comprobamos que se comporta como esperábamos: la señal del cable A está siempre a '1'. Ignoramos las unidades de tiempo que pone, que por defecto está en segundos. Para nosotros serán unidades de tiempo. Tras 20 unidades, la simulación termina.
 
 En la consola veremos que han aparecido los siguientes mensajes:
-
-    #-- Compilar
-    iverilog setbit.v setbit_tb.v -o setbit_tb.out
-    #-- Simular
-    ./setbit_tb.out
-    VCD info: dumpfile setbit_tb.vcd opened for output.
-    Componente ok!
-    #-- Ver visualmente la simulacion con gtkwave
-    gtkwave setbit_tb.vcd setbit_tb.gtkw &
+```
+#-- Compilar
+iverilog setbit.v setbit_tb.v -o setbit_tb.out
+#-- Simular
+./setbit_tb.out
+VCD info: dumpfile setbit_tb.vcd opened for output.
+Componente ok!
+#-- Ver visualmente la simulacion con gtkwave
+gtkwave setbit_tb.vcd setbit_tb.gtkw &
+```
 
 El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de pruebas cuando la salida estaba a '1'
 
@@ -194,4 +195,12 @@ El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de 
 * Cambiar el ejemplo original para que se encienda el led D2 en vez el D1  (está asociado al pin 98 en vez de al 99)
 
 ## Conclusiones
-TODO
+Hemos creado **nuestro primer circuito en verilog**, un "hola mundo" formado por **1 cable**. Lo hemos sintetizado y cargado en la FPGA. También hemos **programado** un **banco de pruebas** en verilog para simularlo.  Ya tenemos todas las herramientas instaladas, configuradas y hemos comprobado que funcionan. Estasmos listos para abordar diseños más complejos e ir aprendiendo más verilog
+
+### Conceptos introducidos:
+* Conexión de cables son **assign**
+* Creación de componentes con **module**
+* Definición de puertos de salida con **output**
+* Definición de un cable con **wire**
+* Banco de pruebas
+
