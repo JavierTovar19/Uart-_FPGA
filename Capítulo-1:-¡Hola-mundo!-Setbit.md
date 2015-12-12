@@ -116,48 +116,51 @@ Si compramos un chip y lo queremos probar, ¿Qué hacemos?. Hombre, normalmente 
 
 En verilog (y resto de lenguajes HDL) hacemos lo mismo.  Un componente descrito en Verilog (como por ejemplo setbit.v) **no se puede simular directamente**. Es necesario escribir un **banco de pruebas** que indique qué cables conectar a sus pines, qué valores de prueba enviar y comprobar que por sus salidas salen resultados correctos. Este banco de pruebas es un fichero también en Verilog.
 
-¿Cómo comprobamos el componente setbit? Se trata de un chip que sólo tiene un pin de salida que siempre está a '1'. En la vida real lo pondríamos en su placa de puntos, lo alimentaríamos, conectaríamos un cable en su pin de salida (A) y usando un polímetro comprobaríamos que sale una tensión igual a la de alimentación (un '1').  Haremos exactamente eso, pero describiéndolo en Verilog. Gráficamente tendríamos lo siguiente:
+¿Cómo comprobamos el componente setbit? Se trata de un chip que sólo tiene **un pin de salida** que siempre está a '1'. En la vida real lo pondríamos en su placa de puntos, lo alimentaríamos, conectaríamos un cable en su pin de salida (A) y usando un polímetro comprobaríamos que sale una tensión igual a la de alimentación (un '1').  Haremos exactamente eso, pero describiéndolo en Verilog. Gráficamente tendríamos lo siguiente:
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-3.png)
 
-El fichero se llama setbit_tb.v. Siempre usaremos el sufijo _tb para indicar que se trata de un banco de pruebas (TestBench) y ¡No de hardware real!. Este banco de pruebas NO ES SINTETIZABLE. Es un código que sólo vale para la SIMULACIÓN.  Lo que sintetizamos es el componente setbit.v.  Por eso, a la hora de hacer bancos de pruebas, estamos empleando Verilog no como una herramienta de descripción hardware sino como un programa. Aquí sí podemos pensar en Verilog como un lenguaje de programación tradicional.
+El fichero se llama **setbit_tb.v**. Siempre usaremos el **sufijo _tb** para indicar que se trata de un **banco de pruebas** (TestBench) y ¡No de hardware real!. Este banco de pruebas **NO ES SINTETIZABLE**. Es un código que **sólo vale para la SIMULACIÓN**.  Lo que sintetizamos es el componente setbit.v.  Por eso, a la hora de hacer bancos de pruebas, estamos empleando Verilog no como una herramienta de descripción hardware sino como un programa. Aquí **sí podemos pensar en Verilog como un lenguaje de programación tradicional**.
 
-El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos llamado A y un bloque de comprobación (que sería el equivalente al polímetro en el mundo real). El código es el siguiente:
+El banco de pruebas tiene 3 elementos: el componente setbit, un cable que hemos llamado A y **un bloque de comprobación** (que sería el equivalente al polímetro en el mundo real). El código es el siguiente:
 
-    //-- Modulo para el test bench
-    module setbit_tb;
+```verilog
+//-- Fichero setbit_tb.v
+//-- Modulo para el test bench
+module setbit_tb;
     
-    //-- Cable para conectar al pin de salida de setbit
-    //-- Le podemos dar CUALQUIER nombre. Pero le llamamos A (igual que el pin de setbit)
-    wire A;
+//-- Cable para conectar al pin de salida de setbit
+//-- Le podemos dar CUALQUIER nombre. Pero le llamamos A (igual que el pin de setbit)
+wire A;
     
-    //-- Colocar el componente (se denomina "Instanciar") y
-    //-- Conectar en el pin A el cable A
-    setbit SB1 (
-     .A (A)
-    );
+//-- Colocar el componente (se denomina "Instanciar") y
+//-- Conectar en el pin A el cable A
+setbit SB1 (
+ .A (A)
+);
     
-    //-- Comenzamos las pruebas (bloque de comprobacion)
-    initial begin
+//-- Comenzamos las pruebas (bloque de comprobacion)
+initial begin
     
-        //-- Definir el fichero donde volcar los datos
-        $dumpfile("setbit_tb.vcd");
+    //-- Definir el fichero donde volcar los datos
+    $dumpfile("setbit_tb.vcd");
     
-        //-- Volcar todos los datos a ese fichero (al finalizar la simulacion)
-        $dumpvars(0, setbit_tb);
+    //-- Volcar todos los datos a ese fichero (al finalizar la simulacion)
+    $dumpvars(0, setbit_tb);
     
-        //-- Pasadas 10 unidades de tiempo comprobamos si el cable está a '1'
-        //-- En caso de no estar a 1, se informa del problema, pero la
-        //-- simulacion no se detiene
-        # 10 if (A != 1)
-               $display("---->¡ERROR! Salida no esta a 1");
-             else
-               $display("Componente ok!");
+    //-- Pasadas 10 unidades de tiempo comprobamos si el cable está a '1'
+    //-- En caso de no estar a 1, se informa del problema, pero la
+    //-- simulacion no se detiene
+    # 10 if (A != 1)
+           $display("---->¡ERROR! Salida no esta a 1");
+         else
+           $display("Componente ok!");
 
-      //-- Terminar la simulacion tras 10 unidades de tiempo desde la comprobacion
-      # 10 $finish;
-    end
-    endmodule
+  //-- Terminar la simulacion tras 10 unidades de tiempo desde la comprobacion
+  # 10 $finish;
+end
+endmodule
+```
 
 ## ¡Simulando!
 
