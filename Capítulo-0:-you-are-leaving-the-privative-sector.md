@@ -198,10 +198,13 @@ Si no dispones de ella (o de otra similar), ¡No problem! También simularemos t
 ## Configuración
 La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener **permisos de acceso**.
 
-Si intentamos cargar en la icestick sin permisos, obtendremos el siguiente mensaje de error:
+Si intentamos cargar en la icestick sin permisos, obtendremos el siguiente **mensaje de error**:
 
 ```
-TODO
+$ iceprog scicad1.bin
+init..
+Can't find iCE FTDI USB device (vedor_id 0x0403, device_id 0x6010).
+ABORT.
 ```
 
 Una manera de solucionarlo es utilizar **sudo** al ejecutar **iceprog**, descargando con el comando:
