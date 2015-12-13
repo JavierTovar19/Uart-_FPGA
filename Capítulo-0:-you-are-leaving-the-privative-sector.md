@@ -198,7 +198,13 @@ Si no dispones de ella (o de otra similar), ¡No problem! También simularemos t
 ## Configuración
 La **descarga del bitstream** a la placa icestick se hace directamente por **USB**, usándose la biblioteca [libftdi](https://www.intra2net.com/en/developer/libftdi/). Para ello es necesario tener **permisos de acceso**.
 
-Una manera es utilizar **sudo** al ejecutar **iceprog**, descargando con el comando:
+Si intentamos cargar en la icestick sin permisos, obtendremos el siguiente mensaje de error:
+
+```
+TODO
+```
+
+Una manera de solucionarlo es utilizar **sudo** al ejecutar **iceprog**, descargando con el comando:
 
     $ sudo icprog bitstream.com
 
@@ -221,6 +227,9 @@ Ahora ya se puede hacer la descarga directamente ejecutando:
 ```
 $ iceprog bitstream.bin
 ```
+
+En ubuntu es necesario reiniciar la máquina para que funcione correctamente
+
 ## Documentación
 * [Manual de la ICEstick](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf)(PDF)
 
