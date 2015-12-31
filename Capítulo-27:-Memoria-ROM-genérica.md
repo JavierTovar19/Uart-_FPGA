@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/romnotes-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T27-rom-param)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T27-rom-param)
 
 # Introducción
 Las **memorias** son **elementos muy comunes**, que usaremos mucho en nuestros diseños. En vez de estar haciendo memorias con un tamaño determinado, es más versátil crear una **memoria genérica** cuyos parámetros de longitud de datos y de direcciones se establezcan al instanciarlas.
@@ -14,7 +14,7 @@ La memoria rom genérica la denominaremos **genrom**
 ## Parámetros
 Tiene 3 parámetros que se asignan al instanciarse la rom:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/genrom-1.png)
 
 * **DW** (Data width): Anchura de los datos (en bits)
 * **AW** (Address width): Anchura de las direcciones (en bits)
@@ -24,7 +24,7 @@ Tiene 3 parámetros que se asignan al instanciarse la rom:
 
 Los **puertos de la rom** son los clásicos, pero ahora su tamaño no está especificado:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/genrom-2.png)
 
 * **Addr**: Bus de direcciones
 * **data**: Bus de datos
@@ -110,7 +110,7 @@ En este ejemplo reproduciremos una **secuencia en los leds**, igual que en los e
 
 Utilizaremos **5 leds para la secuencia**, por lo que la **anchura de los datos** será de 5 bits (**DW = 5**), y una **anchura de direcciones** también de 5 bits (**AW = 5**, para tener 32 posiciones). La secuencia es un contador. En cada posición de la memoria se almacena su número de dirección
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/genrom-3.png)
 
 ## genromleds.v: Descripción en verilog
 
@@ -225,7 +225,7 @@ El banco de pruebas es el mismo que en el capítulo anterior. Para simular ejecu
 
 y en el gtkwave vemos lo siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/genrom-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/genrom-sim-1.png)
 
 Por los leds aparece la secuencia de cuenta, desde 0 hasta 31 (en hexadecimal)
 
@@ -257,7 +257,7 @@ En el segundo ejemplo tocaremos un fragmento de [la marcha imperial](https://es.
 
 El diseño consta de una **memoria ROM de 64 posiciones de 16 bits**. En cada una de ellas se almacena el valor del divisor para generar una nota musical. Los **5 bits menos significativos** de cada valor de la nota **se envían a los leds**, para ver la actividad
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/romnotes-1.png)
 
 El generador de notas (**notegen**) es similar al que se hizo en el [capítulo 17](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-17%3A-Generando-tonos-audibles) pero adaptándolo a las reglas del diseño síncrono y haciendo que el **módulo del contador** se pase como una entrada más, en vez de ser un valor fijo. Además, se ha modificado para que la señal cuadrada generada tenga siempre un **ciclo de trabajo del 50%** (y que todas las notas suenen con la misma intensidad)
 
@@ -518,7 +518,7 @@ Para simulare ejecutamos:
 
 Y en la simulación podremos ver cómo se van enviando los 5 bits menos significativos de la nota a los leds. En la simulación la duración de la nota está puesta a 2 unidades
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T27-rom-param/images/romnotes-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T27-rom-param/images/romnotes-sim-1.png)
 
 ## Síntesis y pruebas
 
