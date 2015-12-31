@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T18-notas/images/notas-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T18-notas)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T18-notas)
 
 ## Introducción
 Diseñaremos un circuito con **8 canales**, cada uno emitiendo **una nota musical**: do, re, mi, fa, sol, la, si, do. Al conectar cada canal a un altavoz / zumbador oiremos las notas.
@@ -28,7 +28,7 @@ En la siguiente tabla se resumen las **frecuencias** y **valores de los divisore
 
 **Las frecuencias de las notas**, según su **octava**, se obtiene mediante esta ecuación (cuya nota de referencia es LA de la 4ª octava, con una frecuencia de 440 Hz)
 
-![Ecuación para las frecuencias de las notas, según su octava](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-2.png)
+![Ecuación para las frecuencias de las notas, según su octava](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T18-notas/images/notas-2.png)
 
 Donde **o** es la **octava** (toma valores desde 0 hasta 10) y **n** la **nota** (valores desde 1 hasta 12), siendo n = 1 el DO
 
@@ -298,7 +298,7 @@ El nuevo archivo con todas las constantes para usar nuestro divisor queda:
 
 El diseño de ejemplo tiene 8 canales independientes, cada uno emitiendo una nota distinta. El esquema es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T18-notas/images/notas-3.png)
 
 y la descripción en verilog:
 
@@ -381,7 +381,7 @@ endmodule
 ## Síntesis
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y las salidas de los 8 canales por los pines 44, 45, 47, 48, 56, 60, 61 y 62 a los que se tiene acceso en la parte inferior derecha de la placa
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/notas-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T18-notas/images/notas-1.png)
 
 Igual que en el ejemplo anterior, usamos un único altavoz que vamos conectando al canal con la nota a escuchar (Selección manual)
 
@@ -458,7 +458,7 @@ Para realizar la simulación ejecutamos:
 
 y el resultado es este:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T18-notas/images/T18-notas-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T18-notas/images/T18-notas-sim-1.png)
 
 Se comprueba que los 8 canales están funcionando con sus divisores correspondientes, y que son independientes
 
