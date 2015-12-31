@@ -1,17 +1,17 @@
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-2.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-2.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T09-inicializador)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T09-inicializador)
 
 ## Introducción
 Muchos circuitos digitales **necesitan inicializarse** antes de comenzar a trabajar normalmente. Su funcionamiento se divide en un **estado de arranque**, donde se inicializan los valores de los registros y un estado de **régimen permanente** donde se realiza la función para la que han sido diseñados.
 
 Para lograr esto necesitamos un circuito de inicialización que nos genere una **señal escalón**: que inicialmente esté a cero y al llegar el primer flanco de reloj pase a 1 y permanezca a 1 durante todo el funcionamiento de la máquina.
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-2.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-2.png)
 
 Esto se implementa de una manera muy sencilla utilizando un **registro de 1 bit** [1] al que se le cablea un "1" en su entrada. Inicialmente el registro estará a 0. Al llegar el primer flanco de reloj, se captura el 1 y se saca por su salida, **generando el flanco de subida para realizar la inicialización**. Para el resto de ciclos de reloj esta señal siempre estará a 1
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-3.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-3.png)
 
 ## Init.v: Descripción del hardware
 
@@ -69,7 +69,7 @@ Podemos hacer lo mismo pero con mucho menos código implementando directamente u
 
 Para probarlo en la fpga simplemente vamos a **conectar la salida ini a un led**. Al cargarlo en la FPGA sólo veremos cómo se enciende un led, sin embargo con ello tenemos nuestro circuito validado y listo para inicalizar los diseños de los capítulos siguientes
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-1.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-1.png)
 
 Lo sintetizamos con:
 
@@ -89,13 +89,13 @@ Lo cargamos en la FPGA con:
 
 El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sacaremos más partido en los capítulos sucesivos :-)
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/T09-init-iCEstorm-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/T09-init-iCEstorm-1.png" width="400" align="center">
 
 ## Simulación
 
 Para simularlo utilizaremos un banco de pruebas simple, en el que no realizamos comprobación de la señal de salida (hay que hacerlo visualmente).  Se instancia el componente, se coloca el reloj y el proceso de inicialización
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/init-4.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-4.png)
 
 El código Verilog es:
 
@@ -133,7 +133,7 @@ El código Verilog es:
 
 El resultado de la simulación es:
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T09-inicializador/images/T09-init-sim.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/T09-init-sim.png)
 
 Observamos cómo la señal ini está a 0 al comienzo y en cuanto llega el primer flanco se pone a 1, permaneciendo en ese estado el resto de ciclos
 
