@@ -1,4 +1,4 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/checkpoint-charlie.png" 
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/checkpoint-charlie.png" 
 width="400" align="center">
 
 _You are leaving the privative sector_ ... ¡y estás entrando en el sector LIBRE! ¡Bienvenido! De aquí en adelante **sólo usaremos herramientas del patrimonio tecnológico de la humanidad**
@@ -9,7 +9,7 @@ Las [FPGAs](https://es.wikipedia.org/wiki/Field_Programmable_Gate_Array) son uno
 
 Todos los circuitos digitales se descomponen en sus elementos básicos: **puertas lógicas** para hacer operaciones booleanas con los bits y **biestables** para almacenarlos. Como primera aproximación, podemos pensar en una FPGA como una chip que tiene en su interior arrays de estos elementos, sin conectar. Al **configurarla**, establecemos estas uniones y obtenemos nuestro circuito.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/fpga-config1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/ICESTICK/images/fpga-config1.png)
 
 Esta configuración se consigue **descargando en la FPGA** un fichero binario, denominado **bitstream**, que contiene toda la información necesaria para establecer las conexiones entre los elementos internos de la FPGA
 
@@ -19,7 +19,7 @@ La magia de las FPGAs está en las **herramientas software** que permiten genera
 
 Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (HDL), como Verilog o VHDL. Son los ficheros fuentes. La generación del bitstream se hace en dos fases, a partir de las fuentes:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/fpga-bitstream1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/fpga-bitstream1.png)
 
 **1 Síntesis**: La herramienta de síntesis infiere los elementos hardware básicos a partir de su descripción, y obtiene un fichero **netlist** que describe las uniones entre ellos. Esta fase no depende de la FPGA a usar
 
@@ -67,7 +67,7 @@ Las herramientas libres para trabajar con las FPGAs de lattice son las siguiente
 
 En la siguiente figura se muestran las diferentes herramientas usadas en las etapas, y las extensiones de los archivos que se van generando:
 
-![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/71283234d239e07ed431e74952fc7eaa95ecaaa5/tutorial/T00-Intro/images/icestorm-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/71283234d239e07ed431e74952fc7eaa95ecaaa5/tutorial/ICESTICK/T00-Intro/images/icestorm-1.png)
 
 Se parte de los ficheros **fuente en verilog** (.v). Usando el sintetizador **Yosys**, se generan los ficheros **netlist** (.blif). El emplazado y rutado se realiza con **arachne-pnr**, generándose el **bitstream en formato ascii** (.txt). Con **icepack** se crea el **bitstream binario** (.bin) que finalmente se envía a la FPGA con **iceprog**
 
