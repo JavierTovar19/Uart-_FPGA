@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T29-tristate)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T29-tristate)
 
 # Introducción
 Las **puertas triestado** (También conocidas como [Buffers triestado](https://es.wikipedia.org/wiki/Buffer_triestado)) nos permiten **desconetar las salidas de nuestros circuitos**, impidiendo que vuelquen su tensión (0 ó 1) en el cable al que se conectan.
@@ -14,7 +14,7 @@ Describiremos cómo funcionan y cómo se modelan en verilog
 ## Funcionamiento
 Las puertas triestado se comportan como **interruptores** que conectan la entrada con la salida cuando su señal de habilitación está activada. Su símbolo es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-1.png)
 
 Tiene 3 puertos de 1 bit:
 * **entrada**:  Señal de entrada
@@ -41,7 +41,7 @@ El primer ejemplo es un hola mundo: conexión de un led a través de una puerta 
 
 Se coloca un **biestable** con un 1 a su entrada, para que se cargue en el **primer flanco de subida**. Su salida se conecta al led a través de una **puerta triestado**. La señal de enable se conecta a un **divisor de frecuencia** que genera un **pulso cuadrado de 1 segundo**, de manera que el led deberá estar medio segundo encendido y medio segundo apagado
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex1.png)
 
 ## Descripción en verilog
 
@@ -125,7 +125,7 @@ La simulación se realiza con el siguiente comando:
 
 Y la simulación en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex1-sim.png)
 
 Se puede ver cómo la señal del led permanece a 1 durante 2 ciclos de reloj, y luego a alta impedancia (color amarillo) durante los otros 2 ciclos
 
@@ -157,7 +157,7 @@ En este ejemplo conectaremos la salida de **tres registros de 1 bit** a un **bus
 
 El **bus de un bit** está conectado a un led de salida para poder visualizar lo que ocurre. Los tres biestables están conectados al bus a través de **puertas triestado**. Se inicializan con los valores iniciales 1, 0 y 1 respectivamente.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex2.png)
 
 Las puertas triestado están habilitadas por los bits 0, 1 y 2 de un **registro de desplazamiento**, que inicialmente tiene el valor binario 0001, y va tomando los valores 0010, 0100 y 1000 por cada pulso de la señal clk_delay (de 1 segundo). De esta forma, primero se vuelca al bus el registro 0, luego el 1, luego el 2 y después ninguno. Al cabo de 4 ciclos de **clk_delay** se vuelve a comenzar
 
@@ -248,7 +248,7 @@ Para simular ejecutamos el comando:
 
 En gtkwave obtenemos lo siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex2-sim.png)
 
 Observamos cómo primero se vuelca el registro 0, que saca un 1 por el led. Luego el registro 1, que vuelca un 0, después el 2, que vuelve a volcar un 1 y finalmente todos desconectados, visualizándose la línea amarilla que indica **alta impedancia**.  El ciclo se repite indefinidamente
 
@@ -291,7 +291,7 @@ arachne-pnr 0.1+134+0 (git sha1 788cf79, g++ 4.9.2-10ubuntu13 -O2)
 
 En este ejemplo conectaremos un registro de 2 bits a dos leds mediante una puerta triestado de 2 bits. El diagrama es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error1-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/error1-1.png)
 
 La descripción en verilog:
 
@@ -322,7 +322,7 @@ El código verilog es correcto, por lo que se simula sin problema, mostrándose 
 
     $ make sim3
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/error1-sim.png)
 
 Sin embargo, al sintetizar obtenemos el siguiente mensaje de error:
 
@@ -346,7 +346,7 @@ make: *** [error1.bin] Error 134
 
 En este ejemplo se conectan dos registros de un bit a un bus de 2 bits mediante dos puertas triestado que usan la misma señal de habilitación: 
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/error2-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/error2-1.png)
 
 La descripción en verilog es:
 
@@ -411,11 +411,11 @@ Las puertas triestado se usan normalmente para interconectar elementos a través
 
 Imaginemos un bus en el que hay 3 registros que pueden escribir en él, y dos que pueden leer. El acceso en escritura de los registro se controla mediante las 3 señales de habilitación de las puertas triestado
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex3.png)
 
 La alternativa es sustituir las puertas triestado por **un multiplexor de 4 a 1**, con una señal de selección de 2 bits:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T29-tristate/images/tristate-ex4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T29-tristate/images/tristate-ex4.png)
 
 # Ejercicios
 Todo
