@@ -1,12 +1,12 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T01-setbit)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T01-setbit)
 
 ## Introducción
 
 El **circuito digital** más sencillo es simplemente **un cable** que está conectado a un **nivel lógico** conocido, por ejemplo 1. De esta forma al conectar un led se iluminará (1) o se apagará (0)
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/setbit-1.png)
 
 La salida de este circuito la hemos denominado A.
 
@@ -16,7 +16,7 @@ Para sintetizar este circuito en la FPGA, primero lo tenemos que describir usand
 
 Verilog es un lenguaje que sirve para describir hardware... pero ¡Cuidado! **¡NO ES UN LENGUAJE DE PROGRAMACIÓN!** ¡Es un lenguaje de descripción! Nos permite describir las conexiones y los elementos de un sistema digital.
 
-El código verilog que implementa este circuito "hola mundo" se encuentra en el fichero [setbit.v](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T01-setbit/setbit.v). Tiene esta pinta:
+El código verilog que implementa este circuito "hola mundo" se encuentra en el fichero [setbit.v](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/setbit.v). Tiene esta pinta:
 
 ```verilog
 //-- Fichero setbit.v
@@ -38,7 +38,7 @@ Sólo consta de una línea, en la que **se asocia la etiqueta A** del componente
 
 En la figura 2 se muestra gráficamente esta idea.  Como lo que estamos describiendo es hardware, siempre es interesante **hacerse esquemas y dibujos** para comprenderlo mejor:
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/setbit-2.png)
 
 Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos el comando **make sint** desde la consola:
 
@@ -98,7 +98,7 @@ El proceso dura aproximadamente **3 segundos**. Los mensajes que aparecen son:
 
 El **led D1** de la ICEStick **se encenderá**:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
 **Nota:** Puede que los otros LED se enciendan parcialmente; esto es normal y debido a que no les hemos asignado ninguna señal (internamente están conectados "al aire").
 
@@ -118,7 +118,7 @@ En verilog (y resto de lenguajes HDL) hacemos lo mismo.  Un componente descrito 
 
 ¿Cómo comprobamos el componente setbit? Se trata de un chip que sólo tiene **un pin de salida** que siempre está a '1'. En la vida real lo pondríamos en su placa de puntos, lo alimentaríamos, conectaríamos un cable en su pin de salida (A) y usando un polímetro comprobaríamos que sale una tensión igual a la de alimentación (un '1').  Haremos exactamente eso, pero describiéndolo en Verilog. Gráficamente tendríamos lo siguiente:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/setbit-3.png)
 
 El fichero se llama **setbit_tb.v**. Siempre usaremos el **sufijo _tb** para indicar que se trata de un **banco de pruebas** (TestBench) y ¡No de hardware real!. Este banco de pruebas **NO ES SINTETIZABLE**. Es un código que **sólo vale para la SIMULACIÓN**.  Lo que sintetizamos es el componente setbit.v.  Por eso, a la hora de hacer bancos de pruebas, estamos empleando Verilog no como una herramienta de descripción hardware sino como un programa. Aquí **sí podemos pensar en Verilog como un lenguaje de programación tradicional**.
 
@@ -170,7 +170,7 @@ Para simular utilizamos las herramientas **Icarus Verilog** y **GTKwave**. Ejecu
 
 y automáticamente se nos abrirá una ventana con el resultado de la simulación:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
 
 A un golpe de vista comprobamos que se comporta como esperábamos: la señal del cable A está siempre a '1'. Ignoramos las unidades de tiempo que pone, que por defecto está en segundos. Para nosotros serán unidades de tiempo. Tras 20 unidades, la simulación termina.
 
