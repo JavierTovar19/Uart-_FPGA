@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/sync-corazon.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/sync-corazon.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T22-syncrules)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T22-syncrules)
 
 ## Introducción
 En este capítulo se explican algunas **reglas de diseño síncrono** [1] para la **creación de circuitos digitales complejos**. Su aplicación nos evitará problemas según crece la complejidad de nuestros circuitos. Las aplicaremos para **mejorar el transmisor serie** que se esbozó en el capítulo anterior
@@ -8,7 +8,7 @@ En este capítulo se explican algunas **reglas de diseño síncrono** [1] para l
 ## Sistemas síncronos
 Los **sistemas digitales complejos son síncronos**: existe **una señal de reloj** (clk) que marca los tiempos en los que el resto de señales cambian. Es un **reloj "corazón"**, al ritmo de cuyos pulsos se transportan y modifican los bits. En la placa iCEstick, nuestro reloj es de **12Mhz**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/sync-corazon.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/sync-corazon.png)
 
 A la hora de diseñar circuitos digitales síncronos conviene tener **una serie de reglas en la cabeza**, que nos ahorrarán muchos problemas, sobre todo cuando se hacen diseños más complejos. Algunas de estas reglas **se han violado** en los ejemplos presentados hasta ahora. Se trata de ejemplos sencillos, que nos han permitido introducir conceptos y hacer pruebas rápidamente en nuestra FPGA.  Es el momento de aprender **reglas de diseño más potentes**, y aplicarlas
 
@@ -22,7 +22,7 @@ Los problemas en los diseños están causados por el **retardo en las señales**
 
 La realidad es diferente. Así por ejemplo, si estamos usando una **puerta NOT** y la simulamos, vemos el caso ideal, en el que la salida B es la negada de la A en todo momento.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/retardo-not.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/retardo-not.png)
 
 En la realidad **la salida B está retrasada con respecto a la entrada** (además de que el cambio de 0 a 1 no es instantáneo). ¿Y por qué es un problema? Porque mirando el cronograma, vemos que hay un instante de tiempo donde **NO SE CUMPLE que B sea el negado de A**. Sucede que A=1 y B=1, lo que significa que **NO SE CUMPLEN LAS ECUACIONES BOOLEANAS de la lógica digital** en ese intervalo de tiempo (esto hay que tenerlo en la cabeza). Además, estos retrasos originan **pulsos espúreos transitorios** (glitches)
 
@@ -32,7 +32,7 @@ En la realidad **la salida B está retrasada con respecto a la entrada** (ademá
 
 Vamos a ver su efecto en un circuito combinacional sencillo: una **puerta XOR** de dos entradas.  Las dos entradas están a 0 (y por tanto la salida permanece a 0). En un instante las señales de entrada A y B cambian a 1. Idealmente, lo que se obtiene por la salida es también 0, ya que 1 xor 1 es igual a 0.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/glitches-xor.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/glitches-xor.png)
 
 Sin embargo, en este ejemplo, debido a los retardos, la señal B ha llegado un poco después que la A. Esto hace que haya un momento en el que A = 1 y B = 0, por lo que la salida es C = 1.  Finalmente, cuando B = 1 la salida se pone a su valor estable: C = 0.
 
@@ -40,7 +40,7 @@ El resultado es que **ha aparecido un pulso** en una señal que **se suponía qu
 
 Imaginemos lo que puede pasar si tenemos este circuito conectado a **la entrada de reloj de un contador**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/xor-contador.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/xor-contador.png)
 
 Debido al pulso espúreo, **¡el contador hará una cuenta falsa!** ¡Contará cuando NO tiene que contar!. El diseñador, por más que mire y remire el diseño digital, verá que está todo correcto. Y al simularlo idealmente todo funcionará bien... pero al cargarlo en la FPGA: ¡zas! Contará mal. **Estos errores son muy difíciles de detectar**
 
@@ -54,14 +54,14 @@ Las reglas son:
 
 **TODAS las entradas de reloj se deben conectar directamente a un único reloj**, común a todos. Esta regla se ha violado en casi todos los ejemplos de este tutorial hasta ahora, para que fuesen sencillos. A partir de ahora todos los ejemplos respetarán esta regla
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-2-unico-reloj.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/regla-2-unico-reloj.png)
 
 Esta regla nos **prohibe conectar a la entrada del reloj cualquier otra cosa que NO sea el reloj del sistema**. De forma que no podemos conectar ningún circuito combinacional (por ej. la puerta xor de la explicación de los pulsos espúreos) ni tampoco secuencial (por ejemplo la salida de un contador para usarlo como divisor). En las siguientes secciones veremos qué añadir a los circuitos para que cumplan esta regla.
 
 ### Regla 2: Sensibilidad al mismo flanco: ¡Todos a una, fuenteovejuna!
 Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al de subida o al de bajada, es indiferente, pero **todos sensibles al mismo**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-1-mismo-flanco.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/regla-1-mismo-flanco.png)
 
 ### Regla 3: Antes de entrar a un circuito combinacional, pase por registro, por favor
 
@@ -72,7 +72,7 @@ Todos los elementos que lleven reloj, serán sensibles al mismo flanco. Bien al 
 ### Regla 4: Antes de entrar a un circuito secuencial, pase por registro por favor
 **Todas las entradas de los circuitos secuenciales** deben provenir de **las salidas de otros circuitos secuenciales** o bien de **combinacionales que cumplan la regla 3**. Es decir, que incluso para entrar en los circuitos secuenciales, es necesario que **las señales estén sincronizadas**.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-4-entradas-sec-sincronizadas.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/regla-4-entradas-sec-sincronizadas.png)
 
 Combinando la regla 3 y la 4, llegamos a la conclusión de que **cualquier entrada a nuestro circuito síncrono tiene que estar registrada**.
 
@@ -80,7 +80,7 @@ Combinando la regla 3 y la 4, llegamos a la conclusión de que **cualquier entra
 
 Esta regla nos indica **dónde ponemos conectar la salida de un circuito combinacional**. Bien a la **entrada de otro combinacional**, a **la entrada síncrona de un secuencial** o bien como **salida directa de nuestro circuito**. Queda terminantemente prohibido conectarlas a las entradas del propio combinacional (nada de realimentaciones directas) o a la entrada de la señal de reloj
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/regla-5-salidas-combinacionales.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/regla-5-salidas-combinacionales.png)
 
 ## Mejorando el transmisor serie
 
@@ -94,7 +94,7 @@ Partimos del ejemplo baudtx, donde se envía el carácter "K" con el flanco de s
 
 El esquema del circuito original es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/baudtx-1-errors.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/baudtx-1-errors.png)
 
 Observamos varias violaciones de las reglas del diseño síncrono:
 
@@ -111,7 +111,7 @@ Como mejora, pondremos **una señal de habilitación del divisor** (**clk_ena**)
 
 El esquema del circuito es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/baudgen-diagram.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/baudgen-diagram.png)
 
 y la descripción en verilog:
 
@@ -166,7 +166,7 @@ El funcionamiento del nuevo divisor se puede ver en **este cronograma**. En el c
 
 El nuevo esquema se muestra a continuación. Además de **cumplir con las reglas del diseño síncrono**, se ha añadido **una mejora**: desde que se recibe el flanco hasta que se empieza a transmitir **sólo transcurre 1 ciclo de reloj**. Antes había que esperar a que además llegase un 1 en la señal de los baudios, por lo que este tiempo variaba. Para lograrlo se controla _baudgen_ mediante su nueva entrada de habilitación: _clk_ena_.  Cuando no hay transmisión de información, la señal de baudios está deshabilitada.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-diagram.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest-diagram.png)
 
 El nuevo **registro de desplazamiento**, en verilog es el siguiente:
 
@@ -343,7 +343,7 @@ Los simulamos con el comando:
 
 El resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest-1-sim.png)
 
 Observamos que efectivamente al llegar un **flanco de subida en dtr**, el circuito envía el carácter. También vemos que la señal de reloj de los bits sólo está funcionando en el momento de transmitir los bits. En cuanto dtr se pone a 0 la señal se para.
 
@@ -367,7 +367,7 @@ y lo cargamos en la FPGA con:
 
 Por defecto las pruebas están a la velocidad de **300 baudios**, que es la más lenta. Abrimos el gtkterm. Cada vez que enviamos un pulso en la señal de DTR, se recibe el carácter K:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-1-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest-1-gtkterm.png)
 
 Si dejamos apretada la tecla F7, se recibirán continuamente Ks. Se puede observar cómo **de vez en cuando se recibe un carácter erroneo**. Esto dependerá del PC en el que lo probemos. El problema está en que si por alguna razón **la señal DTR se desactiva mientras se está enviando un carácter**, lo que se recibirá es "basura". Esto será algo que tendremos que solucionar en el próximo capítulo mediante la introducción de un **controlador**, implementado con autómatas finitos.
 
@@ -377,7 +377,7 @@ Pasando al modo de vista hexadecimal (View / Hexadecimal) se puede ver exactamen
 
 Este ejemplo es similar al anterior, pero **la salida serie del registro de desplazamiento se realimenta por la entrada**, de manera que cuando la señal dtr esté a 1, se realiza una **transmisión continua del carácter K**. Esto permite comprobar que funciona correctamente a su máxima velocidad
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest2-diagram.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest2-diagram.png)
 
 El código es igual que el de txtest.v, pero cambiando ligeramente el registro de desplazamiento:
 
@@ -467,7 +467,7 @@ Se simula con el comando:
 
 El resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest-2-sim.png)
 
 Se observa cómo envían 3 caracteres "K" en cada ráfaga de activación del dtr
 
@@ -490,13 +490,13 @@ y lo cargamos en la FPGA con:
 
 La prueba se ha hecho a 300 baudios. Al apretar F7 para que cortar la ráfaga de transmisiones se obtienen caracteres basura, porque la transmisión está a medias y se aborta
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest-2-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest-2-gtkterm.png)
 
 ### txtest3.v: Ejemplo de transmisión temporizada
 
 En este ejemplo **se transmite el carácter K periódicamente**, cada **250ms**. Para ello se ha añadido el divisor clásico (el que hemos estado usando hasta ahora) gobernado por el reloj global. Su salida se pasa por un registro para sincronizar la señal y se usa como señar de carga
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-diagram.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest3-diagram.png)
 
 Observamos que hay **5 elementos** que tienen **entrada de reloj**, y **TODOS** ellos están **conectados al reloj del sistema** (Regla 1 de diseño síncrono)
 
@@ -643,7 +643,7 @@ Se simula con el comando:
 
 El resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest3-sim.png)
 
 Se puede ver que los trenes de pulsos enviados por tx son periódicos
 
@@ -667,7 +667,7 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** para probarlo, a la velocidad de 300 baudios. Vemos cómo recibimos el carácter K periódicamente. Ahora no se debe recibir ningún carácter "basura" ya que no se corta ninguno por la mitad. Sin embargo si se baja el tiempo de repetición (por ejemplo a 100ms) entonces los caracteres saldrán mal (a 300 baudios)
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T22-syncrules/images/txtest3-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/txtest3-gtkterm.png)
 
 ## Lo que le falta al transmisor
 Todavía no tenemos terminado el transmisor. Ya tenemos lista una parte: su **ruta de datos**. Nos falta el controlador, que es el que emite las diferentes señales (microórdenes) para gobernar esta ruta. Para ellos tendremos que aprender a hacer **máquinas de estados**. 
