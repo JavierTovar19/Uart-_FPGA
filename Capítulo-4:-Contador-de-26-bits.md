@@ -1,13 +1,13 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/T04-counter-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/T04-counter-iCEstick-1.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T04-counter)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T04-counter)
 
 ## Introducción
 Modelaremos nuestro **primer circuito secuencial**: un contador conectado a los LEDs. Los circuitos secuenciales, a diferencia de los combinacionales, **almacenan información**. El contador almacena un número que se incrementa con cada tic del reloj.
 
 Esta es la pinta de nuestro componente. Se actualiza en cada flanco de subida del reloj, y su **salida data** es de **26 bits**.
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-1.png)
 
 **La señal de reloj** de la placa iCEstick es de **12Mhz**. Si hacemos un contador de sólo 4 bits y le conectamos a su entrada clk esta señal de 12Mhz, el resultado será que se incrementará tan rápido que siempre veremos los leds encendidos. Por ello utilizaremos un contador de 26 bits y usaremos los 4 más significativos para mostrarlos en los leds. 
 
@@ -40,7 +40,7 @@ Cualquier contador, con independencia de su número de bits, se construye de est
 
 Los 4 bits de mayor peso (data[25], data[24], data[23] y data[22]) los conectaremos a los pines de la fpga donde están los leds. El reloj de la iCEstick entra por el pin 21, que lo conectaremos a la señal de reloj clk de nuestro contador
 
-![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-2.png)
+![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-2.png)
 
 La asociación entre pines de nuestro componente y pines de la fpga se establece en el fichero **counter.pcf**:
 
@@ -74,7 +74,7 @@ En este vídeo de youtube podemos ver el contador en funcionamiento:
 
 El banco de pruebas está compuesto por 4 elementos (en paralelo) unidos por cables. El diagrama es el siguiente:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/counter-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-3.png)
 
 Hay un generador de reloj que produce una señal cuadrada para incrementar el contador. La salida del contador se comprueba en dos componentes diferentes. Uno hace la comprobación inicial, verificando que inicialmente arranca desde 0.  El segundo tiene una variable interna que se incrementa con cada flanco de bajada del generador del reloj y su salida se comprueba con la del contdor, para verificar que efectivamente está contando. Como es un contador de 26 bits, no se comprueban todos los 67108864 valores, sino que la simulación se para transcurridas 100 unidades de tiempo.
 
@@ -135,7 +135,7 @@ Para simular, ejecutamos:
 
     $ make sim
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T04-counter/images/T04-counter-sim-1.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/T04-counter-sim-1.png)
 
 Efectivamente el contador cuenta. En la imagen sólo se muestran los primeros valores, pero desplazando la imagen se pueden ver hasta el instante 100
 
