@@ -1,6 +1,6 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-tones-icestick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/T17-tones-icestick-1.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T17-tones)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T17-tones)
 
 ## Introducción
 
@@ -9,11 +9,11 @@ Utilizaremos el **divisor de frecuencia** para **generar tonos** de 1, 2, 3 y 4K
 ## Generación de un tono
 En nuestro sistema digital tenemos una señal de reloj de entrada f_in, que en la iCEstick es de 12MHz. Para generar un tono de frecuencia f_t tenemos que calcular **el valor del divisor** usando la **fórmula**:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-formula-divisor.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/T17-formula-divisor.png)
 
 Así, para generar un **tono de 1Khz** tenemos que aplicar un divisor de valor:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-calculo-divisor-1Khz.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/T17-calculo-divisor-1Khz.png)
 
 En la siguiente tabla se muestran los valores de los divisores para generar tonos de 1, 2, 3 y 4KHz:
 
@@ -49,7 +49,7 @@ En el fichero **divisor.vh** se definen estos pares como constantes, para usarlo
 ## tones.v: Descripción del hardware
 Como ejemplo, **generaremos 4 tonos simultáneamente, de 1, 2, 3 y 4KHz**. Cada canal está compuesto por su correspondiente divisor de frecuencia, con los valores calculados anteriormente
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/tones-2.png)
 
 La descripción del componente en Verilog es:
 
@@ -109,7 +109,7 @@ A continuación **se instancian los 4 divisores**, cada uno con su frecuencia y 
 
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y las salidas de los 4 canales por los pines 44, 45, 47 y 48 a los que se tiene acceso en la parte inferior derecha de la placa
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/tones-1.png)
 
 A cada canal se le puede conectar un altavoz externo, pero para hacer pruebas es más fácil utilizar un único **altavoz** (o zumbador) y conectarlo manualmente al canal que se quiere escuchar
 
@@ -133,7 +133,7 @@ Lo cargamos en la FPGA con el comando:
 
 Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema es el siguiente: 
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/tones-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/tones-3.png)
 
 Como zumbador hemos utilizado el que viene en **mi primer kit de robótica**[1]
 
@@ -190,7 +190,7 @@ Para realizar la simulación ejecutamos:
 
 y el resultado es este:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T17-tones/images/T17-tones-sim1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T17-tones/images/T17-tones-sim1.png)
 
 Se puede comprobar que los 4 canales están funcionando con sus divisores correspondientes, y que son independientes
 
