@@ -1,7 +1,7 @@
 
-![Image 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-1.png)
+![Image 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T14-regreset)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T14-regreset)
 
 ## Introducción
 Los registros son elementos muy usados para hacer circuitos digitales. Aunque su descripción en verilog es muy sencilla, crearemos un **registro genérico de N bits** que podremos instanciar en nuestros diseños. Esto nos permitirá **colocar muchos registros fácilmente**. Además, añadiremos una **entrada de reset síncrona** que cargará el registro con un valor inicial (Por defecto será 0 pero podremos indicar otro valor al instanciar el registro). Como ejemplo haremos un **secuenciador con 2 registros**, sacándose por los leds los datos almacenados en ellos, alternativamente.
@@ -10,33 +10,35 @@ Los registros son elementos muy usados para hacer circuitos digitales. Aunque su
 
 El esquema del registro es el mostrado en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-2.png)
 
 Tiene una **entrada de datos din de N bits**, y su **salida dout** correspondiente. Los datos se capturan en **flanco de subida** de la señal de reloj. Dispone de una **entrada de reset síncrona activa a nivel bajo**: Si se recibe un 0 por esta señal y llega un flanco de reloj, el registro se carga con su valor inicial (INI), que se define al instanciarlo
 
 Esta manera de inicilizar el registro ya la conocemos del capítulo anterior, pero ahora se ha integrado dentro del propio registro. Su descripción en Verilog es la siguiente:
 
-    //-- register.v
-    module register (rst, clk, din, dout);
+```verilog
+//-- register.v
+module register (rst, clk, din, dout);
     
-    //-- Parametros:
-    parameter N = 4;     //-- Número de bits del registro
-    parameter INI = 0;   //-- Valor inicial
+//-- Parametros:
+parameter N = 4;     //-- Número de bits del registro
+parameter INI = 0;   //-- Valor inicial
     
-    //-- Declaración de los puertos
-    input wire rst;
-    input wire clk;
-    input wire [N-1:0] din;
-    output reg [N-1:0] dout;
+//-- Declaración de los puertos
+input wire rst;
+input wire clk;
+input wire [N-1:0] din;
+output reg [N-1:0] dout;
     
-    //-- Registro
-    always @(posedge(clk))
-      if (rst == 0)
-        dout <= INI; //-- Inicializacion
-      else
-        dout <= din; //-- Funcionamiento normal
+//-- Registro
+always @(posedge(clk))
+  if (rst == 0)
+    dout <= INI; //-- Inicializacion
+  else
+    dout <= din; //-- Funcionamiento normal
     
-    endmodule
+endmodule
+```
 
 Esto es equivalente a la implementación en el capítulo anterior, donde usábamos dos procesos: uno para el multiplexor y otro para el registro. Aquí están los dos componentes dentro del mismo proceso. Es **la forma típica de implementar un registro con inicialización**
 
@@ -44,7 +46,7 @@ Esto es equivalente a la implementación en el capítulo anterior, donde usábam
 
 Como ejemplo de prueba vamos a implementar un **secuenciador de 2 estados**, usando **2 registros**. Cada uno almacena inicialmente el valor a mostrar en los leds en cada estado. **Los registros están encadenados**, de manera que la salida de uno se conecta a la entrada del otro. De esta forma, cada vez que llega un flanco de  subida de reloj, los registros **intercambian sus valores**. La salida de uno de ellos está conectada los leds.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-3.png)
 
 La salida del registro 0 sale al exterior (puerto data) pero también se envía a la entrada del registro 1, cuya salida está conectada a la del registro 0
 
@@ -54,63 +56,65 @@ El reloj (cables rojos) se pasa a través de un prescaler y se introduce tanto e
 
 El código Verilog es el siguiente:
 
-    //-- regreset.v
-    module regreset(input wire clk, output wire [3:0] data);
+```verilog
+//-- regreset.v
+module regreset(input wire clk, output wire [3:0] data);
     
-    //-- Parametros del secuenciador:
-    parameter NP = 23;        //-- Bits del prescaler
-    parameter INI0 = 4'b1001; //-- Valor inicial para el registro 0
-    parameter INI1 = 4'b0111; //-- Valor inicial para el registro 1
+//-- Parametros del secuenciador:
+parameter NP = 23;        //-- Bits del prescaler
+parameter INI0 = 4'b1001; //-- Valor inicial para el registro 0
+parameter INI1 = 4'b0111; //-- Valor inicial para el registro 1
     
-    //-- Reloj a la salida del presacaler
-    wire clk_pres;
+//-- Reloj a la salida del presacaler
+wire clk_pres;
     
-    //-- Salida de los regitros
-    wire [3:0] dout0;
-    wire [3:0] dout1;
+//-- Salida de los regitros
+wire [3:0] dout0;
+wire [3:0] dout1;
     
-    //-- Señal de inicializacion del reset
-    reg rst = 0;
+//-- Señal de inicializacion del reset
+reg rst = 0;
     
-    //-- Inicializador
-    always @(posedge(clk_pres))
-      rst <= 1;
+//-- Inicializador
+always @(posedge(clk_pres))
+  rst <= 1;
     
-    //-- Registro 0
-    register #(.INI(INI0))
-      REG0 (
-        .clk(clk_pres),
-        .rst(rst),
-        .din(dout1),
-        .dout(dout0)
-      );
+//-- Registro 0
+register #(.INI(INI0))
+  REG0 (
+    .clk(clk_pres),
+    .rst(rst),
+    .din(dout1),
+    .dout(dout0)
+  );
     
-    //-- Registro 1
-    register #(.INI(INI1))
-      REG1 (
-        .clk(clk_pres),
-        .rst(rst),
-        .din(dout0),
-        .dout(dout1)
-      );
+//-- Registro 1
+register #(.INI(INI1))
+  REG1 (
+    .clk(clk_pres),
+    .rst(rst),
+    .din(dout0),
+    .dout(dout1)
+  );
     
-    //-- Sacar la salida del registro 0 por la del componente
-    assign data = dout0;
+//-- Sacar la salida del registro 0 por la del componente
+assign data = dout0;
     
-    //-- Prescaler
-    prescaler #(.N(NP))
-      PRES (
-        .clk_in(clk),
-        .clk_out(clk_pres)
-      );
+//-- Prescaler
+prescaler #(.N(NP))
+  PRES (
+    .clk_in(clk),
+    .clk_out(clk_pres)
+  );
     
-    endmodule
+endmodule
+```
 
 ## Síntesis en la FPGA
 
 Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-1.png)
 
 Sintetizamos con el comando:
 
@@ -132,7 +136,7 @@ Estos son los valores que se visualizan en los leds alternativamente:
 
 | Valor 1  |  Valor 2
 |-----------|----------
-| [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-leds-seq1.png|width=200px]] | [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-leds-seq2.png|width=200px]]
+| [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq1.png|width=200px]] | [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq2.png|width=200px]]
 
 
 En este **vídeo de Youtube** se puede ver la salida de los leds:
@@ -142,41 +146,42 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 ## Simulación
 El banco de pruebas es uno básico, que instancia el componente regreset, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/regreset-4.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-4.png)
 
 El código verilog es:
 
-    //-- regreset_tb.v
-    module regreset_tb();
+```verilog
+//-- regreset_tb.v
+module regreset_tb();
     
-    //-- Registro para generar la señal de reloj
-    reg clk = 0;
+//-- Registro para generar la señal de reloj
+reg clk = 0;
     
-    //-- Datos de salida del componente
-    wire [3:0] data;
+//-- Datos de salida del componente
+wire [3:0] data;
     
-    //-- Instanciar el componente, con prescaler de 1 bit (para la simulacion)
-    regreset #(.NP(1))
-      dut(
-       .clk(clk),
-       .data(data)
-    );
+//-- Instanciar el componente, con prescaler de 1 bit (para la simulacion)
+regreset #(.NP(1))
+  dut(
+   .clk(clk),
+   .data(data)
+);
     
-    //-- Generador de reloj. Periodo 2 unidades
-    always #1 clk = ~clk;
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
     
-    //-- Proceso al inicio
-    initial begin 
+//-- Proceso al inicio
+initial begin 
     
-      //-- Fichero donde almacenar los resultados
-      $dumpfile("regreset_tb.vcd");
-      $dumpvars(0, regreset_tb);
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("regreset_tb.vcd");
+  $dumpvars(0, regreset_tb);
     
-      # 30 $display("FIN de la simulacion");
-      $finish;
-    end
+  # 30 $display("FIN de la simulacion");
+  $finish;
+end
     
-    endmodule
+endmodule
 
 La simulación se realiza con:
 
@@ -184,7 +189,7 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T14-regreset/images/T14-regreset-sim-1.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-sim-1.png)
 
 Se puede ver cómo la secuencia 1001, 0111, 1001, 0111... se va alternando
 
