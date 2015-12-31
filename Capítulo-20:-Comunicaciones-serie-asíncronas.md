@@ -1,5 +1,5 @@
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-2.png)
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T20-serialcomm-1)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T20-serialcomm-1)
 
 ## Introducción
 
@@ -11,7 +11,7 @@ En este capítulo **empezaremos por lo más simple**: reenviar al PC todo lo rec
 
  Este tipo de comunicación tiene la ventaja de que **sólo se necesita un hilo** para cada sentido: del transmisor al receptor. El pin del transmisor, por donde salen los datos digitales, se denomina **Tx**. Y el pin del receptor es **Rx**. Los bits se envían secuencialmente, uno detrás de otro.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-1.png)
 
 Las comunicaciones pueden ser en **ambas direcciones simultáneamente** (full duplex). En ese caso habrá **dos hilos**, y cada circuito hará tanto de transmisor (pin Tx) como de receptor (Rx), como se muestra en la figura.
 
@@ -21,13 +21,13 @@ Los pines **tx** y **rx** forman parte del denominado **puerto serie**. Y se uti
 
 La placa iCEstick incluye un **conversor USB-serie** (chip FTDI) por el que llegan las señales de **Tx** y **Rx** a la FPGA, a través de los **pines 8 y 9**. De esta forma tenemos **conexión directa** entre el **puerto serie del PC** y la **FPGA**, y podremos implementar nuestra UART para la transferencia de datos.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-3.png)
 
 Los **puertos serie**, además de Tx y Rx para la transferencia de datos, **incorporan otras señales de control**. Dos muy empleadas se denominan **RTS** y **DTR**, y van en sentido **PC -> FPGA**.  Son 2 bits que podemos usar para próposito general. Por ejemplo, en las placas compatibles Arduino el PC usa una de estas señales para hacer _reset_ y comenzar así la carga de programas. 
 
 Para trabajar con la iCEstick, en estos tutorial, lo que nos importa es lo resumido en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T20-serialcomm-1/images/serialcomm-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-4.png)
 
 Para nosotros será como si **nuestro PC tuviese un puerto serie nativo** cuyas señales Tx, Rx, DTR, RTS están conectadas directamente a los pines de la FPGA. A partir de ahí empezaremos a "jugar" :-)
 
@@ -51,7 +51,7 @@ Conectamos la placa iCEstick al USB y ejecutamos el gtkterm:
 
 Si es la primera vez que lo arrancamos, posiblemente obtengamos un mensaje de error. No hay problema. Primero tenemos que configurar el puerto serie pinchando en la opción _configuration / port_ y se nos abrirá una ventana de configuración. Establecemos como puerto serie el **/dev/ttyUSB1**, a la velocidad de **115200**.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/gtkterm-screenshot-1.png)
 
 **Nota**: En ubuntu 15.04, al pinchar la iCEstick nos aparecen 2 puertos serie. El que nos permite acceder a la FPGA como puerto serie es el /dev/ttyUSB1
 
@@ -59,12 +59,12 @@ Le damos al OK. Para recordar esta configuración pinchamos en la opción _confi
 
 El terminal tiene esta pinta:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/gtkterm-screenshot-2.png)
 
 ## Experimento 1: Comprobando tx, rx, dtr y rts
 Comprobaremos que todas las señales funcionan correctamente. Para ello haremos un circuito que simplemente haga un **cableado entre señales**: las señales **rts y dtr se conectan a los pines de los leds**. Esto nos permite visualizar su estado, y cambiarlo desde el PC. La señal **RX se conecta físicamente a TX**, de forma que todos los caracteres recibidos se reenvían de nuevo al PC, a nivel físico (no hay procesamiento del carácter en la fpga, es un simple cable)
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-5.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-5.png)
 
 La descripción en Verilog es inmediata:
 
@@ -107,7 +107,7 @@ Para probarlo lanzamos el **gtkterm**. Presionando la **F7** cambiamos el estado
 
 Cualquier carácter que pulsemos se enviará a la FPGA y se hará **eco**. El terminal saca por pantalla todo lo recibido. **El resultado es que veremos en la pantalla todo lo que escribimos**.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/gtkterm-screenshot-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/gtkterm-screenshot-3.png)
 
 En este **vídeo de youtube** se muestra el ejemplo de funcionamiento. Con las teclas F7 y F8 se cambia el estado de las señales DTR y RTS por lo que los leds cambian. También se comprueba el eco
 
@@ -170,7 +170,7 @@ Para simular ejecutamos:
 
 Y el resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/echowire1-sim.png)
 
 Se han agrupado por colores las señales que deben tener la misma forma. Se comprueba que todo funciona como se espera
 
@@ -180,7 +180,7 @@ Modificaremos el ejemplo anterior para que la **conexión entre Tx y Rx se haga 
 
 El esquema del componente es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/serialcomm-6.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/serialcomm-6.png)
 
 y su descripción en Verilog:
 
@@ -224,7 +224,7 @@ y lo cargamos en la FPGA con:
 
 Las pruebas las hacemos igual que en el ejemplo anterior, pero ahora colocamos un cable externo que una los pines 44 y 45:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire2-icestick.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/echowire2-icestick.png" width="400" align="center">
 
 Cuando el cable está conectado, el eco se hace con normalidad. Si quitamos el cable, la comunicación se interrumpirá, como se puede ver en este **vídeo de youtube**
 
@@ -293,7 +293,7 @@ Para simular ejecutamos:
 
 Y el resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T20-serialcomm-1/images/echowire2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T20-serialcomm-1/images/echowire2-sim.png)
 
 ## Ejercicios propuestos
 
