@@ -1,6 +1,6 @@
-![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romleds-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T26-rom)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T26-rom)
 
 # Introducción
 Las **memorias** nos permiten **almacenar información** para usarlas en nuestros circuitos: datos, instrucciones, configuraciones, etc. Son los **componentes esenciales** para crear circuitos más complejos, como por ejemplo **microprocesadores**.
@@ -11,13 +11,13 @@ Mostraremos cómo se modelan las **memorias ROM** (de sólo lectura) en verilog 
 
 Comenzaremos por una **rom muy sencilla**, que puede almacenar 32 valores de 4 bits. Las direcciones de memoria van desde la 0 hasta la 31. Se necesitan **5 bits** para representarlas
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/rom32x4-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/rom32x4-1.png)
 
 ## Pines de acceso
 
 Los puertos de acceso a la memoria son:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/rom32x4-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/rom32x4-2.png)
 
 * **clk**: Señal de reloj del sistema.  Es un circuito síncrono, que nos devuelve los datos en el flanco activo del reloj
 * **addr**: Entrada: Dirección a leer (5 bits)
@@ -27,7 +27,7 @@ Los puertos de acceso a la memoria son:
 
 Para acceder a la memoria rom se deposita la dirección el puerto addres. En el siguiente flanco de bajada del reloj, se obtendrá el dato
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/rom32x4-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/rom32x4-4.png)
 
 ## Descripción en verilog
 
@@ -76,7 +76,7 @@ Como primer ejemplo, instanciaremos la memoria rom anterior (rom32x4) y mostrare
 
 El esquema es muy sencillo:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romhw-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/ICESTICK/T26-rom/images/romhw-1.png)
 
 La **salida de datos** de la rom se conecta directamente a los **4 leds rojos de la placa ICEStick**, para visualizar el dato que sale.  Colocamos una **dirección fija** por la entrada **addr**. El contenido de esa dirección se mostrará por los leds. Dependiendo de la dirección, por los leds se mostrará un dato u otro
 
@@ -115,7 +115,7 @@ La simulación se realiza con:
 
 y los resultados obtenidos en gtkwave son:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romhw-sim.png)
 
 El valor que se obtiene es 5 (que es lo que se ha almacenado en la posición de memoria 5 de la rom)
 
@@ -141,7 +141,7 @@ El diseño se carga con:
 
 Por los leds se visualizará esto:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romhw-test.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romhw-test.png)
 
 (led superior e inferior encendidos)
 
@@ -153,7 +153,7 @@ Como segundo ejemplo vamos a generar una **secuencia de luces en los leds**. Los
 
 La memoria se direcciona mediante un **contador de 4 bits**, de forma que se recorre la memoria desde la dirección 0 hasta la 15. El valor de cada posición se envía directamente a los leds. El contador se incrementa cada **medio segundo**, mediante un temporizador
 
-![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/T26-rom/images/romleds-1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/2308e4ec1b7346b14c24f4835be2170a981fd097/tutorial/ICESTICK/T26-rom/images/romleds-1.png)
 
 Simplemente cambiando los valores almacenados en la memoria, se consigue una secuencia diferente
 
@@ -295,7 +295,7 @@ La simulación se realiza con:
 
 y los resultados obtenidos en gtkwave son:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romleds-sim.png)
 
 
 ## Síntesis y pruebas
@@ -484,7 +484,7 @@ La simulación se realiza con:
 
 y los resultados obtenidos en gtkwave son:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds2-sim1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romleds2-sim1.png)
 
 Se está usando la rom1.list, que tiene en cada posición un valor igual a su dirección, como se puede comprobar en la simulación
 
@@ -494,7 +494,7 @@ parameter ROMFILE = "rom2.list";
 ```
 Ahora al simular vemos una secuencia diferente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T26-rom/images/romleds2-sim2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romleds2-sim2.png)
 
 ## Síntesis y pruebas
 
