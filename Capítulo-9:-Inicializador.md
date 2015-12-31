@@ -21,29 +21,31 @@ Al tratarse de un registro, lo podemos implementar igual que en el capítulo ant
 
 Es la implementación más lógica. Se parte de un registro genérico de 1 bit, que ya sabemos cómo se modela y simplemente cableamos su entrada a 1 y sacamos su salida hacia fuera:
 
-    //-- init.v (implementación natural)
-    //-- Entrada: cable del reloj
-    //-- Salida: Cable con la señal de inicialización
-    module init(input wire clk, output wire ini);
+```verilog
+//-- init.v (implementación natural)
+//-- Entrada: cable del reloj
+//-- Salida: Cable con la señal de inicialización
+module init(input wire clk, output wire ini);
     
-    //-- Cable de entrada el registro de 1 bit
-    wire din;
+//-- Cable de entrada el registro de 1 bit
+wire din;
     
-    //-- Salida del registro de 1 bit (inicializado a 0) (solo para simulacion)
-    //-- En la sintesis siempre estará a 0
-    reg dout = 0;
+//-- Salida del registro de 1 bit (inicializado a 0) (solo para simulacion)
+//-- En la sintesis siempre estará a 0
+reg dout = 0;
 
-    //-- Registro genérico: en flanco de subida se captura la entrada
-    always @(posedge(clk))
-      dout <= din;
+//-- Registro genérico: en flanco de subida se captura la entrada
+always @(posedge(clk))
+  dout <= din;
     
-    //-- Cablear la entrada a 1
-    assign din = 1;
+//-- Cablear la entrada a 1
+assign din = 1;
     
-    //-- Conectar la salida del registro a la señal ini
-    assign ini = dout;
+//-- Conectar la salida del registro a la señal ini
+assign ini = dout;
     
-    endmodule
+endmodule
+```
 
 Esta implementación es muy sencilla y se entiende muy bien. Se ve claramente que es un registro con un "1" cableado por la entrada, sin embargo es muy "verbosa". Hay que escribir mucho código
 
@@ -51,19 +53,21 @@ Esta implementación es muy sencilla y se entiende muy bien. Se ve claramente qu
 
 Podemos hacer lo mismo pero con mucho menos código implementando directamente un registro que asigne siempre un "1" a su salida:
 
-    //-- init.v  (version optimizada)
-    module init(input wire clk, output ini);
+```verilog
+//-- init.v  (version optimizada)
+module init(input wire clk, output ini);
 
-    //-- Registro de 1 bit inicializa a 0 (solo para simulacion)
-    //-- Al sintetizarlo siempre estará a cero con independencia 
-    //-- del valor al que lo pongamos
-    reg ini = 0;
+//-- Registro de 1 bit inicializa a 0 (solo para simulacion)
+//-- Al sintetizarlo siempre estará a cero con independencia 
+//-- del valor al que lo pongamos
+reg ini = 0;
     
-    //-- En flanco de subida sacamos un "1" por la salida
-    always @(posedge(clk))
-      ini <= 1;
+//-- En flanco de subida sacamos un "1" por la salida
+always @(posedge(clk))
+  ini <= 1;
     
-    endmodule
+endmodule
+```
 
 ## Síntesis en la FPGA
 
@@ -99,37 +103,39 @@ Para simularlo utilizaremos un banco de pruebas simple, en el que no realizamos 
 
 El código Verilog es:
 
-    //-- init_tb.v
-    module init_tb();
+```verilog
+//-- init_tb.v
+module init_tb();
     
-    //-- Registro para generar la señal de reloj
-    reg clk = 0;
+//-- Registro para generar la señal de reloj
+reg clk = 0;
     
-    //-- Datos de salida del componente
-    wire ini;
+//-- Datos de salida del componente
+wire ini;
     
-    //-- Instanciar el componente
-    init 
-      INIT (
-        .clk(clk),
-        .ini(ini)
-      );
+//-- Instanciar el componente
+init 
+  INIT (
+    .clk(clk),
+    .ini(ini)
+  );
     
-    //-- Generador de reloj. Periodo 2 unidades
-    always #2 clk = ~clk;
+//-- Generador de reloj. Periodo 2 unidades
+always #2 clk = ~clk;
     
-    //-- Proceso al inicio
-    initial begin
+//-- Proceso al inicio
+initial begin
 
-    //-- Fichero donde almacenar los resultados
-    $dumpfile("init_tb.vcd");
-    $dumpvars(0, init_tb);
+//-- Fichero donde almacenar los resultados
+$dumpfile("init_tb.vcd");
+$dumpvars(0, init_tb);
 
-    # 20 $display("FIN de la simulacion");
-    $finish;
+# 20 $display("FIN de la simulacion");
+$finish;
 
-    end
-    endmodule
+end
+endmodule
+```
 
 El resultado de la simulación es:
 
