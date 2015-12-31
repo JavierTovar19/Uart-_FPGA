@@ -1,12 +1,12 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T02-Fport)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T02-Fport)
 
 ## Introducción
 
 Ahora en vez de 1 bit sacaremos **4**, y los mostraremos por los leds. Se trata de un **valor fijo**, que está "cableado por hardware". Si queremos visualizar otro número por los leds, habrá que sintentizar otro circuito.
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-1.png)
 
 Este componente lo denominaremos **Fport** (Fixed port). Tiene un **bus de salida de 4 bits**, etiquetado como **data**, que está cableado al **valor binario 1010**
 
@@ -32,7 +32,7 @@ La salida ahora es un **array de 4 cables**. Esto se denota poniendo **[3:0]** d
 
 Cada uno de los 4 bits de la salida data se saca por los pines de la fpga donde están conectados los 4 leds:
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-2.png)
 
 Esto se especifica en el fichero **Fport.pcf**:
 
@@ -63,13 +63,13 @@ Ahora cargamos en la fpga el fichero **Fport.bin**:
 
 Al terminar, dos leds estarán encendidos y dos apagados, ya que estamos enviando el valor 1010:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
 
 ## Simulación
 
 El **banco de pruebas** es similar al del capítulo anterior, pero ahora en vez de comprobar sólo un bit se comprueba **el patrón de 4 bits**. Si no es igual al esperado se emite un mensaje de error. El diagrama es el siguiente:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-3.png)
 
 El banco de pruebas (**Fport_tb.v**) consta de tres elementos:
 
@@ -120,7 +120,7 @@ Para realizar la simulación ejecutamos el comando **make sim**:
 
 Este es el resultado con **gtkwave**:
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-sim-1.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-sim-1.png)
 
 Comprobamos que la salida siempre está al valor 1010
 
