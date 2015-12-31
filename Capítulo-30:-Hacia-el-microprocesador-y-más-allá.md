@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T30-microbio)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T30-microbio)
 
 # Introducción
 
@@ -29,7 +29,7 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 
 Microbio se comunica con el exterior mediante los siguientes pines:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-1.png)
 
 * **clk**: Entrada de reloj. Se conecta el reloj de 12 MHz de la FPGA
 * **rstn**: Entrada de reset. Está conectada a la señal DTR para poder hacer reset desde el PC. Al hacer un reset, microbio empieza a ejecutar el programa que tiene almacenado a partir de la dirección de memoria 0
@@ -51,13 +51,13 @@ Microbio puede ejecutar las 4 instrucciones siguientes:
 
 Microbio dispone de una **memoria ROM** de **64 posiciones** donde se almacena el programa a ejecutar. Cada instrucción tiene un ancho de **8 bits**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-2.png)
 
 ## Formato de instrucciones
 
 Todas las instrucciones de microbio tienen el mismo formato, que se muestra a continuación:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-3.png)
 
 Constan de dos campos:
 * **Código de operación** (CO): Campo de **2 bits** que indica el tipo de operación (HALT, LEDS, WAIT o JP)
@@ -82,7 +82,7 @@ Las instructiones que entiendo microbio están en **código máquina**: son núm
 
 Sin embargo, es mucho más sencillo escribir programas en el **lenguaje ensamblador de Microbio** y utilizar un **programa ensamblador** para **traducirlos a código máquina**. Este proceso se denomina **ensamblado**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-4.png)
 
 El ensamblador de microbio se llama **masm.py**, y ha sido programado en **python 3.5** (Aunque funciona igual en 2.7.9) . Para ensamblar el **programa M0.asm**,por ejemplo, hay que ejecutar el siguiente comando:
 
@@ -119,7 +119,7 @@ Machine code:
 ```
 Nos devuelve la **tabla de símbolos** (en este caso no hay porque no se han definido etiquetas), el **programa en ensamblador**, ya procesado y el programa generado en **código máquina**
 
-**Las fuentes del programa masm.py están disponibles** [en el repositorio de este capítulo](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T30-microbio), de forma que se pueda estudiar cómo funciona y sobre todo mejorarlo y ampliarlo. Por ejemplo, si se amplían las instrucciones de Microbio, será necesario que el ensamblador las soporte
+**Las fuentes del programa masm.py están disponibles** [en el repositorio de este capítulo](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T30-microbio), de forma que se pueda estudiar cómo funciona y sobre todo mejorarlo y ampliarlo. Por ejemplo, si se amplían las instrucciones de Microbio, será necesario que el ensamblador las soporte
 
 ## M0.asm: Hola mundo
 
@@ -159,7 +159,7 @@ En el apartado de simulación y pruebas se muestran más detalles, pero para hac
 
 El resultado de la ejecución será que **se encienden tanto los 4 leds rojos como el led verde** (por ejecutarse la instrucción HALT)
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-picture.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/M0-asm-picture.png)
 
 ## M1.asm: Secuencia en los leds
 
@@ -281,7 +281,7 @@ El procesador está formado por su **ruta de datos** y su **unidad de control** 
 
 El diagrama de bloques se muestra en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-5.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-5.png)
 
 Las señales en rojo son las microórdenes, generadas por la unidad de control.
 
@@ -317,7 +317,7 @@ Las **microórdenes** generadas son por la unidad de control son:
 
 El autómata tiene 3 estados, mostrados en el siguiente diagrama:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/microbio-6.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/microbio-6.png)
 
 Los estados son:
 
@@ -596,7 +596,7 @@ y a continuación **lanzamos la simulación** con:
 
 Se nos abrirá el gtkwave con lo siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M0-asm-sim1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/M0-asm-sim1.png)
 
 Para entender la ejecución del programa (que sólo tiene 2 instrucciones: (8F, 40)) nos fijamos en la **señal state**, que nos indica **el estado de la unidad de control**. Sus valores en el tiempo se corresponden con 0, 1, 2, 1, 2 que se corresponden con los estados INIT, FETCH, EXEC, FETCH y EXEC.  Es decir, que efectivamente se ejecutan 2 instrucciones (hay dos ciclos de captura y dos ciclos de ejecución)
 
@@ -620,7 +620,7 @@ y lanzamos la simulación:
 
 Ahora el resultado de la simulación es el siguiente:
 
-![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T30-microbio/images/M1-asm-sim1.png)
+![](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T30-microbio/images/M1-asm-sim1.png)
 
 En el **registro de instrucciones** vemos que se cargan TODAS las instrucciones del programa: 81, 00, 82, 00, 84, 00, 88, 00, 81, 40.  El contador de programa llega hasta la dirección 0xA, y se activa la señal de halt
 
@@ -636,11 +636,11 @@ y lanzamos la simulación:
 
 El resultado de la simulación es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M2-asm-sim1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/M2-asm-sim1.png)
 
 Se puede ver la ejecución de las primeras 13 instrucciones. En este otro pantallazo se puede ver la parte final:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T30-microbio/images/M2-asm-sim2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T30-microbio/images/M2-asm-sim2.png)
 
 El ejecutarse la **instrucción JP 0** (0xC0) el contador de programa pasa a valer 0 de nuevo por lo que se vuelven a ejecutar las instrucciones del principio
 
