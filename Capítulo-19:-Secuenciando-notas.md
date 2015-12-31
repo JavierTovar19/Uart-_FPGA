@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/T19-secnotas/images/secnotas-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/ICESTICK/T19-secnotas/images/secnotas-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T19-secnotas)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T19-secnotas)
 
 ## Introducción
 Hasta ahora hemos generado sonidos en canales diferentes, de manera independiente.  Implementaremos un **secuenciador** que nos permita tocar **4 notas** que sonarán **consecutivamente** en el altavoz. Reproduciremos la secuencia: DO, RE, MI, (silencio) y se volverá al comienzo. Esto nos abre la puerta a la creación de melodías sencillas :-)
@@ -14,7 +14,7 @@ La entrada de selección la conectamos a un **contador de 2 bits**, de forma que
 
 El esquema del circuito se muestra en esta figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T19-secnotas/images/secnotas-2.png)
 
 La descripción en verilog asociada a este esquema es:
 
@@ -103,7 +103,7 @@ En el ejemplo se usa una duración de **250ms**
 
 Para sintetizarlo conectamos a la entrada de reloj la señal de 12Mhz de la IceStick y la de salida al pin 44, donde colocaremos el zumbador al hacer las pruebas
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/T19-secnotas/images/secnotas-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/8bf3e940aebcf444a33c0345be1fcec0de6c5f32/tutorial/ICESTICK/T19-secnotas/images/secnotas-1.png)
 
 Para sintetizar ejecutamos el comando:
 
@@ -125,11 +125,11 @@ Lo cargamos en la FPGA con el comando:
 
 Alimentamos el zumbador desde los pines de 3.3v y gnd de la IceStick. El esquema es el siguiente: 
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T19-secnotas/images/secnotas-3.png)
 
 En esta foto se muestra el zumbador conectado a la iCEstick, listo para hacer las pruebas:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/secnotas-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T19-secnotas/images/secnotas-4.png)
 
 En este **vídeo de youtube** se muestra el ejemplo en acción, tocando las tres notas:
 
@@ -179,7 +179,7 @@ Para realizar la simulación se ejecuta:
 
 El resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T19-secnotas/images/T19-secnotas-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T19-secnotas/images/T19-secnotas-sim-1.png)
 
 Las señales ch0, ch1 y ch2 son las salidas de los divisores. Cada una de una frecuencia. La entrada de selección del multiplexor cambia cíclicamente: 00, 01, 10, 11 (en binario). Finalmente se observa cómo en la salida aparece el canal que está seleccionado. Cuando es el 3, la salida está a cero (silencio). 
 
