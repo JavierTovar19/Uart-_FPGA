@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T21-baud-tx)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T21-baud-tx)
 
 ## Introducción
 
@@ -9,7 +9,7 @@ Empezaremos el diseño de nuestra UART por el **transmisor**. En este capítulo 
 ## Transmitiendo bits
 Los bits se envían al PC de **uno en uno** a través del **pin Tx**. Los datos no se envían aislados, sino que están metido en **una trama**. El **estándar de transmisión** serie define diferentes tramas. Nosotros usaremos la típica, conocida como **8N1** (8 bits de datos, Ninguno de paridad y 1 bit de stop) que tiene el siguiente **formato**:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-format-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/serial-frame-format-2.png)
 
 La trama comienza con un **bit a 0**, que se llama **bit de start**. A continuación están los **8 bits del dato a transmitir**, pero **comenzando por el bit 0** (la transmisión se hace comenzando por el bit de menor peso, 0, hasta el mayor, 7). La trama finaliza con un **bit a 1**, llamado **bit de stop**.
 
@@ -17,11 +17,11 @@ Así, para transmitir un dato, la línea (tx) tomará lo siguientes valores. Ini
 
 Como ejemplo veremos cómo **transmitir el caracter ASCII "K"**. Su valor en hexadecimal es 0x4B y en binario: 01001011
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/k-car.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/k-car.png)
 
 La línea de transmisión a lo largo del tiempo tendrá esta forma:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-format.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/serial-frame-format.png)
 
 **Todos los bits tienen la misma duración**, que denominaremos **periodo de bit** (Tb)
 
@@ -33,7 +33,7 @@ Para que diferentes circuitos se puedan comunicar entre ellos, **las velocidades
 
 Para transmitir a una velocidad de **X baudios**, necesitamos generar una **señal cuadrada cuya frecuencia sea igual a X**. Cada flanco de subida de esta señal indica cuándo enviar el siguiente bit:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/serial-frame-3.png)
 
 ## Generador de señal de reloj para la transmisión
 
@@ -77,7 +77,7 @@ Este primer ejemplo envía el carácter "K" desde la FPGA al ordenador cada vez 
 
 Para realizar una transmisión del dato usaremos un **registro de desplazamiento**, con **carga paralela**. La **salida serie** se conecta directamente a la linea de transmisión **tx**, a través de un multiplexor. Cuando la señal de load está a 0, el registro se carga con un valor de 10 bits: el dato "K", seguido de los bits 01 (bit de start y bit de reposo). 
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1.png)
 
 Cuando la carga está a 1 se realiza el desplazamiento hacia la derecha y por la izquierda se inserta un 1. De esta forma, al transmitirse la trama completa, el bit menos significativo será un 1, para que la línea tx permanezca a 1 (en reposo)
 
@@ -156,7 +156,7 @@ Para simular ejecutamos el comando:
 
 El resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1-sim.png)
 
 La primera señal el reloj para la transmisión de los bits a 115200 baudios. Cuando dtr se pone a cero se carga el registro.  Al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
 
@@ -180,7 +180,7 @@ Lo cargamos en la FPGA con:
 
 Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto sea el **/dev/ttyUSB1** a la velocidad de **115200 baudios**. Con la **tecla F7** cambiamos el estado de la **señal DTR**. La primera vez que pulsamos aparecerá una "K" en la pantalla. La siguiente vez DTR cambia de estado, pero no ocurre nada. Si volvemos a pulsar aparecerá otra "K". Cada dos pulsaciones de F7 obtendremos una "K". Si dejamos apretada F7, aparecerán multiples "K"s
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-1-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1-gtkterm.png)
 
 ## Ejemplo 2: Transmisión continua
 Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente
@@ -189,7 +189,7 @@ Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máx
 
 El cronograma de transmisión continua para el caracter K se muestra en esta figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/serial-frame-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/serial-frame-4.png)
 
 Las líneas verticales punteadas muestran el comienzo y fin de los caracteres enviados. Sin embargo, si no tenemos esas referencias visuales, es **imposible distinguir donde empieza y acaba la trama**. Esto mismo le pasa al receptor serie del PC. Si hacemos que la FPGA envíe constantemente caracteres y arrancamos el programa gtkterm, la lectura comenzará en cualquier punto de la trama. Si pasa esto, **se interpretará como bit de start otro diferente del correcto**, recibiéndose una ráfaga de caracteres incorrectos. En el dibujo se ha marcado en rojo otro punto, llamado A, que podría ser leido como bit de arranque. Si esto ocurre, tanto receptor como transmisor quedarán desincronizados hasta que la línea alcance el estado de reposo.
 
@@ -197,7 +197,7 @@ Es una de las razones por las que **se usa la señal DTR para arrancar la transm
 
 Para lograr la transmisión continúa sólo hay que hacer un pequeño cambio en el ejemplo anterior: Ahora en vez de introducir "1"s por la izquierda del registro de desplazamiento, **haremos que se inserten los bits enviados**, **conectando la _ser_out_ con _ser_in_**, de manera que construimos un anillo en el que todos los bits de la trama se están constantemente enviando
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx2-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx2-1.png)
 
 ### baudtx2.v: Descripción del hardware
 
@@ -319,7 +319,7 @@ Para hacer la simulación ejecutamos:
 
 Y el resultado de la simulación es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-2-sim.png)
 
 Cuando dtr se pone a 1, se observa la transmisión continua. Cuando se pone a 0 se deja de transmitir y la línea permanece en reposo. Nuevamente se pone a 1 y comienza otra ráfaga de transmisión
 
@@ -343,7 +343,7 @@ Lo cargamos en la FPGA con:
 
 Abrimos el gtkterm y pulsamos F7 para cambiar el DTR. Empezarán a aparecer Ks llenando rápidamente la pantalla completa del terminal:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-2-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-2-gtkterm.png)
 
 Al pulsar F7 nuevamente la ráfaga se para
 
@@ -355,7 +355,7 @@ En este ejemplo enviaremos el carácter K cada 250ms, sin tener que usar el DTR
 
 Este circuito **no tiene entrada exterior para la carga del registro**, sino que se ha añadido un **divisor** para generar una **señal de 250ms** y que se cargue periódicamente. De esta forma, cada 250ms, se envía el carácter K:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx3-1.png)
 
 La señal de carga no se conecta directamente desde el divisor, sino que se pasa por **un registro con entrada de reloj clk_baud**. Se ha añadido para que **la señal de load esté sincronizada con la de clk_baud**, y que sus distancias relativas sean siempre las mismas. Si no se pone, pueden ocurrir situaciones en tengan los flancos de subida muy cercanos y se capturen datos incorrectos
 
@@ -481,7 +481,7 @@ Realizamos la simulación con el comando:
 
 Los resultados son:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx3-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx3-sim.png)
 
 Se observa cómo con cada pulso de load se envía un dato nuevo. También se puede observar como las señales _load_ y _load2_ son ligeramente diferente. La distancia entre ellas va variando debido a que **_load_ es asíncrona**, pero _load2_ ya está sincronizada. 
 
@@ -507,13 +507,13 @@ Al arrancar el gtkterm empezarán a aparecer Ks en la pantalla, a la velocidad d
 
 Si la señal de _load_ **NO está sincronizada**, se pueden obtener resultado como estos:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-3-gtkterm.png) 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-3-gtkterm.png) 
 
 Se observa que periódicamente un carácter se recibe incorrectamente.
 
 Cuando está todo sincronizado bien, el resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T21-baud-tx/images/baudtx-3-gtkterm-ok.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-3-gtkterm-ok.png)
 
 ## Ejercicios
 * Probar el último ejemplo pero cambiando las velocidades de transmisión a 19600 y 9600 baudios
