@@ -61,28 +61,30 @@ Al usar el prescarler con el led, **a partir de 19 bits es cuando se puede aprec
 
 El código es prácticamente igual al de un contador, sin embargo introducimos la novedad de que **el prescaler es paramétrico**, de forma que el número de bits está determinado por el **parámetro N**. Sólo cambiando este parámetro podemos sintetizar prescalers de diferentes tamaños
 
-    //-- prescaler.v
-    //-- clk_in: señal de reloj de entrada
-    //-- clk_out: Señal de reloj de salida, con menor frecuencia
-    module prescaler(input clk_in, output clk_out);
-    wire clk_in;
-    wire clk_out;
+```verilog
+//-- prescaler.v
+//-- clk_in: señal de reloj de entrada
+//-- clk_out: Señal de reloj de salida, con menor frecuencia
+module prescaler(input clk_in, output clk_out);
+wire clk_in;
+wire clk_out;
     
-    //-- Numero de bits del prescaler (por defecto)
-    parameter N = 22;
+//-- Numero de bits del prescaler (por defecto)
+parameter N = 22;
     
-    //-- Registro para implementar contador de N bits
-    reg [N-1:0] count = 0;
+//-- Registro para implementar contador de N bits
+reg [N-1:0] count = 0;
     
-    //-- El bit más significativo se saca por la salida
-    assign clk_out = count[N-1];
+//-- El bit más significativo se saca por la salida
+assign clk_out = count[N-1];
     
-    //-- Contador: se incrementa en flanco de subida
-    always @(posedge(clk_in)) begin
-      count <= count + 1;
-    end
+//-- Contador: se incrementa en flanco de subida
+always @(posedge(clk_in)) begin
+  count <= count + 1;
+end
     
-    endmodule
+endmodule
+```
 
 Definimos un registro de N bits, que se incrementa en cada flanco de subida de la señal de reloj de entrada. Su bit más significativo se conecta directamente a la salida clk_out.
 
@@ -126,59 +128,61 @@ En el banco de pruebas colocamos el **prescaler de N bits** (por defecto con N =
 
 El código del banco de pruebas es el siguiente:
 
-    //-- prescaler_tb.v
-    module prescaler_tb();
+```verilog
+//-- prescaler_tb.v
+module prescaler_tb();
     
-    //-- Numero de bits del prescaler a comprobar
-    parameter N = 2;
+//-- Numero de bits del prescaler a comprobar
+parameter N = 2;
     
-    //-- Registro para generar la señal de reloj
-    reg clk = 0;
+//-- Registro para generar la señal de reloj
+reg clk = 0;
     
-    //-- Salida del prescaler
-    wire clk_out;
+//-- Salida del prescaler
+wire clk_out;
     
-    //-- Registro para comprobar si el prescaler funciona
-    reg [N-1:0] counter_check = 0;
+//-- Registro para comprobar si el prescaler funciona
+reg [N-1:0] counter_check = 0;
     
-    //-- Instanciar el prescaler de N bits
-    prescaler #(.N(N))  //-- Parámetro N
-      Pres1(
-        .clk_in(clk),
-        .clk_out(clk_out)
-      );
+//-- Instanciar el prescaler de N bits
+prescaler #(.N(N))  //-- Parámetro N
+  Pres1(
+    .clk_in(clk),
+    .clk_out(clk_out)
+  );
     
-    //-- Generador de reloj. Periodo 2 unidades
-    always #1 clk = ~clk;
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
 
-    //-- Comprobacion del valor del contador
-    //-- En cada flanco de bajada se comprueba la salida del contador
-    //-- y se incrementa el valor esperado
-    always @(negedge clk) begin
+//-- Comprobacion del valor del contador
+//-- En cada flanco de bajada se comprueba la salida del contador
+//-- y se incrementa el valor esperado
+always @(negedge clk) begin
     
-      //-- Incrementar variable del contador de prueba
-      counter_check = counter_check + 1;
+  //-- Incrementar variable del contador de prueba
+  counter_check = counter_check + 1;
     
-      //-- El bit de mayor peso debe coincidir con clk_out
-      if (counter_check[N-1] != clk_out) begin
-        $display("--->ERROR! Prescaler no funciona correctamente");
-        $display("Clk out: %d, counter_check[2]: %d", 
-                  clk_out, counter_check[N-1]);
-      end
+  //-- El bit de mayor peso debe coincidir con clk_out
+  if (counter_check[N-1] != clk_out) begin
+    $display("--->ERROR! Prescaler no funciona correctamente");
+    $display("Clk out: %d, counter_check[2]: %d", 
+              clk_out, counter_check[N-1]);
+  end
     
-    end
+end
     
-    //-- Proceso al inicio
-    initial begin
+//-- Proceso al inicio
+initial begin
     
-      //-- Fichero donde almacenar los resultados
-      $dumpfile("prescaler_tb.vcd");
-      $dumpvars(0, prescaler_tb);
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("prescaler_tb.vcd");
+  $dumpvars(0, prescaler_tb);
     
-      # 99 $display("FIN de la simulacion");
-      # 100 $finish;
-    end
-    endmodule
+  # 99 $display("FIN de la simulacion");
+  # 100 $finish;
+end
+endmodule
+```
 
 Para simular ejecutamos:
 
