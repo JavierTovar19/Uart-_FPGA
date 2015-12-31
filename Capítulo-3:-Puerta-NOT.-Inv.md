@@ -1,13 +1,13 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/T03-inv-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/T03-inv-iCEstick-1.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T03-inv)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T03-inv)
 
 ## Introducción
 Modelaremos nuestro primer **circuito combinacional**: una **puerta inversora** (puerta NOT). 
 
 Los circuitos combinacionales realizan operaciones con los bits de entrada y los sacan por las salidas. **No almacenan bits, sólo los transforman**. El más básico de todos es una puerta NOT, que tiene un bit de entrada y otro de salida. Por la salida siempre saca el inverso del bit de la entrada: El "1" lo transforma a "0"  y el "0" a "1".
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/inv-1.png)
 
 Nuestro componente lo llamaremos INV. Su entrada es A y su salida B
 
@@ -36,7 +36,7 @@ Como se trata de un circuito combinacional, que NO almacena información, **tant
 
 La salida de la puerta la conectamos al pin donde está el LED D1 de la iCEstick. La entrada al pin 44, que está disponible en el puerto de expansión de la iCEstick
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/inv-2.png)
 
 Al pin 44 le introduciremos un "0" o un "1" desde el exterior para encender o apagar el led. Esto lo hacemos conectando el pin a la alimentación (3.3v) o a tierra (0v, GND) mediante un cable externo
 
@@ -59,13 +59,13 @@ Ahora lo cargamos en la FPGA con:
 ## Probando la puerta inversora
 La placa iCEstick tiene pines para su expansión, que dan acceso a algunos de los pines de la fpga. Es muy útil soldar una tira de pines hembra en estos pines para acceder fácilmente a ellos. En la imagen se muestra la tira soldada en los pines inferiores
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-4.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/inv-4.png)
 
 El pin inferior izquierdo se corresponde con el pin 44 de la FPGA y es el que usaremos como entrada de la entrada inversora.  El pin inferior derecho es la alimentación de 3.3 y lo usaremos para introducir un "1" al inversor y el que está a su izquierda es GND, y nos servirá para introducir un "0"
 
 Conectamos dos cables a los pines 3.3v y GND. Serán los que usemos para introducir "1"s y "0" por el pin 44:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
 
 Al conectar el cable de GND, el led se encenderá. Lo sacamos. Conectamos el cable de 3.3v. El led estará apagado.  Cuando no hay nada conectado, el resultado es aleatorio: puede estar encendido, apagado u oscilando entre ambos estados.  Esta es una de las reglas básicas de la electrónica digital: "No dejar los pines de entrada al aire. Siempre a '0' ó '1'.
 
@@ -75,7 +75,7 @@ En el banco de pruebas se instancia la puerta inversora y se le conecta el **cab
 
 Por la entrada introduciremos diferentes valores y comprobaremos qué se obtiene a la salida. Por ello, conectamos el **registro** denotado como **din**.
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/inv-3.png)
 
  A diferencia del cable, el **registro** funciona como una variable, a la que podemos asignar diferentes valores. Primero se introduce un '0' y se comprueba que la salida tenga un '1' (que es el negado). Y luego al revés: se introduce un '1' y se comprueba que se obtiene un '0'.
 
@@ -128,7 +128,7 @@ Realizamos la simulación, ejecutando el comando make sim
 
 En la simulación vemos como **dout** es siempre el negado de **din**
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-5.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T03-inv/images/inv-5.png)
 
 Vemos como en las primeras 5 unidades de tiempo tanto din como dout tienen el valor x (están en rojo), que significa que son valores indefinidos. Esto es porque din no lo hemos inicializado hasta el instante 5. Antes estaba a un estado indefinido (X) y por tanto la salida también. Pero a partir de t = 5, din vale 0 y por tanto dout 1
 
