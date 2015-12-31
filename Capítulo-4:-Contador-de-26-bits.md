@@ -15,22 +15,24 @@ Esta es la pinta de nuestro componente. Se actualiza en cada flanco de subida de
 
 El contador tiene **una entrada clk**, que es un cable, y una **salida data de 26  bits** que nos devuelve el valor del contador. Esta salida es un **registro de 26 bits**, que almacena el valor de la cuenta.
 
-    //-----------------------------------
-    //-- Entrada: señal de reloj
-    //-- Salida: contador de 26 bits
-    //-----------------------------------
-    module counter(input clk, output [25:0] data);
-    wire clk;
+```verilog
+//-----------------------------------
+//-- Entrada: señal de reloj
+//-- Salida: contador de 26 bits
+//-----------------------------------
+module counter(input clk, output [25:0] data);
+wire clk;
     
-    //-- La salida es un registro de 26 bits, inicializado a 0
-    reg [25:0] data = 0;
+//-- La salida es un registro de 26 bits, inicializado a 0
+reg [25:0] data = 0;
     
-    //-- Sensible al flanco de subida
-    always @(posedge clk) begin
-      //-- Incrementar el registro
-      data <= data + 1;
-    end
-    endmodule
+//-- Sensible al flanco de subida
+always @(posedge clk) begin
+  //-- Incrementar el registro
+  data <= data + 1;
+end
+endmodule
+```
 
 El funcionamiento del componente se describe dentro del bloque **always @(posedge clk)**, que indica que todo lo que está dentro de este bloque sólo se evaluará cada vez que llegue un **flanco de subida** en la señal clk. Cada vez que llega uno, se incrementa en una unidad el registro data (y saldrá por la salida del componente).
 
@@ -80,54 +82,56 @@ Hay un generador de reloj que produce una señal cuadrada para incrementar el co
 
 El código en verilog es:
 
-    //-- counter_tb.v
-    module counter_tb();
+```verilog
+//-- counter_tb.v
+module counter_tb();
     
-    //-- Registro para generar la señal de reloj
-    reg clk = 0;
+//-- Registro para generar la señal de reloj
+reg clk = 0;
     
-    //-- Datos de salida del contador
-    wire [26:0] data;
+//-- Datos de salida del contador
+wire [26:0] data;
 
-    //-- Registro para comprobar si el contador cuenta correctamente
-    reg [26:0] counter_check = 1;
+//-- Registro para comprobar si el contador cuenta correctamente
+reg [26:0] counter_check = 1;
     
-    //-- Instanciar el contador
-    counter C1(
-      .clk(clk),
-      .data(data)
-    );
+//-- Instanciar el contador
+counter C1(
+  .clk(clk),
+  .data(data)
+);
     
-    //-- Generador de reloj. Periodo 2 unidades
-    always #1 clk = ~clk;
+//-- Generador de reloj. Periodo 2 unidades
+always #1 clk = ~clk;
     
-    //-- Comprobacion del valor del contador
-    //-- En cada flanco de bajada se comprueba la salida del contador
-    //-- y se incrementa el valor esperado
-    always @(negedge clk) begin
-      if (counter_check != data)
-        $display("-->ERROR!. Esperado: %d. Leido: %d",counter_check, data);
+//-- Comprobacion del valor del contador
+//-- En cada flanco de bajada se comprueba la salida del contador
+//-- y se incrementa el valor esperado
+always @(negedge clk) begin
+  if (counter_check != data)
+    $display("-->ERROR!. Esperado: %d. Leido: %d",counter_check, data);
     
-      counter_check <= counter_check + 1;
-    end
+  counter_check <= counter_check + 1;
+end
     
-    //-- Proceso al inicio
-    initial begin
+//-- Proceso al inicio
+initial begin
     
-      //-- Fichero donde almacenar los resultados
-      $dumpfile("counter_tb.vcd");
-      $dumpvars(0, counter_tb);
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("counter_tb.vcd");
+  $dumpvars(0, counter_tb);
     
-      //-- Comprobación del reset.
-      # 0.5 if (data != 0)
-              $display("ERROR! Contador NO está a 0!");
-            else
-	      $display("Contador inicializado. OK.");
+  //-- Comprobación del reset.
+  # 0.5 if (data != 0)
+          $display("ERROR! Contador NO está a 0!");
+        else
+          $display("Contador inicializado. OK.");
 
-      # 99 $display("FIN de la simulacion");
-      # 100 $finish;
-    end
-    endmodule
+  # 99 $display("FIN de la simulacion");
+  # 100 $finish;
+ end
+ endmodule
+```
 
 Es importante darse cuenta de que todos estos componentes están funcionando en paralelo, todos a la vez (el código NO es secuencial). Por eso, daría igual cambiar el orden de escritura de los elementos.
 
