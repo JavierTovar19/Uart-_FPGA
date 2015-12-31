@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-2.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T25-uart-rx)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T25-uart-rx)
 
 # Introducción
 Diseñaremos una **unidad de recepción serie asíncrona**, que nos permita recibir datos tanto del PC como de otro dispositivo de comunicación serie. Obtendremos el componente final, listo para usar en nuestros diseños
@@ -15,7 +15,7 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-rx**
 
 La unidad tiene 3 entradas y 2 salidas:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-1.png)
 
 * **Entradas**:
     * **clk**: Reloj del sistema (12MHz en la ICEstick)
@@ -30,7 +30,7 @@ La unidad tiene 3 entradas y 2 salidas:
 
 Inicialmente, cuando **la línea está en reposo** y no se ha recibido nada, la señal **rcv está a 0**. Al recibirse el **bit de start** por rx, el receptor comienza a funcionar, leyendo los siguientes bits y almacenándolos internamente en su registro de desplazamiento.  En el **instante t1**, cuando se ha recibido el **bit de stop**, **el dato se captura** y se saca por la **salida data**. En el siguiente ciclo de reloj, **instante t2** (en el cronograma el tiempo se ha exagerado para que se aprecie), aparece un pulso de un ciclo de reloj de anchura (exagerado también en el dibujo) que permita **capturar el dato en un registro externo**.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-3.png)
 
 **Esta interfaz es muy cómoda**. Para usar uart-rx en nuestros diseños, sólo hay que conectar la salida _data_ a la entrada de datos de un **registro** y la señal _rcv_ usarla como **habilitación**. El dato recibido se capturará automáticamente. Esta señal rcv también la podemos usar en los controladores para saber cuándo se ha **recibido un dato nuevo**.
 
@@ -38,7 +38,7 @@ Inicialmente, cuando **la línea está en reposo** y no se ha recibido nada, la 
 
 El diagrama de bloques completo del receptor se muestra en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-2.png)
 
 ### Ruta de datos
 
@@ -52,7 +52,7 @@ Por último tenemos el **controlador**, que genera las microórdenes **baudgen**
 
 El receptor tiene su **propio generador de baudios** que es **diferente al del transmisor**. En el transmisor, al activar su generador con la microorden bauden, emite inmediatamente un pulso. Sin embargo, en el receptor, se emite **en la mitad del periodo**. De esta forma se garantiza que el dato se lee en la mitad del periodo, donde es **mucho más estable** (y la probabilidad de error es mejor)
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-4.png)
 
 En el cronograma se puede ver cómo al recebir el **flanco de bajada** del bit de start **bauden se activa**, para que comience a funcionar el reloj del receptor. Sin embargo, hasta que **no ha alcanzado la mitad del periodo de bit no se pone a 1**. A partir de entonces, los pulsos coinciden con la mitad de los periodos de los bits recibidos 
 
@@ -60,7 +60,7 @@ En el cronograma se puede ver cómo al recebir el **flanco de bajada** del bit d
 
 El controlador está modelado como una máquina de **4 estados**:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/uart-rx-5.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/uart-rx-5.png)
 
 Los estados son:
 
@@ -270,7 +270,7 @@ La **línea rx** se envía directamente al **led verde** para ver la actividad (
 
 El Diagrama de bloques del circuito se muestra a continuación:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/rxleds-1.png)
 
 Simplemente **se instancia la unidad de recepción** y se colocan un **inicializador** para hacer el reset y **un registro** para capturar el dato recibido. Este registro tiene un **enable** para capturar cuando se reciba el dato (indicándose por la señal rcv)
 
@@ -442,7 +442,7 @@ Para realizar la simulación ejecutamos el comando:
 
 Y el resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-gtkwave.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/rxleds-gtkwave.png)
 
 La simulación comienza con la **línea rx en reposo** (a 1) y a continuación se envía el **valor 0x55** en serie al receptor. Cuando se ha terminado se ve en la simulación cómo aparece un **pulso en la señal rcv** y cómo el **valor 0x55** se guarda en el **registro de datos** (_data_). Además, por los leds se sacan los 4 bits menos significativos (que tienen el valor 5 en hexadecimal). 
 
@@ -468,7 +468,7 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Si pulsamos teclas, veremos cómo cambian los leds de la ICEstick. Por ejemplo, si pulsamos el 7, se envía el número 0x37, cuyos 4 bits menos significativos coinciden con el número 7 (el código ASCII se diseño adrede para cumplir con esta propiedad). En binario es 0111.  Veremos cómo se encienden los leds 0, 1 y 3.   
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/rxleds-test.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/rxleds-test.png)
 
 Si ahora pulsamos la tecla 0, todos los leds estarán apagados
 
@@ -484,7 +484,7 @@ Este segundo ejemplo es el **clásico programa de "eco"**: que transmite todo lo
 
 El diagrama de bloques se muestra a continuación:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/eco-1.png)
 
 Sólo se instancian la unidad de transmisión y recepción, y se conectan de manera que lo recibido por una llegue a la otra
 
@@ -634,7 +634,7 @@ Para realizar la simulación ejecutamos el comando:
 
 El resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-gtkwave.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/eco-gtkwave.png)
 
 Se observa cómo en cuanto llega un caracter se vuelve a enviar de vuelta
 
@@ -658,7 +658,7 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Todo lo que escribamos se enviará a la FPGA y se mostrará de vuelta en la pantalla
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T25-uart-rx/images/eco-gtkwave.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T25-uart-rx/images/eco-gtkwave.png)
 
 # Ejercicios propuestos
 TODO
