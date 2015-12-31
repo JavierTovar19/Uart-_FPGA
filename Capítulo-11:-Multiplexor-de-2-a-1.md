@@ -39,7 +39,7 @@ Se utilizan 2 fuentes de datos fijas (están cableadas a valores fijos) que dete
 
 El código verilog es el siguiente:
 
-```
+```verilog
 //-- mux2.v
 module mux2(input wire clk, output reg [3:0] data);
     
