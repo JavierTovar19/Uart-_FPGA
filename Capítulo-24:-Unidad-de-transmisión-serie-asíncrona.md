@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-3.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T24-uart-tx)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T24-uart-tx)
 
 # Introducción
 **Completaremos** la unidad de transmisión serie asíncrona y haremos dos **ejemplos de uso**, que envían la cadena "Hola!...". Uno de manera contínua al activarse la señal de DTR y otro cada segundo
@@ -15,7 +15,7 @@ La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
 
 La unidad de transmisión tiene 4 entradas y 2 salidas:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-2.png)
 
 * **Entradas**:
     * **clk**: Reloj del sistema (12MHz en la ICEstick)
@@ -31,13 +31,13 @@ La unidad de transmisión tiene 4 entradas y 2 salidas:
 
 Para transmitir primero se poner el **carácter de 8 bits en la entrada _data_** y **se activa la señal _start_**. Se comienza a transmitir por _tx_. La **señal _ready_** se pone a **0** para indicar que **la unidad está ocupada**. Cuando el carácter se ha terminado de enviar, **_ready_ se pone de nuevo a 1**.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-4.png)
 
 ## Diagrama de bloques
 
 El diagrama de bloques del transmisor se muestra en la siguiente figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-1.png)
 
 El diseño, como hicimos en el capítulo pasado, está dividido en su **ruta de datos** y su **controlador**. Hay **dos microórdenes** que genera el controlador: _bauden_ y _load_, con las que activa el temporizador de bits y la carga del registro de desplazamiento respectivamente. _Load_ también se usa para poner a cero el contador de bits
 
@@ -216,7 +216,7 @@ El circuito sigue el mismo esquema de ruta de datos / controlador
 
 Los **8 caracteres** de la cadena están cableados a un **multiplexor de 8 a 1**, cuya entrada de selección está controlada por un **contador de 3 bits**, de forma que se vayan sacando los caracteres uno a uno. El caracter a transmitir se registra y se introduce por la entrada data del transmisor.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-3.png)
 
 ### Controlador
 
@@ -231,7 +231,7 @@ Las **microórdenes** que genera son:
 
 Este es el diagrama de estados del autómata:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-5.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-5.png)
 
 Tiene 4 estados:
 * **IDLE**: Estado de reposo. Permanece en este estado indefinidamente, hasta que se activa la orden transmit para empezar a enviar la cadena
@@ -485,7 +485,7 @@ Para simular ejecutamos el comando:
 
 En este pantallazo del gtkwave sólo se muestra la transmisión de la **primera cadena**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad1-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad1-sim.png)
 
 Se observa cómo en cuanto **transmit** se pone a **1**, se **empieza la transmisión** (tx se pone a 0 para tranmitir el bit de start). La señal de **ready** se pone a 1 cada vez que se ha enviado un carácter. Al enviarse el octavo, permanece a 1 (porque transmit está a 0, que indica que no se quiere transmitir más)
 
@@ -508,7 +508,7 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Al apretar la tecla **F7** para **activar el DTR**, se envía la cadena "**Hola!...**" continuamente. Al volver a apretar F7 se para. Observamos que ahora **en ningún momento aparecen caracteres extraños**. Da igual si dejamos pulsado el F7 y la señal de dtr se pone a oscilar
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad1-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad1-gtkterm.png)
 
 En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
@@ -522,7 +522,7 @@ Este circuito de ejemplo es similar al anterior, pero ahora **el envío de la ca
 
 El diagrama de bloques incluye el nuevo **divisorP1** que genera a su salida un pulso de 1 ciclo de anchura cuando transcurre 1 segundo. Se conecta directamente a la señal de transmit, que antes llegaba por el dtr.
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad-6.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-6.png)
 
 ## scicad2.v: Descripción en verilog
 
@@ -772,7 +772,7 @@ Para simular ejecutamos el comando:
 
 En este pantallazo del gtkwave se muestra la transmisión periódica de la cadena:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad2-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad2-gtkterm.png)
 
 Se observa cómo la señal transmit se pone a 1 periódicamente, transmitiéndose la cadena
 
@@ -795,7 +795,7 @@ y lo cargamos en la FPGA con:
 
 Abrimos el **gtkterm** y lo configuramos a **115200 baudios**. Aparecerá la cadena "**Hola!...**" cada segundo
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T24-uart-tx/images/scicad2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad2-sim.png)
 
 En este **vídeo de youtube** se puede ver el ejemplo en acción:
 
