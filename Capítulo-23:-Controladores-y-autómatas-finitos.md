@@ -1,6 +1,6 @@
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-2.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T23-fsmtx)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T23-fsmtx)
 
 # Introducción
 Los **controladores** son la parte de los circuitos digitales que se **encargan de generar todas las señales** (microórdenes) **que gobiernan  el resto de componentes**. Se implementan mediante **autómatas finitos** (también denominadas **máquinas de estados**). En este capítulo diseñaremos un controlador para nuestro **transmisor serie**
@@ -9,7 +9,7 @@ Los **controladores** son la parte de los circuitos digitales que se **encargan 
 
 La **estructura** de los circuitos digitales la podemos descomponer en dos partes:  la **ruta de datos** y el **controlador**
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-3.png)
 
 * **Ruta de datos**: Es la parte que **procesa los datos**. Comprende todas las unidades funciones junto con sus conexiones para realizar ese procesamiento: registros de desplazamiento, unidades aritmético-lógicas, contadores, etc.
 
@@ -23,7 +23,7 @@ Los controladores se implementan mediante [autómatas finitos](https://es.wikipe
 
 Partimos de este **diagrama de 4 estados**, para explicar cómo describirlo en Verilog
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-4.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-4.png)
 
 **Inicialmente** el circuito se encuentra en el **estado 0** y el controlador generará las microórdenes necesarias (no mostradas en el dibujo). Mientras que la **señal a** esté a 0, se mantendrá siempre en ese estado. En cuanto se ponga a 1 se pasará al **estado 1**, donde se generarán otras microórdenes. En este estado, según el valor de la **señal b**, bien se volverá al estado inicial o se avanzará al **estado 2**. El estado 2 **no tiene condiciones**, por lo que **en el siguiente ciclo de reloj** se pasa al **estado 4**. Cuando la **señal c** valga 0, se vuelve al estado inicial.
 
@@ -122,7 +122,7 @@ Haremos un transmisor que envíe el **carácter A** cuando se ponga a 1 la **se�
 
  El esquema es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-1.png)
 
 ### Ruta de datos
 En la **ruta de datos** se encuentra el **registro de desplazamiento** que hace la serialización de los datos, el **generador de baudios**, el inicializador, un **contador de 4 bits** para llevar la cuenta de bits enviados y los **flip-flops** para registrar señales y cumplir con las normas de diseño síncrono
@@ -133,7 +133,7 @@ El contador lleva la cuenta de **cuántos bits se han enviado** y servirá para 
 
 El **diagrama de estados** del controlador es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-2.png)
 
 El transmisor puede estar en **3 estados**:
 
@@ -381,7 +381,7 @@ La simulación se realiza con:
 
 y el resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-sim-1.png)
 
 La línea superior es la de **start**. Observamos cómo esta señal se pone a 0 antes de que termine el primer carácter, pero se  sigue enviando. Al terminar, se vuelve a poner a 1 para enviar el siguiente. Esta vez se deja subido más tiempo, de forma que se envían 2 caracteres más (En total se envían 30 bits, por lo que hay 30 pulsos de la señal _clk_baud_).
 
@@ -407,7 +407,7 @@ y lo cargamos en la FPGA con:
 
 Desde el **gtkterm**, cada vez que le damos al **F7** para modificar la **señal DTR** se empezarán a enviar los **caracteres A** (por defecto a la velocidad de 300 baudios). Si ahora dejamos pulsada F7 o la apretamos aleatoriamente, veremos que **no aparecen caracteres basura**, porque el controlador nos garantiza que siempre se envíe el caracter
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx-gtkterm-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-gtkterm-1.png)
 
 ## fsmtx2.v: Transmisión temporizada
 Este circuito **transmite periódicamente el carácter "A" cada 100ms**. El circuito es similar al del ejemplo anterior pero la señal de start se toma de un divisor de 100ms en vez de la señal externa DTR
@@ -416,7 +416,7 @@ Para que solo se envíe 1 caracter cada vez, el **divisor** está modificado par
 
 El esquema del circuito es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx2-1.png)
 
 y la descripción en Verilog:
 
@@ -588,7 +588,7 @@ endmodule
 ### dividerp1.v: Divisor de pulsos de anchura de 1 ciclo
 El divisor que hemos usado en otros ejemplos está modificado para que la anchura sea de 1 ciclo de reloj:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx2-2.png)
 
 Su descripción en Verilog es:
 
@@ -690,7 +690,7 @@ Lo simulamos ejecutando el comando:
 
 y el resultado en gtkwave es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-sim.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx2-sim.png)
 
 La señal superior se corresponde con tx y la que está debajo a _clk_baud_, que marca el tiempo de envío de los bits. En la simulación se ve cómo se envían 2 caracteres completos y el comienzo del tercero.
 
@@ -715,7 +715,7 @@ y lo cargamos en la FPGA con:
 
 Al abrir el gtkterm a la 115200 baudios veremos cómo van apareciendo los caracteres A periódicamente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T23-fsmtx/images/fsmtx2-gtkterm.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx2-gtkterm.png)
 
 # Ejercicios propuestos
 * Probar los ejemplos a diferentes baudios y cambiando de retardo de envío de caracteres en el segundo
