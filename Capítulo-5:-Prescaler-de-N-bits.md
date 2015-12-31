@@ -1,26 +1,26 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T05-prescaler)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T05-prescaler)
 
 ## Introducción
 
 Los _prescalers_ sirven para **ralentizar las señales de reloj**. Por la entrada entra una señal de reloj de frecuencia f y por la salida se obtiene una de frecuencia menor.  En este tutorial haremos un **prescaler de N bits** para hacer parpadear un led a diferentes frecuencias
 
-![Image header](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-1.png)
+![Image header](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-1.png)
 
 Para un prescaler de N bits, las **fórmulas** que relacionan las frecuencias y periodos de entrada con los de salida son:
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-2.png)
 
 ## Entendiendo el prescaler de 2 bits
 
 Antes de implementar un prescaler de N bits, vamos a entender cómo funciona uno de 2 bits
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-3.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-3.png)
 
 Internamente está constituido por un **contador de 2 bits**, cuyas salidas son d0 y d1. La de mayor peso es la que se saca como señal de salida. Este contador se incrementa en cada flanco de subida de clk, que tiene un periodo T. Si observamos las señales de salida de sus dos bits (d0 y d1):
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-4.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-4.png)
 
 vemos que el periodo de la señal d0 es 2 veces T, y la de la señal d1 es 4 veces T. Es decir, que cada nuevo bit duplica el periodo de la señal anterior. Siguiendo la fórmula general, el periodo de este prescaler de 2 bits es: Tout = 2^2 * T = 4 * T (y gráficamente comprobamos que es así).
 
@@ -92,7 +92,7 @@ Definimos un registro de N bits, que se incrementa en cada flanco de subida de l
 
 La señal de la placa iCEstick de 12 MHZ se introduce a clk_in a través del pin 21 de la fpga. La salida clk_out se envía directamente al led D1 (pin 99), para que parpadee a su misma frecuencia
 
-![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-5.png)
+![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-5.png)
 
 Para sintentizar ejecutamos el comando:
 
@@ -112,7 +112,7 @@ Lo descargamos en la FPGA mediante:
 
 El led D1 empezará a parpadear
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/T05-prescaler-iCEstick-1.png" width="400" align="center">
 
 En este **vídeo de youtube** se puede ver el led parpadeando:
 
@@ -122,7 +122,7 @@ En este **vídeo de youtube** se puede ver el led parpadeando:
 
 En el banco de pruebas colocamos el **prescaler de N bits** (por defecto con N = 2), un **generador de reloj** y un **bloque de comprobación** que se ejecuta con cada flanco de bajada del reloj. Este bloque tiene un registro interno que se incrementa y su bit más significativo se comprueba con clk_out, para asegurarse que está funcionando correctamente.  Hay un cuarto bloque que inicializa todo y espera a que se termine la simulación
 
-![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/prescaler-6.png)
+![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-6.png)
 
 El código del banco de pruebas es el siguiente:
 
@@ -184,7 +184,7 @@ Para simular ejecutamos:
 
     $ make sim
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-sim-N-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/T05-prescaler-sim-N-2.png)
 
 En esta simulación del prescaler de 2 bits vemos cómo efectivamente la señal de salida tiene un periodo de 4 veces el de la señal de entrada.
 
@@ -194,7 +194,7 @@ Repetimos la simulación pero ahora estableciendo un prescaler de 3 bits, cambia
 
 El resultado es:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T05-prescaler/images/T05-prescaler-sim-N-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/T05-prescaler-sim-N-3.png)
 
 Ahora la señal de salida tiene  un periodo 8 veces mayor que el de la entrada
 
