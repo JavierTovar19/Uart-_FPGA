@@ -15,18 +15,20 @@ Nuestro componente lo llamaremos INV. Su entrada es A y su salida B
 
 La descripción es muy parecida al componente hola mundo setbit.v, pero ahora tenemos una entrada y una salida:
 
-    //-- inv.v
-    //-- El componente tiene una entrada (A) y una salida (B)
-    module inv(input A, output B);
+```verilog
+//-- inv.v
+//-- El componente tiene una entrada (A) y una salida (B)
+module inv(input A, output B);
     
-    //-- Tanto la entrada como la salida son "cables"
-    wire A;
-    wire B;
+//-- Tanto la entrada como la salida son "cables"
+wire A;
+wire B;
     
-      //-- Asignar a la salida la entrada negada
-      assign B = ~A;
+  //-- Asignar a la salida la entrada negada
+  assign B = ~A;
     
-    endmodule
+endmodule
+```
 
 A la salida B le asignamos la entrada A negada. Usamos el **operador ~** delante de A para negar (mismo operador que en el lenguaje C).
 
@@ -81,46 +83,48 @@ Por la entrada introduciremos diferentes valores y comprobaremos qué se obtiene
 
  En el banco de pruebas se instancia el inversor, conectando su entrada A al registro din y su salida B al cable dout. Desde el bucle principal se asignan los valores a din y se comprueba el valor de dout. 
 
-    //-- inv_tb.v
-    module inv_tb();
+```verilog
+//-- inv_tb.v
+module inv_tb();
     
-    //-- Registro de 1 bit conectado a la entrada del inversor
-    reg din;
+//-- Registro de 1 bit conectado a la entrada del inversor
+reg din;
     
-    //-- Cable conectado a la salida del inversor
-    wire dout;
+//-- Cable conectado a la salida del inversor
+wire dout;
     
-    //-- Instaciar el inversor, conectado din a la entrada A, y dout a la salida B
-    inv NOT1 (
-     .A (din),
-     .B (dout)
-    );
+//-- Instaciar el inversor, conectado din a la entrada A, y dout a la salida B
+inv NOT1 (
+ .A (din),
+ .B (dout)
+);
     
-    //-- Comenzamos las pruebas
-    initial begin
+//-- Comenzamos las pruebas
+initial begin
     
-      //-- Fichero donde almacenar los resultados
-      $dumpfile("inv_tb.vcd");
-      $dumpvars(0, inv_tb);
+  //-- Fichero donde almacenar los resultados
+  $dumpfile("inv_tb.vcd");
+  $dumpvars(0, inv_tb);
     
-      //-- Ponemos la entrada del inversor a 0
-      #5 din = 0;
+  //-- Ponemos la entrada del inversor a 0
+  #5 din = 0;
     
-      //-- Tras 5 unidades de tiempo comprobamos la salida
-      # 5 if (dout != 1)
-            $display("---->¡ERROR! Esperado: 1. Leido: %d", dout);
+  //-- Tras 5 unidades de tiempo comprobamos la salida
+  # 5 if (dout != 1)
+        $display("---->¡ERROR! Esperado: 1. Leido: %d", dout);
     
-      //-- Tras otras 5 unidades ponemos un 1 en la entrada
-      # 5 din = 1;
+  //-- Tras otras 5 unidades ponemos un 1 en la entrada
+  # 5 din = 1;
      
-      //-- Tras 5 unidades comprobamos si hay un 0 en la entrada
-      # 5 if (dout != 0)
-            $display("---> ¡ERROR! Esperado: 0. Leido: %d", dout);
+  //-- Tras 5 unidades comprobamos si hay un 0 en la entrada
+  # 5 if (dout != 0)
+        $display("---> ¡ERROR! Esperado: 0. Leido: %d", dout);
     
-      # 5 $display("FIN de la simulacion");
-      # 10 $finish;
-    end
-    endmodule
+  # 5 $display("FIN de la simulacion");
+  # 10 $finish;
+end
+endmodule
+```
 
 Realizamos la simulación, ejecutando el comando make sim
 
