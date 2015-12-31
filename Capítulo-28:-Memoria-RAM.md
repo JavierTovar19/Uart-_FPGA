@@ -1,6 +1,6 @@
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T28-ram)
+[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T28-ram)
 
 # Introducción
 Las **memorias RAM** nos permiten almacenar datos y recuperarlos durante el funcionamiento del circuito. Son memorias donde podemos leer y escribir
@@ -15,7 +15,7 @@ La memoria RAM genérica la denominaremos **genram**
 
 Los puertos y parámetros se muestran esta figura:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/genram-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/genram-1.png)
 
 Los **parámetros** son los mismos que en la memoria ROM:
 * **DW** (Data width): Anchura de los datos (en bits)
@@ -32,7 +32,7 @@ Los **puertos** son:
 
 En este cronograma se muestran **dos ciclos de lectura** y **uno de escritura** intercalado:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/genram-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/genram-2.png)
 
 **Ciclo de lectura**:
 * Se coloca la dirección de lectura en **addr**
@@ -99,7 +99,7 @@ Para probar la memoria ram, implementaremos un **buffer de 16 bytes**. Se comien
 
 La arquitectura del circuito es la clásica: una ruta de datos y un controlador:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-1.png)
 
 ### Ruta de datos
 En la ruta de datos se instancian la unidad de transmisión de serie (**uart_tx.v**), la de recepción (**uart_rx.v**) y la memoria ram genérica (**genram.v**). El resto de componentes son: un **contador** para direccionar la memoria, un **comparador** para detectar cuando hay overflow en el **contador** (paso de 0xF a 0) y un inicializador
@@ -118,7 +118,7 @@ Las **microórdenes** que genera el controlador son:
 
 El diagrama de estados del autómata es el siguiente:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-2.png)
 
 Comienza en el estado **WAIT_TX**. Se queda esperando hasta que el transmisor esté listo para transmitir (cuando ready está a 1). Se pasa al estado **READ_TX** donde se lee el dato de la memoria y se inicia la transmisión por el puerto serie. Se habilita el contador para que se incremente la dirección. Se vuelve al estado WAIT_TX hasta que se pueda enviar el siguiente.
 
@@ -440,15 +440,15 @@ La simulación se realiza con:
 
 Veremos los resultados de la simulación por partes. Primero el volcado inicial. Se observa que se transmiten todos los caracteres de la cadena: "ola k ase.......", que salen por la línea **data_out** de la memoria
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-sim-1.png)
 
 A continuación el banco de pruebas envía la cadela "HOLA QUE HACES-." y se recibe por **data_in** para escribirlo en la memoria ram
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-sim-2.png)
 
 y por último esta cadena recibida y almacenada en memoria se vuelca de nuevo por el puerto serie:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-sim-3.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-sim-3.png)
 
 ## Síntesis y pruebas
 
@@ -470,7 +470,7 @@ El diseño se carga con:
 
 Si abrimos primero el gtkterm y luego cargamos el bitstream, lo primero que veremos es la cadena volcada: "ola k ase......". A continuación escribirmos una cadena de 16 caracteres. Al teclear el último carácter se vuelca la cadena completa:
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T28-ram/images/buffer-test-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T28-ram/images/buffer-test-1.png)
 
 El resultado se puede ver en este vídeo de youtube:
 
