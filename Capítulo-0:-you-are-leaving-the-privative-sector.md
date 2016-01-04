@@ -93,6 +93,18 @@ Para diseñar los circuitos es fundamental disponer de un simulador de verilog. 
 
 ## Ubuntu 14.04, 15.10
 
+### Instalación automática, con instalador
+
+David Cuartielles ha creado [este instalador](https://github.com/dcuartielles/open-fpga-install) que realiza todo el proceso automáticamente: se baja todas las herramientas del github, las compila y las instalada, asi como todas las dependencias necesarias. La forma de usarlo es:
+
+```bash
+git clone https://github.com/dcuartielles/open-fpga-install.git
+cd open-fpga-install
+sudo bash install.sh
+```
+
+### Instalación Manual
+
 Instalación de **dependencias**:
 ```
 sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git mercurial graphviz  xdot pkg-config python python3 libftdi-dev
