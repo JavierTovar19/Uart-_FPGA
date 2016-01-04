@@ -64,7 +64,13 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 
 # NOTICIAS
 
+* **2016-01-02**: David Cuartielles [crea un instalador](https://github.com/dcuartielles/open-fpga-install) para facilitar la instalación de todas las herramientas libres para trabajar con FPGA (en sistemas Ubuntu / Debian)
+
 * **2015-12-31**: [Pull request de David Cuartielles](https://github.com/Obijuan/open-fpga-verilog-tutorial/pull/3) al repo del tutorial. Añadido un nuevo makefile para soportar [la tarjeta ICE40HX8K board de lattice](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/iCE40HX8KBreakoutBoard.aspx). 
+
+* **2015-12-30**: Recibimos dos [tarjetas ICE40HX8K board de lattice](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/iCE40HX8KBreakoutBoard.aspx), compradas en [MOUSER](http://www.mouser.es/ProductDetail/Lattice/ICE40HX8K-B-EVN/?qs=%2fha2pyFadugG1hxFZcqbAJG8jgdGBbaecmBJrQx0SABRTeEI3HN%252bIw%3d%3d). Tienen la FPGA HX8K de lattice, con 8 veces el tamaño de la HX1K de la icestick. En esta ya se puede sintetizar un procesador risc-v de 32 bits (no probado todavía)
+
+* **2015-12-27**: Clifford da la charla ["A Free and Open Source Verilog-to-Bitstream Flow for iCE40 FPGAs"](https://media.ccc.de/v/32c3-7139-a_free_and_open_source_verilog-to-bitstream_flow_for_ice40_fpgas#video) en la edición 32 del Chaos Communication Congress, en Hamburgo. [Todo el material está publicado en su web](http://www.clifford.at/papers/2015/icestorm-flow/).  En la demo usan una FPGA HX8K en la [placa icoboard](http://icoboard.org/) con un procesador risc-v de 32 bits sintetizado usando herramientas libres. Víctor Díaz que está allí conoce a Clifford, y éste le entrega una icoboard para dársela a obijuan :-)
 
 * **2015-12-08**: Encontrada **[la solución a un Bug en iceprog](https://github.com/cliffordwolf/icestorm/issues/16)**: Ahora los tiempos de descarga en la icestick son siempre menores de 3 segundos!!!  Clifford lo integra el repo oficial casi al instante. El ciclo de desarrollo es ahora mucho más rápido
 
