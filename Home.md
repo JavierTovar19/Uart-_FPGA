@@ -46,7 +46,9 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **Carlos García Saura***, por las instrucciones de instalación de las herramientas icestorm en Fedora. ¡Muchas gracias!
 
-* A **Javibc (J Bc)**, por las instrucciones para relanzar el udev al configurar la icestick ¡Gracias!
+* A **Javibc (J Bc)**, por las instrucciones para relanzar el udev al configurar la icestick ¡Muchas Gracias!
+
+* A **David Cuartielles** por el instalador de las herramientas libres y los ejemplos del makefile para la placa con la FPGA ICE40HX8K. ¡Muchas gracias!
 
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
