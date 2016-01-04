@@ -217,7 +217,9 @@ La otra forma es **configurar el sistema [udev](https://es.wikipedia.org/wiki/Ud
 
 * Crear el archivo **/etc/udev/rules.d/80-icestick.rules** con el siguiente contenido
 ```
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", OWNER="user", GROUP="dialout", MODE="0777"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0403",
+ ATTRS{idProduct}=="6010", OWNER="user", GROUP="dialout",
+ MODE="0777"
 ```
 * Ejecutar este comando para relanzar el administrador de [udev](https://es.wikipedia.org/wiki/Udev) y cargue la nueva regla:
 
