@@ -64,9 +64,13 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 
 # NOTICIAS
 
+* **2015-12-31**: [Pull request de David Cuartielles](https://github.com/Obijuan/open-fpga-verilog-tutorial/pull/3) al repo del tutorial. Añadido un nuevo makefile para soportar [la tarjeta ICE40HX8K board de lattice](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/iCE40HX8KBreakoutBoard.aspx). 
+
 * **2015-12-08**: Encontrada **[la solución a un Bug en iceprog](https://github.com/cliffordwolf/icestorm/issues/16)**: Ahora los tiempos de descarga en la icestick son siempre menores de 3 segundos!!!  Clifford lo integra el repo oficial casi al instante. El ciclo de desarrollo es ahora mucho más rápido
 
 * **2015-12-04**: Se crea [el grupo de FPGA-WARS](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre). Se [anuncia oficialmente en clonewars](https://groups.google.com/d/msg/asrob-uc3m-impresoras-3d/Lv6Tjb_3js8/_C4ZTISADAAJ)
+
+* **2015-12-01**: Cena de David Cuartielles de Arduino.cc y Rodrigo del Prado y Juan González de BQ, en Madrid. Le comentamos a David el nuevo ecosistema de herramientas libres para FPGA y la posibilidad de colaborar juntos
 
 * **2015-11-26**: Primera versión del procesador educacional **SIMPLEZ** sintetizado en la icestick, ejecutando un programa que muestra una secuencia por los leds: [Repo](https://github.com/Obijuan/simplez-fpga)
 
