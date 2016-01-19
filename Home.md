@@ -83,6 +83,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-01-12**: Jesús Arroyo replica los [ejemplos de clifford del 32CCC](http://www.clifford.at/papers/2015/icestorm-flow/) en nuestra icoboard, y crea ejemplos nuevos que sube a [este repositorio en github](https://github.com/Jesus89/picorv32-c-examples)
+
 * **2016-01-11**: Recibimos la [tarjeta icoboard](http://icoboard.org/) que nos donan en el 32CCC, al que asistió Víctor Díaz. ¡Muchas gracias! :-)
 
 * **2016-01-02**: David Cuartielles [crea un instalador](https://github.com/dcuartielles/open-fpga-install) para facilitar la instalación de todas las herramientas libres para trabajar con FPGA (en sistemas Ubuntu / Debian)
