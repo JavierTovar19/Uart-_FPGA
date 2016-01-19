@@ -251,31 +251,31 @@ En ubuntu es necesario reiniciar la máquina para que funcione correctamente
 
 Para realizar estos tutoriales, y poder probar todos los ejemplos, hay que seguir los siguientes pasos:
 
-1. Clona el repo de los tutoriales, para tener en tu ordenador todos los ficheros:
-
-```
-$ git clone https://github.com/Obijuan/open-fpga-verilog-tutorial.git
-```
-
-2. Entra en el directorio de trabajo del tutorial que toca. Por ejemplo, para el 1 sería:
-
-```
+1. **Clona el repo de los tutoriales**, para tener en tu ordenador todos los ficheros:
+    
+    ```
+    $ git clone https://github.com/Obijuan/open-fpga-verilog-tutorial.git
+    ```
+    
+2. **Entra en el directorio de trabajo** del tutorial que toca. Por ejemplo, para el 1 sería:
+    
+    ```
 $ cd open-fpga-verilog-tutorial/tutorial/ICESTICK/T01-setbit/
-```
+    ```
+    
+3. **Simula y sintetiza**
 
-3. Simula y sintetiza
-
-En cada tutorial se irán indicando los comandos a ejecutar. En el caso del primero, para realizar la simulación hay que ejecutar:
+En cada tutorial se irán indicando los comandos a ejecutar. En el caso del primero, para **realizar la simulación** hay que ejecutar:
 
 ```
 make sim
 ```
-* Para sintetizar:
+* Para **sintetizar**:
 ```
 make sint
 ```
 
-y finalmente para configurar la FPGA:
+y finalmente para **configurar la FPGA**:
 
 ```
 $ iceprog setbit.bin
