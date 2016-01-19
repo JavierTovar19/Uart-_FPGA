@@ -83,6 +83,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-01-11**: Recibimos la [tarjeta icoboard](http://icoboard.org/) que nos donan en el 32CCC, al que asistió Víctor Díaz. ¡Muchas gracias! :-)
+
 * **2016-01-02**: David Cuartielles [crea un instalador](https://github.com/dcuartielles/open-fpga-install) para facilitar la instalación de todas las herramientas libres para trabajar con FPGA (en sistemas Ubuntu / Debian)
 
 * **2015-12-31**: [Pull request de David Cuartielles](https://github.com/Obijuan/open-fpga-verilog-tutorial/pull/3) al repo del tutorial. Añadido un nuevo makefile para soportar [la tarjeta ICE40HX8K board de lattice](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/iCE40HX8KBreakoutBoard.aspx). 
