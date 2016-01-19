@@ -247,7 +247,7 @@ $ iceprog bitstream.bin
 
 En ubuntu es necesario reiniciar la máquina para que funcione correctamente
 
-## Como hacer los tutoriales
+## Cómo hacer los tutoriales
 
 Para realizar estos tutoriales, y poder probar todos los ejemplos, hay que seguir los siguientes pasos:
 
