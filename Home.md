@@ -67,6 +67,7 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
 
 * **He hecho el tutorial Hola mundo y la diferencia es que al sintetizar el archivo no me genera un .bin si no un .blif**
+
 El fichero .blif es lo que se genera en la síntesis, después de ejecutar el programa yosys. Sin embargo, para obtener el .bin todavía tienes que ejecutar más comandos. Todos los comandos a ejecutar para obtener el .bin a partir del .v en el primero tutorial son:
 ```
 $ yosys -p "synth_ice40 -blif setbit.blif" setbit.v
