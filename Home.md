@@ -50,6 +50,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **David Cuartielles** por el instalador de las herramientas libres y los ejemplos del makefile para la placa con la FPGA ICE40HX8K. ¡Muchas gracias!
 
+* A **Fernando Barcala** (Barkalez) por su feedback sobre los problemas haciendo el tutorial 1. Con ello se ha mejorado la documentación. ¡Gracias!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
  Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
@@ -63,6 +65,21 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 * **¿Dónde puedo comprar la tarjeta IceStick**
 -[Icestick en Mouser España ](http://www.mouser.es/new/Lattice-Semiconductor/lattice-icestick-kit/)
 -[Icestick en LatticeUSA](http://www.latticesemi.com/icestick)
+
+* **He hecho el tutorial Hola mundo y la diferencia es que al sintetizar el archivo no me genera un .bin si no un .blif**
+El fichero .blif es lo que se genera en la síntesis, después de ejecutar el programa yosys. Sin embargo, para obtener el .bin todavía tienes que ejecutar más comandos. Todos los comandos a ejecutar para obtener el .bin a partir del .v en el primero tutorial son:
+```
+$ yosys -p "synth_ice40 -blif setbit.blif" setbit.v
+$ arachne-pnr -d 1k -p setbit.pcf setbit.blif -o setbit.txt
+$ icepack setbit.txt setbit.bin
+```
+Para hacerlo más fácil, lo mejor es ejecutar el comando make sint. Para ello tienes que clonar el repositorio del tutorial de github, entrar en el directorio de trabajo y ejecutar make sint:
+
+```
+$ git clone https://github.com/Obijuan/open-fpga-verilog-tutorial.git
+$ cd open-fpga-verilog-tutorial/tutorial/ICESTICK/T01-setbit/
+$ make sim
+```
 
 # NOTICIAS
 
