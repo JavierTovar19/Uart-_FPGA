@@ -2,6 +2,22 @@
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T01-setbit)
 
+## Antes de empezar
+
+**No olvides clonar los tutoriales** en tu ordenador, para tener acceso a todos los programas de ejemplo:
+
+```
+https://github.com/Obijuan/open-fpga-verilog-tutorial.git
+```
+
+**Entra en el directorio de trabajo** del tutorial 1:
+
+```
+cd open-fpga-verilog-tutorial/tutorial/ICESTICK/T01-setbit/
+```
+
+¡Estás listo para hacer el tutorial!
+
 ## Introducción
 
 El **circuito digital** más sencillo es simplemente **un cable** que está conectado a un **nivel lógico** conocido, por ejemplo 1. De esta forma al conectar un led se iluminará (1) o se apagará (0)
