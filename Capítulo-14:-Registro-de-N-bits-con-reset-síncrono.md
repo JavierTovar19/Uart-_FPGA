@@ -182,6 +182,7 @@ initial begin
 end
     
 endmodule
+```
 
 La simulación se realiza con:
 
