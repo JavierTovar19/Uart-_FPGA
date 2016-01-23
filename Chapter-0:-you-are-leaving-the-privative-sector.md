@@ -1,4 +1,4 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T00-Intro/images/checkpoint-charlie.png" 
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T00-Intro/images/checkpoint-charlie.png" 
 width="400" align="center">
 
 _You are leaving the privative sector_ ... and you're entering the FREE sector! Welcome! From now on, **we'll only use tools that belong to human heritage.**
