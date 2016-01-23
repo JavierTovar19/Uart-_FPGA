@@ -6,7 +6,7 @@
 
 The simplest digital circuit is just a cable connected to a "high" logic level. "1", for example. This way, if you connect a LED to it will light on (1) or turn off (0).
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-1.png)
 
 The output of this circuit has been called "A".
 
@@ -38,7 +38,7 @@ In this example, it only has one line, linking the "A" label to pin 99 of the FP
 
 Figure 2 graphically displays this idea. We are describing hardware, so making sketches and drawings is a good idea in order to understand our design better: 
 
-![Imagen 2](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T01-setbit/images/setbit-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-2.png)
 
 To make the complete synthesis of the circuit, we got to the  _tutorial/T01-setbit_ folder, and we execute the **make sint** from the console:
 
@@ -96,7 +96,7 @@ The process last about 30 seconds (With the current iceprog version. This time w
 
 LED D1 on the iCEStick will turn on:
 
-<img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
 **Note:** The other LEDs may flicker. That is normal. It is because they have no signal assigned, and internally they are unconnected.
 
@@ -116,7 +116,7 @@ In Verilog (and the rest of HDL languages) it's the same idea. **You can't simul
 
 How do we test the setbit component? It's a chip that has only one output pin, always high. In real life we would plug it onto a breadboard, we power it up, we would connect a cable to the output pin, and we would check it's high in voltage with a multimeter. We will do exactly the same, but with Verilog. We would get something like this:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/setbit-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-3.png)
 
 The file is called setbit_tb.v. We always use the "_tb" suffix to indicate that it the file is a testbench and not a real piece of hardware. This testbench is NOT SYNTHESIZABLE, is a code FOR SIMULATION PURPOSES ONLY. That's why this time we can think of Verilog as a programming language, we are programming something that will "happen" to our circuit.
 
@@ -165,7 +165,7 @@ We use icarus verilog y GTKwave tools for simulation. We execute the command:
 
 and a window will pop up with the results of the simulation:
 
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
 
 At first glance, we can see it behaves as intended: the signal in A is always a "1". We can ignore the time units for now, they are seconds by default. After 20 units, simulation ends. 
 
