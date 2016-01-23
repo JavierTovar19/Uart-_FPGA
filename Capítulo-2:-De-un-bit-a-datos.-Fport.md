@@ -1,4 +1,4 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T02-Fport)
 
@@ -130,6 +130,5 @@ Comprobamos que la salida siempre está al valor 1010
 
 ## Conclusiones
 TODO
-
 
 
