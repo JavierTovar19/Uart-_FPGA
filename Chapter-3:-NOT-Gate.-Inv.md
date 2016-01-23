@@ -1,4 +1,4 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/T03-inv-iCEstick-1.png" width="400" align="center">
+<img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/T03-inv-iCEstick-1.png" width="400" align="center">
 
 [Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T03-inv)
 
@@ -7,7 +7,7 @@ Let's model our first **combinational circuit**: an **inverter** (NOT Gate).
 
 Combinational circuits make operations with the input bits, and then, they output the result. **They don't store bits, they just modify them**. The simplest of them all is the NOT gate, that has an input bit, and an output bit. The output is always the inverse of the input. "0" turns into "1", and "1" turns into "0".
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-1.png)
+![Imagen 1](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-1.png)
 
 We'll name our component INV. The input will be A, and the output will be B.
 
@@ -36,7 +36,7 @@ Because it is a combinational circuit, and does NOT store information, **A and B
 
 We'll connect the output of the gate to the D1 LED on the iCEstick (pin 99). The input will go to the 44 pin, that can be reached through the expansion port of the iCEstick.
 
-![Imagen 2](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T03-inv/images/inv-2.png)
+![Imagen 2](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-2.png)
 
 We want to enter a "0" or a "1" to the 44 pin from outside, in order to turn on or off the LED. To achieve this we will physically wire that pin to the Vcc pin (3.3v) or to ground (0v, GND).
 
@@ -59,13 +59,13 @@ This command uploads the resulting file into the FPGA:
 ## Testing the new inversion gate
 The iCEstick board has an expansion port connected to some of the pins of the FPGA. It's useful to solder a female pin strip to have easy access to them. You can see the strip soldered to the lower pins. 
 
-![Imagen 3](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T03-inv/images/inv-4.png)
+![Imagen 3](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-4.png)
 
 The lower left pin is the 44 pin of the FPGA, and it's the one we´ll use as an input of the inverter. The lower right pins are 3.3v and GND, the first will be used to enter a "1", and the latter will be used to enter a "0".
 
 Let's connect two pieces of cable, one into the 3.3v pin and the other to the GND pin.
 
-<img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
+<img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
 
 When the cable in the GND pin is connected to the 44 pin, the LED will turn on. When we connect the cable in the 3.3v, the LED tunrs off. When there is NOTHING connected to the 44 pin, the result is quite random: It can be on, it can be off, or it can be flickering between the two states. This is one of the basic rules of digital design: "Never leave an input wire unconnected. Always 1 or 0".
 
@@ -75,7 +75,7 @@ In the testbench, we must instantiate the inverter, and connect the **dout cable
 
 We'll input various values, and check what comes out from the output. To do so, we connect the **register** named **din**.
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T03-inv/images/inv-3.png)
+![Imagen 3](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-3.png)
 
 Unlike cables, **registers** work as a variable, to which we can assign different values. First we'll enter a "0", and then check that the output is a "1" (the negative). Then we do the other case: we enter a "1" and the check if we get a "0".
 
@@ -128,7 +128,7 @@ We make the simulation, executing the make sim command:
 
 In the simulation we can see that **dout** is always the inverse of **din**.
 
-![Imagen 4](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T03-inv/images/inv-5.png)
+![Imagen 4](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-5.png)
 
 We can see that, in the first 5 time units, din and dout have the X value (red). It means that it's value is undefined. That happens because we didn't initialize din with any value until the 5th time unit. Before that, it had an undetermined value (X) and therefore the output is undetermined too. After the 5th time unit, din is 0, and hence dout is 1. 
 
@@ -137,6 +137,5 @@ We can see that, in the first 5 time units, din and dout have the X value (red).
 
 ## Conclusions
 TODO
-
 
 
