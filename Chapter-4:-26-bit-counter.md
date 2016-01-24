@@ -78,7 +78,7 @@ The testbench is made of 4 (parallel) elements, connected by wires. The diagram 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-3.png)
 
-There's a clock generator that produces a square signal, to increase the counter. The counter's output is checked by two different components: One makes the initial check, verifying that it starts at 0. The second has an internal variable that increments with every rising edge of the clock, and it's output is checked against the counter's output, to verify that indeed it is counting. Because it's a 26-bit counter, we won't check through all the 67108864 values, we will stop the simulation after 100 time units.
+There's a clock generator that produces a square signal, to increase the counter. The counter's output is checked by two different components: One makes the initial check, verifying that it starts at 0. The second has an internal variable that increases with every rising edge of the clock, and it's output is checked against the counter's output, to verify that indeed it is counting. Because it's a 26-bit counter, we won't check through all the 67108864 values, we will stop the simulation after 100 time units.
 
 The verilog code would be:
 
