@@ -1,4 +1,4 @@
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-1.png" width="400" align="center">
 
 [Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T02-Fport)
 
@@ -6,7 +6,7 @@
 
 Now, instead of just one bit we will output four of them, and display them using the LEDs. It's a fixed value, wired "within the hardware". If we wanted to display any other number on the LEDs, we will need to synthesize again.
 
-![Pic 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/T02-Fport/images/Fport-1.png)
+![Pic 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-1.png)
 
 We will name this component "Fport" (Fixed port). It has a 4-bit output bus, labeled as "data", wired to the binary value "1010".
 
@@ -31,7 +31,7 @@ The output is now a **4 cable array**. You can express that by writing [3:0] bef
 
 Each one of the output bits 4 will be assigned to the pins connected to each one of the 4 leds of the FPGA:
 
-![Pic 2](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T02-Fport/images/Fport-2.png)
+![Pic 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-2.png)
 
 This is specified in the Fport.pcf file:
 
@@ -62,13 +62,13 @@ Now we upload the Fport.bin file into the FPGA:
 
 Upon finishing, two LEDs will be on, and two LEDs will be off, given that we are sending the value "1010":
 
-<img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
+<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-iCEstick-2.png" width="400" align="center">
 
 ## Simulation
 
 This testbench is similar to the one in the last chapter. But now, instead of checking just one bit, we check the whole 4-bit bus. If it's not exacly as expected, it throws an error. The diagram is the following:
 
-![Imagen 3](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T02-Fport/images/Fport-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-3.png)
 
 The testbench (Fport_tb.v) has this three elements:
 
@@ -117,7 +117,7 @@ To make the simulation we execute **make sim**:
 
 This is the result displayed with gtkwave:
 
-![Imagen 4](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/T02-Fport/images/Fport-sim-1.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-sim-1.png)
 
 We can check that the output is always "1010".
 
@@ -127,5 +127,4 @@ We can check that the output is always "1010".
 
 ## Conclusions
 TODO
-
 
