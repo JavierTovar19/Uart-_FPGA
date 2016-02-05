@@ -83,7 +83,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016-01-31**: Primera maqueta de platfomrio + FPGA, usado desde Atom :-) ([VIDEO](https://www.youtube.com/watch?v=a_m_Nx66eOs&index=14&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
+* **2016-01-31**: Primera maqueta de platfomrio + FPGA, usado desde Atom :-) ([VIDEO](https://www.youtube.com/watch?v=a_m_Nx66eOs&index=14&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)). Desarrollar hardware ahora es muchísimo más fácil. Ya no hace falta usar la consola y make
 
 * **2016-01-28**: Se comienza a dar soporte a las FPGA ice40 de lattice en **Platformio**: [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home)
 
