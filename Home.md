@@ -83,6 +83,10 @@ $ make sim
 
 # NOTICIAS
 
+* ** Platformio+FPGA
+
+* **2016-01-24**: Simplez documentando y con mejoras: ([VIDEO](https://www.youtube.com/watch?v=_3sWETbaDig))
+
 * **2016-01-12**: Jesús Arroyo replica los [ejemplos de clifford del 32CCC](http://www.clifford.at/papers/2015/icestorm-flow/) en nuestra icoboard, y crea ejemplos nuevos que sube a [este repositorio en github](https://github.com/Jesus89/picorv32-c-examples)
 
 * **2016-01-11**: Recibimos la [tarjeta icoboard](http://icoboard.org/) que nos donan en el 32CCC, al que asistió Víctor Díaz. ¡Muchas gracias! :-)
