@@ -83,7 +83,9 @@ $ make sim
 
 # NOTICIAS
 
-* **2016-02-02**: Primera prueba del [icestudio](https://github.com/Jesus89/icestudio): Bloques lógicos gráficos convertidos a json, de ahí a verilog, y sintetizados y cargados en la FPGA, a través de platformio: ([VIDEO](https://www.youtube.com/watch?v=lIjSNTmHkQU))
+* **2016-02-04**: Más mejoras en el [icestudio](https://github.com/Jesus89/icestudio), por **Jesús Arroyo**: ([VIDEO](https://www.youtube.com/watch?v=RLr2cC8dgOg)) ([VIDEO](https://www.youtube.com/watch?v=pG1DsF9MIj0))
+
+* **2016-02-02**: Primera prueba del [icestudio](https://github.com/Jesus89/icestudio), diseñado por **Jesús Arroyo**: Bloques lógicos gráficos convertidos a json, de ahí a verilog, y sintetizados y cargados en la FPGA, a través de platformio: ([VIDEO](https://www.youtube.com/watch?v=lIjSNTmHkQU))
 
 * **2016-01-31**: Primera maqueta de **platformio + FPGA**, usado desde Atom ([VIDEO](https://www.youtube.com/watch?v=a_m_Nx66eOs&index=14&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)). Desarrollar hardware ahora es muchísimo más fácil. Ya no hace falta usar la consola y make ;-)
 
