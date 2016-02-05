@@ -83,7 +83,7 @@ $ make sim
 
 # NOTICIAS
 
-* ** Platformio+FPGA
+* **2016-01-28**: Se comienza a dar soporte a las FPGA ice40 de lattice en **Platformio**: [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home)
 
 * **2016-01-24**: Simplez documentando y con mejoras: ([VIDEO](https://www.youtube.com/watch?v=_3sWETbaDig))
 
