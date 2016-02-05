@@ -83,6 +83,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-02-02**: Primera prueba del [icestudio](https://github.com/Jesus89/icestudio): Bloques lógicos gráficos convertidos a json, de ahí a verilog, y sintetizados y cargados en la FPGA, a través de platformio: ([VIDEO](https://www.youtube.com/watch?v=lIjSNTmHkQU))
+
 * **2016-01-31**: Primera maqueta de **platformio + FPGA**, usado desde Atom ([VIDEO](https://www.youtube.com/watch?v=a_m_Nx66eOs&index=14&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)). Desarrollar hardware ahora es muchísimo más fácil. Ya no hace falta usar la consola y make ;-)
 
 * **2016-01-28**: Se comienza a dar soporte a las FPGA ice40 de lattice en **Platformio**: [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home)
