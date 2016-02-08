@@ -83,6 +83,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-02-08**: Alberto Piganti (pighixxx) ha hecho el [dibujo del pinout de la icestick](http://www.pighixxx.com/test/2016/02/icestick-pinout/)
+
 * **2016-02-04**: Más mejoras en el [icestudio](https://github.com/Jesus89/icestudio), por **Jesús Arroyo**: ([VIDEO](https://www.youtube.com/watch?v=RLr2cC8dgOg)) ([VIDEO](https://www.youtube.com/watch?v=pG1DsF9MIj0))
 
 * **2016-02-02**: Primera prueba del [icestudio](https://github.com/Jesus89/icestudio), diseñado por **Jesús Arroyo**: Bloques lógicos gráficos convertidos a json, de ahí a verilog, y sintetizados y cargados en la FPGA, a través de platformio: ([VIDEO](https://www.youtube.com/watch?v=lIjSNTmHkQU))
