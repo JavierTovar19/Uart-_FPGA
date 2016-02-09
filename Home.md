@@ -142,4 +142,4 @@ $ make sim
 
 * **2015-05-27**: El [proyecto icestorm](http://www.clifford.at/icestorm/) alcanza el primer gran hito: ya se tiene un flujo de trabajo que funciona completamente usando sólo herramientas libres
 
-[next](Cap%C3%ADtulo-1%3A-%C2%A1Hola-mundo%21-Setbit)
+[next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
