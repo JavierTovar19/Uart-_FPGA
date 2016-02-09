@@ -145,7 +145,9 @@ $ make sim
 * **2015-05-27**: El [proyecto icestorm](http://www.clifford.at/icestorm/) alcanza el primer gran hito: ya se tiene un flujo de trabajo que funciona completamente usando sólo herramientas libres
 
 # Recopilación de Enlaces
-* [Proyecto icestorm](http://www.clifford.at/icestorm/) ([Github](https://github.com/cliffordwolf/icestorm))
+* [Proyecto icestorm](http://www.clifford.at/icestorm/) ([Github](https://github.com/cliffordwolf/icestorm)). Un proyecto para englobarlos a todos
+* [Yosys: herramienta de síntesis](http://www.clifford.at/yosys/) ([Github](https://github.com/cliffordwolf/yosys))
+* [Arachne: Place & route](https://github.com/cseed/arachne-pnr)
 
 
 [next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
