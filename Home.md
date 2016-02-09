@@ -151,5 +151,8 @@ $ make sim
 * [Icarus Verilog](http://iverilog.icarus.com/) Simulador de Verilog ([Github](https://github.com/steveicarus/iverilog))
 * [Gtkwave](http://gtkwave.sourceforge.net/). Visualizador de señales
 * [Placa Icestick](http://www.latticesemi.com/icestick)
+* [iCE40LPHXFamilyDataSheet.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf). Hoja de datos de las FPGAs ICE40
+* [icestickusermanual.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf). Hoja de datos de la placa icestick
+* [Pinout de la placa Icestick](http://www.pighixxx.com/test/2016/02/icestick-pinout/) por Alberto Piganti
 
 [next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
