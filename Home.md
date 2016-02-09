@@ -52,6 +52,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **Fernando Barcala** (Barkalez) por su feedback sobre los problemas haciendo el tutorial 1. Con ello se ha mejorado la documentación. ¡Gracias!
 
+* A **Alberto Piganti** (pighixxx) por hacer el **pinout** de la icestick. ¡Gracias!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
  Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
