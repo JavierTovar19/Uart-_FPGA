@@ -155,6 +155,10 @@ $ make sim
 * [icestickusermanual.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf). Hoja de datos de la placa icestick
 * [Pinout de la placa Icestick](http://www.pighixxx.com/test/2016/02/icestick-pinout/) por Alberto Piganti
 * [Procesador Simplez-F](https://github.com/Obijuan/simplez-fpga/wiki/Procesador-SIMPLEZ-F). Procesador educacional Simplez, del profesor Gregorio Fernández, escrito en Verilog y sintetizado en una Icestick
+* [Simplez en Atom](https://github.com/Obijuan/simplez-grammar). Paquete para resaltar la sintáxis de Simplez desde Atom
+* [Grupo FPGA-WARS](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre): explorando el lado libre
+* [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home). Inclusión de las FPGAs ICE40 en el entorno Platformio
+* [Icestudio](https://github.com/Jesus89/icestudio). Herramienta visual para sintetizar hardware en la icestick
 
 
-[next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
+[Next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
