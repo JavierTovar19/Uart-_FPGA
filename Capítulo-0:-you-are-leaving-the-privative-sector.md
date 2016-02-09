@@ -287,7 +287,7 @@ $ iceprog setbit.bin
 * [Hoja de datos FPGA iCE40LPHXF](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf)(PDF)
 
 ## Pinout de la Icestick
-TODO
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/images/icestick_pinout.png)
 
 # Enlaces
 * [Proyecto Icestorm](http://www.clifford.at/icestorm/) ([Github](https://github.com/cliffordwolf/yosys))
