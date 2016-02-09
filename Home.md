@@ -148,6 +148,7 @@ $ make sim
 * [Proyecto icestorm](http://www.clifford.at/icestorm/) ([Github](https://github.com/cliffordwolf/icestorm)). Un proyecto para englobarlos a todos
 * [Yosys: herramienta de síntesis](http://www.clifford.at/yosys/) ([Github](https://github.com/cliffordwolf/yosys))
 * [Arachne: Place & route](https://github.com/cseed/arachne-pnr)
+* [Icarus Verilog](http://iverilog.icarus.com/) Simulador de Verilog ([Github](https://github.com/steveicarus/iverilog))
 
 
 [next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
