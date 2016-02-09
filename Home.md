@@ -149,6 +149,6 @@ $ make sim
 * [Yosys: herramienta de síntesis](http://www.clifford.at/yosys/) ([Github](https://github.com/cliffordwolf/yosys))
 * [Arachne: Place & route](https://github.com/cseed/arachne-pnr)
 * [Icarus Verilog](http://iverilog.icarus.com/) Simulador de Verilog ([Github](https://github.com/steveicarus/iverilog))
-
+* [Gtkwave](http://gtkwave.sourceforge.net/). Visualizador de señales
 
 [next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
