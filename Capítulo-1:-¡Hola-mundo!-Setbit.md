@@ -56,9 +56,9 @@ En la figura 2 se muestra gráficamente esta idea.  Como lo que estamos describi
 
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/setbit-2.png)
 
-Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos el comando **make sint** desde la consola:
+Para hacer la síntesis completa nos vamos al directorio _tutorial/T01-setbit_ y ejecutamos el comando **sudo make sint** desde la consola:
 
-    $ make sint
+    $ sudo make sint
     
     yosys -p "synth_ice40 -blif setbit.blif" setbit.v
     
