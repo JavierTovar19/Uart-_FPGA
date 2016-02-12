@@ -97,7 +97,7 @@ Para diseñar los circuitos es fundamental disponer de un simulador de verilog. 
 
 David Cuartielles ha creado [este instalador](https://github.com/dcuartielles/open-fpga-install) que realiza todo el proceso automáticamente: se baja todas las herramientas del github, las compila y las instalada, asi como todas las dependencias necesarias. La forma de usarlo es:
 
-```bash
+```
 git clone https://github.com/dcuartielles/open-fpga-install.git
 cd open-fpga-install
 sudo bash install.sh
