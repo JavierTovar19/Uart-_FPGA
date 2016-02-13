@@ -31,17 +31,17 @@ Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (H
 
 Las FPGAs se conocen desde hace 30 años. Son unas herramientas tremendamente útiles con muchísimo potencial. ¡Te permiten diseñar tu propio chip! Sin embargo, los fabricantes de FPGAs nunca han liberado ni el software ni las especificaciones de los formatos de sus bitstreams. 
 
-Esto ha hecho que nadie pueda crear software para trabajar con las FPGAs, sino que sólo se puede utilizar el del fabricante. Y sólo se puede utilizar en los ordenadores que el fabricante te diga. Sólo puedes diseñar lo que el fabricante haya pensado que se puede diseñar con sus herramientas.  Si se te ocure algo nuevo, no soportado por su software, no podrás hacer nada.  Todo esto es bastante frustrante. Y ha hecho que al final mucha gente deje de uilizar las FPGAs.
+Esto ha hecho que nadie pueda crear software para trabajar con las FPGAs, sino que sólo se puede utilizar el del fabricante. Y sólo se puede utilizar en los ordenadores que el fabricante te diga. Sólo puedes diseñar lo que el fabricante haya pensado que se puede diseñar con sus herramientas.  Si se te ocurre algo nuevo, no soportado por su software, no podrás hacer nada.  Todo esto es bastante frustrante. Y ha hecho que al final mucha gente deje de utilizar las FPGAs.
 
 # Herramientas libres para trabajar con FPGAs
-En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez todas las herramientas necesarias para **generar el bitstream** a partir de **código en Verilog** usando **sólo software libre**, gracias al [proyecto icestorm](http://www.clifford.at/icestorm/), liderado por **Clifford Wolf**.  A partir de eso momento,ya tenemos herramientas que pertenecen al **patrimonio tecnológico de la humanidad** para trabajar con FPGAs, y poder desarrollar hardware usando sólo herramientas de este pratrimonio
+En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez todas las herramientas necesarias para **generar el bitstream** a partir de **código en Verilog** usando **sólo software libre**, gracias al [proyecto icestorm](http://www.clifford.at/icestorm/), liderado por **Clifford Wolf**.  A partir de ese momento,ya tenemos herramientas que pertenecen al **patrimonio tecnológico de la humanidad** para trabajar con FPGAs, y poder desarrollar hardware usando sólo herramientas de este patrimonio
 
 ## Ventajas del uso de las herramientas libres
 * **Autonomía**: Los desarrolladores de hardware pueden desarrollar sus sistemas con independencia del fabricante. Ya no se depende de los caprichos de cada fabricante, o de sus gustos. Con las herramientas libres nos independizamos. Los diseñadores decidimos qué sistema operativo utilizar. O qué entorno usar. Ya no estamos obligados a hacer lo que nos diga el fabricante.
 
 * **Acceso al conocimiento**: Estas herramientas las podemos usar normalmente, igual que las privativas. Sin embargo, si tenemos curiosidad, tenemos acceso al conocimiento de cómo están programadas, qué algoritmos se usan, cómo se implementa la síntesis... Esto fomenta el espíritu científico de comprender cómo funcionan las cosas... para luego mejorarlas. Ahora es posible que investigadores de cualquier parte del mundo analicen los algoritmos, los comprendan y los mejoren. Antes sólo los fabricantes lo podían hacer
 
-* **Nuevas aplicaciones**: Se abre el camino a probar nuevos usos de la FPGA no previstos por los fabricantes. Desde el comienzo de las FPGAs han surgido las ideas de usar hardware bajo demanda, de codiseño hw/hw, sistemas operativos que usen tareas hw, etc. Aunque se han escrito muchísimas tesis sobre ello, las implementaciones reales eran muy espefíficas para un fabricante concreto. Y poco reproducibles por la comunidad. Ahora ya es viable hacer implementaciones que corran por ejemplo en una raspberry pi, y que se sintetice el hardware bajo demanda. Con las herramientas privativas era imposible, porque no estba previsto por los fabricantes
+* **Nuevas aplicaciones**: Se abre el camino a probar nuevos usos de la FPGA no previstos por los fabricantes. Desde el comienzo de las FPGAs han surgido las ideas de usar hardware bajo demanda, de codiseño hw/hw, sistemas operativos que usen tareas hw, etc. Aunque se han escrito muchísimas tesis sobre ello, las implementaciones reales eran muy específicas para un fabricante concreto. Y poco reproducibles por la comunidad. Ahora ya es viable hacer implementaciones que corran por ejemplo en una raspberry pi, y que se sintetice el hardware bajo demanda. Con las herramientas privativas era imposible, porque no estaba previsto por los fabricantes
 
 * **Participación de la comunidad**:  Ahora TODOS podemos participar en la evolución de las FPGAs, no sólo limitándonos a usarlas, sino haciendo crecer y mejorando las propias herramientas.
 
@@ -49,7 +49,7 @@ En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez
 
 ## Limitaciones
 
-Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de soft/hw libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
+Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de software/hardware libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
 
 Las herramientas del [proyecto icestorm](http://www.clifford.at/icestorm/) acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
 * Sólo sirven para las **FPGAs de Lattice**, modelos: **HX1K-TQ144** y **HX8K-CT256**
