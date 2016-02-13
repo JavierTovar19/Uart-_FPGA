@@ -95,7 +95,7 @@ Los recursos ocupados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 4 / 96
-|PLBs      | 7 / 160
+|PLBs      | 8 / 160
 |BRAMs     | 0 / 16
 
 Para cargarlo en la FPGA ejecutamos:
