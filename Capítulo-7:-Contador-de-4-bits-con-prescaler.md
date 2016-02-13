@@ -44,7 +44,7 @@ El código se ha implementado a partir del dibujo  de la imagen 1
 
 ## Síntesis en la FPGA
 
-La señal de reloj de 21Mhz entra por el pin 21 de la fpga, y la salida de datos se cada por los pines de los leds, del 99 al 96
+La señal de reloj de 12Mhz entra por el pin 21 de la fpga, y la salida de datos se cada por los pines de los leds, del 99 al 96
 
 Para sintentizarlo ejecutar el comando:
 
