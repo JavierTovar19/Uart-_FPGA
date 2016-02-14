@@ -4,7 +4,7 @@
 
 ## Introducción
 
-Ahora en vez de 1 bit sacaremos **4**, y los mostraremos por los leds. Se trata de un **valor fijo**, que está "cableado por hardware". Si queremos visualizar otro número por los leds, habrá que sintentizar otro circuito.
+Ahora en vez de 1 bit sacaremos **4**, y los mostraremos por los leds. Se trata de un **valor fijo**, que está "cableado por hardware". Si queremos visualizar otro número por los leds, habrá que sintetizar otro circuito.
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T02-Fport/images/Fport-1.png)
 
@@ -26,7 +26,7 @@ module Fport(output [3:0] data);
     
 endmodule
 ```
-La salida ahora es un **array de 4 cables**. Esto se denota poniendo **[3:0]** delante del nombre. Para realizar la asignación escribimos el número en binario usando la notación de Verilog: Primero el número de bits, luego el carácter ', a continuación la base del número (b para binario) y por último los 4 dígitos binarios.  Este mísmo número se podría expresar mediante un único dígito **hexadecimal** mediante:  **4'hA**. También lo podriamos poner en **decimal** como **4'd10**
+La salida ahora es un **array de 4 cables**. Esto se denota poniendo **[3:0]** delante del nombre. Para realizar la asignación escribimos el número en binario usando la notación de Verilog: Primero el número de bits, luego el carácter ', a continuación la base del número (b para binario) y por último los 4 dígitos binarios.  Este mismo número se podría expresar mediante un único dígito **hexadecimal** mediante:  **4'hA**. También lo podríamos poner en **decimal** como **4'd10**
 
 ## Síntesis en la FPGA
 
@@ -73,7 +73,7 @@ El **banco de pruebas** es similar al del capítulo anterior, pero ahora en vez 
 
 El banco de pruebas (**Fport_tb.v**) consta de tres elementos:
 
-* El componente a probar: Fport  (En la liteatura se conoce como uut: unit under test)
+* El componente a probar: Fport  (En la literatura se conoce como uut: unit under test)
 * El bloque de comprobación 
 * El cable DATA
 
