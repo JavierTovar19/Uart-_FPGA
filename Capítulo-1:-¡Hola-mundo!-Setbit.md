@@ -122,7 +122,7 @@ El **led D1** de la ICEStick **se encenderá**:
 
 ### Primero simulamos, luego sintetizamos
 
-El ejemplo anterior lo hemos cargado directamente en la FPGA porque el diseño ya **ESTABA PROBADO PREVIAMENTE**. Cuando trabajamos con FPGAs **estamos haciendo hardware** y tenemos que tener siempre mucho cuidado. Podemos escribir un código que por ejemplo tenga un cortocircuito. Y podría ocurrir que las herramientas de síntesis no nos avisen con un **warning** (sobre todo con estas primeras versiones que todavía están en estado alfa). Si lo cargamoss en la fpga la podríamos estropear parcialmente.
+El ejemplo anterior lo hemos cargado directamente en la FPGA porque el diseño ya **ESTABA PROBADO PREVIAMENTE**. Cuando trabajamos con FPGAs **estamos haciendo hardware** y tenemos que tener siempre mucho cuidado. Podemos escribir un código que por ejemplo tenga un cortocircuito. Y podría ocurrir que las herramientas de síntesis no nos avisen con un **warning** (sobre todo con estas primeras versiones que todavía están en estado alfa). Si lo cargamos en la FPGA la podríamos estropear parcialmente.
 
 Por ello, **SIEMPRE** hay que **simular el código** que hagamos. Y una vez que estamos lo bastante seguros de que funciona (o que no tiene error gordos) es cuando lo cargamos en la FPGA.
 
@@ -206,12 +206,12 @@ El que pone "**Componente ok!**" es el que hemos puesto nosotros en el banco de 
 
 ## Ejercicios propuestos
 
-* Cambiar el componente para que saque un 0. Descargarlo en la fpga. Comprobar que el led está ahora apagado
+* Cambiar el componente para que saque un 0. Descargarlo en la FPGA. Comprobar que el LED está ahora apagado
 
-* Cambiar el ejemplo original para que se encienda el led D2 en vez el D1  (está asociado al pin 98 en vez de al 99)
+* Cambiar el ejemplo original para que se encienda el LED D2 en vez el D1  (está asociado al pin 98 en vez de al 99)
 
 ## Conclusiones
-Hemos creado **nuestro primer circuito en verilog**, un "hola mundo" formado por **1 cable**. Lo hemos sintetizado y cargado en la FPGA. También hemos **programado** un **banco de pruebas** en verilog para simularlo.  Ya tenemos todas las herramientas instaladas, configuradas y hemos comprobado que funcionan. Estasmos listos para abordar diseños más complejos e ir aprendiendo más verilog
+Hemos creado **nuestro primer circuito en verilog**, un "hola mundo" formado por **1 cable**. Lo hemos sintetizado y cargado en la FPGA. También hemos **programado** un **banco de pruebas** en verilog para simularlo.  Ya tenemos todas las herramientas instaladas, configuradas y hemos comprobado que funcionan. Estamos listos para abordar diseños más complejos e ir aprendiendo más verilog
 
 ### Conceptos introducidos:
 * Conexión de cables son **assign**
