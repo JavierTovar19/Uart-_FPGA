@@ -125,7 +125,7 @@ Los recursos empleados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 5 / 96
-|PLBs      | 12 / 160
+|PLBs      | 11 / 160
 |BRAMs     | 0 / 16
 
 Para cargar en la FPGA ejecutamos:
