@@ -9,7 +9,7 @@ Los **multiplexores** son circuitos combinacionales que nos permiten **seleccion
 
 Un multiplexor 2 a 1 selecciona entre 2 fuentes de datos según el valor de su **entrada de selección** sel. Si sel es 0, se saca por la salida la fuente 0, si es 1 se saca la fuente 1
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/e9142aee8f70b7342c69b990159529ce68601487/tutorial/ICESTICK/T11-mux-2-1/images/mux2-2.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/images/mux2-2.png)
 
 Los describimos en Verilog usando la intrucción if ... else:
 
