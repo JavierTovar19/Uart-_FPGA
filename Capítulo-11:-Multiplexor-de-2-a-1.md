@@ -1,4 +1,4 @@
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T11-mux-2-1)
 
@@ -9,7 +9,7 @@ Los **multiplexores** son circuitos combinacionales que nos permiten **seleccion
 
 Un multiplexor 2 a 1 selecciona entre 2 fuentes de datos según el valor de su **entrada de selección** sel. Si sel es 0, se saca por la salida la fuente 0, si es 1 se saca la fuente 1
 
-![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/images/mux2-2.png)
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-2.png)
 
 Los describimos en Verilog usando la intrucción if ... else:
 
@@ -33,7 +33,7 @@ Esta lista incluye automáticamente todas las señales de entrada
 
 Como ejemplo de uso, haremos un **secuenciador de 2 estados**: Un circuito que envía alternativamente dos datos de 4 bits a los leds. El esquema del circuito es el siguiente:
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-3.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-3.png)
 
 Se utilizan 2 fuentes de datos fijas (están cableadas a valores fijos) que determinan el estado de los leds en cada momento. El multiplexor selecciona alternativamemente entre una y otra a través de una señal de reloj que pasa por un prescaler (para reducir la frecuencia y que podamos apreciar el movimiento de los leds).
 
@@ -80,7 +80,7 @@ La implementación del multiplexor es sencilla por lo que se incluye directament
 
 Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
 
 Sintetizamos con el comando:
 
@@ -105,7 +105,7 @@ En este **vídeo de Youtube** se puede ver la salida de los leds:
 ## Simulación
 El banco de pruebas es uno básico, que instancia el componente mux2, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-4.png)
+![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-4.png)
 
 La simulación se realiza con:
 
@@ -113,7 +113,7 @@ La simulación se realiza con:
 
 El resultado en gtkwave es:
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/T11-mux2-simulation.png)
+![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/T11-mux2-simulation.png)
 
 Vemos cómo se van alternando las dos salidas: 1010 y 0101 alternativamente, cada una asociada a un nivel de la señal de sel (que proviene del reloj pasada por un prescaler de 1 bit en simulación)
 
