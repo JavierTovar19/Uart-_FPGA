@@ -50,9 +50,9 @@ Como ejemplo de prueba vamos a implementar un **secuenciador de 2 estados**, usa
 
 La salida del registro 0 sale al exterior (puerto data) pero también se envía a la entrada del registro 1, cuya salida está conectada a la del registro 0
 
-En las entradas de reset de los registros se ha colocado **un inicializar** que general la señal escalón para realizar la **carga inicial** en el primer flanco de subida del reloj. Los cables de reset han dibujado en verde en la figura. En el resto de ciclos funcionan como registros normales, cargando lo que les llega por su entradas din
+En las entradas de reset de los registros se ha colocado **un inicializar** que general la señal escalón para realizar la **carga inicial** en el primer flanco de subida del reloj. Los cables de reset han dibujado en rojos  en la figura. En el resto de ciclos funcionan como registros normales, cargando lo que les llega por su entradas din
 
-El reloj (cables rojos) se pasa a través de un prescaler y se introduce tanto en los registros como en el inicializador
+El reloj (cables verde) se pasa a través de un prescaler y se introduce tanto en los registros como en el inicializador
 
 El código Verilog es el siguiente:
 
