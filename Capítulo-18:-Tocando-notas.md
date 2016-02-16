@@ -394,7 +394,7 @@ Los recursos empleados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 9 / 96
-|PLBs      | 45 / 160
+|PLBs      | 44 / 160
 |BRAMs     | 0 / 16
 
 Lo cargamos en la fpga con:
