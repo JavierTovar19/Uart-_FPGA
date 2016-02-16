@@ -114,7 +114,7 @@ Los recursos empleados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 6 / 96
-|PLBs      | 26 / 160
+|PLBs      | 25 / 160
 |BRAMs     | 0 / 16
 
 ## Pruebas
