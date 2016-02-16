@@ -110,16 +110,16 @@ for oct in range(11):
 	print_table(oct)
 ```
 
-Al ejecutarlo, se nos genera por pantalla la tabla completa, que pegaremos en el archivo **divider.dh**:
+Al ejecutarlo, se nos genera por pantalla la tabla completa, que pegaremos en el archivo **divider.vh**:
 
     $ python notas_gen.py
 
-## divider.dh: Notas musicales añadidas
+## divider.vh: Notas musicales añadidas
 
 El nuevo archivo con todas las constantes para usar nuestro divisor queda:
 
 ``` verilog
-//-- Fichero divisor.vh
+//-- Fichero divider.vh
 //-------------------- Frecuencias
 //-- Megaherzios  MHz
 `define F_4MHz 3
