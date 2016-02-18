@@ -334,7 +334,7 @@ Los recursos ocupados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 6 / 96
-|PLBs      | 7 / 160
+|PLBs      | 8 / 160
 |BRAMs     | 0 / 16
 
 Lo cargamos en la FPGA con:
