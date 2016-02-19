@@ -85,7 +85,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016-02-19**: [Tarjeta Icezum](https://github.com/Obijuan/icezum) publicada en github. Diseñada por Eladio Delgado. Ayer se mandaron a fabricar los primeros 5 pcbs. Es un tarjeta entrenadora como a icestick pero con forma de BQ ZUM,que es a su vez como un Arduino uno
+* **2016-02-19**: [Tarjeta Icezum](https://github.com/Obijuan/icezum) publicada en github. Diseñada por Eladio Delgado. Ayer se mandaron a fabricar los primeros 5 pcbs. Es un tarjeta entrenadora como la icestick pero con forma de BQ ZUM,que es a su vez como un Arduino uno
 
 * **2016-02-08**: **Alberto Piganti** (pighixxx) ha hecho el [dibujo del pinout de la icestick](http://www.pighixxx.com/test/2016/02/icestick-pinout/)
 
