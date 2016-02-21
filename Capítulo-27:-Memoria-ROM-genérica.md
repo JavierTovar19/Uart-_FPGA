@@ -240,7 +240,7 @@ Los recursos empleados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 7 / 96
-|PLBs      | 16 / 160
+|PLBs      | 15 / 160
 |BRAMs     | 1 / 16
 
 El diseño se carga con:
