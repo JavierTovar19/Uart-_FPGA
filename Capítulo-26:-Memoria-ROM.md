@@ -130,7 +130,7 @@ Los recursos empleados son:
 | Recurso  | ocupación
 |----------|-----------
 |PIOs      | 3 / 96
-|PLBs      | 1 / 160
+|PLBs      | 2 / 160
 |BRAMs     | 1 / 16
 
 Observamos que ahora se está usando **1 bloque de memoria** (BRAM, Block RAM) de los 16 que tiene la FPGA. El sintetizador ha detectado que hay una memoria en nuestro diseño y la ha sintetizado mediante un bloque de memoria.
