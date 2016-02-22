@@ -140,7 +140,7 @@ $ make sim
 
 * **2015-07-04**: Empieza a escribir las [Notas sobre FPGAs libres](http://www.iearobotics.com/wiki/index.php?title=Obijuan:Notas_sobre_FPGAs_libres) en la wiki, para recopilar información. Todavía no puedo evaluar nada porque antes tengo que acabar con [los tutoriales de la temporada 2 de Freecad](http://www.iearobotics.com/wiki/index.php?title=Tutorial_Freecad._Temporada_2). Hasta que no termino una cosa no puedo empezar con la siguiente
 
-* **2015-07-03**: Sale otro [post en hack-a-day](http://hackaday.com/2015/07/03/hackaday-prize-entry-they-make-fpgas-that-small/). Se me dispara el SAV
+* **2015-07-03**: Sale otro [post en hack-a-day](http://hackaday.com/2015/07/03/hackaday-prize-entry-they-make-fpgas-that-small/). Se me dispara el SAV (Síndrome del ansia viva)
 
 * **2015-05-29**: La noticia sale en un [post en hack-a-day](http://hackaday.com/2015/05/29/an-open-source-toolchain-for-ice40-fpgas/). Me entero de su existencia a través de este post y empiezo a evaluar las herramientas (obijuan)
 
