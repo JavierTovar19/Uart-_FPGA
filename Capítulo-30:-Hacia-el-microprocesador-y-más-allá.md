@@ -10,7 +10,7 @@ Uno de los aspectos que más me apasionan de las FPGAs es la posibilidad de **cr
 
 Microbio es un **procesador "hola mundo"**. Es extremadamente simple, pero es perfecto para comprender su funcionamiento: **leer instruciones de la memoria principal** y **ejecutarlas**
 
-En realidad, Microbio es un **microcontrolador**: es un microprocesador que incluye la memoria y dos periféricos simples: un **puerto de 4 bits** para mostrar información por los leds y un **temporizador de 100ms**
+En realidad, Microbio es un **microcontrolador**: es un microprocesador que incluye la memoria y dos periféricos simples: un **puerto de 4 bits** para mostrar información por los leds y un **temporizador de 200ms**
 
 ## Características
 
@@ -22,7 +22,7 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 * Funcuencia de funcionamiento: Reloj de 12MHz
 * Tiene 2 **periféricos**:
     * Puerto de salida de 4 bits: conectado a los leds
-    * Temporizador de 100ms
+    * Temporizador de 200ms
 * Indicador de programa terminado: El led verde se activa cuando se ejecuta la instrucción HALT que detiene el microprocesador
 
 ## Interfaz con el exterior
@@ -44,7 +44,7 @@ Microbio puede ejecutar las 4 instrucciones siguientes:
 |----------|-----------|--------------
 | **HALT**     |     | Detener la ejecución. Se activa la señal stop que se muestra por el led verde
 | **LEDS**     | _val_    | Escribir el dato _val_ en el puerto de salida de 4 bits, para visualizarlo en los leds
-| **WAIT**     |    | Realizar una pausa de 100ms
+| **WAIT**     |    | Realizar una pausa de 200ms
 | **JP**       | _dir_    | Saltar a la dirección de memoria indicada por el operador _dir_
 
 ## Memoria
