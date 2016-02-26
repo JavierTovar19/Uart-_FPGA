@@ -54,6 +54,12 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **Alberto Piganti** (pighixxx) por hacer el **pinout** de la icestick. ¡Gracias!
 
+* A **Cristóbal Bueno** por sus pruebas de las toolchains de icestorm para Linux-32bits. ¡Gracias!
+
+* A **Sebastián Gallardo** Por las prueba de la libusb en Windows 32-bits. ¡Gracias!
+
+* A **Carlos Díaz** por las pruebas de la libusb en Windows 10 64-bits. ¡Gracias!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
  Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
