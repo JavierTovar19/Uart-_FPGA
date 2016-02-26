@@ -91,7 +91,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016-02-26**: Liberada [versión 0.6 de yosys](https://github.com/cliffordwolf/yosys/releases/tag/yosys-0.6). Dentro de poco estará empaquetada para ubuntu y su instalación será trivial
+* **2016-02-26**: Clifford lanza [la versión 0.6 de yosys](https://github.com/cliffordwolf/yosys/releases/tag/yosys-0.6). Dentro de poco estará empaquetada para ubuntu y su instalación será trivial
 
 * **2016-02-25**: **Cross-compilación** de las herramientas de icestorm para **Linux-32 bits**. Se generan los paquetes y se pueden instalar directamente desde [Apio](https://github.com/bqlabs/apio). **Cristóbal Bueno**, de la lista de FPGA-wars, se encarga de hacer las pruebas. ¡Gracias!
 
