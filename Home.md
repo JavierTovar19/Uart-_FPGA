@@ -91,7 +91,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016-02-29**: La versión de la tarjeta icezum que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
+* **2016-02-29**: La versión de la [tarjeta icezum](https://github.com/bqlabs/icezum) que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
 
 * **2016-02-28**: **Cross-compilación** de la herramienta **iceprog para windows**. **Cristóbal Bueno** ha reportado [las primeras pruebas de correcto funcionamiento en Windows 10 de 64 bits](https://github.com/bqlabs/toolchain-icestorm/wiki#more-tests)
 
