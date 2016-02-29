@@ -91,6 +91,10 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-02-29**: La versión de la tarjeta icezum que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
+
+* **2016-02-28**: **Cross-compilación** de la herramienta **iceprog para windows**. **Cristóbal Bueno** ha reportado [las primeras pruebas de correcto funcionamiento en Windows 10 de 64 bits](https://github.com/bqlabs/toolchain-icestorm/wiki#more-tests)
+
 * **2016-02-26**: Clifford lanza [la versión 0.6](https://github.com/cliffordwolf/yosys/releases/tag/yosys-0.6)  de Yosys ([Descarga](http://www.clifford.at/yosys/download.html)). Dentro de poco estará empaquetada para ubuntu y su instalación será trivial
 
 * **2016-02-25**: **Cross-compilación** de las herramientas de icestorm para **Linux-32 bits**. Se generan los paquetes y se pueden instalar directamente desde [Apio](https://github.com/bqlabs/apio). **Cristóbal Bueno**, de la lista de FPGA-wars, se encarga de hacer las pruebas. ¡Gracias!
