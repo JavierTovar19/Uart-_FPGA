@@ -91,6 +91,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-03-04**: Primera versión de las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7). Ya se tienen cross-compilados las herramientas para Mac y Windows. Pruebas iniciales ok
+
 * **2016-03-03**: Recibimos los primeros PCBs de la [Icezum Alhambra](https://github.com/bqlabs/icezum/wiki). Están en Pinos del valle, en Granada ([Imagen](https://github.com/bqlabs/icezum/raw/master/doc/Icezum-Alhambra-pcb-1.jpg))
 
 * **2016-02-29**: La versión de la [tarjeta icezum](https://github.com/bqlabs/icezum) que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
