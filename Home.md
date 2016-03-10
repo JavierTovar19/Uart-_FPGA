@@ -91,6 +91,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-03-09**: Publican un [post en Hackaday](http://hackaday.com/2016/03/09/does-the-world-need-an-fpga-arduino/) sobre la IceZUM Alhambra
+
 * **2016-03-08**: ¡Ya tenemos 5 prototipos de la [IceZUM Alhambra](https://github.com/bqlabs/icezum/wiki) funcionando!  ([Imagen](https://raw.githubusercontent.com/bqlabs/icezum/master/doc/IceZUM-rev1-1607-img4.jpg)). Hemos hecho algunas pruebas que puedes ver en [estos vídeos](https://github.com/bqlabs/icezum/wiki#videos)
 
 * **2016-03-05**: **¡Primer bitstream descargado en la tarjeta IceZUM Alhambra!** :-) La placa funciona. Además, las pruebas se han hecho desde Windows, usando las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7) ¡Doble validación! ;-) ([Imagen](https://github.com/bqlabs/icezum/raw/master/doc/2016-03-04-Mounting-first-prototype/icezum-alhambra-mounting-15.jpg))
