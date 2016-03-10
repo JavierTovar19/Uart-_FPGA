@@ -91,6 +91,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-03-08**: ¡Ya tenemos 5 prototipos de la IceZUM Alhambra funcionando!  ([Imagen](https://raw.githubusercontent.com/bqlabs/icezum/master/doc/IceZUM-rev1-1607-img4.jpg)). Hemos hecho algunas pruebas que puedes ver en [estos vídeos](https://github.com/bqlabs/icezum/wiki#videos)
+
 * **2016-03-05**: **¡Primer bitstream descargado en la tarjeta IceZUM Alhambra!** :-) La placa funciona. Además, las pruebas se han hecho desde Windows, usando las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7) ¡Doble validación! ;-) ([Imagen](https://github.com/bqlabs/icezum/raw/master/doc/2016-03-04-Mounting-first-prototype/icezum-alhambra-mounting-15.jpg))
 
 * **2016-03-04**: Primera versión de las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7). Ya se tienen cross-compilados las herramientas para Mac y Windows. Pruebas iniciales ok
