@@ -91,6 +91,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-03-12**: Videoblog sobre la IceZUM Alhambra ([VIDEO](https://www.youtube.com/watch?v=LC8nucTiswM&index=17&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
+
 * **2016-03-09**: Publican un [post en Hackaday](http://hackaday.com/2016/03/09/does-the-world-need-an-fpga-arduino/) sobre la IceZUM Alhambra
 
 * **2016-03-08**: ¡Ya tenemos 5 prototipos de la [IceZUM Alhambra](https://github.com/bqlabs/icezum/wiki) funcionando!  ([Imagen](https://raw.githubusercontent.com/bqlabs/icezum/master/doc/IceZUM-rev1-1607-img4.jpg)). Hemos hecho algunas pruebas que puedes ver en [estos vídeos](https://github.com/bqlabs/icezum/wiki#videos)
