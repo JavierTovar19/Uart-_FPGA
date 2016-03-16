@@ -40,7 +40,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A [BQ](http://bq.com), por financiar el material usado en el tutorial. Soy un verdadero privilegiado por trabajar en una empresa donde fomentan el espíritu maker y apoyan las iniciativas de exploración y experimentación con tecnologías Libres ¡Muchas gracias!
 
-* A **Jesús Arroyo**, por hacer la compra de las placas iCEStick y empezar con el empaquetado para Debian/Ubuntu de las herramientas Arachne-pnr y las del proyecto icestorm. ¡Muchas Gracias!
+* A **Jesús Arroyo**, por las increibles herramientas: icestudio y apio que está desarrollando para hacer más fácil la utilización de FPGAs ¡Muchas Gracias!
 
 * A **David Sánchez Falero**, por enseñarme cómo resaltar código Verilog en los markdown de github :-) ¡Esto ha hecho que el código sea muchísimo más legible! ¡Muchas Gracias! 
 
