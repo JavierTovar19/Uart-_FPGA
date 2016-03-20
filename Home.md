@@ -193,4 +193,7 @@ $ make sim
 * [Icestudio](https://github.com/Jesus89/icestudio). Herramienta visual para sintetizar hardware en la icestick
 * [Tarjeta IceZUM Alhambra](https://github.com/bqlabs/icezum/wiki)
 
+# Bibliografía
+*  "**Digital Design, An Embedded Systems Approach Using Verilog**". P. Ashenden. 2007.  Es el libro de referencia de diseño digital con lenguajes hdl
+
 [Next](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Cap%C3%ADtulo-0%3A-you-are-leaving-the-privative-sector)
