@@ -91,6 +91,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-03-24**: Cross-compilación de las herramientas icestorm para el **Ubuntu Phone** ([VIDEO](https://www.youtube.com/watch?v=xZG6to8HW7I&index=19&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
+
 * **2016-03-15**: Locomoción de un **robot modular** tipo gusano usando **osciladores hardware en FPGA**, con la tarjeta IceZUM ([VIDEO](https://www.youtube.com/watch?v=6I5Z70eewrg))
 
 * **2016-03-12**: Videoblog sobre la IceZUM Alhambra ([VIDEO](https://www.youtube.com/watch?v=LC8nucTiswM&index=17&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
