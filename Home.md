@@ -99,25 +99,25 @@ $ make sim
 
 * **2016-03-09**: Publican un [post en Hackaday](http://hackaday.com/2016/03/09/does-the-world-need-an-fpga-arduino/) sobre la IceZUM Alhambra
 
-* **2016-03-08**: ¡Ya tenemos 5 prototipos de la [IceZUM Alhambra](https://github.com/bqlabs/icezum/wiki) funcionando!  ([Imagen](https://raw.githubusercontent.com/bqlabs/icezum/master/doc/IceZUM-rev1-1607-img4.jpg)). Hemos hecho algunas pruebas que puedes ver en [estos vídeos](https://github.com/bqlabs/icezum/wiki#videos)
+* **2016-03-08**: ¡Ya tenemos 5 prototipos de la [IceZUM Alhambra](https://github.com/FPGAwars/icezum/wiki) funcionando!  ([Imagen](https://raw.githubusercontent.com/FPGAwars/icezum/master/doc/IceZUM-rev1-1607-img4.jpg)). Hemos hecho algunas pruebas que puedes ver en [estos vídeos](https://github.com/FPGAwars/icezum/wiki#videos)
 
-* **2016-03-05**: **¡Primer bitstream descargado en la tarjeta IceZUM Alhambra!** :-) La placa funciona. Además, las pruebas se han hecho desde Windows, usando las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7) ¡Doble validación! ;-) ([Imagen](https://github.com/bqlabs/icezum/raw/master/doc/2016-03-04-Mounting-first-prototype/icezum-alhambra-mounting-15.jpg))
+* **2016-03-05**: **¡Primer bitstream descargado en la tarjeta IceZUM Alhambra!** :-) La placa funciona. Además, las pruebas se han hecho desde Windows, usando las [icestorm MULTIPLATAFORMA](https://github.com/FPGAwars/toolchain-icestorm/releases/tag/0.7) ¡Doble validación! ;-) ([Imagen](https://github.com/FPGAwars/icezum/raw/master/doc/2016-03-04-Mounting-first-prototype/icezum-alhambra-mounting-15.jpg))
 
-* **2016-03-04**: Primera versión de las [icestorm MULTIPLATAFORMA](https://github.com/bqlabs/toolchain-icestorm/releases/tag/0.7). Ya se tienen cross-compilados las herramientas para Mac y Windows. Pruebas iniciales ok
+* **2016-03-04**: Primera versión de las [icestorm MULTIPLATAFORMA](https://github.com/FPGAwars/toolchain-icestorm/releases/tag/0.7). Ya se tienen cross-compilados las herramientas para Mac y Windows. Pruebas iniciales ok
 
-* **2016-03-03**: Recibimos los primeros PCBs de la [Icezum Alhambra](https://github.com/bqlabs/icezum/wiki). Están en Pinos del valle, en Granada ([Imagen](https://github.com/bqlabs/icezum/raw/master/doc/Icezum-Alhambra-pcb-1.jpg))
+* **2016-03-03**: Recibimos los primeros PCBs de la [Icezum Alhambra](https://github.com/FPGAwars/icezum/wiki). Están en Pinos del valle, en Granada ([Imagen](https://github.com/FPGAwars/icezum/raw/master/doc/Icezum-Alhambra-pcb-1.jpg))
 
-* **2016-02-29**: La versión de la [tarjeta icezum](https://github.com/bqlabs/icezum) que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
+* **2016-02-29**: La versión de la [tarjeta icezum](https://github.com/FPGAwars/icezum) que está por llegar se ha bautizado como **Icezum Alhambra**. El nombre lo sugirió **Sebastián Gallardo** en [este post de la lista FPGA-wars](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/f1W0Vtt5NdE/LEDRSXudGwAJ)
 
-* **2016-02-28**: **Cross-compilación** de la herramienta **iceprog para windows**. **Cristóbal Bueno** ha reportado [las primeras pruebas de correcto funcionamiento en Windows 10 de 64 bits](https://github.com/bqlabs/toolchain-icestorm/wiki#more-tests)
+* **2016-02-28**: **Cross-compilación** de la herramienta **iceprog para windows**. **Cristóbal Bueno** ha reportado [las primeras pruebas de correcto funcionamiento en Windows 10 de 64 bits](https://github.com/FPGAwars/toolchain-icestorm/wiki#more-tests)
 
 * **2016-02-26**: Clifford lanza [la versión 0.6](https://github.com/cliffordwolf/yosys/releases/tag/yosys-0.6)  de Yosys ([Descarga](http://www.clifford.at/yosys/download.html)). Dentro de poco estará empaquetada para ubuntu y su instalación será trivial
 
-* **2016-02-25**: **Cross-compilación** de las herramientas de icestorm para **Linux-32 bits**. Se generan los paquetes y se pueden instalar directamente desde [Apio](https://github.com/bqlabs/apio). **Cristóbal Bueno**, de la lista de FPGA-wars, se encarga de hacer las pruebas. ¡Gracias!
+* **2016-02-25**: **Cross-compilación** de las herramientas de icestorm para **Linux-32 bits**. Se generan los paquetes y se pueden instalar directamente desde [Apio](https://github.com/FPGAwars/apio). **Cristóbal Bueno**, de la lista de FPGA-wars, se encarga de hacer las pruebas. ¡Gracias!
 
 * **2016-02-23**: [El icestudio sale publicado en hackaday](http://hackaday.com/2016/02/23/icestudio-an-open-source-graphical-fgpa-tool/) :-)
 
-* **2016-02-19**: [Tarjeta Icezum](https://github.com/bqlabs/icezum) publicada en github. Diseñada por **Eladio Delgado**. Ayer se mandaron a fabricar los primeros 5 pcbs. Es un tarjeta entrenadora como la icestick pero con forma de BQ ZUM,que es a su vez como un Arduino uno
+* **2016-02-19**: [Tarjeta Icezum](https://github.com/FPGAwars/icezum) publicada en github. Diseñada por **Eladio Delgado**. Ayer se mandaron a fabricar los primeros 5 pcbs. Es un tarjeta entrenadora como la icestick pero con forma de BQ ZUM,que es a su vez como un Arduino uno
 
 * **2016-02-08**: **Alberto Piganti** (pighixxx) ha hecho el [dibujo del pinout de la icestick](http://www.pighixxx.com/test/2016/02/icestick-pinout/)
 
@@ -129,7 +129,7 @@ $ make sim
 
 * **2016-01-31**: Primera maqueta de **platformio + FPGA**, usado desde Atom ([VIDEO](https://www.youtube.com/watch?v=a_m_Nx66eOs&index=14&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)). Desarrollar hardware ahora es muchísimo más fácil. Ya no hace falta usar la consola y make ;-)
 
-* **2016-01-28**: Se comienza a dar soporte a las FPGA ice40 de lattice en **Platformio**: [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home)
+* **2016-01-28**: Se comienza a dar soporte a las FPGA ice40 de lattice en **Platformio**: [Platformio+FPGA](https://github.com/FPGAwars/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home)
 
 * **2016-01-24**: Simplez documentando y con mejoras: ([VIDEO](https://www.youtube.com/watch?v=_3sWETbaDig))
 
@@ -191,9 +191,9 @@ $ make sim
 * [Procesador Simplez-F](https://github.com/Obijuan/simplez-fpga/wiki/Procesador-SIMPLEZ-F). Procesador educacional Simplez, del profesor Gregorio Fernández, escrito en Verilog y sintetizado en una Icestick
 * [Simplez en Atom](https://github.com/Obijuan/simplez-grammar). Paquete para resaltar la sintáxis de Simplez desde Atom
 * [Grupo FPGA-WARS](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre): explorando el lado libre
-* [Platformio+FPGA](https://github.com/bqlabs/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home). Inclusión de las FPGAs ICE40 en el entorno Platformio
+* [Platformio+FPGA](https://github.com/FPGAwars/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home). Inclusión de las FPGAs ICE40 en el entorno Platformio
 * [Icestudio](https://github.com/Jesus89/icestudio). Herramienta visual para sintetizar hardware en la icestick
-* [Tarjeta IceZUM Alhambra](https://github.com/bqlabs/icezum/wiki)
+* [Tarjeta IceZUM Alhambra](https://github.com/FPGAwars/icezum/wiki)
 
 # Bibliografía
 *  "**Digital Design, An Embedded Systems Approach Using Verilog**". P. Ashenden. 2007.  Es el libro de referencia de diseño digital con lenguajes hdl
