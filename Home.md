@@ -61,6 +61,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **Carlos Díaz** por las pruebas de la libusb en Windows 10 64-bits. ¡Gracias!
 
+* A **Pablo Cisneros** (ZioGuillo) por las instrucciones de síntesis/descarga en MAC. ¡Gracias!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
  Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
