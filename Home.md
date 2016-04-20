@@ -32,7 +32,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 ## Créditos
 * [Proyecto icestorm](http://www.clifford.at/icestorm/), por Clifford Wolf and Mathias Lasser
 * [Arachne-pnr](https://github.com/cseed/arachne-pnr), por Cotton Seed 
-* BQ, por apoyar este proyecto desde el 2015-07-01 hasta el 2016-04-14  
+* [BQ](http://bq.com), por apoyar este proyecto desde el 2015-07-01 hasta el 2016-04-14  
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/bq-logo-cc-sa-small-150px.png">
 
