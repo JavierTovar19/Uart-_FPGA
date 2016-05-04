@@ -94,6 +94,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016-05-04**: Ya tenemos [el pinout de la tarjeta Icezu Alhambra](http://www.pighixxx.com/test/2016/05/icezum-pinout/), hecho por Alberto Piganti ¡Gracias!
+
 * **2016-04-29**: [Platformio 2.9.0](https://community.platformio.org/t/big-update-platformio-ide-1-2-0-and-platformio-cli-2-9-0/202) ya soporta las FPGAs libres :-) 
 
 * **2016-04-20**: [Organizacion FPGAwars en github](https://github.com/FPGAwars). Todos los repos relacionados con fpgas libres los hemos trasladado a esa organización
