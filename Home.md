@@ -17,7 +17,7 @@ Es un **tutorial incremental**, en el que los conceptos se van introduciendo pro
 El viaje comienza con el circuito más sencillo posible: un cable. Y termina con el diseño de **un microprocesador muy simple**: MICROBIO
 
 ## Comunidad: FPGA-WARS
-Únete al grupo [FPGA-WARS: explorando el lado libre](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre) para conocer las últimas noticias, preguntar, compartir y colaborar en el desarrollo de hardware libre reconfigurable
+Únete al grupo [FPGA-WARS: explorando el lado libre](http://fpgawars.github.io/) para conocer las últimas noticias, preguntar, compartir y colaborar en el desarrollo de hardware libre reconfigurable
 
 ## Repositorio
 
