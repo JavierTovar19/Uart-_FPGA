@@ -96,7 +96,9 @@ $ make sim
 
 * **2016/05/30**: El **esquemático** de la Icezum Alhambra se ha **migrado a [Kicad](http://kicad-pcb.org/)**, una herramienta libre de diseño electrónico ([repo](https://github.com/FPGAwars/icezum/tree/master/src-kicad))
 
-* **2016/05/18**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado al **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
+* **2016/05/19**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado al **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
+
+* **2016/05/18**: [Objetivo conseguido](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/oLFzYPqCOcQ/luBcnXpBBwAJ). Ya están apalabradas las 100 Icezum Alhambras. ¡Empezamos las gestiones para la fabricación de la primera tirada de 100 unidades!
 
 * **2016-05-04**: Ya tenemos [el pinout de la tarjeta Icezu Alhambra](http://www.pighixxx.com/test/2016/05/icezum-pinout/), hecho por Alberto Piganti ¡Gracias!
 
