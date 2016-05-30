@@ -27,14 +27,13 @@ El viaje comienza con el circuito más sencillo posible: un cable. Y termina con
 [Juan González Gómez](http://obijuan.github.io/) (Obijuan)
 
 ## Licencia
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/images/attribution-share-alike-creative-commons-license.png)  
 Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Créditos
 * [Proyecto icestorm](http://www.clifford.at/icestorm/), por Clifford Wolf and Mathias Lasser
 * [Arachne-pnr](https://github.com/cseed/arachne-pnr), por Cotton Seed 
 * [BQ](http://bq.com), por apoyar este proyecto desde el 2015-07-01 hasta el 2016-04-14  
-
-<img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/bq-logo-cc-sa-small-150px.png">
 
 ## Agradecimientos
 * Este tutorial no habría sido posible sin las increibles herramientas libres del proyecto Icestorm y Arachne-pnr, por **Clifford Wolf**, **Mathias Lasser** y **Cotton Seed**. Representan un avance espectacular para el patrimonio tecnólogico de la humanidad ¡Muchísimas gracias! 
