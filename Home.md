@@ -94,7 +94,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/05/30**: El esquemático de la Icezum Alhambra se ha migrado a [Kicad](http://kicad-pcb.org/), una herramienta libre de diseño electrónico ([repo](https://github.com/FPGAwars/icezum/tree/master/src-kicad))
+* **2016/05/30**: El **esquemático** de la Icezum Alhambra se ha **migrado a [Kicad](http://kicad-pcb.org/)**, una herramienta libre de diseño electrónico ([repo](https://github.com/FPGAwars/icezum/tree/master/src-kicad))
 
 * **2016/05/18**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado al **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
 
