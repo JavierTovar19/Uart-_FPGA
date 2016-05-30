@@ -94,7 +94,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/05/18**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado a **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
+* **2016/05/18**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado al **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
 
 * **2016-05-04**: Ya tenemos [el pinout de la tarjeta Icezu Alhambra](http://www.pighixxx.com/test/2016/05/icezum-pinout/), hecho por Alberto Piganti ¡Gracias!
 
