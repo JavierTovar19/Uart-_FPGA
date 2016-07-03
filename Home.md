@@ -37,7 +37,7 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 * [BQ](http://bq.com), por apoyar este proyecto desde el 2015-07-01 hasta el 2016-04-14  
 
 ## Agradecimientos
-* Este tutorial no habría sido posible sin las increibles herramientas libres del proyecto Icestorm y Arachne-pnr, por **Clifford Wolf**, **Mathias Lasser** y **Cotton Seed**. Representan un avance espectacular para el patrimonio tecnólogico de la humanidad ¡Muchísimas gracias! 
+* Este tutorial no habría sido posible sin las increibles herramientas libres del proyecto Icestorm y Arachne-pnr, por **Clifford Wolf**, **Mathias Lasser** y **Cotton Seed**. Representan un avance espectacular para el patrimonio tecnólogico de la humanidad ¡Muchísimas gracias! [Listado de todos los financiadores](https://docs.google.com/spreadsheets/d/1yngU6kfMr5JWJYXrxBMJ7l1Cai2iuucMDoND4NpgU5Y)
 
 * A [BQ](http://bq.com), por financiar el material usado en el tutorial. ¡Muchas gracias!
 
