@@ -94,7 +94,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/07/03**: Finalizada la fase de recaudación de dinero para el crowdfunding de la fabricación la Icezum Alhambra. Ya hemos recibido los **6500€** de los financiadores. ¡Muchísimas gracias a todos por vuestra ayuda!
+* **2016/07/03**: Finalizada la fase de recaudación de dinero para el crowdfunding de la fabricación la **Icezum Alhambra**. Ya hemos recibido los **6500€** de los financiadores. ¡Muchísimas gracias a todos por vuestra ayuda!
 
 * **2016/07/02**: **Jesús arroyo** libera la [versión 0.2.0-Beta1](https://github.com/FPGAwars/icestudio/releases/tag/0.2.0-beta1) del Icestudio. Publica [este vídeo enseñando las nuevas características más relevantes](https://www.youtube.com/watch?v=mAIKb47z2Do): bloques de código y diseño jerárquico.  **Clifford Wolf** se hace eco de la noticia y lo prueba en una icestick :-) [Pone este post en twitter](https://twitter.com/oe1cxw/status/748838491010830336)
 
