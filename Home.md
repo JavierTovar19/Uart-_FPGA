@@ -94,6 +94,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/07/03**: Finalizada la fase de recaudación de dinero para el crowdfunding de la fabricación la Icezum Alhambra. Ya hemos recibido los **6500€** de los financiadores. ¡Muchísimas gracias a todos por vuestra ayuda!
+
 * **2016/05/30**: El **esquemático** de la Icezum Alhambra se ha **migrado a [Kicad](http://kicad-pcb.org/)**, una herramienta libre de diseño electrónico ([repo](https://github.com/FPGAwars/icezum/tree/master/src-kicad))
 
 * **2016/05/19**: El **pinout de la Icezum Alhambra**, del maestro Piganti, se ha migrado al **formato SVG**, con Inkscape, para que cualquiera lo pueda modificar o utilizar fácilmente ([repo](https://github.com/FPGAwars/icezum/tree/master/doc/pinout))
@@ -106,7 +108,7 @@ $ make sim
 
 * **2016-04-29**: [Platformio 2.9.0](https://community.platformio.org/t/big-update-platformio-ide-1-2-0-and-platformio-cli-2-9-0/202) ya soporta las FPGAs libres :-) 
 
-* **2016-04-20**: [Organizacion FPGAwars en github](https://github.com/FPGAwars). Todos los repos relacionados con fpgas libres los hemos trasladado a esa organización
+* **2016-04-20**: [Organizacion FPGAwars en github](https://github.com/FPGAwars). Todos los repos relacionados con fpgas libres los hemos trasladado a esa organización. BQ ya no continúa con las FPGAs libres
 
 * **2016-03-24**: Cross-compilación de las herramientas icestorm para el **Ubuntu Phone** ([VIDEO](https://www.youtube.com/watch?v=xZG6to8HW7I&index=19&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
 
