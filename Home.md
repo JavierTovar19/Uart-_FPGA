@@ -94,7 +94,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/07/29**: Videoblog 22: Icezum Alhambra V1.0K Patrimonio de la Humanidad Edition ([VIDEO](https://www.youtube.com/watch?v=d-9dIAo4FVw&index=22&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
+* **2016/07/29**: Videoblog 22: **Icezum Alhambra V1.0K** Patrimonio de la Humanidad Edition ([VIDEO](https://www.youtube.com/watch?v=d-9dIAo4FVw&index=22&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
 
 * **2016/07/28**: [Icezum Alhambra V1.0K](https://github.com/FPGAwars/icezum/wiki) liberada! Se ha creado desde cero utilizando sólo herramientas libres, de nuestro patrimonio tecnológico
 
