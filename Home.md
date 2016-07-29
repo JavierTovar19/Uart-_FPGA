@@ -94,6 +94,10 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/07/29**: Videoblog 22: Icezum Alhambra V1.0K Patrimonio de la Humanidad Edition ([VIDEO](https://www.youtube.com/watch?v=d-9dIAo4FVw&index=22&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
+
+* **2016/07/28**: [Icezum Alhambra V1.0K](https://github.com/FPGAwars/icezum/wiki) liberada! Se ha creado desde cero utilizando sólo herramientas libres, de nuestro patrimonio tecnológico
+
 * **2016/07/07**: Frontend de **VHDL** para Yosys! Todavía verde, pero la comunidad ya comienza el **soporte de VHDL en las FPGAs libres**: https://github.com/forflo/yodl
 
 * **2016/07/03**: Finalizada la fase de recaudación de dinero para el crowdfunding de la fabricación la **Icezum Alhambra**. Ya hemos recibido los **6500€** de los financiadores. ¡Muchísimas gracias a todos por vuestra ayuda! [Listado de todos los financiadores](https://docs.google.com/spreadsheets/d/1yngU6kfMr5JWJYXrxBMJ7l1Cai2iuucMDoND4NpgU5Y)
