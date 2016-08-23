@@ -73,7 +73,7 @@ Muchas aplicaciones se pueden hacer tanto por software (programando) o por hardw
 * **¿Por qué Verilog y no VHDL?**  
 Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog  
 
-**Actualización (Agosto-2016)**: El [Proyecto Yodl](https://github.com/forflo/yodl) está implementando VHDL para el sintetizador libre Yosys. Todavía está verde, pero el soporte para VHDL está en camino :-)
+  **Actualización (Agosto-2016)**: El [Proyecto Yodl](https://github.com/forflo/yodl) está implementando VHDL para el sintetizador libre Yosys. Todavía está verde, pero el soporte para VHDL está en camino :-)
 
 
 * **¿Dónde puedo comprar la tarjeta IceStick**
