@@ -94,6 +94,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/08/23**: Videoblog 23: **ACC: Apollo CPU Core**. Anuncio del proyecto ACC: la implementación de un core básico de la CPU del apollo en Verilog para FPGAs libres ([VIDEO](https://www.youtube.com/watch?v=2PzKB2mfwoU&index=23&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)) ([wiki](https://github.com/Obijuan/ACC/wiki))
+
 * **2016/07/29**: Videoblog 22: **Icezum Alhambra V1.0K** Patrimonio de la Humanidad Edition ([VIDEO](https://www.youtube.com/watch?v=d-9dIAo4FVw&index=22&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
 
 * **2016/07/28**: [Icezum Alhambra V1.0K](https://github.com/FPGAwars/icezum/wiki) liberada! Se ha creado desde cero utilizando sólo herramientas libres, de nuestro patrimonio tecnológico
