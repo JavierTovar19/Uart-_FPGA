@@ -71,7 +71,9 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 Muchas aplicaciones se pueden hacer tanto por software (programando) o por hardware. Por ejemplo un contador. La diferencia está en que al hacerlo por hardware conseguimos velocidades muchísimo mayores. Además, el hardware se puede "clonar" directamente y funciona en paralelo. Tener en software varias cosas funcionando en paralelo no es inmediato.
 
 * **¿Por qué Verilog y no VHDL?**  
-Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog
+Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at/icestorm/) de momento. Pero como es un proyecto libre, la comunidad lo irá ampliando y el VHDL se soportará tarde o temprano. Al día de hoy (sep-2015), para trabajar con herramientas libres y FPGAs, hay que usar Verilog  
+**Actualización (Agosto-2016)**: El [Proyecto Yodl](https://github.com/forflo/yodl) está implementando VHDL para el sintetizador libre Yosys. Todavía está verde, pero el soporte para VHDL está en camino :-)
+
 
 * **¿Dónde puedo comprar la tarjeta IceStick**
 -[Icestick en Mouser España ](http://www.mouser.es/new/Lattice-Semiconductor/lattice-icestick-kit/)
