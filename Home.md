@@ -226,7 +226,8 @@ $ make sim
 * [Simplez en Atom](https://github.com/Obijuan/simplez-grammar). Paquete para resaltar la sintáxis de Simplez desde Atom
 * [Grupo FPGA-WARS](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre): explorando el lado libre
 * [Platformio+FPGA](https://github.com/FPGAwars/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home). Inclusión de las FPGAs ICE40 en el entorno Platformio
-* [Icestudio](https://github.com/Jesus89/icestudio). Herramienta visual para sintetizar hardware en la icestick
+* [Apio](https://github.com/FPGAwars/apio). Ecosistema multiplataforma para sintetizar hardware en FPGAs libres
+* [Icestudio](https://github.com/FPGAwars/icestudio). Herramienta visual para sintetizar hardware en FPGAs libres
 * [Tarjeta IceZUM Alhambra](https://github.com/FPGAwars/icezum/wiki)
 
 # Bibliografía
