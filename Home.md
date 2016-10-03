@@ -97,7 +97,9 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/10/02**: Clifford anuncia que empezará a hacer ingeniería inversa del bitstream de las FPGAs de la serie 7 de Xilinx ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/RWrDKMzHFdw/3iwhS5XhBgAJ))
+* **2016/10/02**: Clifford anuncia que empezará a hacer **ingeniería inversa** del bitstream de las **FPGAs de la serie 7 de Xilinx**. Llevará más de 1 año, pero es un hito muy importante para incrementar el parque de FPGAs libres ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/RWrDKMzHFdw/3iwhS5XhBgAJ))
+
+* **2016/09/24**: Charla: "FPGAwars: Explorando el lado libre de las FPGAs" dada en la **Madrid Mini maker faire** ([Más información](https://github.com/Obijuan/myslides/wiki/2016_09_24-Madrid-Maker-faire:FPGAwars-explorando-el-lado-libre))
 
 * **2016/09/23**: Primera charla dada en España sobre **FPGAs libres**. Se dió en la ETSIIT de la Universidad de Granada, organizada por la **Oficina de Software Libre de la Universidad de Granada** ([Más información](https://github.com/Obijuan/myslides/tree/master/2016-09-23-Granada-geek))
 
