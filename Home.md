@@ -97,6 +97,8 @@ $ make sim
 
 # NOTICIAS
 
++ **2016/09/23**: Primera charla dada en España sobre **FPGAs libres**. Se dió en la ETSIIT de la Universidad de Granada, organizada por la **Oficina de Software Libre de la Universidad de Granada** ([Más información](https://github.com/Obijuan/myslides/tree/master/2016-09-23-Granada-geek))
+
 * **2016/08/23**: Videoblog 23: **ACC: Apollo CPU Core**. Anuncio del proyecto ACC: la implementación de un core básico de la CPU del apollo en Verilog para FPGAs libres ([VIDEO](https://www.youtube.com/watch?v=2PzKB2mfwoU&index=23&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30)) ([wiki](https://github.com/Obijuan/ACC/wiki))
 
 * **2016/07/29**: Videoblog 22: **Icezum Alhambra V1.0K** Patrimonio de la Humanidad Edition ([VIDEO](https://www.youtube.com/watch?v=d-9dIAo4FVw&index=22&list=PLmnz0JqIMEzVo7w2pv6Q04QgRaBTkqR30))
