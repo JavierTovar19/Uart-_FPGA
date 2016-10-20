@@ -97,9 +97,9 @@ $ make sim
 
 # NOTICIAS
 
-* Tarjeta Alhambra-led
+* **2016/10/20**: Publicada la **Tarjeta Alhambra-led**: Periférico con un led, para la Icezum Alhambra, con **PCB imprimible** ([Más información](https://github.com/FPGAwars/alhambra-led/wiki))
 
-* **2016/10/18**: Podcast 97: [Obijuan, que el software libre te compañeh(http://programarfacil.com/podcast/software-libre-hardware-libre-clone-wars/). Entrevista a obijuan en el Podcast de **Programarfacil.com**, por **Luis del Valle**
+* **2016/10/18**: Podcast 97: [Obijuan, que el software libre te compañe](http://programarfacil.com/podcast/software-libre-hardware-libre-clone-wars/). Entrevista a obijuan en el Podcast de **Programarfacil.com**, por **Luis del Valle**
 
 * **2016/10/02**: Clifford anuncia que empezará a hacer **ingeniería inversa** del bitstream de las **FPGAs de la serie 7 de Xilinx**. Llevará más de 1 año, pero es un hito muy importante para incrementar el parque de FPGAs libres ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/RWrDKMzHFdw/3iwhS5XhBgAJ))
 
