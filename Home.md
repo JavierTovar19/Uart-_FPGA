@@ -97,6 +97,10 @@ $ make sim
 
 # NOTICIAS
 
+* Tarjeta Alhambra-led
+
+* **2016/10/18**: Podcast 97: [http://programarfacil.com/podcast/software-libre-hardware-libre-clone-wars/](Obijuan, que el software libre te compañe). Entrevista a obijuan en el Podcast de **Programarfacil.com**, por **Luis del Valle**
+
 * **2016/10/02**: Clifford anuncia que empezará a hacer **ingeniería inversa** del bitstream de las **FPGAs de la serie 7 de Xilinx**. Llevará más de 1 año, pero es un hito muy importante para incrementar el parque de FPGAs libres ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/RWrDKMzHFdw/3iwhS5XhBgAJ))
 
 * **2016/09/24**: Charla: "FPGAwars: Explorando el lado libre de las FPGAs" dada en la **Madrid Mini maker faire** ([Más información](https://github.com/Obijuan/myslides/wiki/2016_09_24-Madrid-Maker-faire:FPGAwars-explorando-el-lado-libre))
