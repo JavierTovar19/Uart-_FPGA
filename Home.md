@@ -97,6 +97,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/10/24**: Charla: "**FPGAs libres**", dada en EL EVENTO 2016, en la Universidad Carlos III de Madrid (UC3M) ([https://github.com/Obijuan/myslides/wiki/2016_10_24:-El-Evento-2016,-UC3M.-FPGAs-libres](Más información))
+
 * **2016/10/20**: Publicada la **Tarjeta Alhambra-led**: Periférico con un led, para la Icezum Alhambra, con **PCB imprimible** ([Más información](https://github.com/FPGAwars/alhambra-led/wiki))
 
 * **2016/10/18**: Podcast 97: [Obijuan, que el software libre te compañe](http://programarfacil.com/podcast/software-libre-hardware-libre-clone-wars/). Entrevista a obijuan en el Podcast de **Programarfacil.com**, por **Luis del Valle**
