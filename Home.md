@@ -97,7 +97,7 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/10/30**: Lanzada la **Icezum Alhambra Peregrina**, para que todo el mundo puda frikear con FPGAs libres ([Más información](https://groups.google.com/forum/#!msg/fpga-wars-explorando-el-lado-libre/DsyM8_VJm5U/dJXNHKtEAAAJ))
+* **2016/10/30**: Lanzada la **Icezum Alhambra Peregrina**, para que todo el mundo pueda frikear con FPGAs libres ([Más información](https://groups.google.com/forum/#!msg/fpga-wars-explorando-el-lado-libre/DsyM8_VJm5U/dJXNHKtEAAAJ))
 
 * **2016/10/24**: Charla: "**FPGAs libres**", dada en EL EVENTO 2016, en la Universidad Carlos III de Madrid (UC3M) ([Más información](https://github.com/Obijuan/myslides/wiki/2016_10_24:-El-Evento-2016,-UC3M.-FPGAs-libres))
 
