@@ -204,7 +204,7 @@ sudo make install
 
 # Placa ICEStick
 
-La placa que usaremos en estos tutoriales es la [IceStrick](http://www.latticesemi.com/icestick)
+La placa que usaremos en estos tutoriales es la [IceStick](http://www.latticesemi.com/icestick)
 Si no dispones de ella (o de otra similar), ¡No problem! También simularemos todos los diseños con icarus verilog y gtkwave
 
 ## Configuración
