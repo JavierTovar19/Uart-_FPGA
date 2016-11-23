@@ -21,11 +21,12 @@ Ahora ya simplemente conectamos un inicializador a la entrada de selección del 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-4.png)
 
- De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor inicial. En el siguiente franco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento
+De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor 
+inicial. En el siguiente flanco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento.
 
 ## reginit.v: Secuenciador de 2 estados con registro
 
-Vamos a reacer el circuito blink4 del capítulo 8. Este circuito hacía parpadear los 4 leds a la vez, produciendo la secuencia: 0000, 1111, 0000 ...
+Vamos a rehacer el circuito blink4 del capítulo 8. Este circuito hacía parpadear los 4 leds a la vez, produciendo la secuencia: 0000, 1111, 0000 ...
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T08-register/images/blink4-3.png)
 
@@ -79,7 +80,7 @@ prescaler #(.N(NP))
 endmodule
 ```
 
-El multiplexor de 2 a 1 ha implementado usando el **operador ? :** (similar al del lenguaje C). Es un if-else abreviado:
+El multiplexor de 2 a 1 ha sido implementado usando el **operador ? :** (similar al _operador condicional_ de lenguaje C). Es un if-else abreviado:
 
 ```verilog
 assign din = (sel == 0) ? INI : ~dout;
