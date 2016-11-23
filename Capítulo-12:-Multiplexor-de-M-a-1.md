@@ -22,11 +22,11 @@ El código Verilog es muy intuitivo. Usaremos la instrucción case:
 ```verilog
 always @*
   case (sel)
-     0 : data <= fuente0;
-     1 : data <= fuente1;
-     2 : data <= fuente2;
-     3 : data <= fuente3;
-     default : data <= 0;
+     0 : out <= fuente0;
+     1 : out <= fuente1;
+     2 : out <= fuente2;
+     3 : out <= fuente3;
+     default : out <= 0;
   endcase
 ```
 
