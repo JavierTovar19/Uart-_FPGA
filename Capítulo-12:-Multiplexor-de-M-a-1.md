@@ -22,15 +22,15 @@ El código Verilog es muy intuitivo. Usaremos la instrucción case:
 ```verilog
 always @*
   case (sel)
-     0 : out <= fuente0;
-     1 : out <= fuente1;
-     2 : out <= fuente2;
-     3 : out <= fuente3;
+     0 : data <= fuente0;
+     1 : data <= fuente1;
+     2 : data <= fuente2;
+     3 : data <= fuente3;
      default : data <= 0;
   endcase
 ```
 
-Observamos que **están cubiertos todos los casos**. Pero aún así, se ha añadido el caso **default** (que no se cumplirá nunca). Esto es así para asegurarse que todos los casos se cubren (por si en el código por error se quita un caso, o se comenta). Esto nos garantiza que se implementa un **circuito combinacional**. Si no se cubren todos los casos, el sintetizador puede inferior algún registro.
+Observamos que **están cubiertos todos los casos**. Pero aún así, se ha añadido el caso **default** (que no se cumplirá nunca). Esto es así para asegurarse que todos los casos se cubren (por si en el código por error se quita un caso, o se comenta). Esto nos garantiza que se implementa un **circuito combinacional**. Si no se cubren todos los casos, el sintetizador puede inferir algún registro.
 
 En la lista de sensilidad habría que colocar las 5 entradas. Por ello se ha preferido usar @*
 
