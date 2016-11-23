@@ -9,7 +9,7 @@
 
 ## Descripción del hardware
 
-El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits. También tiene un paráemtro N para indicar el número de bits del prescaler y establecer su frecuencia de funcionamiento. El código verilog es el siguiente:
+El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits. También tiene un parámetro N para indicar el número de bits del prescaler y establecer su frecuencia de funcionamiento. El código verilog es el siguiente:
 
 ```verilog
 //-- counter4.v
