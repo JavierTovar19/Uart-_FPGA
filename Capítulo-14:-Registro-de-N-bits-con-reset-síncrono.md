@@ -195,7 +195,7 @@ El resultado en gtkwave es:
 Se puede ver cómo la secuencia 1001, 0111, 1001, 0111... se va alternando.
 
 ## Ejercicios propuestos
-* **Ejercicio 1**: Modificar el diseño para añadir 2 registro más y hacer que el secuenciador tenga 4 estados
+* **Ejercicio 1**: Modificar el diseño para añadir 2 registros más y hacer que el secuenciador tenga 4 estados
 
 ## Conclusiones
 TODO
