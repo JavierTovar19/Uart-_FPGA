@@ -12,7 +12,7 @@ El esquema del registro es el mostrado en la siguiente figura:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-2.png)
 
-Tiene una **entrada de datos din de N bits**, y su **salida dout** correspondiente. Los datos se capturan en **flanco de subida** de la señal de reloj. Dispone de una **entrada de reset síncrona activa a nivel bajo**: Si se recibe un 0 por esta señal y llega un flanco de reloj, el registro se carga con su valor inicial (INI), que se define al instanciarlo
+Tiene una **entrada de datos din de N bits**, y su **salida dout** correspondiente. Los datos se capturan en **flanco de subida** de la señal de reloj. Dispone de una **entrada de reset síncrona activa a nivel bajo**: Si se recibe un 0 por esta señal y llega un flanco de reloj, el registro se carga con su valor inicial (INI), que se define al instanciarlo.
 
 Esta manera de inicilizar el registro ya la conocemos del capítulo anterior, pero ahora se ha integrado dentro del propio registro. Su descripción en Verilog es la siguiente:
 
@@ -40,7 +40,7 @@ always @(posedge(clk))
 endmodule
 ```
 
-Esto es equivalente a la implementación en el capítulo anterior, donde usábamos dos procesos: uno para el multiplexor y otro para el registro. Aquí están los dos componentes dentro del mismo proceso. Es **la forma típica de implementar un registro con inicialización**
+Esto es equivalente a la implementación en el capítulo anterior, donde usábamos dos procesos: uno para el multiplexor y otro para el registro. Aquí están los dos componentes dentro del mismo proceso. Es **la forma típica de implementar un registro con inicialización**.
 
 ## regreset.v: Secuenciador con dos registros de 4 bits
 
@@ -48,9 +48,9 @@ Como ejemplo de prueba vamos a implementar un **secuenciador de 2 estados**, usa
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/regreset-3.png)
 
-La salida del registro 0 sale al exterior (puerto data) pero también se envía a la entrada del registro 1, cuya salida está conectada a la del registro 0
+La salida del registro 0 sale al exterior (puerto data) pero también se envía a la entrada del registro 1, cuya salida está conectada a la del registro 0.
 
-En las entradas de reset de los registros se ha colocado **un inicializador** que general la señal escalón para realizar la **carga inicial** en el primer flanco de subida del reloj. Los cables de reset han dibujado en rojos  en la figura. En el resto de ciclos funcionan como registros normales, cargando lo que les llega por su entradas din
+En las entradas de reset de los registros se ha colocado **un inicializador** que general la señal escalón para realizar la **carga inicial** en el primer flanco de subida del reloj. Los cables de reset han dibujado en rojos  en la figura. En el resto de ciclos funcionan como registros normales, cargando lo que les llega por su entradas din.
 
 El reloj (cables en verde) se pasa a través de un prescaler y se introduce tanto en los registros como en el inicializador.
 
@@ -192,7 +192,7 @@ El resultado en gtkwave es:
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-sim-1.png)
 
-Se puede ver cómo la secuencia 1001, 0111, 1001, 0111... se va alternando
+Se puede ver cómo la secuencia 1001, 0111, 1001, 0111... se va alternando.
 
 ## Ejercicios propuestos
 * **Ejercicio 1**: Modificar el diseño para añadir 2 registro más y hacer que el secuenciador tenga 4 estados
