@@ -99,6 +99,8 @@ $ make sim
 
 * **2016/10/30**: Lanzada la **Icezum Alhambra Peregrina**, para que todo el mundo pueda frikear con FPGAs libres ([Más información](https://groups.google.com/forum/#!msg/fpga-wars-explorando-el-lado-libre/DsyM8_VJm5U/dJXNHKtEAAAJ)) ([Google Docs](https://docs.google.com/spreadsheets/d/11Riyfs-KfIxmTNFPu6D26Ne3IdXgFJP3_fDqvvpL_3c/edit?usp=sharing))
 
+* **2016/10/28**: Organizado el I taller sobre FPGAs libres de España. Impartido en la Escuela Técnica Superior de Ingenieros Industriales, en la UPM ([Más información](https://github.com/FPGAwars/workshops/wiki/2016_10_28:-Reset-ETSII-UPM))
+
 * **2016/10/24**: Charla: "**FPGAs libres**", dada en EL EVENTO 2016, en la Universidad Carlos III de Madrid (UC3M) ([Más información](https://github.com/Obijuan/myslides/wiki/2016_10_24:-El-Evento-2016,-UC3M.-FPGAs-libres))
 
 * **2016/10/20**: Publicada la **Tarjeta Alhambra-led**: Periférico con un led, para la Icezum Alhambra, con **PCB imprimible** ([Más información](https://github.com/FPGAwars/alhambra-led/wiki))
