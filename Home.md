@@ -97,9 +97,9 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/11/05**:  
-  * Charla: "**FPGAs Libres**", dada en la OSHWDEM 2016, en el Museo Domus de A Coruña ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_05:-OSHWdem-2016,-Coru%C3%B1a.-FPGAs-libres))
-  * Impartido el **II taller de FPGAs Libres** en España, en la OSHWDEM 2016 de A Coruña ([Más información](https://github.com/FPGAwars/workshops/wiki/2016_11_05:-OSHWDem16-A-Coru%C3%B1a))
+* **2016/11/05**:  Actividades en la **OSHWDEM 2016 de A Coruña**, en el Museo Domus
+  * Charla: "**FPGAs Libres**" ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_05:-OSHWdem-2016,-Coru%C3%B1a.-FPGAs-libres))
+  * Impartido el **II taller de FPGAs Libres** en España ([Más información](https://github.com/FPGAwars/workshops/wiki/2016_11_05:-OSHWDem16-A-Coru%C3%B1a))
 
 * **2016/10/30**: Lanzada la **Icezum Alhambra Peregrina**, para que todo el mundo pueda frikear con FPGAs libres ([Más información](https://groups.google.com/forum/#!msg/fpga-wars-explorando-el-lado-libre/DsyM8_VJm5U/dJXNHKtEAAAJ)) ([Google Docs](https://docs.google.com/spreadsheets/d/11Riyfs-KfIxmTNFPu6D26Ne3IdXgFJP3_fDqvvpL_3c/edit?usp=sharing))
 
