@@ -63,6 +63,8 @@ Licensed under a  [Creative Commons Attribution-ShareAlike 4.0 International Lic
 
 * A **Pablo Cisneros** (ZioGuillo) por las instrucciones de síntesis/descarga en MAC. ¡Gracias!
 
+* A **Julian Caro** por todas las issues enviadas para mejorar este tutorial. ¡Graciass!
+
 ## FAQs
 * **¿Qué diferencia hay entre una FPGA y Arduino?**  
  Arduino es una placa que lleva un microcontrolador, que se programa.  Las FPGAs NO SE PROGRAMAN, se configuran para implementar en ellas HARDWARE. Nos sirven para diseñar Circuitos
@@ -97,7 +99,7 @@ $ make sim
 
 # NOTICIAS
 
-**2016/11/09**: Charla: "FPGAs Libres" en la Universidad Rey Juan Carlos, campus de fuenlabrada ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libreshttps://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libres))
+* **2016/11/09**: Charla: "FPGAs Libres" en la Universidad Rey Juan Carlos, campus de fuenlabrada ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libreshttps://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libres))
 
 * **2016/11/05**:  Actividades en la **OSHWDEM 2016 de A Coruña**, en el Museo Domus
   * Charla: "**FPGAs Libres**" ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_05:-OSHWdem-2016,-Coru%C3%B1a.-FPGAs-libres))
