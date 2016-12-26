@@ -99,6 +99,10 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/12/10**: Actividades en la **Ourense MakersLab 2016**:
+  * Charla: "**FPGAs Libres**": ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_18:-Maker-faire-Bilbao,-FPGAs-Libres))
+  * Impartido el **III taller de FPGAs Libres** ([Más información](https://github.com/FPGAwars/workshops/wiki/2016_12_10:-Ourense-MakersLab))
+
 * **2016/11/18**: Charla: "**FPGAs Libres**" en la **Bilbao MakerFaire** ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_18:-Maker-faire-Bilbao,-FPGAs-Libres))
 
 * **2016/11/09**: Charla: "**FPGAs Libres**" en la **Universidad Rey Juan Carlos**, campus de fuenlabrada ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libreshttps://github.com/Obijuan/myslides/wiki/2016_11_09:-URJC,-Fuenlabrada,-Madrid,-FPGAs-Libres))
