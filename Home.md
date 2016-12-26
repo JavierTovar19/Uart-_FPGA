@@ -99,7 +99,9 @@ $ make sim
 
 # NOTICIAS
 
-* **2016/12/21**: ¡Entregadas las **100 Icezum Alhambras** (v1.1) del primer Lote! :-) #elRepartidorDeLaAlhambra ya puede descansar
+* **2016/12/21**: 
+  * ¡Entregadas las **100 Icezum Alhambras** (v1.1) del primer Lote! :-) #elRepartidorDeLaAlhambra ya puede descansar
+  * **Julian Caro** hace [este vídeo tan épico](https://www.youtube.com/watch?v=ImtLt6a4EI4)  ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/_HGMov0MS5w/Nem_c3pkEAAJ))
 
 * **2016/12/10**: Actividades en la **Ourense MakersLab 2016**:
   * Charla: "**FPGAs Libres**": ([Más información](https://github.com/Obijuan/myslides/wiki/2016_11_18:-Maker-faire-Bilbao,-FPGAs-Libres))
