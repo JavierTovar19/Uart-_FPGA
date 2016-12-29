@@ -101,7 +101,7 @@ $ make sim
 
 * **2016/12/28**: ¡Clifford Wolf ya tiene su Icezum Alhambra!. La recibió de manos de Ismael Olea, en el 33C3 en Hamburgo
 
-![]()
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/images/Clifford-wolf-Ismael-Olea-icezum-alhambra.jpeg)
 
 * **2016/12/21**: 
   * ¡Entregadas las **100 Icezum Alhambras** (v1.1) del primer Lote! :-) #elRepartidorDeLaAlhambra ya puede descansar
