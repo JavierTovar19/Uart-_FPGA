@@ -99,6 +99,10 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/12/28**: ¡Clifford Wolf ya tiene su Icezum Alhambra!. La recibió de manos de Ismael Olea, en el 33C3 en Hamburgo
+
+![]()
+
 * **2016/12/21**: 
   * ¡Entregadas las **100 Icezum Alhambras** (v1.1) del primer Lote! :-) #elRepartidorDeLaAlhambra ya puede descansar
   * **Julian Caro** hace [este vídeo tan épico](https://www.youtube.com/watch?v=ImtLt6a4EI4)  ([Más información](https://groups.google.com/d/msg/fpga-wars-explorando-el-lado-libre/_HGMov0MS5w/Nem_c3pkEAAJ))
