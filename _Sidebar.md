@@ -7,7 +7,7 @@
 3 [[Puerta NOT|Capítulo 3: Puerta NOT. Inv]]  ([[EN|Chapter 3: NOT Gate. Inv]])  
 4 [[Contador de 26 bits|Capítulo 4: Contador de 26 bits]]  ([[EN|Chapter 4: 26 bit counter]])  
 5 [[Prescaler de N bits|Capítulo 5: Prescaler de N bits]]  ([[EN|Chapter 5: N bit prescaler]])  
-6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  
+6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  ([[EN|Chapter 6: Multiple prescalers]])  
 7 [[Contador de 4 bits con prescaler|Capítulo 7: Contador de 4 bits con prescaler]]  
 8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]]  
 9 [[Inicializador|Capítulo 9: Inicializador]]  
