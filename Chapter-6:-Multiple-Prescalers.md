@@ -2,7 +2,7 @@
 
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T06-multiples-prescalers)
 
-## Introducción
+## Introduction
 With **hierarchical design** we can reuse tested components to build more complex designs. In this chapter we will flash 4 LEDs independently, each with its own prescaler.
 
   In the previous chapter we have created a **parametric prescaler**, which has the number of bits as a parameter. We will instantiate 5 prescalers, with different number of bits, to independently control the LEDs, and that each one can flash at a different frequency. Depending on the frequencies used, we can create different patterns in the LEDs.
@@ -110,7 +110,7 @@ In this video you can see the original sequence:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/Kldn76w58VY/0.jpg)](https://www.youtube.com/watch?v=Kldn76w58VY)
 
-## Simulación
+## Simulation
 
 The test bench is very basic. We simply **instantiate the component mpres.v**, add a **clock generator** and **  **a block to start and end the simulation**. There is no explicit check of whether the component is working properly. It has to be visually checked by watching the simulation signals.
 
