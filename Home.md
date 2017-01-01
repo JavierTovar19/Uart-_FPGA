@@ -99,6 +99,8 @@ $ make sim
 
 # NOTICIAS
 
+* **2016/12/29**: Clifford añade [un ejemplo hola mundo para la Icezum Alhambra](https://github.com/cliffordwolf/icestorm/tree/master/examples/icezum) dentro del proyecto Icestorm
+
 * **2016/12/28**: ¡Clifford Wolf ya tiene su Icezum Alhambra!. La recibió de manos de Ismael Olea, en el 33C3 en Hamburgo. Todo nuestro reconocimiento al trabajo de Clifford. Y Muchas gracias a Ismael por dársela :-)
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/images/Clifford-wolf-Ismael-Olea-icezum-alhambra.jpeg)
