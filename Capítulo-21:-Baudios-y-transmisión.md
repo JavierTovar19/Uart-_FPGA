@@ -158,7 +158,7 @@ El resultado es:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1-sim.png)
 
-La primera señal el reloj para la transmisión de los bits a 115200 baudios. Cuando dtr se pone a cero se carga el registro.  Al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
+La primera señal es el reloj para la transmisión de los bits a 115200 baudios. Cuando dtr se pone a cero se carga el registro.  Al ponerse a 1 se empieza a enviar el dato en serie. En el pantallazo se observan 2 pulsos en dtr y cómo despues de ellos se comienza a enviar el dato en serie
 
 ### Síntesis y pruebas
 
@@ -183,7 +183,7 @@ Para probarlo arrancamos el **gtkterm** y con configuramos para que el puerto se
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T21-baud-tx/images/baudtx-1-gtkterm.png)
 
 ## Ejemplo 2: Transmisión continua
-Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamete a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente
+Con este ejemplo comprobamos si el transmisor funciona correctamente a la **máxima velocidad**, **transmitiendo un carácter inmediatamente a continuacion del otro**. Cada vez que la señal DTR se ponga a 1, se transmite el carácter K constantemente
 
 ### Funcionamiento
 
