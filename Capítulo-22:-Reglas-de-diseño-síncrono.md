@@ -78,7 +78,7 @@ Combinando la regla 3 y la 4, llegamos a la conclusión de que **cualquier entra
 
 ### Regla 5: Salidas de un combinacional: Sólo a entradas de otro combinacional, entradas síncronas o salidas del circuito síncrono
 
-Esta regla nos indica **dónde ponemos conectar la salida de un circuito combinacional**. Bien a la **entrada de otro combinacional**, a **la entrada síncrona de un secuencial** o bien como **salida directa de nuestro circuito**. Queda terminantemente prohibido conectarlas a las entradas del propio combinacional (nada de realimentaciones directas) o a la entrada de la señal de reloj
+Esta regla nos indica **dónde podemos conectar la salida de un circuito combinacional**. Bien a la **entrada de otro combinacional**, a **la entrada síncrona de un secuencial** o bien como **salida directa de nuestro circuito**. Queda terminantemente prohibido conectarlas a las entradas del propio combinacional (nada de realimentaciones directas) o a la entrada de la señal de reloj
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T22-syncrules/images/regla-5-salidas-combinacionales.png)
 
