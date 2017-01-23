@@ -21,7 +21,7 @@ Los controladores se implementan mediante [autómatas finitos](https://es.wikipe
 
 # Máquinas de estado en verilog
 
-Partimos de este **diagrama de 4 estados**, para explicar cómo describirlo en Verilog
+Partimos de este **diagrama de 4 estados**, para explicar cómo describirlo en Verilog:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-4.png)
 
