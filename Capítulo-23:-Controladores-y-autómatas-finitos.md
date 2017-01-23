@@ -143,7 +143,7 @@ El transmisor puede estar en **3 estados**:
 
 * **TRANS**: Estado de transmisión. Permanece en este estado durante la trasmisión del carácter. En cuanto el contador de bits alcanza el valor 11 (10 bits ya transmitidos) se pasa al estado inicial de reposo
 
-Para controlar la ruta de datos se necesitan **2 microórdenes**, _load_ y _baudgen_. La se usa para cargar el dato en el registro de desplazamiento y poner a cero el contador de bits. La segunda es la habilitación del temporizador de bits (generador de baudios) 
+Para controlar la ruta de datos se necesitan **2 microórdenes**, _load_ y _baudgen_. La primera se usa para cargar el dato en el registro de desplazamiento y poner a cero el contador de bits. La segunda es la habilitación del temporizador de bits (generador de baudios) 
 
 ### fsmtx.v: Descripción del hardware
 
