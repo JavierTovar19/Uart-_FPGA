@@ -7,7 +7,7 @@ Los **controladores** son la parte de los circuitos digitales que se **encargan 
 
 # Arquitectura genérica
 
-La **estructura** de los circuitos digitales la podemos descomponer en dos partes:  la **ruta de datos** y el **controlador**
+La **estructura** de los circuitos digitales la podemos descomponer en dos partes:  la **ruta de datos** y el **controlador**:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T23-fsmtx/images/fsmtx-3.png)
 
