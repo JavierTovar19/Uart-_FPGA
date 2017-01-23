@@ -719,7 +719,7 @@ Al abrir el gtkterm a la 115200 baudios veremos cómo van apareciendo los caract
 
 # Ejercicios propuestos
 * Probar los ejemplos a diferentes baudios y cambiando de retardo de envío de caracteres en el segundo
-* Modificar el controlador para que se genere una señal de salida **ready**, que se pogna a 1 cuando el transmisor esté listo para enviar el siguiente carácter y pemanezca a 0 cuando esté ocupado
+* Modificar el controlador para que se genere una señal de salida **ready**, que se ponga a 1 cuando el transmisor esté listo para enviar el siguiente carácter y pemanezca a 0 cuando esté ocupado
 
 # Conclusiones
 TODO
