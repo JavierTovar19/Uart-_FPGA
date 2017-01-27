@@ -42,7 +42,7 @@ El diagrama de bloques completo del receptor se muestra en la siguiente figura:
 
 ### Ruta de datos
 
-La **señal rx se registra**, para cumplir con las normas de diseño síncrono, y se introduce por el bit más significativo de un **registro de desplazamiento** de 10 bits. El desplazamiento se realiza cuando llega un pulso por la señal **clk_baud**, proveniente del **generador de baudios**. Este generador sólo funciona cuando la miroorden **bauden** está activada.
+La **señal rx se registra**, para cumplir con las normas de diseño síncrono, y se introduce por el bit más significativo de un **registro de desplazamiento** de 10 bits. El desplazamiento se realiza cuando llega un pulso por la señal **clk_baud**, proveniente del **generador de baudios**. Este generador sólo funciona cuando la microorden **bauden** está activada.
 
 Un **contador de 4 bits** realiza la cuenta de los bits recibidos (cuenta cada pulso de clk_baud). Se pone a 0 con la microórden **clear**
 
