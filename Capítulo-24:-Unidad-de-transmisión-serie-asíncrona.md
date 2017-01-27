@@ -3,13 +3,13 @@
 [Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T24-uart-tx)
 
 # Introducción
-**Completaremos** la unidad de transmisión serie asíncrona y haremos dos **ejemplos de uso**, que envían la cadena "Hola!...". Uno de manera contínua al activarse la señal de DTR y otro cada segundo
+**Completaremos** la unidad de transmisión serie asíncrona y haremos dos **ejemplos de uso**, que envían la cadena "Hola!...". Uno de manera contínua al activarse la señal de DTR y otro cada segundo.
 
-Se trata de la **última versión de la unidad de transmisión**, que quedará lista para usar en nuestros proyectos
+Se trata de la **última versión de la unidad de transmisión**, que quedará lista para usar en nuestros proyectos.
 
 # Módulo UART-TX
 
-La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**
+La unidad de transmisión serie la encapsularemos dentro del **módulo uart-tx**.
 
 ## Descripción de la interfaz
 
@@ -39,9 +39,9 @@ El diagrama de bloques del transmisor se muestra en la siguiente figura:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T24-uart-tx/images/scicad-1.png)
 
-El diseño, como hicimos en el capítulo pasado, está dividido en su **ruta de datos** y su **controlador**. Hay **dos microórdenes** que genera el controlador: _bauden_ y _load_, con las que activa el temporizador de bits y la carga del registro de desplazamiento respectivamente. _Load_ también se usa para poner a cero el contador de bits
+El diseño, como hicimos en el capítulo pasado, está dividido en su **ruta de datos** y su **controlador**. Hay **dos microórdenes** que genera el controlador: _bauden_ y _load_, con las que activa el temporizador de bits y la carga del registro de desplazamiento respectivamente. _Load_ también se usa para poner a cero el contador de bits.
 
-El dato a transmitir se recibe por _data_, y se registra para cumplir con las **normas del diseño síncrono**. El controlador genera también la **señal ready** para indicar cuándo se ha terminado de transmitir
+El dato a transmitir se recibe por _data_, y se registra para cumplir con las **normas del diseño síncrono**. El controlador genera también la **señal ready** para indicar cuándo se ha terminado de transmitir.
 
 ## Descripción del módulo en Verilog
 
@@ -206,11 +206,11 @@ endmodule
 
 # Ejemplo 1: Enviando cadenas continuamente
 
-En este primer ejemplo de utilización del módulo de transmisión **enviaremos la cadena "Hola!..."** de forma continua, mientras que la **señal de dtr esté activada**
+En este primer ejemplo de utilización del módulo de transmisión **enviaremos la cadena "Hola!..."** de forma continua, mientras que la **señal de dtr esté activada**.
 
 ## Diagrama de bloques
 
-El circuito sigue el mismo esquema de ruta de datos / controlador
+El circuito sigue el mismo esquema de ruta de datos / controlador.
 
 ### Ruta de datos
 
