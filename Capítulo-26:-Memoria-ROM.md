@@ -25,7 +25,7 @@ Los puertos de acceso a la memoria son:
 
 ## Cronograma
 
-Para acceder a la memoria rom se deposita la dirección del puerto addres. En el siguiente flanco de bajada del reloj, se obtendrá el dato
+Para acceder a la memoria rom se deposita la dirección del puerto addres. En el siguiente flanco de bajada del reloj, se obtendrá el dato.
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/rom32x4-4.png)
 
