@@ -5,7 +5,7 @@
 # Introducción
 Las **memorias** nos permiten **almacenar información** para usarlas en nuestros circuitos: datos, instrucciones, configuraciones, etc. Son los **componentes esenciales** para crear circuitos más complejos, como por ejemplo **microprocesadores**.
 
-Mostraremos cómo se modelan las **memorias ROM** (de sólo lectura) en verilog y haremos tres ejemplos muy sencillos: un hola mundo y dos ejemplos de **generación de secuencias en los leds**, para cargar en la placa ICEstick
+Mostraremos cómo se modelan las **memorias ROM** (de sólo lectura) en verilog y haremos tres ejemplos muy sencillos: un hola mundo y dos ejemplos de **generación de secuencias en los leds**, para cargar en la placa ICEstick.
 
 # Memoria ROM 32x4
 
@@ -486,7 +486,7 @@ y los resultados obtenidos en gtkwave son:
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T26-rom/images/romleds2-sim1.png)
 
-Se está usando la rom1.list, que tiene en cada posición un valor igual a su dirección, como se puede comprobar en la simulación
+Se está usando la rom1.list, que tiene en cada posición un valor igual a su dirección, como se puede comprobar en la simulación.
 
 Para simular la secuencia con la otra rom, hay que cambiar el fichero rom1.list por rom2.list en esta línea del banco de pruebas:
 ```verilog
@@ -520,7 +520,7 @@ El diseño se carga con:
 
     $ sudo iceprog romleds2.bin
 
-Igual que en el ejemplo 2, veremos cómo leds siguen una secuencia, dada por los valores que hayamos colocado en la rom
+Igual que en el ejemplo 2, veremos cómo leds siguen una secuencia, dada por los valores que hayamos colocado en la rom.
 
 # Ejercicios propuestos
 * Crear una secuencia en los leds con 32 valores, que se carguen desde un fichero
