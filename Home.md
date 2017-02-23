@@ -270,6 +270,12 @@ $ make sim
 * [Icestudio](https://github.com/FPGAwars/icestudio). Herramienta visual para sintetizar hardware en FPGAs libres
 * [Tarjeta IceZUM Alhambra](https://github.com/FPGAwars/icezum/wiki)
 
+# Herramientas usadas para la elaboración de este tutorial
+
+* [Inkscape](https://inkscape.org/es/), 0.91: Para las figuras (los ficheros fuente en .SVG, de todas las figuras, están en el repositorio)
+* [Gimp](https://www.gimp.org/): Retoque y procesado de fotos
+* **Sistema Operativo**: Ubuntu GNU/Linux 16.04
+
 # Bibliografía
 *  "**Digital Design, An Embedded Systems Approach Using Verilog**". P. Ashenden. 2007.  Es el libro de referencia de diseño digital con lenguajes hdl
 
