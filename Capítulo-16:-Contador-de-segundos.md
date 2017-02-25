@@ -52,7 +52,7 @@ En vez de utilizar un número para los divisores, es más claro asociarlos a sus
 ```verilog
 parameter M = `F_1Hz;
 ```
-Otra majera es la de utilizar el **operador ? :**  en vez de **if-else** para la descripción del contador módulo M. De esta forma el código es más compacto. También le da un aspecto más parecido a C, y eso mola :-)
+Otra mejora es utilizar el operador `? :`  en vez de `if-else` para la descripción del contador módulo M. De esta forma el código es más compacto. También le da un aspecto más parecido a C, y eso mola :-)
 
 ```verilog
 //-- Contador módulo M
