@@ -123,7 +123,7 @@ El proceso de comprobación comienza con
 
     always @(data) begin
 
-Esto significa que cada vez que ejecuta cada vez que hay un cambio en data
+Esto significa que se ejecuta cada vez que hay un cambio en `data`
 
 Para simular ejecutamos:
 
