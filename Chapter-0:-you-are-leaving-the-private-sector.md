@@ -1,15 +1,17 @@
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T00-Intro/images/checkpoint-charlie.png" 
 width="400" align="center">
 
-_You are leaving the privative sector_ ... and you're entering the FREE sector! Welcome! From now on, **we'll only use tools that belong to human heritage.**
+_You are leaving the private sector_ ... and you're entering the FREE sector! Welcome! From now on, **we'll only use tools that belong to technological heritage of humanity.**
 
 # Introduction
 
 [FPGAs](https://es.wikipedia.org/wiki/Field_Programmable_Gate_Array) are this kind of "blank" chips, that can be configured in order to create our own digital circuits. Yep! With FPGAs we are creating actual hardware! 
 
-Every digital circuit can be split in it's basic elements: **logic gates** that perform boolean operations with the bits and **flip-flops** to store the results. As a first approach, we can think of an FPGA as a chip that has arrays of these elements, unconnected. When you configure it, they connect to each other in an specific way and that's how we get our circuit.
+Every digital circuit can be split in it's basic elements: **logic gates** that perform boolean operations with the bits and **flip-flops** to store the results. As a first approximation, we can think of an FPGA as a chip that has unconnected  arrays of these elements. When you configure it, they connect to each other in an specific way and that's how we get our circuit.
 
-(drawing)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/fpga-config1.png)
+
+This configuration is achieved by downloading in the FPGA a binary file, called a bitstream, which contains all the information necessary to establish the connections between the internal elements of the FPGA. 
 
 # Free environment
 TODO
