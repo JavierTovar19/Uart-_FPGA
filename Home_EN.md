@@ -248,26 +248,28 @@ $ make sim
 
 ## Compilation of Links
 
-[Project icestorm](http://www.clifford.at/icestorm/) ( [Github](https://github.com/cliffordwolf/icestorm) ). A project to encompass everything
-[Yosys: synthesis tool](http://www.clifford.at/yosys/) ( [Github](https://github.com/cliffordwolf/yosys) )
-[Arachne: Place & route](https://github.com/cseed/arachne-pnr)
-[Icarus Verilog Simulator](http://iverilog.icarus.com/) ( [Github](https://github.com/steveicarus/iverilog) )
-[Gtkwave](http://gtkwave.sourceforge.net/) . Signal display
-[Icestick board](http://www.latticesemi.com/icestick)
-[ICE40LPHXFamilyDataSheet.pdf]](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf) . ICE40 FPGA datasheet
-[Icestickusermanual.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf) . Icestick data sheet
-[Pinout of the Icestick board](http://www.pighixxx.com/test/2016/02/icestick-pinout/) by Alberto Piganti
-[Processor Simplez-F](https://github.com/Obijuan/simplez-fpga/wiki/Procesador-SIMPLEZ-F). Educational processor Simplez, by Professor Gregorio Fernández, written in Verilog and synthesized in an Icestick
-[Simplez on Atom](https://github.com/Obijuan/simplez-grammar) . Package to highlight the Simplez syntax from Atom
-[FPGA-WARS Group](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre) : Exploring the Free Side
-[Platformio + FPGA](https://github.com/FPGAwars/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home) . Inclusion of ICE40 FPGAs in the Platformio environment
-[Apio](https://github.com/FPGAwars/apio) . Multiplatform ecosystem to synthesize hardware in free FPGAs
-[Icestudio](https://github.com/FPGAwars/icestudio) . Visual tool to synthesize hardware in free FPGAs
-[IceZUM Alhambra Card](https://github.com/FPGAwars/icezum/wiki)
+* [Project icestorm](http://www.clifford.at/icestorm/) ( [Github](https://github.com/cliffordwolf/icestorm) ). A project to encompass all the low level iCE tools
+* [Yosys: synthesis tool](http://www.clifford.at/yosys/) ( [Github](https://github.com/cliffordwolf/yosys) )
+* [Arachne: Place & route](https://github.com/cseed/arachne-pnr)
+* [Icarus Verilog Simulator](http://iverilog.icarus.com/) ( [Github](https://github.com/steveicarus/iverilog) )
+* [Gtkwave](http://gtkwave.sourceforge.net/) : Waveform display
+* [Icestick board](http://www.latticesemi.com/icestick)
+* [ICE40LPHXFamilyDataSheet.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/iCE40LPHXFamilyDataSheet.pdf) : ICE40 FPGA datasheet
+* [Icestickusermanual.pdf](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/doc/icestickusermanual.pdf) : Icestick data sheet
+* [Pinout of the Icestick board](http://www.pighixxx.com/test/2016/02/icestick-pinout/) by Alberto Piganti
+* [Processor Simplez-F](https://github.com/Obijuan/simplez-fpga/wiki/Procesador-SIMPLEZ-F). Educational processor Simplez, by Professor Gregorio Fernández, written in Verilog and synthesized into an Icestick
+* [Simplez on Atom](https://github.com/Obijuan/simplez-grammar) . Package to highlight the Simplez syntax from Atom
+* [FPGA-WARS Group](https://groups.google.com/forum/#!forum/fpga-wars-explorando-el-lado-libre) : Exploring the Free Side
+* [Platformio + FPGA](https://github.com/FPGAwars/Platformio-FPGA/wiki/Platformio-FPGA-wiki-home) . Inclusion of ICE40 FPGAs in the Platformio environment
+* [Apio](https://github.com/FPGAwars/apio) . Multiplatform ecosystem to synthesize hardware in free FPGAs
+* [Icestudio](https://github.com/FPGAwars/icestudio) . Visual tool to synthesize hardware in free FPGAs
+* [IceZUM Alhambra Card](https://github.com/FPGAwars/icezum/wiki)
 ## Tools used for the preparation of this tutorial
 
-[Inkscape](https://inkscape.org/es/), 0.91: For the figures (the source files in .SVG, of all the figures, are in the repository)
+[Inkscape](https://inkscape.org/es/), 0.91: For the figures (All of the figures source files in .SVG are in the repository)
+
 [Gimp](https://www.gimp.org/): Retouching and processing of photos
+
 **Operating System** : Ubuntu GNU / Linux 16.04
 ## Bibliography
 
