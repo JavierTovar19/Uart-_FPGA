@@ -1,10 +1,20 @@
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
 [Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T01-setbit)
+## Before starting 
+Do not forget to clone the tutorials on your computer, to be able to access to all the sample programs:
+```
+https://github.com/Obijuan/open-fpga-verilog-tutorial.git
+```
+Enter the working directory of tutorial 1:
+```
+cd open-fpga-verilog-tutorial/tutorial/ICESTICK/T01-setbit/
+```
+You are ready to do the tutorial!
 
 ## Introduction
 
-The simplest digital circuit is just a cable connected to a "high" logic level. "1", for example. This way, if you connect a LED to it will light on (1) or turn off (0).
+The simplest digital circuit is just a wire connected to a known logic level, "1", for example. This way, if you connect a LED to it, it will light up (1) or turn off (0).
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-1.png)
 
@@ -12,9 +22,9 @@ The output of this circuit has been called "A".
 
 ## setbit.v: Hardware description.
 
-In order to synthesize this circuit into the FPGA, we have to describe it first, using a hardware description language (HDL). In this tutorial we use Verilog, given that we have all the free tools for its simulation/synthesis.
+In order to synthesize this circuit into an FPGA, we have to describe it first, using a hardware description language (HDL). In this tutorial we use Verilog, given that we have all the free tools for its simulation/synthesis.
 
-Verilog is a language used for describing hardware..  but beware! IT IS NOT A PROGRAMMING LANGUAGE! It's a description language! It allows us to describe the connections and the elements of a digital system.
+Verilog is a language used for describing hardware...  but beware! IT IS NOT A PROGRAMMING LANGUAGE! It's a description language! It allows us to describe the connections and the elements of a digital system.
 
 The Verilog code for this "hello world" circuit implementation can be found in the [setbit.v](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/T01-setbit/setbit.v) file. It looks like this:
 
@@ -30,17 +40,17 @@ endmodule
 
 ## Synthesis into the FPGA
 
-In addition to the Verilog file, we'll need to specify which pin of the FPGA we want the component's "A" output to be connected to. This map is made with the setbit.pcf file, (pcf = Physical Constraint File). We will output the "A" signal through the pin 99, that is connected to the D1 LED; but it could be any other pin:
+In addition to the Verilog file, we'll need to specify which pin of the FPGA we want the component's "A" output to be connected to. This association is made with the setbit.pcf file, (pcf = Physical Constraint File). We will output the "A" signal through pin 99, which is connected to the D1 LED; but it could be any other pin:
 
     set_io A 99
 
-In this example, it only has one line, linking the "A" label to pin 99 of the FPGA.
+In this example, the file only has one line, linking the "A" label to pin 99 of the FPGA.
 
 Figure 2 graphically displays this idea. We are describing hardware, so making sketches and drawings is a good idea in order to understand our design better: 
 
 ![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-2.png)
 
-To make the complete synthesis of the circuit, we got to the  _tutorial/T01-setbit_ folder, and we execute the **make sint** from the console:
+To make the complete synthesis of the circuit, we go to the  _tutorial/T01-setbit_ folder, and we execute the **make sint** from the console:
 
     $ make sint
     
@@ -73,11 +83,13 @@ A lot more messages will pop up. My laptop takes less than a second to synthesiz
     icepack setbit.txt setbit.bin
     $
 
-When it finishes, it generates a "setbit.h" file. This file will be uploaded to the FPGA in order to configure it. We put the iCEStick into the USB and execute this command:
+When it finishes, it generates a "setbit.bin" file. This file will be uploaded to the FPGA in order to configure it. We put the iCEStick into the USB and execute this command:
 
     $ sudo iceprog setbit.bin
 
-The process last about 30 seconds (With the current iceprog version. This time will be reduce as the community improves the software). The messages that pop up are:
+**NOTE**: If the ICEStick is configured as indicated in chapter 0, the download can be done without sudo. 
+
+The process last about 3 seconds The messages that pop up are:
 
     [sudo] password for obijuan: 
     init..
@@ -98,19 +110,19 @@ LED D1 on the iCEStick will turn on:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-iCEstick.png" width="400" align="center">
 
-**Note:** The other LEDs may flicker. That is normal. It is because they have no signal assigned, and internally they are unconnected.
+**Note:** The other LEDs may be dimmly lit. That is normal. It is because they have no signal assigned in the FPGA, and there is a weak pullup by default. 
 
 ## Simulation
 
-### Simulate first, sythesize later
+### Simulate first, synthesize later
 
-The latter example it's been directly uploaded to the FPGA because the design was **PREVIOUSLY TESTED**. When we work with FPGA **we are actually making hardware** and we always have to be very careful. We could write a code that contains a short. And it could also happen that the tools didn't warn us, (specially in these first versions, still in an alpha stage). If we upload that circuit into the FPGA we could break it.
+In the previous example we directly uploaded to the FPGA because the design was **PREVIOUSLY TESTED**. When we work with FPGAs **we are actually making hardware** and we always have to be very careful. We could write a design that contains a short circuit. And it could also happen that the tools don't warn us, (especially in these first versions, still in an alpha stage). If we upload that circuit into the FPGA we could break it.
 
 Because of that, we **ALWAYS SIMULATE THE CODE** that we write. Once we are sure enough that it works, (and it doesn't have a critical mistake) we upload it into the FPGA.
 
 ### Testing components: the testbench
 
-If we buy a chip and we want to test it, what do we do?. Usually we weld it directly onto a PCB or we put it in a socket. But we can also plug it into a breadboard and place all the cables by ourselves.
+If we buy a chip and we want to test it, what do we do?. Usually we solder it directly onto a PCB or we put it in a socket. But we can also plug it into a breadboard and place all the wires by ourselves.
 
 In Verilog (and the rest of HDL languages) it's the same idea. **You can't simulate a verilog component right away**, you need to write a **testbench** that indicates which cables connect to which pins, which input signals to send the circuit, and check that the circuit outputs the right values. This testbench file is also written in Verilog.
 
@@ -121,7 +133,7 @@ How do we test the setbit component? It's a chip that has only one output pin, a
 The file is called setbit_tb.v. We always use the "_tb" suffix to indicate that it the file is a testbench and not a real piece of hardware. This testbench is NOT SYNTHESIZABLE, is a code FOR SIMULATION PURPOSES ONLY. That's why this time we can think of Verilog as a programming language, we are programming something that will "happen" to our circuit.
 
 The testbench has 3 elements: the "setbit" component, a cable called "A" and a check block (The equivalent of a multimeter). This is the code:
-
+```verilog
     //-- Test bench module
     module setbit_tb;
     
@@ -156,10 +168,10 @@ The testbench has 3 elements: the "setbit" component, a cable called "A" and a c
       # 10 $finish;
     end
     endmodule
+```
+## Simulating!
 
-## ¡Simulating!
-
-We use icarus verilog y GTKwave tools for simulation. We execute the command:
+We use icarus verilog and GTKwave tools for simulation. We execute the command:
 
     $ make sim
 
@@ -167,7 +179,7 @@ and a window will pop up with the results of the simulation:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
 
-At first glance, we can see it behaves as intended: the signal in A is always a "1". We can ignore the time units for now, they are seconds by default. After 20 units, simulation ends. 
+At a glance we can see it behaves as intended: the signal in A is always a "1". We can ignore the time units for now, they are seconds by default. After 20 units, simulation ends. 
 
 The console will show the following messages:
 
@@ -189,4 +201,12 @@ The one that says "**Component ok!**" is the one we placed in the testbench when
 * Change the original example so setbit is output through the D2 LED (associated with pin 98 instead of 99)
 
 ## Conclusions
-TODO
+We have created our first circuit in verilog , a "hello world" consisting of 1 wire. We have synthesized and loaded it into the FPGA. We have also written one test bench in verilog to simulate it. We already have all the tools installed, configured and we have verified that they work. We are ready to tackle more complex designs and learn more verilog
+
+### Introduced concepts:
+
+* pin connections are assigned
+* Creating components with module
+* Definition of output ports with output
+* Definition of a wire with wire
+* testbench
