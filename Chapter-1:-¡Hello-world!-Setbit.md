@@ -122,7 +122,7 @@ Because of that, we **ALWAYS SIMULATE THE CODE** that we write. Once we are sure
 
 ### Testing components: the testbench
 
-If we buy a chip and we want to test it, what do we do?. Usually we solder it directly onto a PCB or we put it in a socket. But we can also plug it into a breadboard and place all the wires by ourselves.
+If we buy a chip and we want to test it, what do we do? Usually we solder it directly onto a PCB or we put it in a socket. But we can also plug it into a breadboard and place all the wires by ourselves.
 
 In Verilog (and the rest of HDL languages) it's the same idea. **You can't simulate a verilog component right away**, you need to write a **testbench** that indicates which cables connect to which pins, which input signals to send the circuit, and check that the circuit outputs the right values. This testbench file is also written in Verilog.
 
