@@ -13,7 +13,7 @@ We will name this component "Fport" (Fixed port). It has a 4-bit output bus, lab
 ## Fport.v: Hardware description
 
 This circuit is similar to the one in the last tutorial, (setbit.v) but instead of having just 1 output bits, it has 4 bits. It's described like this:
-
+```verilog
     //-- Fichero Fport.v
     module Fport(output [3:0] data);
     
@@ -24,12 +24,12 @@ This circuit is similar to the one in the last tutorial, (setbit.v) but instead 
       assign data = 4'b1010; //-- 4'hA
     
     endmodule
-
-The output is now a **4 cable array**. You can express that by writing [3:0] before the wire name. In order to assign that wire to a value, we write the value using Verilog's notation: First, the number of bits, then the ' caracter, after that, the base of the number (in this case, "b" for "binary") and finally, the 4 binary digits. This number could be expressed like a single hexadecimal digit, by writing 4'hA. We could also write it in decimal as 4'd10.
+```
+The output is now a **4 wire array**. You can express that by writing [3:0] before the wire name. In order to assign a value to that wire, we write the value using Verilog's notation: First, the number of bits, then the ' character, after that, the base of the number (in this case, "b" for "binary") and finally, the 4 binary digits. This number could be expressed like a single hexadecimal digit, by writing 4'hA. We could also write it in decimal as 4'd10.
 
 ## Synthesis into the FPGA
 
-Each one of the output bits 4 will be assigned to the pins connected to each one of the 4 leds of the FPGA:
+Each one of the 4 output bits will be assigned to the pins connected to each one of the 4 leds of the FPGA:
 
 ![Pic 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T02-Fport/images/Fport-2.png)
 
@@ -40,7 +40,7 @@ This is specified in the Fport.pcf file:
     set_io data[2] 97
     set_io data[3] 96
 
-In order to make the synthesis, we navigate to the **tutorial/T02-Fport** folder in Terminal, and execute the command **make sint**:
+In order to synthesize, we navigate to the **tutorial/T02-Fport** folder, and execute the command **make sint**:
 
     $ make sint
 
@@ -77,7 +77,7 @@ The testbench (Fport_tb.v) has this three elements:
 * The DATA wire
 
 The testbench code is:
-
+```verilog
     //-- Fport_tb.v
     module Fport_tb;
     
@@ -108,7 +108,7 @@ The testbench code is:
     end
     
     endmodule
-
+```
 Note that the component output is labeled "data" and it is connected to "DATA". With this we want to make clear that the names can be different.
 
 To make the simulation we execute **make sim**:
