@@ -27,7 +27,7 @@ Description is similar to the "hello world" component "setbit.v", but now we hav
       assign B = ~A;
     
     endmodule
-```verilog
+```
 We assign the negated input A, to the output B. We use the **~ operator** in front of the A to invert the signal (this is the same operator as in the C programming language).
 
 Because it is a combinatorial circuit, and does NOT store information, **A and B are defined as wires**: information goes through them, but it's not stored. 
@@ -80,7 +80,7 @@ We'll input various values, and check what comes out from the output. To do so, 
 Unlike cables, **registers** work as a variable, to which we can assign different values. First we'll enter a "0", and then check that the output is a "1" (the negative). Then we do the other case: we enter a "1" and the check if we get a "0".
 
 In the testbench, we instantiate the inverter, connecting it's input A to the register din, and it's input B to the dout cable. From the main loop, we assign values to din, and check dout.
-
+```verilog
     //-- inv_tb.v
     module inv_tb();
     
@@ -121,7 +121,7 @@ In the testbench, we instantiate the inverter, connecting it's input A to the re
       # 10 $finish;
     end
     endmodule
-
+```
 We run the simulation by executing the make sim command:
 
     $ make sim
