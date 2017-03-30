@@ -3,9 +3,9 @@
 [Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/T03-inv)
 
 ## Introduction
-Let's model our first **combinational circuit**: an **inverter** (NOT Gate). 
+Let's model our first **combinatorial circuit**: an **inverter** (NOT Gate). 
 
-Combinational circuits make operations with the input bits, and then, they output the result. **They don't store bits, they just modify them**. The simplest of them all is the NOT gate, that has an input bit, and an output bit. The output is always the inverse of the input. "0" turns into "1", and "1" turns into "0".
+Combinatorial circuits operate on the input bits, and then output the result. **They don't store bits, they just modify them**. The simplest of them all is the NOT gate, which has an input bit and an output bit. The output is always the inverse of the input. "0" turns into "1", and "1" turns into "0".
 
 ![Imagen 1](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-1.png)
 
@@ -14,12 +14,12 @@ We'll name our component INV. The input will be A, and the output will be B.
 ## inv.v: Hardware description
 
 Description is similar to the "hello world" component "setbit.v", but now we have an input, and an output.:
-
+```verilog
     //-- inv.v
     //-- Component has an input (A) and an output (B)
     module inv(input A, output B);
     
-    //-- Either the input and the output are "wires"
+    //-- Both the input and the output are "wires"
     wire A;
     wire B;
     
@@ -27,20 +27,20 @@ Description is similar to the "hello world" component "setbit.v", but now we hav
       assign B = ~A;
     
     endmodule
+```verilog
+We assign the negated input A, to the output B. We use the **~ operator** in front of the A to invert the signal (this is the same operator as in the C programming language).
 
-We assign the negated input A, to the output B. We use the **~ operator** in front of the A to invert the signal (is the same operator as in the C language).
-
-Because it is a combinational circuit, and does NOT store information, **A and B are defined as es**: information goes through them, but it's not stored. 
+Because it is a combinatorial circuit, and does NOT store information, **A and B are defined as wires**: information goes through them, but it's not stored. 
 
 ## Synthesis into the FPGA
 
-We'll connect the output of the gate to the D1 LED on the iCEstick (pin 99). The input will go to the 44 pin, that can be reached through the expansion port of the iCEstick.
+We'll connect the output of the gate to the D1 LED on the iCEstick (pin 99). The input will go to the 44 pin which can be reached through the expansion port of the iCEstick.
 
 ![Imagen 2](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-2.png)
 
 We want to enter a "0" or a "1" to the 44 pin from outside, in order to turn on or off the LED. To achieve this we will physically wire that pin to the Vcc pin (3.3v) or to ground (0v, GND).
 
-Synthesis is done like always, with the **make synth** command:
+Synthesis is done like always, with the **make sint** command:
 
     $ make sint
 
@@ -56,8 +56,8 @@ This command uploads the resulting file into the FPGA:
 
     $ sudo iceprog inv.bin
 
-## Testing the new inversion gate
-The iCEstick board has an expansion port connected to some of the pins of the FPGA. It's useful to solder a female pin strip to have easy access to them. You can see the strip soldered to the lower pins. 
+## Testing the inversion gate
+The iCEstick board has an expansion port connected to some of the pins of the FPGA. It's useful to solder a female pin strip to have easy access to them. You can see the strip soldered to the lower pins in the picture below. 
 
 ![Imagen 3](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-4.png)
 
@@ -67,11 +67,11 @@ Let's connect two pieces of cable, one into the 3.3v pin and the other to the GN
 
 <img src="https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/T03-inv-iCEstick-3.png" width="400" align="center">
 
-When the cable in the GND pin is connected to the 44 pin, the LED will turn on. When we connect the cable in the 3.3v, the LED tunrs off. When there is NOTHING connected to the 44 pin, the result is quite random: It can be on, it can be off, or it can be flickering between the two states. This is one of the basic rules of digital design: "Never leave an input wire unconnected. Always 1 or 0".
+When the cable in the GND pin is connected to the 44 pin, the LED will turn on. When we connect the cable in the 3.3v, the LED turns off. When there is NOTHING connected to the 44 pin, the result is quite random: It can be on, it can be off, or it can be flickering between the two states. This is one of the basic rules of digital design: "Never leave an input wire unconnected. Always 1 or 0".
 
 
 ## Simulation
-In the testbench, we must instantiate the inverter, and connect the **dout cable** to the B output.
+In the testbench, we must instantiate the inverter, and connect the **dout wire** to the B output.
 
 We'll input various values, and check what comes out from the output. To do so, we connect the **register** named **din**.
 
@@ -90,7 +90,7 @@ In the testbench, we instantiate the inverter, connecting it's input A to the re
     //-- Wire connected to the inverter's output
     wire dout;
     
-    //-- Instantiate the inverter, connnecting din to the input A, and dout to the output B
+    //-- Instantiate the inverter, connecting din to the input A, and dout to the output B
     inv NOT1 (
      .A (din),
      .B (dout)
@@ -122,7 +122,7 @@ In the testbench, we instantiate the inverter, connecting it's input A to the re
     end
     endmodule
 
-We make the simulation, executing the make sim command:
+We run the simulation by executing the make sim command:
 
     $ make sim
 
@@ -130,12 +130,10 @@ In the simulation we can see that **dout** is always the inverse of **din**.
 
 ![Imagen 4](https://raw.githubusercontent.com/Obijuan/open-fpga-verilog-tutorial/master/tutorial/ICESTICK/T03-inv/images/inv-5.png)
 
-We can see that, in the first 5 time units, din and dout have the X value (red). It means that it's value is undefined. That happens because we didn't initialize din with any value until the 5th time unit. Before that, it had an undetermined value (X) and therefore the output is undetermined too. After the 5th time unit, din is 0, and hence dout is 1. 
+We can see that, in the first 5 time units, din and dout have the X value (red). This means that its value is undefined. That happens because we didn't initialize din with any value until the 5th time unit. Before that, it had an undetermined value (X) and therefore the output is undetermined too. After the 5th time unit, din is 0, and hence dout is 1. 
 
 ## Proposed exercises
 * Make a component that has 2 inverters, and consequently, 2 inputs, and 2 outputs. Their outputs must be connected to 2 different LEDs.
 
-## Conclusions
-TODO
 
 
