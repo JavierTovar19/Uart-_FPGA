@@ -18,7 +18,7 @@ Before implementing a N-bit prescaler, we are going to understand how a 2-bit pr
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-3.png)
 
-Internally, it's made of a **2-bit counter**, whose outputs are d0 and d1. The most significant bit, is the one that is sent as output signal. This counter increases with each rising edge of clk, that has a period of "T". If we see the output signals of its 2 bits: (d0 and d1):
+Internally, it's made of a **2-bit counter**, whose outputs are d0 and d1. The most significant bit is the one that is sent as output signal. This counter increases with each rising edge of clk, that has a period of "T". If we see the output signals of its 2 bits: (d0 and d1):
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-4.png)
 
@@ -55,11 +55,11 @@ The **input frequency** into the prescaler in the iCEStick is *12MHz*. Applying 
 
 Human eyes have a refresh rate of around 25Hz. This means that anything happening at higher frequencies remain unnoticed. If we make the LED blink at a higher frequency, we'll see that as if was always on. (We won't see it blinking).
 
-When you use the prescaler with the LED, **you notice the blinking when using 19 bits or more**. The more bits you use, the slower the LED will blink.
+When you use the prescaler with an LED, **you notice the blinking when using 19 bits or more**. The more bits you use, the slower the LED will blink.
 
 ## Hardware description
 
-The code is almost the same as the one of the counter, but this time we introduce this new feature that **this prescaler is parametric**, this way the number of bits is determined by the **N parameter**. We can synthesise different sizes of prescalers by just changing this parameter.
+The code is almost the same as the one of the counter, but this time we introduce this new feature that **this prescaler is parametric**, this way the number of bits is determined by the **N parameter**. We can synthesize different sizes of prescalers by just changing this parameter.
 
 ```verilog
 //-- prescaler.v
@@ -96,7 +96,7 @@ The 12MHz clock signal from the iCEStick goes through the pin 21 of the FPGA. Th
 
 ![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-5.png)
 
-To sythesise, we execute:
+To synthesize, we execute:
 
     $ make sint
 
@@ -122,7 +122,7 @@ In this **Youtube video** you can see the LED blinking:
 
 ## Simulation
 
-In the testbench we put the **N-bit prescaler** (N = 2 by default), a **clock signal generator** and a **check block** that executes every falling edge of the clock. This block has an internal register that increases each update, and its most significant byte is checked against clk_out, to assure that the latter is working properly. There's also a fourth block that initializes everything and waits for the simulation to finish.
+In the testbench we put the **N-bit prescaler** (N = 2 by default), a **clock signal generator** and a **check block** that executes every falling edge of the clock. This block has an internal register that increases each update, and its most significant bit is checked against clk_out, to assure that the latter is working properly. There's also a fourth block that initializes everything and waits for the simulation to finish.
 
 ![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T05-prescaler/images/prescaler-6.png)
 
@@ -203,7 +203,7 @@ The result is:
 Now the output signal has a period 8 times greater that the input signal.
 
 ## Proposed exercises
-* Modify the prescaler with values of N = 18, 19, 20 y 21. Synthesise them and upload into the iCEStick.
+* Modify the prescaler with values of N = 18, 19, 20 y 21. Synthesize them and upload into the iCEStick.
 * Make a simulation for N = 4
 
 ## Conclusions
