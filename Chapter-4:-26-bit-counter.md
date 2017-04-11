@@ -13,7 +13,7 @@ iCEstick board's **clock signal** oscillates at **12Mhz**. If we made a counter 
 
 ## Hardware description
 
-The counter has a **clk input** which is a wire, and a **26-bit output** that returns the value of the counter. This output is a **26-bit register** stores the current counter value. 
+The counter has a **clk input** which is a wire, and a **26-bit output** that returns the value of the counter. This output is a **26-bit register** which stores the current counter value. 
 
 ```verilog
 //-----------------------------------
@@ -36,11 +36,11 @@ endmodule
 
 The behaviour of the component is described inside the **always @(posedge clk)** block, that line indicates that everything described within this block, will be evaluated each time a **rising edge** comes in, from the clk signal. When a rising edge arrives, the data register is incremented by 1, (and is output, through the component's output).
 
-Every counter, regardless of the amount of bit it has, is built this way. If we want it to have 20 bits, we just have to change the 25 number to 19 in the data register definition.
+Every counter, regardless of the amount of bits it has, is built this way. If we want it to have 20 bits, we just have to change the 25 number to 19 in the data register definition.
 
 ## Synthesis into the FPGA
 
-The 4 most significant bits, (data[25], data[24], data[23] y data[22]) will be connected to the pins of the FPGA that are connected to the LEDs. The iCEstick clock comes from pin 21, so we'll connect that to the clk signal of our counter.
+The 4 most significant bits, (data[25], data[24], data[23] and data[22]) will be connected to the pins of the FPGA that are connected to the LEDs. The iCEstick clock comes from pin 21, so we'll connect that to the clk signal of our counter.
 
 ![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-2.png)
 
@@ -52,7 +52,7 @@ The connection between our component and the pins in our FPGA is established in 
     set_io data[22] 99
     set_io clk 21
 
-We synthesise as always:
+We synthesize as always:
 
     $ make sint
 
@@ -78,7 +78,7 @@ The testbench is made of 4 (parallel) elements, connected by wires. The diagram 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T04-counter/images/counter-3.png)
 
-There's a clock generator that produces a square signal, to increase the counter. The counter's output is checked by two different components: One makes the initial check, verifying that it starts at 0. The second has an internal variable that increases with every rising edge of the clock, and it's output is checked against the counter's output, to verify that indeed it is counting. Because it's a 26-bit counter, we won't check through all the 67108864 values, we will stop the simulation after 100 time units.
+There's a clock generator that produces a square signal, to increment the counter. The counter's output is checked by two different components: One makes the initial check, verifying that it starts at 0. The second has an internal variable that increases with every rising edge of the clock, and it's output is checked against the counter's output, to verify that indeed it is counting. Because it's a 26-bit counter, we won't check through all the 67108864 values, we will stop the simulation after 100 time units.
 
 The verilog code would be:
 
@@ -90,10 +90,10 @@ module counter_tb();
 reg clk = 0;
     
 //-- Counter's output data
-wire [26:0] data;
+wire [25:0] data;
 
 //-- Register for checking if the counter is counting properly
-reg [26:0] counter_check = 1;
+reg [25:0] counter_check = 1;
     
 //-- Instantiating the counter
 counter C1(
@@ -146,5 +146,5 @@ Indeed the counter is counting. The image shows only the first values, but if yo
 ## Proposed exercises
 * Changing the counter from 26 to 24 bits, so LEDs flicker more rapidly.
 
-## Conclussions
+## Conclusions
 TODO
