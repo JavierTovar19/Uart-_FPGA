@@ -203,7 +203,7 @@ The result is:
 Now the output signal has a period 8 times greater that the input signal.
 
 ## Proposed exercises
-* Modify the prescaler with values of N = 18, 19, 20 y 21. Synthesize them and upload into the iCEStick.
+* Modify the prescaler with values of N = 18, 19, 20 and 21. Synthesize them and upload into the iCEStick.
 * Make a simulation for N = 4
 
 ## Conclusions
