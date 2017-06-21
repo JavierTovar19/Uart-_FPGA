@@ -116,23 +116,23 @@ endmodule
 
 ### Сначала симулируем, затем синтезируем
 
-In the previous example we directly uploaded to the FPGA because the design was **PREVIOUSLY TESTED**. When we work with FPGAs **we are actually making hardware** and we always have to be very careful. We could write a design that contains a short circuit. And it could also happen that the tools don't warn us, (especially in these first versions, still in an alpha stage). If we upload that circuit into the FPGA we could break it.
+В предидущем примере мы сразу загрузили пример в ПЛИС. Мы так сделали, поскольку этот пример уже был **заранее протестирован**. Когда мы работаем с ПЛИС - мы создаем электрические схемы, поэтому всегда должны быть внимательны! Мы можем описать такую схему, в которой получится короткое замыкание и утилиты могут об этом не предупредить (особенно в ранних версиях средств разработки). Если мы загрузим такую схему в ПЛИС, мы, вероятнее всего, повредим ПЛИС.
 
-Because of that, we **ALWAYS SIMULATE THE CODE** that we write. Once we are sure enough that it works, (and it doesn't have a critical mistake) we upload it into the FPGA.
+Поэтому мы **ВСЕГДА СИМУЛИРУЕМ НАПИСАННЫЙ КОД**. Как только мы убедились что в симуляторе код работает и не содержит критических ошибок его можно загрузить в ПЛИС.
 
-### Testing components: the testbench
+### Тестирование компонентов: testbench (испытательный стенд)
 
-If we buy a chip and we want to test it, what do we do? Usually we solder it directly onto a PCB or we put it in a socket. But we can also plug it into a breadboard and place all the wires by ourselves.
+Если мы купили микросхему и хотим ее проверить, что мы делаем? Обычно паяем на плату или вставляем в панельку. Еще есть вариант вставить ее в макетную плату или подключить на проводах.
 
-In Verilog (and the rest of HDL languages) it's the same idea. **You can't simulate a verilog component right away**, you need to write a **testbench** that indicates which cables connect to which pins, which input signals to send the circuit, and check that the circuit outputs the right values. This testbench file is also written in Verilog.
+В Verilog (и других языках HDL) принцип аналогичный. **Вы не можете симулировать компонент сам по себе**, вам нужно написать **testbench**, который описывает какие "провода" подключаются к каким выводам и какие сигналы куда подавать, чтобы проверить работоспособность и сравнить выходные сигналы с ожидаемыми. Этот testbench так же пишется на Verilog.
 
-How do we test the setbit component? It's a chip that has only one output pin, always high. In real life we would plug it onto a breadboard, we power it up, we would connect a cable to the output pin, and we would check it's high in voltage with a multimeter. We will do exactly the same, but with Verilog. We would get something like this:
+Как нам протестировать компонент setbit? Это деталь которая имеет всего один выход и его значение всегда "1". В случае настоящей аппаратной микросхемы мы вставили бы ее в панельку, подали бы питание и подсоединили бы провод к выходному контакту, затем проверили бы что на нем логическая "1" вольтметром, осциллографом или логическим анализатором. Мы сделаем то же самое, но на Verilog. Мы сделаем вот так:
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-3.png)
+![Image 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/setbit-3.png)
 
-The file is called setbit_tb.v. We always use the "_tb" suffix to indicate that it the file is a testbench and not a real piece of hardware. This testbench is NOT SYNTHESIZABLE, is a code FOR SIMULATION PURPOSES ONLY. That's why this time we can think of Verilog as a programming language, we are programming something that will "happen" to our circuit.
+Файл называется setbit_tb.v. Мы всегда будем использовать суффикс "_tb" чтобы показать что это testbench, а не часть схемы проекта. Стоит заметить что testbench не синтезируем в железе, это код только для симулятора. Поэтому в данный момент мы может рассматривать Verilog как язык программирования, мы программируем что произойдет с нашей схемой и какой результат мы ожидаем.
 
-The testbench has 3 elements: the "setbit" component, a cable called "A" and a check block (The equivalent of a multimeter). This is the code:
+Testbench содержит 3 элемента: компонент "setbit", провод "A" и блок проверки. Вот код нашего testbench:
 ```verilog
     //-- Test bench module
     module setbit_tb;
@@ -169,19 +169,19 @@ The testbench has 3 elements: the "setbit" component, a cable called "A" and a c
     end
     endmodule
 ```
-## Simulating!
+## Симуляция!
 
-We use icarus verilog and GTKwave tools for simulation. We execute the command:
+Мы будем использовать icarus verilog и GTKwave для симуляции. Запускаем:
 
     $ make sim
 
-and a window will pop up with the results of the simulation:
+и откроется окно с результатами симуляции:
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/blob/master/tutorial/ICESTICK/T01-setbit/images/T01-setbit-simul-1.png" width="600" align="center">
 
-At a glance we can see it behaves as intended: the signal in A is always a "1". We can ignore the time units for now, they are seconds by default. After 20 units, simulation ends. 
+На логическом анализаторе мы видим ожидаемое поведение: сигнал A всегда в значении "1". Пока мы можем не обращать внимание на единицы измерения времени (по умолчанию это секунды). После 20 единиц, симуляция завершается. 
 
-The console will show the following messages:
+В консоле появятся такие сообщения:
 
     #-- Compilar
     iverilog setbit.v setbit_tb.v -o setbit_tb.out
@@ -192,21 +192,21 @@ The console will show the following messages:
     #-- Ver visualmente la simulacion con gtkwave
     gtkwave setbit_tb.vcd setbit_tb.gtkw &
 
-The one that says "**Component ok!**" is the one we placed in the testbench when the output was "1".
+Одно из них гласит "**Component ok!**" это то сообщение, которое мы поместили в testbench для случая, когда A = "1".
 
-## Proposed exercises
+## Упражнения
 
-* Change the component so it outputs a 0. Upload it into the FPGA. Check that the LED is off now.
+* Измените компонент на фиксированное значение "0". Загрузите его в ПЛИС. Проверьте что светодиод погас.
 
-* Change the original example so setbit is output through the D2 LED (associated with pin 98 instead of 99)
+* Измените пример так, чтобы setbit был подключен к светодиоду D2 (подключен к пину 98 вместо 99)
 
-## Conclusions
-We have created our first circuit in verilog , a "hello world" consisting of 1 wire. We have synthesized and loaded it into the FPGA. We have also written one test bench in verilog to simulate it. We already have all the tools installed, configured and we have verified that they work. We are ready to tackle more complex designs and learn more verilog
+## Заключение
+Мы сделали первую схему на  verilog, "hello world" содержаший 1 сигнал. Мы синтезировали его и загрузили в ПЛИС. Так же мы написали testbech для него на verilog и симулировали его. Теперь у нас установлены и настроены все утилиты и мы проверили их работоспособность. Теперь мы готовы к более сложным задачам и дальнейшему изучению Verilog.
 
-### Introduced concepts:
+### Пройденные понятия:
 
-* pin connections are assigned
-* Creating components with module
-* Definition of output ports with output
-* Definition of a wire with wire
+* Подключение сигнала к контактам (пинам)
+* Создание компонентов при помощи конструкции module
+* Определение выходов с помощью output
+* Определение провода с помощью wire
 * testbench
