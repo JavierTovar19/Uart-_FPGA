@@ -1,6 +1,6 @@
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T06-multiples-prescalers/images/mpres-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T06-multiples-prescalers)
+[Examples of this chapter on github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T06-multiples-prescalers)
 
 ## Introduction
 With **hierarchical design** we can reuse tested components to build more complex designs. In this chapter we will flash 4 LEDs independently, each with its own prescaler.
@@ -92,7 +92,7 @@ To synthesize, we execute:
 
 Resource usage is:
 
-| Recurso  | ocupación
+| Resource | utilization
 |----------|-----------
 |PIOs      | 4 / 96
 |PLBs      | 8 / 160
@@ -160,7 +160,7 @@ always #1 clk = ~clk;
 //-- Initialization block
 initial begin
     
-  //-- Fichero donde almacenar los resultados
+  //-- Result location
   $dumpfile("mpres_tb.vcd");
   $dumpvars(0, mpres_tb);
       
@@ -181,7 +181,7 @@ This is the result in gtkwave:
 
 
 ## Proposed exercises
-* Generar otra secuencia de movimiento cambiando  las frecuencias de los prescalers
+* Generate a different sequence by changing the parameters of the prescalers
 
 ## Conclusions
 TODO
