@@ -1,15 +1,15 @@
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T07-contador-prescaler/images/counter4-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T07-contador-prescaler)
+[Examples of this chapter on github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T07-contador-prescaler)
 
-## Introducción
-**Contador de 4 bits** conectado a los leds. Para que cuente más lentamente, la señal de reloj se pasa por un **prescaler de 22 bits**.  Se trata del mismo contador del capítulo 4, pero con un diseño mejorado. Para cambiar la frecuencia de cuenta sólo hay que cambiar los bits del prescaler (y no hace falta modificar los bits del contador ni reasignarlos en el fichero .pcf)
+## Introduction
+**4 bit counter** connected to the LEDs. To count more slowly, the clock signal of the counter is passed through a **22 bit prescaler**. This is the same counter as in Chapter 4, but with an improved design: to change the frequency of the counter, just change the parameter of the prescaler (and no need to modify the width of the counter or reassign them in the .pcf file). 
 
 
 
-## Descripción del hardware
 
-El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits. También tiene un parámetro N para indicar el número de bits del prescaler y establecer su frecuencia de funcionamiento. El código verilog es el siguiente:
+## Hardware Description
+The counter has a **clock input** and a **4-bit data output**. It also has parameter N to indicate the number of bits of the prescaler and set it's operating frequency. The verilog code is as follows: 
 
 ```verilog
 //-- counter4.v
@@ -17,20 +17,20 @@ module counter4(input clk, output [3:0] data);
 wire clk;
 reg [3:0] data = 0;
     
-//-- Parametro para el prescaler
+//-- Parameter for the prescaler
 parameter N = 22;
     
-//-- Reloj de salida del prescaler
+//-- Output clock of the prescaler
 wire clk_pres;
     
-//-- Instanciar el prescaler de N bits
+//-- Instantiate the prescaler of N bits
 prescaler #(.N(N))
   pres1 (
     .clk_in(clk),
     .clk_out(clk_pres)
   );
     
-//-- Incrementar el contador en cada flanco de subida
+//-- Increment the counter on each rising edge. 
 always @(posedge(clk_pres)) begin
   data <= data + 1;
 end
@@ -38,80 +38,80 @@ end
 endmodule
 ```
 
-Se podría haber definido un contador genérico en un fichero aparte e instanciarlo (igual que se ha hecho con el prescaler). Sin embargo se ha hecho así para mostrar un ejemplo de diseño jerárquico mezclado con un componente definido en un proceso.  Además, el contador es tan sencillo, que no merece la pena almacernarlo en un fichero separado.
+You could have defined a generic counter in a seperate file and instantiate it (just like you did with the prescaler). However, in this case this is to show an example of hierarchical design mixed with a component defined in a process. In addition, the counter is so simple that it is not worth it to store in a seperate file. 
 
-El código se ha implementado a partir del dibujo  de la imagen 1
+The code has been implemented following the design in image 1. 
 
-## Síntesis en la FPGA
+## Synthesis of the FPGA
 
-La señal de reloj de 12Mhz entra por el pin 21 de la fpga, y la salida de datos se cada por los pines de los leds, del 99 al 96
+The 12 Mhz clock signal enters the FPGA via pin 21, and the output data is sent to each pin connected to the LEDs, from 99 to 96. 
 
-Para sintentizarlo ejecutar el comando:
+to synthesis the design, execute the command: 
 
     $ make sint
 
-Los recursos empleados son:
+The resources used are:
 
-| Recurso  | ocupación
+| Resources| utilization
 |----------|-----------
 |PIOs      | 3 / 96
 |PLBs      | 8 / 160
 |BRAMs     | 0 / 16
 
-Cargar en la FPGA con el comando:
+Load the design into the fpga with the command: 
 
     $ sudo iceprog counter4.bin
 
-## Simulación
-El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de comprobación del contador se ha modificado ligeramente. Ahora en vez de realizarse la comprobación en el flanco de bajada, se hace cuando hay algún cambio en la salida data del contador.  Esto se consigue poniendo a data en la lista de sensibilidad del proceso de comprobación:
+## Simulation
+The testbench is similar to Chapter 4, but the counter test process has been slightly modified. Now instead of performing the check on the falling edge, it is done when any change occurs in the data output of the counter. This is accomplished by putting data in the sensitivity list of the checking process. 
 
 ```verilog
 //-- counter4_tb.v
 module counter4_tb();
     
-//-- Registro para generar la señal de reloj
+//-- register to generate the clock signal
 reg clk = 0;
     
-//-- Datos de salida del contador
+//-- output data from the counter
 wire [3:0] data;
     
-//-- Registro para comprobar si el contador cuenta correctamente
+//-- register for checking the counter
 reg [3:0] counter_check = 0;
     
-//-- Instanciar el contador, con prescaler de 1 bit (para la simulacion)
+//-- instantiate the counter, with 1 bit prescaler during simulation
 counter4 #(.N(1))
   C1(
     .clk(clk),
     .data(data)
   );
 
-//-- Generador de reloj. Periodo 2 unidades
+//-- clock generator with 2 cycle period
 always #1 clk = ~clk;
     
-//-- Proceso de comprobación. Cada vez que hay un cambio en
-//-- el contador se comprueba con el valor de prueba
+//-- Check Process. Every time there's a change in 
+//-- the counter, the design value is checked against the expected value
 always @(data) begin
     
   if (counter_check != data)
-    $display("-->ERROR!. Esperado: %d. Leido: %d",counter_check, data);
+    $display("-->ERROR!. Expected: %d. Actual: %d",counter_check, data);
     
   counter_check = counter_check + 1;
 end
     
-//-- Proceso al inicio
+//-- Start Process
 initial begin
     
-  //-- Fichero donde almacenar los resultados
+  //-- result file
   $dumpfile("counter4_tb.vcd");
   $dumpvars(0, counter4_tb);
     
-  //-- Comprobación del reset.
+  //-- check the reset
   # 0.5 if (data != 0)
-          $display("ERROR! Contador NO está a 0!");
+          $display("ERROR! Counter is NOT 0!");
         else
-	  $display("Contador inicializado. OK.");
+	  $display("Counter initialized. OK.");
     
- # 99 $display("FIN de la simulacion");
+ # 99 $display("End of the simulation");
  # 100 $finish;
 end
     
@@ -119,25 +119,25 @@ endmodule
 ```
 
 
-El proceso de comprobación comienza con
+The verification process begins with 
 
     always @(data) begin
 
-Esto significa que se ejecuta cada vez que hay un cambio en `data`
+This means it runs every time there is a change in `data`
 
-Para simular ejecutamos:
+To simulate we execute:
 
     $ make sim
 
-El resultado es:
+The result is:
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T07-contador-prescaler/images/T07-counter4-simulation-1.png)
 
-Vemos que el contador cuenta. Se ha utilizado un prescaler de 1 bit para que vaya más rápido en l simulación
+We see that the counter is counting. a 1 bit prescaler was used to make this occur much faster in simulation. 
 
-## Ejercicios propuestos
-* Cambiar el prescaler para que cuente más rápido
-* Cambiar el prescaler para que cuente más lento
+## Proposed exercises
+* Change the prescaler to count faster.
+* Change the counter to count down. 
 
-## Conclusiones
+## Conclusions
 TODO
