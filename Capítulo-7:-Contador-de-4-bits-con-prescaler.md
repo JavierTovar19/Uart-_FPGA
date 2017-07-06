@@ -1,13 +1,13 @@
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T07-contador-prescaler/images/counter4-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T07-contador-prescaler)
+[Examples of this chapter on github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T07-contador-prescaler)
 
-## Introducción
+## Introduction
 **Contador de 4 bits** conectado a los leds. Para que cuente más lentamente, la señal de reloj se pasa por un **prescaler de 22 bits**.  Se trata del mismo contador del capítulo 4, pero con un diseño mejorado. Para cambiar la frecuencia de cuenta sólo hay que cambiar los bits del prescaler (y no hace falta modificar los bits del contador ni reasignarlos en el fichero .pcf)
 
 
 
-## Descripción del hardware
+## Hardware Description
 
 El contador tiene una **entrada de reloj clk** y una **salida de datos data** de 4 bits. También tiene un parámetro N para indicar el número de bits del prescaler y establecer su frecuencia de funcionamiento. El código verilog es el siguiente:
 
@@ -42,7 +42,7 @@ Se podría haber definido un contador genérico en un fichero aparte e instancia
 
 El código se ha implementado a partir del dibujo  de la imagen 1
 
-## Síntesis en la FPGA
+## Synthesis of the FPGA
 
 La señal de reloj de 12Mhz entra por el pin 21 de la fpga, y la salida de datos se cada por los pines de los leds, del 99 al 96
 
@@ -52,7 +52,7 @@ Para sintentizarlo ejecutar el comando:
 
 Los recursos empleados son:
 
-| Recurso  | ocupación
+| Resources| utilization
 |----------|-----------
 |PIOs      | 3 / 96
 |PLBs      | 8 / 160
@@ -62,7 +62,7 @@ Cargar en la FPGA con el comando:
 
     $ sudo iceprog counter4.bin
 
-## Simulación
+## Simulation
 El banco de pruebas es similar al del capítulo 4, sin embargo, el proceso de comprobación del contador se ha modificado ligeramente. Ahora en vez de realizarse la comprobación en el flanco de bajada, se hace cuando hay algún cambio en la salida data del contador.  Esto se consigue poniendo a data en la lista de sensibilidad del proceso de comprobación:
 
 ```verilog
@@ -135,9 +135,9 @@ El resultado es:
 
 Vemos que el contador cuenta. Se ha utilizado un prescaler de 1 bit para que vaya más rápido en l simulación
 
-## Ejercicios propuestos
-* Cambiar el prescaler para que cuente más rápido
-* Cambiar el prescaler para que cuente más lento
+## Proposed exercises
+* Change the prescaler to count faster
+* Change the prescaler so it counts down
 
-## Conclusiones
+## Conclusions
 TODO
