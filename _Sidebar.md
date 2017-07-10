@@ -9,7 +9,7 @@
 5 [[Prescaler de N bits|Capítulo 5: Prescaler de N bits]]  ([[EN|Chapter 5: N bit prescaler]])  
 6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  ([[EN|Chapter 6: Multiple prescalers]])  
 7 [[Contador de 4 bits con prescaler|Capítulo 7: Contador de 4 bits con prescaler]] ([[EN|Chapter 7:4 bit counter with prescaler]])  
-8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]]  
+8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]] ([[EN|Chapter 8: 4 bit register]])  
 9 [[Inicializador|Capítulo 9: Inicializador]]  
 10 [[Registro de desplazamiento|Capítulo 10: Registro de desplazamiento]]  
 11 [[Multiplexor de 2 a 1|Capítulo 11: Multiplexor de 2 a 1]]  
