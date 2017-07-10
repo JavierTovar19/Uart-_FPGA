@@ -9,12 +9,12 @@
 5 [[Prescaler de N bits|Capítulo 5: Prescaler de N bits]]  ([[EN|Chapter 5: N bit prescaler]])  
 6 [[Múltiples prescalers|Capítulo 6: Multiples prescalers]]  ([[EN|Chapter 6: Multiple prescalers]])  
 7 [[Contador de 4 bits con prescaler|Capítulo 7: Contador de 4 bits con prescaler]] ([[EN|Chapter 7:4 bit counter with prescaler]])  
-8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]] ([[EN|Chapter 8: 4 bit register]])
-9 [[Inicializador|Capítulo 9: Inicializador]]  ([[EN|Chapter 9: initializer]])
+8 [[Registro de 4 bits|Capítulo 8: registro de 4 bits]] ([[EN|Chapter 8: 4 bit register]])  
+9 [[Inicializador|Capítulo 9: Inicializador]]  ([[EN|Chapter 9: initializer]])  
 10 [[Registro de desplazamiento|Capítulo 10: Registro de desplazamiento]] ([[EN|Chapter 10: shift register]])  
-11 [[Multiplexor de 2 a 1|Capítulo 11: Multiplexor de 2 a 1]] ([[EN|Chapter 11: 2 to 1 multiplexor]]) 
-12 [[Multiplexor de M a 1|Capítulo 12: Multiplexor de M a 1]] ([[EN|Chapter 12: M to 1 multiplexor]]) 
-13 [[Inicializando registros|Capítulo 13: Inicializando registros]]  ([[EN| Chapter 13: initializing registers]])
+11 [[Multiplexor de 2 a 1|Capítulo 11: Multiplexor de 2 a 1]] ([[EN|Chapter 11: 2 to 1 multiplexor]])   
+12 [[Multiplexor de M a 1|Capítulo 12: Multiplexor de M a 1]] ([[EN|Chapter 12: M to 1 multiplexor]])   
+13 [[Inicializando registros|Capítulo 13: Inicializando registros]]  ([[EN|Chapter 13: initializing registers]])  
 14 [[Registro de N bits con reset síncrono|Capítulo 14: Registro de N bits con reset síncrono]]  
 15 [[Divisor de frecuencias|Capítulo 15: Divisor de frecuencias]]  
 16 [[Contador de segundos|Capítulo 16: Contador de segundos]]  
