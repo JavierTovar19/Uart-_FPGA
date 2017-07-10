@@ -1,132 +1,131 @@
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-2.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T09-inicializador)
+[Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T09-inicializador)
 
-## Introducción
-Muchos circuitos digitales **necesitan inicializarse** antes de comenzar a trabajar normalmente. Su funcionamiento se divide en un **estado de arranque**, donde se inicializan los valores de los registros y un estado de **régimen permanente** donde se realiza la función para la que han sido diseñados.
+## Introduction
+Many digital circuits **need to be initialized** before starting to work normally. A circuits operation is divided into a start state, where the values of the registers are initialized, and a steady state where the function for which they have been designed is performed. 
 
-Para lograr esto necesitamos un circuito de inicialización que nos genere una **señal escalón**: que inicialmente esté a cero y al llegar el primer flanco de reloj pase a 1 y permanezca a 1 durante todo el funcionamiento de la máquina.
+To achieve this, we need an initialization circuit that generates a **step signal**: initially it is at zero and when the first clock edge arrives, it changes to a 1 and remains at 1 during the whole operation of the machine. 
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-2.png)
+![Image 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-2.png)
 
-Esto se implementa de una manera muy sencilla utilizando un **registro de 1 bit** [1] al que se le cablea un "1" en su entrada. Inicialmente el registro estará a 0. Al llegar el primer flanco de reloj, se captura el 1 y se saca por su salida, **generando el flanco de subida para realizar la inicialización**. Para el resto de ciclos de reloj esta señal siempre estará a 1
+this is implemented in a very simple way using a **1-bit register** (or flip-flop) which is wired to 1'b1 at it's input. Initially the register will be 0. When the first clock edge arrives, the 1 is captured by the circuitry and passed on to it's output, **generating the rising edge to initialize**. For the rest of the systems clock cycles this signal will always be at 1'b1. 
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-3.png)
+![Image 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-3.png)
 
-## Init.v: Descripción del hardware
+## Init.v: Hardware Description 
 
-Al tratarse de un registro, lo podemos implementar igual que en el capítulo anterior. Esta es la **implementación natural**. Otra posibilidad es hacer una **implementación optimizada**, usando menos código verilog
+Since this is a register, we will implement it similar to last chapter. This is the **natural implementation** . Another possibility is to make an **optimized implementation** using less verilog code. 
 
-### Implementación natural
+### Natural Implementation
 
-Es la implementación más lógica. Se parte de un registro genérico de 1 bit, que ya sabemos cómo se modela y simplemente cableamos su entrada a 1 y sacamos su salida hacia fuera:
+This logical implementation starts from a generic 1 bit register that we understand how to model. From there we simply wire it's input to 1, and take it's output: 
 
 ```verilog
-//-- init.v (implementación natural)
-//-- Entrada: cable del reloj
-//-- Salida: Cable con la señal de inicialización
+//-- init.v (natural implementation)
+//-- input: clock 
+//-- output: initialization signal 
 module init(input wire clk, output wire ini);
     
-//-- Cable de entrada el registro de 1 bit
+//-- register input 
 wire din;
     
-//-- Salida del registro de 1 bit (inicializado a 0) (solo para simulacion)
-//-- En la sintesis siempre estará a 0
+//-- register output (initialized to 0 in simulation) 
+//-- For synthesis, initializations cannot be non-zero.
 reg dout = 0;
 
-//-- Registro genérico: en flanco de subida se captura la entrada
+//-- generic rising edge clock register 
 always @(posedge(clk))
   dout <= din;
     
-//-- Cablear la entrada a 1
+//-- assign 1 to the input
 assign din = 1;
     
-//-- Conectar la salida del registro a la señal ini
+//-- connect the register output to the module output
 assign ini = dout;
     
 endmodule
 ```
 
-Esta implementación es muy sencilla y se entiende muy bien. Se ve claramente que es un registro con un "1" cableado por la entrada, sin embargo es muy "verbosa". Hay que escribir mucho código
+This implementation is simple and easy to understand. It's clear to see that it's a register with 1'b1 wired to it's input, but it's also very verbose -- there's a lot of code defining a simple thing. 
 
-### Implementación optimizada
+### Optimized Implementation
 
-Podemos hacer lo mismo pero con mucho menos código implementando directamente un registro que asigne siempre un "1" a su salida:
+We can do the same thing but with much less code by directly implemnting a register that always assigns 1 to it's output: 
 
 ```verilog
-//-- init.v  (version optimizada)
+//-- init.v  (optimized version)
 module init(input wire clk, output ini);
 
-//-- Registro de 1 bit inicializa a 0 (solo para simulacion)
-//-- Al sintetizarlo siempre estará a cero con independencia 
-//-- del valor al que lo pongamos
+//-- 1 bit register initialized to 0 for sim
+//-- for synthesize, this initialization value is ignored. 
 reg ini = 0;
     
-//-- En flanco de subida sacamos un "1" por la salida
+//-- on the rising edge of the clock, we assign 1 to the output
 always @(posedge(clk))
   ini <= 1;
     
 endmodule
 ```
 
-## Síntesis en la FPGA
+## Synthesis of the FPGA 
 
-Para probarlo en la fpga simplemente vamos a **conectar la salida ini a un led**. Al cargarlo en la FPGA sólo veremos cómo se enciende un led, sin embargo con ello tenemos nuestro circuito validado y listo para inicalizar los diseños de los capítulos siguientes
+to test this in the fpga we will simply **connect the output ini to an LED**. When loading the design into the FPGA we will only see that an LED is turned on, however this validates this simple circuit enough to initialize the designs in the following chapters. 
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-1.png)
+![Image 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-1.png)
 
-Lo sintetizamos con:
+Synthesize the design with:
 
     $ make sint
 
-Los recursos utilizados son:
+The resources used are:
 
-| Recurso  | ocupación
+| Resource | utilization
 |----------|-----------
 |PIOs      | 2 / 96
 |PLBs      | 1 / 160
 |BRAMs     | 0 / 16
 
-Lo cargamos en la FPGA con:
+Load into the FPGA with:
 
     $ sudo iceprog init.bin
 
-El led se encenderá. Nuestro circuito de inicialización funciona, aunque le sacaremos más partido en los capítulos sucesivos :-)
+The LED will light up. Our initialization circuit works, and we'll get more out of it in the following chapters.  :-)
 
 <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/T09-init-iCEstorm-1.png" width="400" align="center">
 
-## Simulación
+## Simulation
 
-Para simularlo utilizaremos un banco de pruebas simple, en el que no realizamos comprobación de la señal de salida (hay que hacerlo visualmente).  Se instancia el componente, se coloca el reloj y el proceso de inicialización
+To simulate the design we will use a simple test bench in which we do not carry out verification of the output signal, but instead do it visually. The init component is instantiated, the clock is generated, and the test init process is run. 
 
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-4.png)
+![Image 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/init-4.png)
 
-El código Verilog es:
+The Verilog code is:
 
 ```verilog
 //-- init_tb.v
 module init_tb();
     
-//-- Registro para generar la señal de reloj
+//-- register for the clock signal
 reg clk = 0;
     
-//-- Datos de salida del componente
+//-- output data of the component
 wire ini;
     
-//-- Instanciar el componente
+//-- Instantiate the component
 init 
   INIT (
     .clk(clk),
     .ini(ini)
   );
     
-//-- Generador de reloj. Periodo 2 unidades
+//-- generate the clock with a 2 cycle period
 always #2 clk = ~clk;
     
-//-- Proceso al inicio
+//-- start process
 initial begin
 
-//-- Fichero donde almacenar los resultados
+//-- file to store the results
 $dumpfile("init_tb.vcd");
 $dumpvars(0, init_tb);
 
@@ -137,20 +136,20 @@ end
 endmodule
 ```
 
-El resultado de la simulación es:
+The result of the simulation is: 
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/T09-init-sim.png)
+![Image 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T09-inicializador/images/T09-init-sim.png)
 
-Observamos cómo la señal ini está a 0 al comienzo y en cuanto llega el primer flanco se pone a 1, permaneciendo en ese estado el resto de ciclos
+We observe how the signal ini is 0 at the beginning and as soon as the first clock edge arrives it is set to one and remains in that state the rest of the simulation. 
 
-## Modificaciones en la duración del arranque
-Por defecto, este inicializador está en el **estado inicial** durante **1 ciclo de reloj**. Si nos interesase que estuviese durante más ciclos, sólo habría que **añadir un prescaler** a la entrada de reloj, y conectar su salida clk_out al reloj del registro
+## Modifications to boot time
+By default, this initializer is in the **initial state** for **1 clock cycle**. If we are interested in having more cycles, we could just **add a prescaler** to the clock input, and connect it's output clk to the clock of the initialization register. 
 
-## Ejercicios propuestos
-* Ejercicio 1: Modificar el inicializador para que su estado inicial dure más de 1 ciclo de reloj
+## Proposed exercises
+* Exercise 1: Modify the initializer so that it's initial state lasts for more than 1 clock cycle. 
+* Exercise 2: Add self checking to the test bench to verify both initial state and final state. 
 
-## Conclusiones
+## Conclusions
 TODO
 
-[1] Un registro de 1 bit es en realidad un **flip-flop**. Sin embargo prefiero llamarlo registro de 1 bit para generalizar. Su implementación en Verilog es la misma que la de un registro de N bits
 
