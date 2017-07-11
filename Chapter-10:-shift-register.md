@@ -1,43 +1,42 @@
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-3.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T10-shif-register)
+[Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T10-shif-register)
 
-## Introducción
-Los registros de desplazamiento **almacenan un valor** y nos pemiten **desplazarlo**. Son extremadamente útiles. Se utilizan para convertir la información de paralelo a serie (y vice-versa) para usar en las **comunicaciones síncronas**. Las comunicaciones a través de SPI, I2C, etc, se implementan con estos registros. También nos permiten realizar las operaciones de multiplicar por 2 y dividir entre 2 para número enteros.
+## Introduction
+The shift registers **store a value** and **shifts it**. They are extremely useful. They are used to convert information from parallel to serial (and vice versa) for use in **syncronous communications**. Communications through SPI, I2C, and more are implemented with these registers. The also allow us to perform the operations of multiplying by powers of 2 and dividing by powers of 2 for integers. 
 
-En este capítulo los utilizaremos para generar una secuencia de 4 estados en los leds de la placa iCEstick, moviendo las luces en sentido horario
+In this chapter we will use them to generate a sequence of 4 states on the LEDs of the iCEstick, moving the lights clockwise. 
 
-## Descripción del registro
-El registro de desplazamiento que usaremos es como el siguiente:
+## Description of the register. 
+The shift register we will use is as follows: 
 
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-2.png)
+![Image 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-2.png)
 
-La **salida** del registro es **de N bits** (en nuestro ejemplo usaremos un registro de 4 bits). Tiene una **entrada en paralelo** de N bits, que nos permite cargar en el registro con un valor nuevo. La **señal load_shift** nos permite determinar el **modo de funcionamiento**: cuando está a 0 se realiza la **carga** de un valor nuevo al llegar un flanco de subida de reloj. Cuando está a 1 se realiza un **desplazamiento hacia la izquierda** en el flanco de subida del reloj.
+The **output** of the register is **N bits** (in our example we will use a 4 bit register). It has an N-bit **Parallel input**, which allows us to load the register with a new value. The **load_shift signal** allows us to determine the **operating mode**: when it is at 0, a new value is **loaded** when a rising edge of the clock arrives. When it is at 1, a **right shift** is made on the rising edge of the clock.
 
-En este desplazamiento **el bit más significativo se pierde**, y el nuevo se lee de la **entrada serin** (serial input). Si tenemos almacenado el valor inicial 1001, la señal load_shift está a 1, serin está a 0 y llega un flanco de subida de reloj, obtendremos el valor:  0010.  En el siguiente flanco (si serin sigue a 0) obtendremos 0100, luego 1000 y luego 0000.
+In this shift **the most significant bit is lost** and the new value is read from the **serin input** (serial input). If we have the initial value 1'b1001 stored, and the signal load_shift is at 1, while serin is at 0 and a rising edge of the clock arrives, we get the value: 0010. On the next cycle (if serin statys 0) we get 0100, then 1000, and then 0000. 
 
-## shift4: Rotación de bits
+## shift4: Rotation of bits
 
-Como ejemplo usaremos un **registro de desplazamiento de 4 bits** para rotar una secuencia de bits y mostrarlos por los 4 leds de la placa iCEStick. La secuencia obtenida por los leds dependerá del valor inicial cargado en el registro.
+As an example we will use a **4-bit shift register** to rotate a sequence of bits and display them by the 4 LEDs on the iCEstick. The sequence obtained by the LEDs will depend on the initial value loaded in the register. 
 
-El diagrama de bloques del componente **shift4** es:
+The block diagram of the shift4 component is: 
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-1.png)
 
-El componente principal es un **registro de desplazamiento de 4 bits**. Por su entrada de reloj se conecta el reloj de la placa iCEstick a través de un **prescaler**, para disminuir su frecuencia y poder ver la rotación de los bits en los leds.
+The main component is a **4-bit shift register**. It's clock input is connected to the iCEstick clock via a prescaler component to lower it's frequency and to be able to see the shifting of the bits in the LEDs. 
 
-El bit más significativo del registro (**data[3]**) se conecta directamente a la entrada **serin**, de forma que se consiga la **rotación de bits** (el más significativo pasa a ser el de menor peso)
+The most significant bit of the register (**data[3]**) is connected directly to the **serin** input, so that bit rotation is achieved (the most significant one becomes the least significant). 
 
-Por la entrada paralelo introducimos el **valor inicial**, que por defecto será el **0001**. Al rotar aparecerá la secuencia 0010, 0100, 1000 y 0001.
+Via the parallel input we introduce the **initial value**, which by default will be **1'b0001**. Rotation will show the sequence 0010, 0100, 1000, and 0001. 
 
-La carga inicial la realizamos usando un **inicializador**, como el mostrado en el capítulo 9. Está conectado a la entrada load_shift, de manera que inicialmente está a 0 y al llegar el primer flanco de reloj pasa a '1', cargándose el valor inicial y pasando a modo desplazamiento. En el resto de flancos se realizará el desplazamiento (y no la carga).  Este es un ejemplo de cómo funciona el inicializador.
+The initial load is done using an **initializer**, as shown in chapter 9. It is connected to the input **load_shift**, so that initially it is 0 and when the first clock edge arrives it changes to 1, loading the initial value and changing to shift mode. The rest of the cycles will be shifting. This is an example of how the initializer works. 
 
+## Hardware Description
 
-## Descripción del hardware
+### Shift Register
 
-### Registro de desplazamiento
-
-El registro de desplazamiento se describe con muy pocas líneas. Es un proceso que depende del flanco de subida del reloj. 
+The shift register is described with very few lines. It is a process that depends on the rising edge of the clock. 
 
 ```verilog
 always @(posedge(clk_pres)) begin
@@ -48,47 +47,47 @@ always @(posedge(clk_pres)) begin
 end
 ```
 
-En el **modo carga** se saca el valor inicial (INI) por la salida. En el de desplazamiento se sacan los tres bits menos significativos y se añade serin como menos significativo. Esto se hace con el **operador de concatenación {}**: A los tres cables definidos por data[2:0] se le añade un cuarto cable: serin
+In the **load mode** the initial value (INI) is output. In the shift, the three least significant bits are shifted left and serin is concatenated as the least significant bit. This is done with the **concatenation operator{}**: a fourth wire is added to the three wires defined by data[2:0]. 
 
-### Componente shift4
 
-El componente final shift4 tiene **2 parámetros**: el **número de bits del prescaler** (NP), que determina la velocidad de rotación de los bits y el **valor inicial** (INI) a cargar, que determina la secuencia. Por defecto, este valor inicial es 0001.
+### Shift4 Component
 
-El código para describir el componente shift4 completo es:
+The final component of shift4 has **2 parameters**: the **number of bits of the prescaler (NP), which determines the speed of ration of the bits, and the **initial value** (INI) to be loaded, which determines the sequence. By default, this initial value is 4'b0001
+
+The code to describe the complete shift4 component is: 
 
 ```verilog
 //-- shift4.v
 module shift4(input wire clk, output reg [3:0] data);
     
-//-- Parametros del secuenciador
-parameter NP = 21;  //-- Bits del prescaler
-parameter INI = 1;  //-- Valor inicial a cargar en el registro
+//-- parameters of the sequencer
+parameter NP = 21;  //-- Bits of the prescaler
+parameter INI = 1;  //-- initial value to load into the shift register
     
-//-- Reloj de salida del prescaler
+//-- clock from the prescaler
 wire clk_pres;
     
-//-- Shift / load. Señal que indica si el registro
-//-- se carga o desplaza
-//-- shift = 0: carga
-//-- shift = 1: desplaza
+//-- Shift / load. Signal indicating whether the register is loaded or shifted
+//-- shift = 0: load
+//-- shift = 1: shifted
 reg load_shift = 0;
     
-//-- Entrada serie del registro
+//-- serial input of the register
 wire serin;
     
-//-- Instanciar el prescaler de N bits
+//-- Instantiate the N bit prescaler
 prescaler #(.N(NP))
   pres1 (
     .clk_in(clk),
     .clk_out(clk_pres)
   );
     
-//-- Inicializador
+//-- Initializer
 always @(posedge(clk_pres)) begin
     load_shift <= 1;
 end
     
-//-- Registro de desplazamiento
+//-- shift register
 always @(posedge(clk_pres)) begin
   if (load_shift == 0)  //-- Load mode
     data <= INI;
@@ -96,61 +95,61 @@ always @(posedge(clk_pres)) begin
     data <= {data[2:0], serin};
 end
     
-//-- Salida de mayor peso se re-introduce por la entrada serie
+//-- assign the MSB to the serial input to create a ring
 assign serin = data[3];
     
 endmodule
 ```
 
-El registro de desplazamiento se ha implementado directamente como un proceso en el propio componente, en vez de hacer como un componente separado (diseño jerárquico).
+Thie shift register has been directly implemented as a process in the component itself, rather than as a separate componente (hierarchical design).
 
-## Síntesis en la FPGA
+## Synthesis of the FPGA
 
-Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
+To synthesize it in the fpga we will connect the data outpus to the LEDs and the clock input to that of the iCEstick. 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-3.png)
 
-Sintetizamos con el comando:
+Synthesize with the command:
 
     $ make sint
 
-Los recursos empleados son:
+The resources used are:
 
-| Recurso  | ocupación
+| Resource | utilization
 |----------|-----------
 |PIOs      | 4 / 96
 |PLBs      | 10 / 160
 |BRAMs     | 0 / 16
 
-Para cargar en la FPGA ejecutamos:
+To load into the FPGA we execute:
 
     $ sudo iceprog shift4.bin
 
-En este **vídeo de Youtube** se puede ver la salida de los leds:
+In this **Youtube video** you can see the output of the LEDs: 
 
 [![Click to see the youtube video](http://img.youtube.com/vi/JgwFiXQobi4/0.jpg)](https://www.youtube.com/watch?v=JgwFiXQobi4)
 
-## Simulación
+## Simulation
 
-El banco de pruebas es uno básico, que instancia el componente shift4, con 1 bit para el prescaler (para que la simulación tarde menos) y un valor inicial del registro de 0001. Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+The testbench is a basic one, which instantiates the shift4 component, with 1 bit for the prescaler parameter (to make the simulation run over less clock cycles) and an initial value of 4'b0001 for the shift register. It has a process for the clock signal, and one for initialization of simulation. 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-4.png)
 
-La simulación se realiza con:
+The simulation is run with:
 
     $ make sim
 
-El resultado en gtkwave es:
+The result in gtkwave is: 
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/T10-shift4-sim-1.png)
 
-Vemos cómo inicialmente el registro tiene un valor indefinido (está en rojo, aunque en la síntesis tendrá un 0) y al llegar el **primer flanco de subida** se inicializa con el valor **0001**  (Gracias al circuito inicializador). En los siguientes flancos vemos cómo efectivamente el bit se desplaza hacia la izquierda: 0010, 0100, 1000  y por último vuelve al valor inicial: 0001, repitiéndose la secuencia hasta el final de la simulación.
+We see how initially the register has an undefined value (x) and when the first rising edge arrives it is initialized with the value 0001, thanks to the initializer circuit). In the following cycles we see how the bit is shifted to the left: 0010, 0100, 1000 and finally returns to the initial value: 0001, repeating the sequence until the end of simulation. 
 
-## Ejercicios propuestos
-* Ejercicio 1: Cambiar el valor del prescaler para que la rotación sea más rápida y el valor inicial del registro, para que salga otra secuencia.
-* Ejercicio 2: Utilizar un registro de desplazamiento de 8 bits, conectando los 4 menos significativos a los leds. De esta forma se pueden hacer secuencias en las que haya momentos en los que los leds están apagados.
+## Proposed Exercises
+* Exercise 1: Change the value of the presacler so that the rotation is faster, and the initial value of the register, so that another sequence comes out. 
+* Exercise 2: Use an 8-bit shift register, connecting the least signifcant 4 bits to the LEDs. This allows for making sequences in which all LEDs are off. 
 
-## Conclusiones
+## Conclusion
 TODO
 
 
