@@ -1,124 +1,144 @@
-![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
+![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T11-mux-2-1)
+[Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T12-mux-4-1)
 
-## Introducción
-Los **multiplexores** son circuitos combinacionales que nos permiten **seleccionar** entre varias fuentes de datos. En este capítulo utilizaremos un multiplexor de 2 a 1 para mostrar por los leds una secuencia de dos valores, que se mostrarán alternativamente.
+## Introduction
+Multiplexers allow us to **select between M inputs** (M being a pwoer of 2). Only the source that is selected is output. In the previous chapter we saw how to implement a simple multiplexer, from 2 to 1. In this chapter we generalize to M to 1, making an example fo 4 to 1. We will use it to create a sequencer of 4 states that will be output to the LEDs. 
 
-## Descripción del multiplexor 2 a 1
+## Multiplexer M to 1
+**The multiplexer has M data inputs**, M being a power of 2(2, 4, 8, 16, ...). All inputs and output are N bits. The selection input has b bits, with M = 2^b 
 
-Un multiplexor 2 a 1 selecciona entre 2 fuentes de datos según el valor de su **entrada de selección** sel. Si sel es 0, se saca por la salida la fuente 0, si es 1 se saca la fuente 1.
+![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-2.png)
 
-![Imagen 2](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-2.png)
+## Multiplexer 4 to 1
 
-Los describimos en Verilog usando la intrucción if ... else:
+As an example, we will implement a 4-bit multiplexer passing on 4 bits. The selection input has 2 bits: 
+
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-3.png)
+
+the verilog code is intuitive. We will use the case statement: 
 
 ```verilog
-always @(fuente0 or fuente1 or sel)
-  if (sel == 0)
-    dout <= fuente0;
-  else
-    dout <= fuente1;
+always @*
+  case (sel)
+     0 : out <= source0;
+     1 : out <= source1;
+     2 : out <= source2;
+     3 : out <= source3;
+     default : out <= 0;
+  endcase
 ```
 
-Es muy importante que exista el **else**. Al tratarse de un circuito combinacional, **todos los casos deben estar cubiertos**. Si no es así, se pueden inferir registros.  También es muy importante colocar en la **lista de sensibilidad** TODAS las señales de entrada: fuente0, fuente1 y sel.
+Note that **all valid cases are covered**. Even so, the **default** case has been added. This ensures that if sel has a Z or X value, known output occurs. This guarantees that a **combinatorial circuit** is implemented. If all cases are not covered, the synthesizer may infer a latch. 
 
-La lista de sensibilidad se puede escribir de forma abreviada con el argumento @*
+In the sensitivity list, we could have placed 5 entries, but instead used @* which automatically determines all variables in the process and uses them all in the sensitivity list. 
 
-    always @*
+## mux4: 4 state sequencer 
+We will use a multiplexer of 4 to 1 to make a sequencer of 4 states, generating a sequenc that is visible via the LEDs. For the 4 inputs we wire the values of the sequence. The default used is 0000, 1010, 1111, 0101. The selection input is connected to a 2 bit counter so that the 4 inputs are sequentially selected. The counter clock is connected to a prescaler to slow down the frequency, making the different selections visible to the naked eye. 
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-4.png)
 
-Esta lista incluye automáticamente todas las señales de entrada.
-
-## mux2.v: Secuenciador de 2 estados
-
-Como ejemplo de uso, haremos un **secuenciador de 2 estados**: Un circuito que envía alternativamente dos datos de 4 bits a los leds. El esquema del circuito es el siguiente:
-
-![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-3.png)
-
-Se utilizan 2 fuentes de datos fijas (están cableadas a valores fijos) que determinan el estado de los leds en cada momento. El multiplexor selecciona alternativamemente entre una y otra a través de una señal de reloj que pasa por un prescaler (para reducir la frecuencia y que podamos apreciar el movimiento de los leds).
-
-El código verilog es el siguiente:
+The Verilog code is:
 
 ```verilog
-//-- mux2.v
-module mux2(input wire clk, output reg [3:0] data);
+//-- mux4.v
+module mux4(input wire clk, output reg [3:0] data);
     
 //-- Parametros del secuenciador:
-parameter NP = 22;         //-- Bits del prescaler
-parameter VAL0 = 4'b1010;  //-- Valor secuencia 0
-parameter VAL1 = 4'b0101;  //-- Valor secuencia 1
+parameter NP = 23;         //-- Bits of the prescaler
+parameter VAL0 = 4'b0000;  //-- sequence value 0
+parameter VAL1 = 4'b1010;  //-- sequence value 1
+parameter VAL2 = 4'b1111;  //-- sequence value 2
+parameter VAL3 = 4'b0101;  //-- sequence value 3
     
-//-- Cables de las 3 entradas del multiplexor
+//-- wires for the 5 inputs to the multiplexer
 wire [3:0] val0;
 wire [3:0] val1;
-wire sel;
+wire [3:0] val2;
+wire [3:0] val3;
+wire [1:0] sel;  //-- 2 bits of selection. 
     
-//-- Por las entradas del mux cableamos los datos de entrada
+//-- 2 bit counter
+reg [1:0] count = 0;
+wire clk_pres; //-- output clock of the prescaler 
+    
+//-- wire the constants to the inputs of the mux. 
 assign val0 = VAL0;
 assign val1 = VAL1;
+assign val2 = VAL2;
+assign val3 = VAL3;
     
-//-- Implementación del multiplexor
-always @(sel or val0 or val1)
-  if (sel==0)
-    data <= val0;
-  else
-    data <= val1;
+//-- implement the 4 to 1 multiplexer 
+always @*
+  case (sel)
+     0 : data <= val0;
+     1 : data <= val1;
+     2 : data <= val2;
+     3 : data <= val3;
+     default : data <= 0;
+  endcase
     
-//-- Presaler que controla la señal de selección del multiplexor
+ //-- counter to drive the sel wire 
+ always @(posedge(clk_pres))
+  count <= count + 1;
+     
+//-- drive the sel wire with the counter value
+assign sel = count;
+    
+//-- prescaler that controls the counter frequency
 prescaler #(.N(NP))
   PRES (
     .clk_in(clk),
-    .clk_out(sel)
+    .clk_out(clk_pres)
   );
     
 endmodule
 ```
 
-La implementación del multiplexor es sencilla por lo que se incluye directamente en un proceso, en vez de definirla en un fichero separado y luego instanciarlo (diseño jerárquico).
 
-## Síntesis en la FPGA
+## Synthesis in the FPGA 
 
-Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick.
+To synthesize the design into the FPGA we will connect the data outputs to the LEDs, and the clock input to that of the iCEstick. 
 
-![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-1.png)
+![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-1.png)
 
-Sintetizamos con el comando:
+Synthesize with the command: 
 
     $ make sint
 
-Los recursos empleados son:
+The resources used are:
 
-| Recurso  | ocupación
+| Resource | utilization
 |----------|-----------
 |PIOs      | 3 / 96
-|PLBs      | 7 / 160
+|PLBs      | 6 / 160
 |BRAMs     | 0 / 16
 
-Para cargar en la FPGA ejecutamos:
+To load the FPGA we execute:
 
-    $ sudo iceprog mux2.bin
+    $ sudo iceprog mux4.bin
 
-En este **vídeo de Youtube** se puede ver la salida de los leds:
+In this **Youtube video** you can see the output of the LEDs:
 
-[![Click to see the youtube video](http://img.youtube.com/vi/4GnH5lqlTOU/0.jpg)](https://www.youtube.com/watch?v=4GnH5lqlTOU)
+[![Click to see the youtube video](http://img.youtube.com/vi/6z3PyGcX_eg/0.jpg)](https://www.youtube.com/watch?v=6z3PyGcX_eg)
 
-## Simulación
-El banco de pruebas es uno básico, que instancia el componente mux2, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación.
+## Simulation
+The testbench is a basic one, which instantiates the mux4 compnent, with 1 bit for the prescaler for less cycles in the simulation. It has a process for the clock signal, and one for the initialization of the simulation. 
 
-![Imagen 5](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/mux2-4.png)
+![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/mux4-5.png)
 
-La simulación se realiza con:
+The simulation is performed with: 
 
     $ make sim
 
-El resultado en gtkwave es:
+The result in gtkwave is:
 
-![Imagen 6](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T11-mux-2-1/images/T11-mux2-simulation.png)
+![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T12-mux-4-1/images/T12-mux4-sim-1.png)
 
-Vemos cómo se van alternando las dos salidas: 1010 y 0101 alternativamente, cada una asociada a un nivel de la señal de sel (que proviene del reloj pasada por un prescaler de 1 bit en simulación).
+We see how the 4 outputs are alternated: 0000, 1010, 1111, 0101, each associated with a value of the signal of sel. 
 
-## Ejercicios propuestos
-* **Ejercicio 1**: Cambiar los valores de entrada del multiplexor para sacar otra secuencia diferente por los leds.
-
-## Conclusiones
+## Proposed Exercises
+* Exercise 1: Modify the values to get a different sequence
+* Exercise 2: Make an 8-state sequencer using an 8-1 multiplexer
+* Exercise 3: Make a self checking testbench
+## Conclusions
 TODO
