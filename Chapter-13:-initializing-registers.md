@@ -1,36 +1,35 @@
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-1.png)
 
-[Ejemplos de este capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T13-reg-init)
+[Examples of this chapter in githube capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T13-reg-init)
 
-## Introducción
-Ya podemos responder a la pregunta planteada en el capítulo 8 sobre **cómo realizar la inicialización de los registros**. Los registros sintetizados están a 0. Normalmente necesitamos cargar en ellos un valor inicial, y que luego funcionen para lo que hayan sido diseñados. En este capítulo mostraremos cómo hacerlo, usando las herramientas que ya conocemos: el **multiplexor** y el **inicializador**
+## Introduction 
+We can now answer the question posed in Cahpter 8 on **how to initialize registers**. The synthesized registers start out at 0. Often we need to load an initial valie into them, and then enable them to start functioning. In this chapter we will show you how to do that, using the tools we already know -- the **multiplexer** and the **initializer**. 
 
-## Inicializando registros
+## Initializing registers 
 
-Partimos de un **registro genérico de N bits**, que ya conocemos, con una entrada din, una salida dout y una señal de reloj
+We start from a **generic register of N bits**, which we already know. It has din as input, dout as output, and a clock signal. 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-2.png)
 
-Queremos que se cargue con un valor inicial al principio y que luego funcione normalmente. Para hacerlo colocamos un **multiplexor de 2 a 1** en su entrada (para dividir la entrada en 2). Por una entrada del multiplexor ponemos el **valor inicial** y por la otra la entrada genérica del registro din2.
+We want it to load an initial value at the beginning, and then run normally. to do this, we put a **2 to 1 multiplexer** at it's input to allow two different inputs. For one input of the multiplexer we put the **initial value** and on the other, the regular input of the register. 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-3.png)
 
-**Es muy importante que el valor inicial se introduzca por la fuente 0 del multiplexor**.
+**It is very important that the initial value is using the 0 source of the multiplexer for this design**.
 
-Ahora ya simplemente conectamos un inicializador a la entrada de selección del multiplexor.
+Now we connect an initializer to the selection input of the multiplexer. 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-4.png)
 
-De esta forma, al arrancar, el inicializador emitirá un 0 y por la entrada din del registro llegará el valor 
-inicial. En el siguiente flanco de subida este valor inicial se captura y el inicializador pasa a 1, por lo que ahora se seleccionará la fuente 1, que será por donde vengan los datos del registro en el régimen normal de funcionamiento.
+In this way, at the start the initializer will emit a 0 and the the multiplexer will pass on the initial value. On the next rising edge this initial value is captured by the register, and the initializer is set to and held at 1 so the multiplexer passes on it's source 1 input. This will be whatever the normal operating mode data is. expected to be. 
 
-## reginit.v: Secuenciador de 2 estados con registro
+## reginit.v: 2-state sequencer with a register
 
-Vamos a rehacer el circuito blink4 del capítulo 8. Este circuito hacía parpadear los 4 leds a la vez, produciendo la secuencia: 0000, 1111, 0000 ...
+We will redo the blink4 circuit of chapter 8. This circuit would blink all 4 LEDs at the same time, 0000, 1111, 0000,...
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T08-register/images/blink4-3.png)
 
-Ahora lo vamos a mejorar haciendo que se pueda poner cualquier valor inicial en el registro, lográndose la secuencia INI, ~INI, INI ... (valor inicial y su negado alternativamente):
+Now, we will improve this design by making it possible to assign the register an initial value, achieving the sequence INI, ~INI, INI ...: 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-5.png)
 
@@ -40,33 +39,33 @@ La descripción de este circuito en Verilog es:
 //-- reginit.v
 module reginit(input wire clk, output wire [3:0] data);
     
-//-- Parametros del secuenciador:
-parameter NP = 23;        //-- Bits del prescaler
-parameter INI = 4'b1100;  //-- Valor inicial a cargar en registro
+//-- sequencer parameters:
+parameter NP = 23;        //-- prescaler bits 
+parameter INI = 4'b1100;  //-- value to initialize the state register to
     
-//-- Reloj a la salida del presacaler
+//-- output clock from the prescaler
 wire clk_pres;
     
-//-- Salida del regitro
+//-- output of the register
 reg [3:0] dout;
     
-//-- Entrada del registro
+//-- input of the register
 wire [3:0] din;
     
-//-- Señal de seleccion del multiplexor
+//-- select signal of the multiplexer
 reg sel = 0;
     
-//-- Registro
+//-- Register
 always @(posedge(clk_pres))
   dout <= din;
     
-//-- Conectar el registro con la salida
+//-- Connect the register to the output
 assign data = dout;
     
-//-- Multiplexor de inicializacion
+//-- initialization multiplexer
 assign din = (sel == 0) ? INI : ~dout;
     
-//-- Inicializador
+//-- Inicializer
 always @(posedge(clk_pres))
   sel <= 1;
     
@@ -80,13 +79,12 @@ prescaler #(.N(NP))
 endmodule
 ```
 
-El multiplexor de 2 a 1 ha sido implementado usando el **operador ? :** (similar al _operador condicional_ de lenguaje C). Es un if-else abreviado:
-
+the 2 to 1 multiplexer has been implemented using the **operator ?:** (similar to the _continaonal operator_ of the C language). It's an abbreviated if-else: 
 ```verilog
 assign din = (sel == 0) ? INI : ~dout;
 ```
 
-Es equivalente a:
+which is equivelant to :
 
 ```
 always @*
@@ -96,65 +94,65 @@ always @*
     din <= ~dout;
 ```
     
-pero la primera notación es más compacta
+But the first notation is more compact. 
 
-## Síntesis en la FPGA
+## Synthesize the FPGA
 
-Para sintetizarlo en la fpga conectaremos las salidas data a los leds, y la entrada de reloj a la de la placa iCEstick
+To synthesize the design in the FPGA we will connect the data outputs to the LEDs, and the clock input to that of the iCEstick. 
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-1.png)
 
-Sintetizamos con el comando:
+Synthesize with the command:
 
     $ make sint
 
-Los recursos empleados son:
+The resources utilized are:
 
-| Recurso  | ocupación
+| Resource | utilization
 |----------|-----------
 |PIOs      | 4 / 96
 |PLBs      | 10 / 160
 |BRAMs     | 0 / 16
 
-Para cargar en la FPGA ejecutamos:
+To program the FPGA execute: 
 
     $ sudo iceprog reginit4.bin
 
-En este **vídeo de Youtube** se puede ver la salida de los leds:
+In this **Youtube Video** you can see the flashing of the LEDs:
 
 [![Click to see the youtube video](http://img.youtube.com/vi/dYikGANv1t4/0.jpg)](https://www.youtube.com/watch?v=dYikGANv1t4)
 
-## Simulación
-El banco de pruebas es uno básico, que instancia el componente reginit, con 1 bit para el prescaler (para que la simulación tarde menos). Tiene un proceso para la señal de reloj y uno para la inicialización de la simulación
+## Simulation
+The testbench is a basic one, which instantiates the register init component, with 1 bit for the prescaler (so the simulation runs over less cycles). It runs the clock in a process, and initializes the simulation. 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/reginit-6.png)
 
-El código verilog es:
+The verilog code is:
 
 ```verilog
 //-- reginit_tb.v
 module reginit_tb();
     
-//-- Registro para generar la señal de reloj
+//-- Register for the clock
 reg clk = 0;
     
-//-- Datos de salida del componente
+//-- data from the component
 wire [3:0] data;
 
-//-- Instanciar el componente, con prescaler de 1 bit (para la simulacion)
+//-- Instantiate the component with prescaler set to 1
 reginit #(.NP(1))
   dut(
    .clk(clk),
    .data(data)
   );
     
-//-- Generador de reloj. Periodo 2 unidades
+//-- generate the clock
 always #1 clk = ~clk;
     
-//-- Proceso al inicio
+//-- initialization process
 initial begin
     
-  //-- Fichero donde almacenar los resultados
+  //-- files for the results
   $dumpfile("reginit_tb.vcd");
   $dumpvars(0, reginit_tb);
     
@@ -164,20 +162,21 @@ end
 endmodule
 ```
 
-La simulación se realiza con:
+Run the simulation with the command: 
 
     $ make sim
 
-El resultado en gtkwave es:
+The results in gtkwave are:
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T13-reg-init/images/T13-reginit-sim.png)
 
-Se puede ver cómo el registro se carga con su valor inicial 1100 y se van alternando los valores 0011 y 1100 
+You can see how the register is loaded with its initial vallue 1100 and the values 0011 and 1100 are alternated. 
 
-## Ejercicios propuestos
-* **Ejercicio 1**: Modificar el valor inicial para obtener una secuencia diferente
+## Proposed exercise: 
+* **Exercise 1**: Modify the initial values to get a different sequence
+* **Exercise 2**: change the simulation to be self-checking
 
-## Conclusiones
+## Conclusions
 TODO
 
 
