@@ -142,7 +142,7 @@ El fichero **prog.list**, con el **código máquina** esamblado a través de mas
 
 Sólo ocupa 2 bytes, uno por cada instrucción
 
-En el apartado de simulación y pruebas se muestran más detalles, pero para hacer una primera prueba en la placa icestick, el proceso a seguier es:
+En el apartado de simulación y pruebas se muestran más detalles, pero para hacer una primera prueba en la placa icestick, el proceso a seguir es:
 
 * Ensamblar el programa****
 
