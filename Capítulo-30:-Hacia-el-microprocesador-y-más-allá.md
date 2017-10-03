@@ -78,7 +78,7 @@ Se muestran **tres programas de ejemplo** muy sencillo para probar el procesador
 
 ## Ensamblador de Microbio
 
-Las instructiones que entiendo microbio están en **código máquina**: son números almacenados en su memoria rom, que el procesador va leyendo secuencialmente y ejecutando. Podemos programar microbio directamente en código máquina, escribiendo los **números hexadecimales** de sus instrucciones en el fichero **prog.list**
+Las instructiones que entiende microbio están en **código máquina**: son números almacenados en su memoria rom, que el procesador va leyendo secuencialmente y ejecutando. Podemos programar microbio directamente en código máquina, escribiendo los **números hexadecimales** de sus instrucciones en el fichero **prog.list**
 
 Sin embargo, es mucho más sencillo escribir programas en el **lenguaje ensamblador de Microbio** y utilizar un **programa ensamblador** para **traducirlos a código máquina**. Este proceso se denomina **ensamblado**
 
