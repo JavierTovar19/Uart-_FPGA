@@ -19,7 +19,7 @@ En realidad, Microbio es un **microcontrolador**: es un microprocesador que incl
 * 4 instrucciones: HALT, LEDS, WAIT y JP
 * No puede realizar cálculos: no tiene unidad aritmético lógica
 * No tiene registros de propósito general para almacenar información o hacer operaciones
-* Funcuencia de funcionamiento: Reloj de 12MHz
+* Frecuencia de funcionamiento: Reloj de 12MHz
 * Tiene 2 **periféricos**:
     * Puerto de salida de 4 bits: conectado a los leds
     * Temporizador de 200ms
