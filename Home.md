@@ -84,18 +84,18 @@ Verilog es el lenguaje que soporta el [proyecto icestorm](http://www.clifford.at
 
 * **He hecho el tutorial Hola mundo y la diferencia es que al sintetizar el archivo no me genera un .bin si no un .blif**  
 El fichero .blif es lo que se genera en la síntesis, después de ejecutar el programa yosys. Sin embargo, para obtener el .bin todavía tienes que ejecutar más comandos. Todos los comandos a ejecutar para obtener el .bin a partir del .v en el primero tutorial son:  
-    ```
+```
 $ yosys -p "synth_ice40 -blif setbit.blif" setbit.v
 $ arachne-pnr -d 1k -p setbit.pcf setbit.blif -o setbit.txt
 $ icepack setbit.txt setbit.bin
-    ```  
+```  
 Para hacerlo más fácil, lo mejor es ejecutar el comando **make sint**. Para ello tienes que clonar el repositorio del tutorial de github, entrar en el directorio de trabajo y ejecutar make sint:  
     
-    ```
+```
 $ git clone https://github.com/Obijuan/open-fpga-verilog-tutorial.git
 $ cd open-fpga-verilog-tutorial/tutorial/ICESTICK/T01-setbit/
 $ make sim
-    ```
+```
 
 # NOTICIAS
 
