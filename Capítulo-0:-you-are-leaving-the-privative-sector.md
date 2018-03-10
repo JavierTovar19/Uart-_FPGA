@@ -115,6 +115,7 @@ git clone https://github.com/cliffordwolf/icestorm.git icestorm
 cd icestorm
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 Instalación de **Arachne-PNR** (the place&route tool):
 ```
@@ -122,6 +123,7 @@ git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
 cd arachne-pnr
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 Instalación de **Yosys** (Verilog synthesis):
 ```
@@ -129,6 +131,7 @@ git clone https://github.com/cliffordwolf/yosys.git yosys
 cd yosys
 make -j$(nproc)
 sudo make install
+cd ..
 ```
 
 Instalación de **Icarus Verilog** y **GTKwave**
