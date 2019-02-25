@@ -130,7 +130,7 @@ The **synthesized registers** always have an **initial value of 0**. The line of
 reg [3:0] dout = 0;
 ```
 
-But the initialization in this line only works for simulation. It can give any value and we will see it in the simulation, however in "real hardware" we cannot do this. They will always be initialized to 0. To put another value we would have to load the register with this value. In the example blink4, if we could load the record initially with the value 1'b1010 (instead of 1'b0000), inverting it woudl yield 1'b0101. So we would have a different sequence: 1010, 0101, 1010 ... How coudl we implement this load? It is left as an exercise for the user to think about. In the following chapters we will sho the necessary elements to accomplish it. 
+But the initialization in this line only works for simulation. It can give any value and we will see it in the simulation, however in "real hardware" we cannot do this. They will always be initialized to 0. To put another value we would have to load the register with this value. In the example blink4, if we could load the record initially with the value 1'b1010 (instead of 1'b0000), inverting it woudl yield 1'b0101. So we would have a different sequence: 1010, 0101, 1010 ... How coudl we implement this load? It is left as an exercise for the user to think about. In the following chapters we will show the necessary elements to accomplish it. 
 
 ## Simulation
 
