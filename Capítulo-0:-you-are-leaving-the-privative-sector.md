@@ -224,7 +224,7 @@ ABORT.
 
 Una manera de solucionarlo es utilizar **sudo** al ejecutar **iceprog**, descargando con el comando:
 
-    $ sudo icprog bitstream.com
+    $ sudo iceprog bitstream.com
 
 Esto tiene el inconveniente de que hay que estar metiendo la clave cada cierto tiempo.
 
