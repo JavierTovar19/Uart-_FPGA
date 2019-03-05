@@ -136,8 +136,7 @@ Estos son los valores que se visualizan en los leds alternativamente:
 
 | Valor 1  |  Valor 2
 |-----------|----------
-| [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq1.png|width=200px]] | [[https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq2.png|width=200px]]
-
+| <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq1.png" width="200"> | <img src="https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T14-regreset/images/T14-regreset-leds-seq2.png" width="200">
 
 En este **vídeo de Youtube** se puede ver la salida de los leds:
 
