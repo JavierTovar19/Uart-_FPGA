@@ -18,13 +18,13 @@ In this shift **the most significant bit is lost** and the new value is read fro
 
 ## shift4: Rotation of bits
 
-As an example we will use a **4-bit shift register** to rotate a sequence of bits and display them by the 4 LEDs on the iCEstick. The sequence obtained by the LEDs will depend on the initial value loaded in the register. 
+As an example, we will use a **4-bit shift register** to rotate a sequence of bits and display them by the 4 LEDs on the iCEstick. The sequence obtained by the LEDs will depend on the initial value loaded in the register. 
 
 The block diagram of the shift4 component is: 
 
 ![Imagen 1](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-1.png)
 
-The main component is a **4-bit shift register**. It's clock input is connected to the iCEstick clock via a prescaler component to lower it's frequency and to be able to see the shifting of the bits in the LEDs. 
+The main component is a **4-bit shift register**. Its clock input is connected to the iCEstick clock via a prescaler component to lower its frequency and to be able to see the shifting of the bits in the LEDs. 
 
 The most significant bit of the register (**data[3]**) is connected directly to the **serin** input, so that bit rotation is achieved (the most significant one becomes the least significant). 
 
@@ -101,11 +101,11 @@ assign serin = data[3];
 endmodule
 ```
 
-Thie shift register has been directly implemented as a process in the component itself, rather than as a separate componente (hierarchical design).
+Thie shift register has been directly implemented as a process in the component itself, rather than as a separate component (hierarchical design).
 
 ## Synthesis of the FPGA
 
-To synthesize it in the fpga we will connect the data outpus to the LEDs and the clock input to that of the iCEstick. 
+To synthesize it in the FPGA we will connect the data output to the LEDs and the clock input to that of the iCEstick. 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-3.png)
 
@@ -131,7 +131,7 @@ In this **Youtube video** you can see the output of the LEDs:
 
 ## Simulation
 
-The testbench is a basic one, which instantiates the shift4 component, with 1 bit for the prescaler parameter (to make the simulation run over less clock cycles) and an initial value of 4'b0001 for the shift register. It has a process for the clock signal, and one for initialization of simulation. 
+The testbench is a basic one, which instantiates the shift4 component, with 1 bit for the prescaler parameter (to make the simulation run over fewer clock cycles) and an initial value of 4'b0001 for the shift register. It has a process for the clock signal, and one for initialization of simulation. 
 
 ![Imagen 3](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/shift4-4.png)
 
@@ -143,11 +143,11 @@ The result in gtkwave is:
 
 ![Imagen 4](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T10-shif-register/images/T10-shift4-sim-1.png)
 
-We see how initially the register has an undefined value (x) and when the first rising edge arrives it is initialized with the value 0001, thanks to the initializer circuit). In the following cycles we see how the bit is shifted to the left: 0010, 0100, 1000 and finally returns to the initial value: 0001, repeating the sequence until the end of simulation. 
+We see how initially the register has an undefined value (x) and when the first rising edge arrives it is initialized with the value 0001, thanks to the initializer circuit). In the following cycles, we see how the bit is shifted to the left: 0010, 0100, 1000 and finally returns to the initial value: 0001, repeating the sequence until the end of the simulation. 
 
 ## Proposed Exercises
 * Exercise 1: Change the value of the presacler so that the rotation is faster, and the initial value of the register, so that another sequence comes out. 
-* Exercise 2: Use an 8-bit shift register, connecting the least signifcant 4 bits to the LEDs. This allows for making sequences in which all LEDs are off. 
+* Exercise 2: Use an 8-bit shift register, connecting the least significant 4 bits to the LEDs. This allows for making sequences in which all LEDs are off. 
 
 ## Conclusion
 TODO
