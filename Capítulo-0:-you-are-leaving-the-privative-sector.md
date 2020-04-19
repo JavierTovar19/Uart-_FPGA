@@ -7,7 +7,7 @@ _You are leaving the privative sector_ ... ¡y estás entrando en el sector LIBR
 
 Las [FPGAs](https://es.wikipedia.org/wiki/Field_Programmable_Gate_Array) son unos chips "en blanco" que nos permiten configurarlos para crear dentro de ellos nuestros propios circuitos digitales. ¡Si! ¡Con las FPGAs estamos creando hardware! 
 
-Todos los circuitos digitales se descomponen en sus elementos básicos: **puertas lógicas** para hacer operaciones booleanas con los bits y **biestables** para almacenarlos. Como primera aproximación, podemos pensar en una FPGA como una chip que tiene en su interior arrays de estos elementos, sin conectar. Al **configurarla**, establecemos estas uniones y obtenemos nuestro circuito.
+Todos los circuitos digitales se descomponen en sus elementos básicos: **puertas lógicas** para hacer operaciones booleanas con los bits y **biestables** para almacenarlos. Como primera aproximación, podemos pensar en una FPGA como un chip que tiene en su interior arrays de estos elementos, sin conectar. Al **configurarla**, establecemos estas uniones y obtenemos nuestro circuito.
 
 ![](https://github.com/Obijuan/open-fpga-verilog-tutorial/raw/master/tutorial/ICESTICK/T00-Intro/images/fpga-config1.png)
 
@@ -25,7 +25,7 @@ Los circuitos se diseñan utilizando un **lenguaje de descripción hardware** (H
 
 **2 Emplazado y rutado**. Los componentes del netlist se hacen corresponder con los elementos físicos de la FPGA, se determina su colocación y se realiza el rutado. Toda la información de configuración de la FPGA se condensa en el bitstream. Esta fase sí depende del modelo concreto de FPGA que se disponga
 
-**NOTA SOBRE TERMINOLOGÍA**: Aunque técnicamente la fase de síntesis en sólo una parte de la generación del bitstream, coloquialmente **cuando se habla de síntesis nos solemos referir al proceso completo**. Así, si decimos que "hemos sintetizado este circuito en la FPGA", nos estamos refiriendo a que se han realizado todas las fase: síntesis, emplazado y rutado, generación del bitstream y carga en la FPGA
+**NOTA SOBRE TERMINOLOGÍA**: Aunque técnicamente la fase de síntesis en sólo una parte de la generación del bitstream, coloquialmente **cuando se habla de síntesis nos solemos referir al proceso completo**. Así, si decimos que "hemos sintetizado este circuito en la FPGA", nos estamos refiriendo a que se han realizado todas las fases: síntesis, emplazado y rutado, generación del bitstream y carga en la FPGA
 
 ## Cautivos del fabricante
 
@@ -49,7 +49,7 @@ En **mayo de 2015** ocurrió un **hito histórico**: se tuvieron por primera vez
 
 ## Limitaciones
 
-Ninguna herramientas recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de software/hardware libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
+Ninguna herramienta recién nacida tiene todo lo que deseamos. Pero al ser libre, potencialmente cualquier característica se puede implementar. Por eso todos los sistemas de software/hardware libres, evolucionan y maduran con el tiempo.  Einstein también fue bebé, y con esa edad no podía crear sus teorías. Lo importante es el potencial.
 
 Las herramientas del [proyecto icestorm](http://www.clifford.at/icestorm/) acaban de nacer. Y tienen todavía que madurar y desarrollarse. Algunas limitaciones son:
 * Sólo sirven para las **FPGAs de Lattice**, modelos: **HX1K-TQ144** y **HX8K-CT256**
@@ -95,7 +95,7 @@ Para diseñar los circuitos es fundamental disponer de un simulador de verilog. 
 
 ### Instalación automática, con instalador
 
-David Cuartielles ha creado [este instalador](https://github.com/dcuartielles/open-fpga-install) que realiza todo el proceso automáticamente: se baja todas las herramientas del github, las compila y las instalada, asi como todas las dependencias necesarias. La forma de usarlo es:
+David Cuartielles ha creado [este instalador](https://github.com/dcuartielles/open-fpga-install) que realiza todo el proceso automáticamente: se baja todas las herramientas del github, las compila y las instala, así como todas las dependencias necesarias. La forma de usarlo es:
 
 ```
 git clone https://github.com/dcuartielles/open-fpga-install.git
