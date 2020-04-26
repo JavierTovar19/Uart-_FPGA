@@ -3,7 +3,7 @@
 [Examples of this chapter in github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T10-shif-register)
 
 ## Introduction
-The shift registers **store a value** and **shifts it**. They are extremely useful. They are used to convert information from parallel to serial (and vice versa) for use in **syncronous communications**. Communications through SPI, I2C, and more are implemented with these registers. The also allow us to perform the operations of multiplying by powers of 2 and dividing by powers of 2 for integers. 
+The shift registers **store a value** and **shift it**. They are extremely useful. They are used to convert information from parallel to serial (and vice versa) for use in **synchronous communications**. Communications through SPI, I2C, and more are implemented with these registers. They also allow us to perform the operations of multiplying by powers of 2 and dividing by powers of 2 for integers. 
 
 In this chapter we will use them to generate a sequence of 4 states on the LEDs of the iCEstick, moving the lights clockwise. 
 
