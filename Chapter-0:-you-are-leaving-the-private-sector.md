@@ -204,6 +204,8 @@ sudo make install
 # ICEStick board
 The board that we will use in these tutorials is the [IceStick](http://www.latticesemi.com/icestick) If you do not have it (or a similar one), No problem! We will also simulate all designs with icarus verilog and gtkwave
 
+> If you are using a different device than the IceStick the command to program it may be slightly different. The [Project IceStorm](http://www.clifford.at/icestorm/) homepage has a table for the various arachne-pnr commands depending on the chip used, which you should change in the Makefile as you do the tutorial. You will also need to use a different pcf file.
+
 ## Configuration
 The download of the bitstream to the icestick plate is done directly by USB , using the library [libftdi](https://www.intra2net.com/en/developer/libftdi/). This requires access permissions .
 
