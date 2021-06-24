@@ -3,7 +3,7 @@
 [Examples of this chapter in githube capítulo en github](https://github.com/Obijuan/open-fpga-verilog-tutorial/tree/master/tutorial/ICESTICK/T13-reg-init)
 
 ## Introduction 
-We can now answer the question posed in Cahpter 8 on **how to initialize registers**. The synthesized registers start out at 0. Often we need to load an initial valie into them, and then enable them to start functioning. In this chapter we will show you how to do that, using the tools we already know -- the **multiplexer** and the **initializer**. 
+We can now answer the question posed in Chapter 8 on **how to initialize registers**. The synthesized registers start out at 0. Often we need to load an initial value into them, and then enable them to start functioning. In this chapter we will show you how to do that, using the tools we already know -- the **multiplexer** and the **initializer**. 
 
 ## Initializing registers 
 
